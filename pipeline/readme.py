@@ -135,6 +135,10 @@ def map_text(summary: dict, geo: dict | None, acs: dict | None) -> str:
         n_mig = sum(1 for c in nat if c["net_migration"] > 0)
         parts.append(f"In {n_dec} counties deaths have outnumbered births since 2020, and {n_mig} counties have "
                      f"gained people through migration.")
+    b = (geo or {}).get("boundary") or {}
+    if b.get("land_rank_in_state") == 1 and b.get("share_of_state_land"):
+        parts.append(f"It is the largest of Wisconsin's {b['districts_in_state']} districts by land area, covering "
+                     f"{b['share_of_state_land'] * 100:.0f}% of the state's land.")
     if geo:
         parts.append(f"The district had **{geo['pop_2020']:,} residents in the 2020 Census**"
                      + (f" and an estimated **{acs['district']['metrics']['population']:,.0f} in {acs['vintage']['acs1']}**."
@@ -334,8 +338,19 @@ def render(d: District) -> str:
                  f'website: the district map draws itself, then the people, work, federal dollars, and representation '
                  f'sections scroll past" width="100%" /></a></p>\n<p align="center"><sub>A 40-second tour of the website. '
                  f'Click for the full-quality video.</sub></p>')
+    gallery = ""
+    screens = media / "screens"
+    picks = [("land", "The scroll-driven map: each step recolors the counties"), ("people", "How the district compares with Wisconsin and the nation"),
+             ("seat", "The seat: members, notes, votes, and elections"), ("trust", "Every cross-check, in public")]
+    if all((screens / f"{n}-light.png").exists() for n, _ in picks):
+        cells = []
+        for n, cap in picks:
+            cells.append(f'<td width="50%" valign="top"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/screens/{n}-dark.png" />'
+                         f'<img src="docs/media/screens/{n}-light.png" alt="{escape(cap)}" width="100%" /></picture><br/><sub>{escape(cap)}</sub></td>')
+        gallery = ("## 🖼 Gallery\n\n<table>\n<tr>" + "".join(cells[:2]) + "</tr>\n<tr>" + "".join(cells[2:]) + "</tr>\n</table>")
     a = acs or {}
     values = {
+        "gallery": gallery,
         "site_url": d.site_url,
         "tagline": d.tagline,
         "hero": hero,

@@ -101,6 +101,22 @@ function hero() {
   const outline = svg.append("path").attr("class", "outline").attr("d", path(district));
   const len = outline.node().getTotalLength();
   outline.style("--len", len);
+  if (!REDUCED && !FILM) parallax();
+}
+
+function parallax() {
+  const map = $("#hero-map"), copy = $(".hero-copy"), hero = $(".hero");
+  let ticking = false;
+  const update = () => {
+    const h = hero.offsetHeight, y = Math.min(scrollY, h);
+    const k = y / h;
+    map.style.transform = `scale(${1 + k * 0.18}) translateY(${k * 40}px)`;
+    map.style.opacity = String(0.8 * (1 - k * 0.9));
+    copy.style.transform = `translateY(${k * -60}px)`;
+    copy.style.opacity = String(1 - k * 1.2);
+    ticking = false;
+  };
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
 }
 
 // ---------------------------------------------------------------- glance
@@ -133,7 +149,7 @@ function glance() {
 // ---------------------------------------------------------------- map (scrollytelling)
 const STEPS = {
   outline: { legend: () => "", color: () => css("--accent"), opacity: () => 0.22 },
-  split: { legend: () => `<span class="hatch-key"></span> Split between districts; only the part in the 7th is drawn`, color: (c) => (c?.whole ? css("--land") : css("--accent")), opacity: (c) => (c?.whole ? 1 : 0.55) },
+  split: { legend: () => `<span class="hatch-key"></span> Split between districts; only the part in the 7th is drawn`, color: () => css("--accent"), opacity: (c) => (c?.whole ? 0.1 : 0.6) },
   population: { metric: (c) => c?.pop_2020_in_district, scheme: "seq", label: "People living in the district, 2020 Census", fmt: F.int },
   change: { metric: (c) => c?.pop_change_pct, scheme: "div", label: "Population change since April 2020 (whole county)", fmt: F.signedPct },
   income: { metric: (c) => c?.acs?.median_household_income, scheme: "seq", label: "Median household income (whole county, ACS 5-year)", fmt: (v) => F.usd(v) },
@@ -226,7 +242,11 @@ function stepTexts() {
   const cs = state.counties;
   const split = cs.filter((c) => !c.whole);
   const land = s.headline.find((h) => h.id === "land");
-  $("#step-outline").innerHTML = `<strong>${geo.county_count} counties</strong> and <strong>${land ? land.display : "n/a"} square miles of land</strong>, about a third of Wisconsin. ${geo.whole_count} counties lie wholly inside the district.`;
+  const b = geo.boundary || {};
+  const share = b.share_of_state_land != null ? `, ${F.pct(b.share_of_state_land * 100, 0)} of Wisconsin's land area` : "";
+  $("#step-outline").innerHTML = `<strong>${geo.county_count} counties</strong> and <strong>${land ? land.display : "n/a"} square miles of land</strong>${share}. ${geo.whole_count} counties lie wholly inside the district.`;
+  if (b.land_rank_in_state === 1) $("#land-lede").textContent = `The largest of Wisconsin's ${b.districts_in_state} congressional districts by land area, drawn to the boundaries the U.S. House uses today.`;
+  else if (b.land_rank_in_state) $("#land-lede").textContent = `Number ${b.land_rank_in_state} of Wisconsin's ${b.districts_in_state} congressional districts by land area, drawn to the boundaries the U.S. House uses today.`;
   if (split.length) {
     const list = split.map((c) => `${c.short_name} (${F.pct((c.pop_share_in_district || 0) * 100, 0)} of residents)`);
     $("#step-split").innerHTML = `${list.slice(0, -1).join(", ")}, and ${list.slice(-1)} are divided with neighboring districts. The map shows only the part inside the 7th.`;

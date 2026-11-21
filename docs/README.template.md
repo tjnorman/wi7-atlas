@@ -35,7 +35,7 @@
 <td width="33%" valign="top">
 
 ### 📍 One district, in full
-Twenty-six counties from Lake Superior to Marshfield, mapped to the boundaries the U.S. House uses today, with the five split counties drawn as they really are.
+Twenty-six counties from Lake Superior to central Wisconsin, mapped to the boundaries the U.S. House uses today, with the five split counties drawn as they really are.
 
 </td>
 <td width="33%" valign="top">
@@ -54,6 +54,8 @@ A scheduled GitHub Action rebuilds the data each week, runs {{check_count}} cros
 </table>
 
 {{video_block}}
+
+{{gallery}}
 
 ## 🗺 The district in one picture
 

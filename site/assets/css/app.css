@@ -104,7 +104,8 @@ button, input, select { font: inherit; color: inherit; }
 .hero-map { position: absolute; inset: 0; z-index: -1; display: grid; place-items: center; opacity: 0.8;
   -webkit-mask-image: radial-gradient(60% 55% at 50% 52%, #000 35%, transparent 78%); mask-image: radial-gradient(60% 55% at 50% 52%, #000 35%, transparent 78%); }
 .hero-map svg { width: min(92vw, 980px); height: auto; max-height: 92%; }
-.hero-copy { position: relative; }
+.hero-copy { position: relative; will-change: transform, opacity; }
+.hero-map { will-change: transform, opacity; }
 .hero-copy::before { content: ""; position: absolute; inset: -12% -8%; z-index: -1; background: radial-gradient(closest-side, color-mix(in srgb, var(--bg) 82%, transparent), transparent); }
 .hero-copy { text-align: center; max-width: 980px; }
 .eyebrow { color: var(--accent); font-size: 15px; font-weight: 600; letter-spacing: 0; margin: 0 0 14px; }

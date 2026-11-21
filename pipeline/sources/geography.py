@@ -119,7 +119,10 @@ def boundaries(fetcher: Fetcher, d: District, out_dir: pathlib.Path) -> tuple[di
         raise FetchError(f"No cartographic boundary files found: {last_error}")
 
     st = d.state_fips
-    district = _shapes(cd_zip, lambda p: str(p.get("STATEFP")) == st and _cd_field(p, d.congress) == d.district)
+    all_districts = _shapes(cd_zip, lambda p: str(p.get("STATEFP")) == st)
+    ranking = sorted(((_cd_field(f["properties"], d.congress), int(f["properties"].get("ALAND") or 0)) for f in all_districts),
+                     key=lambda x: -x[1])
+    district = [f for f in all_districts if _cd_field(f["properties"], d.congress) == d.district]
     parts = _shapes(parts_zip, lambda p: str(p.get("STATEFP")) == st and _cd_field(p, d.congress) == d.district)
     counties = _shapes(county_zip, lambda p: str(p.get("STATEFP")) == st)
     state = _shapes(state_zip, lambda p: str(p.get("STATEFP")) == st)
@@ -164,8 +167,13 @@ def boundaries(fetcher: Fetcher, d: District, out_dir: pathlib.Path) -> tuple[di
 
     aland = sum(int(f["properties"]["aland"] or 0) for f in district)
     awater = sum(int(f["properties"]["awater"] or 0) for f in district)
+    state_aland = sum(int(f["properties"].get("ALAND") or 0) for f in _shapes(state_zip, lambda p: str(p.get("STATEFP")) == st))
+    rank = next((i + 1 for i, (cd, _) in enumerate(ranking) if cd == d.district), None)
     return {"year": y, "aland_sq_m": aland, "awater_sq_m": awater,
-            "land_sq_mi": aland / SQ_M_PER_SQ_MI, "water_sq_mi": awater / SQ_M_PER_SQ_MI}, str(y)
+            "land_sq_mi": aland / SQ_M_PER_SQ_MI, "water_sq_mi": awater / SQ_M_PER_SQ_MI,
+            "state_land_sq_mi": state_aland / SQ_M_PER_SQ_MI if state_aland else None,
+            "share_of_state_land": aland / state_aland if state_aland else None,
+            "land_rank_in_state": rank, "districts_in_state": len(ranking)}, str(y)
 
 
 def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, list[Source], list[dict]]:
