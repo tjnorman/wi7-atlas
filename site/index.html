@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>WI-7 Atlas · Wisconsin's 7th Congressional District, counted</title>
+  <meta name="description" content="A nonpartisan atlas of Wisconsin's 7th Congressional District: people, work, federal dollars, and representation. Every number sourced and cross-checked." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="WI-7 Atlas" />
+  <meta property="og:description" content="Wisconsin's 7th Congressional District, counted. Every number sourced and cross-checked." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="media/social.png" />
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/app.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="WI-7 Atlas, back to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 2 2 9-6 7-10-3-2-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>WI-7 Atlas</span>
+      </a>
+      <nav aria-label="Sections">
+        <a href="#land">The land</a>
+        <a href="#people">People</a>
+        <a href="#work">Work</a>
+        <a href="#dollars">Federal dollars</a>
+        <a href="#seat">The seat</a>
+        <a href="#counties">Counties</a>
+        <a href="#trust">How we know</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark appearance">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="sample-banner" id="sample-banner" hidden>Sample data for design preview only. These numbers are not real.</div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-map" id="hero-map" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow reveal">A nonpartisan public atlas</p>
+        <h1 id="hero-title" class="reveal">Wisconsin's <span class="grad">7th</span>.</h1>
+        <p class="hero-lede reveal">Twenty-six counties. One seat in Congress.<br />Every number sourced, and checked twice.</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="#land">Explore the district</a>
+          <a class="btn btn-ghost" href="#trust">How we check</a>
+          <a class="btn btn-ghost" href="#tour" id="tour-btn" hidden>▶ Watch the tour</a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#glance" aria-label="Scroll to the numbers"><span></span></a>
+    </section>
+
+    <!-- AT A GLANCE -->
+    <section class="glance" id="glance" aria-labelledby="glance-title">
+      <h2 id="glance-title" class="visually-hidden">At a glance</h2>
+      <div class="glance-grid" id="glance-grid"></div>
+      <p class="fine center" id="glance-note"></p>
+    </section>
+
+    <!-- TOUR VIDEO (shown when media/tour.mp4 exists) -->
+    <section class="tour" id="tour" hidden aria-labelledby="tour-title">
+      <header class="chapter-head">
+        <p class="eyebrow">Watch</p>
+        <h2 id="tour-title">The atlas in one minute.</h2>
+      </header>
+      <div class="tour-frame reveal">
+        <video id="tour-video" controls playsinline preload="none" aria-label="A one-minute tour of the WI-7 Atlas">
+          <source src="media/tour.webm" type="video/webm" />
+          <source src="media/tour.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <p class="fine center">Recorded automatically from this page and the current data.</p>
+    </section>
+
+    <!-- THE LAND (scrollytelling map) -->
+    <section class="chapter" id="land" aria-labelledby="land-title">
+      <header class="chapter-head">
+        <p class="eyebrow">The land</p>
+        <h2 id="land-title">From Lake Superior to Marshfield.</h2>
+        <p class="lede">The largest district in Wisconsin by area, drawn to the boundaries the U.S. House uses today.</p>
+      </header>
+      <div class="scrolly">
+        <div class="scrolly-graphic">
+          <figure class="map-figure">
+            <div class="map" id="map" role="img" aria-label="Map of the district's counties"></div>
+            <div class="map-legend" id="map-legend" aria-live="polite"></div>
+            <figcaption class="fine" id="map-caption"></figcaption>
+          </figure>
+        </div>
+        <div class="scrolly-steps" id="steps">
+          <div class="step" data-step="outline"><div class="step-card"><h3>Twenty-six counties</h3><p id="step-outline"></p></div></div>
+          <div class="step" data-step="split"><div class="step-card"><h3>Five are split</h3><p id="step-split"></p></div></div>
+          <div class="step" data-step="population"><div class="step-card"><h3>Where people live</h3><p id="step-population"></p></div></div>
+          <div class="step" data-step="change"><div class="step-card"><h3>How it is changing</h3><p id="step-change"></p></div></div>
+          <div class="step" data-step="income"><div class="step-card"><h3>Household income</h3><p id="step-income"></p></div></div>
+          <div class="step" data-step="unemployment"><div class="step-card"><h3>Work, this month</h3><p id="step-unemployment"></p></div></div>
+          <div class="step" data-step="explore"><div class="step-card"><h3>Explore any county</h3><p>Hover or tap a county for its numbers. Select it to open everything the atlas knows about it, with sources.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEOPLE -->
+    <section class="chapter" id="people" aria-labelledby="people-title">
+      <header class="chapter-head">
+        <p class="eyebrow">People</p>
+        <h2 id="people-title">Who lives here.</h2>
+        <p class="lede" id="people-lede"></p>
+      </header>
+      <div class="panel reveal">
+        <div class="panel-head">
+          <h3>How the 7th compares</h3>
+          <div class="legend-inline"><span class="dot d-district"></span>District <span class="dot d-state"></span>Wisconsin <span class="dot d-us"></span>United States</div>
+        </div>
+        <div id="compare-chart" class="chart"></div>
+        <p class="fine" id="compare-source"></p>
+      </div>
+      <div class="two-up">
+        <div class="panel reveal"><h3>Age</h3><div id="age-chart" class="chart"></div><p class="fine" id="age-source"></p></div>
+        <div class="panel reveal"><h3>Race and ethnicity</h3><div id="race-chart" class="chart"></div><p class="fine" id="race-source"></p></div>
+      </div>
+      <div class="panel reveal">
+        <h3>The district over time</h3>
+        <p class="sub" id="trend-sub"></p>
+        <div class="trend-grid" id="trend-grid"></div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="chapter" id="work" aria-labelledby="work-title">
+      <header class="chapter-head">
+        <p class="eyebrow">Work</p>
+        <h2 id="work-title">How people make a living.</h2>
+        <p class="lede" id="work-lede"></p>
+      </header>
+      <div class="panel reveal">
+        <div class="panel-head">
+          <h3>Unemployment, month by month</h3>
+          <label class="select">Highlight a county
+            <select id="laus-county"><option value="">None</option></select>
+          </label>
+        </div>
+        <div id="laus-chart" class="chart tall"></div>
+        <p class="fine" id="laus-source"></p>
+      </div>
+      <div class="two-up">
+        <div class="panel reveal"><h3>What residents do</h3><div id="industry-chart" class="chart"></div><p class="fine" id="industry-source"></p></div>
+        <div class="panel reveal"><h3>Jobs and pay where people work</h3><div id="pay-chart" class="chart"></div><p class="fine" id="pay-source"></p></div>
+      </div>
+    </section>
+
+    <!-- FEDERAL DOLLARS -->
+    <section class="chapter" id="dollars" aria-labelledby="dollars-title">
+      <header class="chapter-head">
+        <p class="eyebrow">Federal dollars</p>
+        <h2 id="dollars-title">What Washington sends.</h2>
+        <p class="lede" id="dollars-lede"></p>
+      </header>
+      <div class="panel reveal">
+        <h3>Award obligations by fiscal year</h3>
+        <div id="fed-chart" class="chart"></div>
+        <p class="fine" id="fed-source"></p>
+      </div>
+      <div class="two-up">
+        <div class="panel reveal"><h3 id="agencies-title">Top awarding agencies</h3><div id="agencies" class="rank"></div></div>
+        <div class="panel reveal"><h3 id="programs-title">Top programs</h3><div id="programs" class="rank"></div></div>
+      </div>
+    </section>
+
+    <!-- THE SEAT -->
+    <section class="chapter" id="seat" aria-labelledby="seat-title">
+      <header class="chapter-head">
+        <p class="eyebrow">The seat</p>
+        <h2 id="seat-title">One seat in Congress.</h2>
+        <p class="lede">This atlas follows the seat, not any officeholder or party: who has held it, how it has voted, how elections for it have gone, and the money raised to win it.</p>
+      </header>
+      <div class="seat-top">
+        <div class="panel member reveal" id="member-card"></div>
+        <div class="panel notes reveal" id="notes-card"></div>
+      </div>
+      <div class="panel reveal"><h3>Who has held the seat</h3><div id="seat-chart" class="chart"></div><p class="fine" id="seat-source"></p></div>
+      <div class="panel reveal" id="votes-panel">
+        <h3 id="votes-title">How the seat has voted</h3>
+        <div class="rings" id="vote-rings"></div>
+        <details class="recent"><summary>The 25 most recent votes</summary><div class="table-wrap"><table id="recent-votes"></table></div></details>
+        <p class="fine" id="votes-source"></p>
+      </div>
+      <div class="panel reveal"><h3>Every general election for the seat</h3><div id="elections-chart" class="chart"></div><p class="fine" id="elections-source"></p></div>
+      <div class="panel reveal">
+        <div class="panel-head">
+          <h3>Campaign money</h3>
+          <div class="segmented" id="fec-cycles" role="tablist" aria-label="Election cycle"></div>
+        </div>
+        <div class="table-wrap"><table id="fec-table"></table></div>
+        <p class="fine" id="fec-source"></p>
+      </div>
+    </section>
+
+    <!-- COUNTIES -->
+    <section class="chapter" id="counties" aria-labelledby="counties-title">
+      <header class="chapter-head">
+        <p class="eyebrow">Counties</p>
+        <h2 id="counties-title">Twenty-six places.</h2>
+        <p class="lede">Each card opens the county's full profile. Split counties show the share of their people who live inside the district.</p>
+      </header>
+      <div class="toolbar">
+        <div class="segmented" id="county-sort" role="tablist" aria-label="Sort counties">
+          <button data-sort="name" class="on">A to Z</button>
+          <button data-sort="pop">Population</button>
+          <button data-sort="change">Change</button>
+          <button data-sort="income">Income</button>
+          <button data-sort="unemp">Unemployment</button>
+        </div>
+        <input type="search" id="county-search" placeholder="Find a county" aria-label="Find a county" />
+      </div>
+      <div class="county-grid" id="county-grid"></div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="chapter" id="trust" aria-labelledby="trust-title">
+      <header class="chapter-head">
+        <p class="eyebrow">How we know</p>
+        <h2 id="trust-title">Every number has a receipt.</h2>
+        <p class="lede">Each build fetches data from its publisher, records exactly what was read, and checks independent sources against each other. Problems are shown here, not hidden.</p>
+      </header>
+      <div class="panel reveal">
+        <div class="panel-head"><h3>Cross-checks in the latest build</h3><span class="pill" id="checks-summary"></span></div>
+        <ul class="checks" id="checks"></ul>
+      </div>
+      <div class="two-up">
+        <div class="panel reveal">
+          <h3>Method</h3>
+          <details><summary>Boundaries and split counties</summary><p>The map uses the Census Bureau's cartographic boundary files for the 119th Congress. Five counties are divided between districts. Their shapes show only the part inside the district, and population shares come from the 2020 Census tabulated by county part. County-level statistics such as income always describe the whole county and are labeled that way.</p></details>
+          <details><summary>Survey estimates and margins of error</summary><p>Most figures about people and homes come from the American Community Survey, a sample survey. District figures use 1-year estimates; county figures use 5-year estimates, which are more reliable for small counties. Margins of error at 90 percent confidence appear beside district figures. Small differences may not be meaningful.</p></details>
+          <details><summary>Following the seat</summary><p>Roll-call votes are attributed to whoever held the seat on the date of the vote. Party agreement and winning-side rates use only yes-or-no votes; quorum calls and the election of the Speaker are left out. Definitions appear beside every rate.</p></details>
+          <details><summary>Unofficial and scheduled information</summary><p>Some facts, like a race called by news organizations before certification, are not yet in any official dataset. Those appear as notes labeled unofficial, with sources, a verification date, and a review-by date. The cross-checks flag any note past its review date.</p></details>
+          <details><summary>What this atlas does not do</summary><p>It does not rate, endorse, or characterize candidates, officeholders, or parties, and it does not predict elections. Party colors appear only in election charts.</p></details>
+        </div>
+        <div class="panel reveal">
+          <h3>Download the data</h3>
+          <p class="sub">Every file includes its sources and retrieval date.</p>
+          <ul class="downloads" id="downloads"></ul>
+          <p class="fine" id="built-at"></p>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <h3>Sources</h3>
+        <ol class="sources" id="sources"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong>WI-7 Atlas</strong> is an independent, nonpartisan civic resource published by <span id="publisher">Thomas J. Norman</span>. It is not affiliated with any candidate, party, campaign, or government office.</p>
+      <p>Companion site: <a href="https://widistrict7.com/">widistrict7.com</a> · <a id="repo-link" href="https://github.com/Normansrule/wi7-atlas">Code and data on GitHub</a> · Code MIT, text and charts CC BY 4.0.</p>
+    </div>
+  </footer>
+
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawer-title" role="dialog">
+    <div class="drawer-inner">
+      <button class="drawer-close" id="drawer-close" type="button" aria-label="Close county profile">×</button>
+      <div id="drawer-body"></div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+  <div class="tooltip" id="tooltip" role="status" aria-live="polite" hidden></div>
+
+  <script src="vendor/d3.min.js"></script>
+  <script src="vendor/topojson-client.min.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

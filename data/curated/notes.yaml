@@ -1,0 +1,79 @@
+# Hand-curated statements that no API publishes yet.
+#
+# Rules: every note carries at least one public source, the date it was
+# verified, and a review_by date. The integrity report flags any note past
+# its review_by date, so an unofficial statement cannot linger unnoticed.
+# Election results stay labeled "unofficial" until the Wisconsin Elections
+# Commission certifies them.
+
+notes:
+  - id: election-2026
+    section: representation
+    status: unofficial
+    title: 2026 general election
+    text: >-
+      The Associated Press called the November 3, 2026 race for the open
+      7th District seat for Republican Michael Alfonso over Democrat Fred
+      Clark on election night. Results stay unofficial until the Wisconsin
+      Elections Commission completes the state canvass, which state law
+      requires on or before December 1, 2026.
+    verified_on: 2026-11-20
+    review_by: 2026-12-02
+    sources:
+      - id: wpr-2026-alfonso
+        label: WPR, Nov 4, 2026
+        apa: >-
+          Wisconsin Public Radio. (2026, November 4). Republican Michael
+          Alfonso wins northern Wisconsin district.
+        url: https://www.wpr.org/news/republican-michael-alfonso-wins-northern-wisconsin-district
+      - id: wis-stat-7-70
+        label: Wis. Stat. § 7.70
+        apa: Wis. Stat. § 7.70 (2025). State canvass.
+        url: https://docs.legis.wisconsin.gov/statutes/statutes/7/70
+      - id: brennan-2026-wi-certification
+        label: Brennan Center
+        apa: >-
+          Brennan Center for Justice. (2026, August 3). Wisconsin election
+          certification processes and guardrails.
+        url: https://www.brennancenter.org/our-work/research-reports/wisconsin-election-certification-processes-and-guardrails
+
+  - id: seat-transition
+    section: representation
+    status: scheduled
+    title: Change of member on January 3, 2027
+    text: >-
+      Rep. Tom Tiffany did not seek re-election to the House in 2026, so
+      the seat was open. The term of the member elected in 2026 begins
+      January 3, 2027, the date the 20th Amendment sets for House terms.
+    verified_on: 2026-11-20
+    review_by: 2027-01-04
+    sources:
+      - id: wpr-2026-results
+        label: WPR results
+        apa: >-
+          Wisconsin Public Radio. (2026, November). Wisconsin congressional
+          election results, November 2026.
+        url: https://www.wpr.org/news/wisconsin-congressional-election-results-november-2026
+      - id: us-const-amend-20
+        label: 20th Amendment
+        apa: U.S. Const. amend. XX, § 1.
+        url: https://constitution.congress.gov/constitution/amendment-20/
+
+  - id: map-119
+    section: geography
+    status: verified
+    title: Same lines for the 118th and 119th Congresses
+    text: >-
+      Wisconsin did not redraw its congressional map between the 118th and
+      119th Congresses; the five states that did were Alabama, Georgia,
+      Louisiana, New York, and North Carolina. That is why district
+      estimates from 2022 onward can be compared year to year.
+    verified_on: 2026-11-20
+    review_by: 2027-06-30
+    sources:
+      - id: census-bef-119
+        label: Census Bureau
+        apa: >-
+          U.S. Census Bureau. (2025). 119th Congress block equivalency
+          files.
+        url: https://www.census.gov/geographies/mapping-files/2025/dec/rdo/119-congressional-district-bef.html

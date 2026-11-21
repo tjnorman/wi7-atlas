@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this atlas or its data, please cite it as below, and cite the primary sources listed in the README."
+title: "WI-7 Atlas: Wisconsin's 7th Congressional District, counted"
+authors:
+  - family-names: Norman
+    given-names: Thomas J.
+type: software
+license: MIT
+repository-code: "https://github.com/Normansrule/wi7-atlas"
+url: "https://normansrule.github.io/wi7-atlas/"
+version: 1.0.0
+date-released: 2026-11-20
+keywords: [Wisconsin, congressional district, open data, census, civic technology]

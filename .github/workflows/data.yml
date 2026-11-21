@@ -1,0 +1,80 @@
+# Rebuild the data from primary sources, run the cross-checks, redraw the
+# README charts, commit what changed, and publish the site.
+name: Data refresh
+
+on:
+  schedule:
+    - cron: "17 11 * * 1"   # Mondays, 11:17 UTC (early morning in Wisconsin)
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Comma-separated sources to rebuild (blank = all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: pip install -r requirements.txt
+      - run: npm ci
+      - name: Restore HTTP cache (roll calls and other files that never change)
+        uses: actions/cache@v4
+        with:
+          path: .cache/http
+          key: http-${{ github.run_id }}
+          restore-keys: http-
+      - name: Build data
+        env:
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+          ATLAS_USE_CACHE: "0"
+        run: |
+          if [ -n "${{ github.event.inputs.only }}" ]; then
+            python -m pipeline build --only "${{ github.event.inputs.only }}"
+          else
+            python -m pipeline build
+          fi
+      - name: Charts and README
+        run: python -m pipeline charts && python -m pipeline readme
+      - name: Data tests
+        run: python -m pytest -q tests/test_pipeline_units.py tests/test_data.py
+      - name: Commit changes
+        run: |
+          git config user.name "wi7-atlas-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data README.md docs/media
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Data refresh $(date -u +%Y-%m-%d)" -m "Automated rebuild from primary sources; see data/wi-07/integrity.json for cross-check results."
+            git push
+          fi
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

@@ -1,0 +1,58 @@
+# District configuration for the WI-7 Atlas.
+#
+# Everything district-specific lives here. To build an atlas for another
+# congressional district, copy this file, change the identifiers and the
+# expectations, and run `python -m pipeline build --district <id>`.
+
+id: wi-07
+name: Wisconsin's 7th Congressional District
+short_name: WI-7
+tagline: Wisconsin's 7th Congressional District, counted.
+
+state:
+  name: Wisconsin
+  abbr: WI
+  fips: "55"
+
+district: "07"          # two-digit district code used by Census and the FEC
+district_number: 7
+congress: 119           # Congress whose boundaries the atlas maps
+
+# The Wisconsin plan for the 118th and 119th Congresses is the same map
+# (in effect since January 3, 2023). Census tabulates ACS 1-year estimates
+# for 118th districts in 2022-2023 and 119th districts from 2024, so the
+# district trend is comparable from 2022 on.
+comparable_acs1_years_from: 2022
+
+publisher: Thomas J. Norman
+repo: Normansrule/wi7-atlas
+site_url: https://normansrule.github.io/wi7-atlas/
+companion_sites:
+  - name: widistrict7.com
+    url: https://widistrict7.com/
+
+# Facts recorded elsewhere that each build re-checks against primary sources.
+# A mismatch fails the integrity report; it never silently changes the site.
+expectations:
+  source: >-
+    widistrict7.com home page and the Wisconsin Watch workspace plan,
+    both recorded November 8, 2026
+  county_count: 26
+  whole_county_count: 21
+  split_counties: [Chippewa, Jackson, Juneau, Monroe, Wood]
+  census_2020_population: 736715
+  land_area_sq_mi: 18787
+
+# Comparison geographies shown beside the district.
+comparisons:
+  - id: state
+    label: Wisconsin
+  - id: us
+    label: United States
+
+# How far back to show trends.
+trends:
+  laus_start_year: 2016
+  usaspending_start_fy: 2018
+  fec_cycles: [2020, 2022, 2024, 2026]
+  house_results_from: 1976

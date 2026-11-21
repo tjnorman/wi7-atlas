@@ -1,0 +1,48 @@
+# Methodology
+
+How the WI-7 Atlas turns public records into the numbers on the site, and how it checks them.
+
+## Geography
+
+- **District boundaries** come from the U.S. Census Bureau's cartographic boundary files (1:500,000) for the 119th Congress. Wisconsin's congressional map is the same for the 118th and 119th Congresses and has been in effect since January 3, 2023.
+- **Which counties are in the district** comes from the Census Bureau's 119th Congressional District to 2020 county relationship file. A county counts as part of the district only if it shares land with it; contact across water (Lake Superior) does not count. A county is **whole** when the land inside the district equals the county's land area.
+- **Split counties** are drawn from the "county within 119th congressional district" boundary file, so the map shows only the part inside the district. The share of each split county's people living in the district comes from the 2020 Census 119th Congressional District Summary File, tabulated by county part.
+- **County statistics** such as income and unemployment always describe the whole county, including any part outside the district, and are labeled that way.
+
+## People and homes
+
+- District, Wisconsin, and U.S. figures use the **American Community Survey (ACS) 1-year estimates**, the most recent available. County figures use **ACS 5-year estimates**, which are more reliable for small counties.
+- The atlas reads **detailed tables** (B and C tables), whose variable numbers are stable across years. Before any value is used, the pipeline downloads the official label for every variable and compares it with what the atlas expects it to mean. A mismatch drops the measure and fails a public check.
+- ACS figures are estimates from a sample. District figures are shown with **margins of error at 90% confidence** where the Census Bureau publishes them. Small differences may not be meaningful.
+- The **district trend** starts in 2022, the first year the ACS used the current district lines. Dollar amounts are in each year's dollars.
+
+## Population change
+
+County populations since 2020 come from the Census Bureau's **Population Estimates Program** (the vintage in the data file). Change is measured from the April 1, 2020 estimates base. Components of change (births, deaths, and migration) are summed over the estimate years.
+
+## Work and pay
+
+- **Unemployment rates** come from the Bureau of Labor Statistics' Local Area Unemployment Statistics, **not seasonally adjusted**, because county rates are published only that way. The state and national lines use the not seasonally adjusted series to match. The latest month is preliminary.
+- **Jobs and pay** come from the Quarterly Census of Employment and Wages (QCEW), annual averages for all ownerships. QCEW counts jobs where people work, not where they live.
+
+## Federal dollars
+
+Award obligations come from **USAspending.gov**, filtered by place of performance in the district under current lines. Obligations are commitments to spend and agencies revise them. Payments reported only at the county or state level, such as many benefits paid to individuals, are not included in district totals. County totals describe whole counties.
+
+## The seat
+
+- **Members** come from the public-domain [congress-legislators](https://github.com/unitedstates/congress-legislators) dataset and are cross-checked with the Clerk of the House's member data.
+- **Roll-call votes** come from the Clerk's official XML records. Each vote is attributed to whoever held the seat on that date. Agreement rates use only yes-or-no votes; quorum calls and the election of the Speaker are excluded. Definitions:
+  - *Votes missed*: share of yes-or-no roll calls recorded as Not Voting.
+  - *With own party's majority*: share of the member's yes-or-no votes matching the position taken by most members of the member's party (ties excluded).
+  - *On the winning side*: share of the member's yes-or-no votes matching the outcome.
+- **Election results** come from the MIT Election Data and Science Lab's U.S. House dataset, compiled from official state results. General elections only. The most recent election appears after official certification; until then, a dated note labeled *unofficial* describes the status with sources.
+- **Campaign finance** comes from the Federal Election Commission's candidate totals for each two-year cycle, through each committee's latest report.
+
+## Cross-checks
+
+Each build runs checks that compare independent sources, listed with results on the site and in the README. A failed check is shown publicly; it is never hidden. Hand-written notes carry a review-by date, and an overdue note is flagged for review.
+
+## What the atlas does not do
+
+It does not rate, endorse, or characterize candidates, officeholders, or parties, and it does not predict elections.

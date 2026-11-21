@@ -1,0 +1,9 @@
+{
+  "name": "wi7-atlas",
+  "private": true,
+  "description": "Map tooling for the WI-7 Atlas pipeline (mapshaper simplifies Census boundaries into TopoJSON).",
+  "license": "MIT",
+  "devDependencies": {
+    "mapshaper": "^0.6.102"
+  }
+}

@@ -1,0 +1,9 @@
+.cache/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+site/data
+_site/
+.DS_Store
+docs/media/README.preview.md
