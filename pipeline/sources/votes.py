@@ -40,6 +40,10 @@ def bill_url(legis: str, congress: int) -> str | None:
 def parse_vote(xml_bytes: bytes) -> dict:
     root = ET.fromstring(xml_bytes)
     meta = root.find("vote-metadata")
+    if meta is None:
+        meta = root.find(".//vote-metadata")
+    if meta is None:
+        raise ValueError(f"not a roll-call record: <{root.tag}> {xml_bytes[:160]!r}")
     get = lambda tag: (meta.findtext(tag) or "").strip()
     when = datetime.strptime(get("action-date"), "%d-%b-%Y").date()
     by_party: dict[str, Counter] = {}
@@ -77,6 +81,7 @@ def fetch(fetcher: Fetcher, d: District, terms: list[dict]) -> tuple[dict, list[
     today = date.today()
     parsed: list[dict] = []
     gaps = []
+    diagnostics: list[str] = []
     for y in years:
         if y > today.year:
             continue
@@ -85,11 +90,14 @@ def fetch(fetcher: Fetcher, d: District, terms: list[dict]) -> tuple[dict, list[
             try:
                 parsed.append(parse_vote(fetcher.fetch(EVS.format(y=y, n=n), retries=2)))
                 misses = 0
-            except FetchError:
+            except FetchError as exc:
                 misses += 1
                 gaps.append((y, n))
-            except ET.ParseError:
+                diagnostics.append(f"{y}/{n}: {str(exc)[:200]}")
+            except (ET.ParseError, ValueError) as exc:
+                misses += 1
                 gaps.append((y, n))
+                diagnostics.append(f"{y}/{n}: {str(exc)[:200]}")
             n += 1
         # trailing misses are simply the end of the year's votes
         gaps = [g for g in gaps if not (g[0] == y and g[1] >= n - 3)]
@@ -135,6 +143,8 @@ def fetch(fetcher: Fetcher, d: District, terms: list[dict]) -> tuple[dict, list[
             winning_comparable += 1
             winning += int(ms == win)
     total = cast + missed
+    if not parsed:
+        raise FetchError("No roll calls could be read. First responses: " + " | ".join(diagnostics[:3]))
     payload = {
         "congress": congress,
         "years": years,
@@ -148,6 +158,7 @@ def fetch(fetcher: Fetcher, d: District, terms: list[dict]) -> tuple[dict, list[
         "on_winning_side_pct": 100 * winning / winning_comparable if winning_comparable else None,
         "recent": sorted(rows, key=lambda r: (r["date"], r["roll"]), reverse=True)[:25],
         "gaps": gaps,
+        "diagnostics": diagnostics[:12],
         "definitions": {
             "missed_pct": "Share of yes-or-no roll calls, while the member held the seat, recorded as Not Voting.",
             "house_missed_pct": "The same share for every House member on the same roll calls.",

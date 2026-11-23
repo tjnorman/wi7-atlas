@@ -117,7 +117,7 @@ flowchart LR
     B["Bureau of Labor Statistics<br/>LAUS · QCEW"]
     U["USAspending.gov"]
     H["Clerk of the House<br/>members · roll calls"]
-    M["MIT Election Data<br/>and Science Lab"]
+    M["MIT Election Lab ·<br/>FEC certified results"]
     F["Federal Election<br/>Commission"]
     L["congress-legislators"]
   end
@@ -199,7 +199,7 @@ tests/                 pytest unit tests and Playwright site checks
 ## 🤝 Principles
 
 - **Nonpartisan.** The atlas follows the seat, not any officeholder or party. It describes votes, money, and public data, not personalities. Party colors appear only on election charts.
-- **Primary sources.** Census Bureau, Bureau of Labor Statistics, USAspending.gov, the Clerk of the House, the Federal Election Commission, and the MIT Election Data and Science Lab, which compiles official state results.
+- **Primary sources.** Census Bureau, Bureau of Labor Statistics, USAspending.gov, the Clerk of the House, the Federal Election Commission (campaign finance and certified election results), and the MIT Election Data and Science Lab, which compiles official state results.
 - **Labels over guesses.** Unofficial results are labeled until certified, estimates carry their margins of error, and split counties are never counted as whole.
 - **Open by default.** Code, data, and the method are public. Corrections are welcome as GitHub issues.
 

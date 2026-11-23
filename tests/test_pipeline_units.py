@@ -276,3 +276,35 @@ def test_curated_notes_have_sources():
         assert n["review_by"] and n["verified_on"]
         for s in n["sources"]:
             assert s["url"].startswith("https://")
+
+
+def test_fec_workbook_parsing():
+    import io
+    from openpyxl import Workbook
+    from pipeline.sources import elections
+
+    wb = Workbook()
+    wb.active.title = "Table 1"
+    ws = wb.create_sheet("2022 US House Results")
+    ws.append(["FEDERAL ELECTIONS 2022"])
+    ws.append(["1", "STATE", "STATE ABBREVIATION", "D", "FEC ID#", "(I)", "CANDIDATE NAME", "PARTY", "PRIMARY VOTES", "GENERAL VOTES ", "GE WINNER INDICATOR"])
+    ws.append([2, "Wisconsin", "WI", "07", "H0WI07101", "(I)", "Tiffany, Thomas P.", "R", 1000, 209224, "W"])
+    ws.append([3, "Wisconsin", "WI", "07", "H2WI07999", "", "Ausman, Richard", "D", 900, 135759, ""])
+    ws.append([4, "Wisconsin", "WI", "07", "", "", "Scattered", "W", None, 210, ""])
+    ws.append([5, "Wisconsin", "WI", "07", "", "", "District Votes:", "", None, 345193, ""])
+    ws.append([6, "Wisconsin", "WI", "03", "", "", "Someone Else", "R", None, 5, ""])
+    buf = io.BytesIO()
+    wb.save(buf)
+    r = elections.parse_fec_xlsx(buf.getvalue(), 2022, "WI", 7)
+    assert r["year"] == 2022 and r["new_lines"] is True
+    names = [c["name"] for c in r["candidates"]]
+    assert names == ["Thomas P. Tiffany", "Richard Ausman", "Scattering (write-ins)"]
+    assert r["candidates"][0]["party"] == "Republican" and r["candidates"][1]["party"] == "Democrat"
+    assert r["total_votes"] == 209224 + 135759 + 210
+
+
+def test_surname_normalization():
+    from pipeline.sources.elections import surname
+
+    assert surname("Sean P. Duffy") == surname("Sean P Duffy") == "duffy"
+    assert surname("David R. Obey Jr.") == "obey"

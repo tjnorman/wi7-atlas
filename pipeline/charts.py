@@ -533,7 +533,7 @@ def chart_elections(d: District, theme: str, ele: dict) -> SVG | None:
             svg.line(x - bw * 0.12, y0 - 6, x - bw * 0.12, y1, t["ink"], 1, dash="4 4", opacity=0.6)
         if i % 2 == 0 or i == len(res) - 1:
             svg.text(x + bw * 0.38, y1 + 20, str(r["year"]), cls="small muted", anchor="middle")
-    svg.footer("Source: MIT Election Data and Science Lab, U.S. House 1976-2024 (Harvard Dataverse), from official state results.")
+    svg.footer("Sources: MIT Election Data and Science Lab (1976-2018) and Federal Election Commission compilations of certified results.")
     return svg
 
 

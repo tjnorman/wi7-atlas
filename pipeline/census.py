@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import json
 import os
+import urllib.parse
 from typing import Any, Iterable
 
 from .http import Fetcher, FetchError
@@ -49,12 +51,16 @@ def query(
         key = os.environ.get("CENSUS_API_KEY")
         if key:
             params["key"] = key
-        raw = fetcher.fetch(f"{BASE}/{path}", params=params, ok_statuses=(200, 204))
+        # The Census API documents spaces as %20 in geography names ("congressional district").
+        url = f"{BASE}/{path}?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote, safe=",:*()")
+        raw = fetcher.fetch(url, ok_statuses=(200, 204))
         if not raw.strip():
             return []
-        import json
-
-        rows = json.loads(raw.decode("utf-8"))
+        try:
+            rows = json.loads(raw.decode("utf-8"))
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            snippet = raw[:240].decode("utf-8", "replace").replace("\n", " ")
+            raise FetchError(f"Census API returned non-JSON for {path} ({for_}): {snippet}")
         header, body = rows[0], rows[1:]
         geo_cols = [h for h in header if h != "NAME" and h not in chunk]
         for row in body:

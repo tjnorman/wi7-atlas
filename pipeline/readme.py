@@ -27,6 +27,11 @@ def _data(obj):
 
 
 def money(n, short=False):
+    if isinstance(n, str):
+        try:
+            n = float(n)
+        except ValueError:
+            return n
     if n is None:
         return "n/a"
     if abs(n) >= 1e9:

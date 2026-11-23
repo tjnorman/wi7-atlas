@@ -630,7 +630,7 @@ function elections() {
   });
   const lg = svg.append("g").attr("transform", `translate(${m.l},14)`);
   [["Democratic", css("--dem")], ["Republican", css("--rep")], ["Other", css("--oth")]].forEach(([n, c], i) => { lg.append("rect").attr("x", i * 110).attr("y", -9).attr("width", 11).attr("height", 11).attr("rx", 2).attr("fill", c); lg.append("text").attr("class", "muted").attr("x", i * 110 + 16).attr("y", 0).text(n); });
-  $("#elections-source").innerHTML = sourceLine(["medsl-house"], "General elections only; special elections are not shown. Results for the most recent election appear after official certification.");
+  $("#elections-source").innerHTML = sourceLine(["medsl-house", "fec-results"], "General elections only; special elections are not shown. Results for the most recent election appear after official certification.");
 }
 
 function fec() {

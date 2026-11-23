@@ -55,6 +55,15 @@ jobs:
           else
             python -m pipeline build
           fi
+      - name: Save this build's data for inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-build
+          path: |
+            data/
+            docs/media/charts/
+          retention-days: 14
       - name: Charts and README
         run: python -m pipeline charts && python -m pipeline readme
       - name: Data tests
