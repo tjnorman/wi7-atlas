@@ -253,7 +253,7 @@ def test_checks_pass_on_consistent_data(district):
         ["A%02d" % i for i in range(21)] + district.expectations["split_counties"])]
     geo = {"data": {"county_count": 26, "whole_count": 21, "split": district.expectations["split_counties"],
                     "counties": counties, "pop_2020": 736715, "pop_2020_sum_of_parts": 736715,
-                    "boundary": {"land_sq_mi": 18790.0}, "land_sq_mi_relationship": 18791.0}}
+                    "boundary": {"land_sq_mi": 23110.0}, "land_sq_mi_relationship": 23111.0}}
     res = {c["id"]: c for c in checks.run(district, {"geography": geo}, [], [])}
     for k in ("county-list", "pop-2020", "whole-county-pop", "land-area"):
         assert res[k]["status"] == "pass", res[k]
