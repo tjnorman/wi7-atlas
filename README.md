@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://tjnorman.github.io/wi7-atlas/"><img src="docs/media/charts/map-light.svg" alt="Animated map of Wisconsin's 7th Congressional District: the district outline draws itself and its 26 counties light up" width="100%" /></a>
+<a href="https://tjnorman.github.io/wi7-atlas/"><img src="docs/media/hero.webp" alt="Animated map of Wisconsin's 7th Congressional District: the district outline draws itself and its 26 counties light up" width="100%" /></a>
 
 <h1>WI-7 Atlas</h1>
 
@@ -71,6 +71,16 @@ A scheduled GitHub Action rebuilds the data each week, runs 17 cross-checks betw
 
 </td>
 </tr>
+</table>
+
+<p align="center"><a href="https://tjnorman.github.io/wi7-atlas/media/tour.mp4"><img src="docs/media/tour.webp" alt="A tour of the WI-7 Atlas website: the district map draws itself, then the people, work, federal dollars, and representation sections scroll past" width="100%" /></a></p>
+<p align="center"><sub>A 40-second tour of the website. Click for the full-quality video.</sub></p>
+
+## 🖼 Gallery
+
+<table>
+<tr><td width="50%" valign="top"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/screens/land-dark.png" /><img src="docs/media/screens/land-light.png" alt="The scroll-driven map: each step recolors the counties" width="100%" /></picture><br/><sub>The scroll-driven map: each step recolors the counties</sub></td><td width="50%" valign="top"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/screens/people-dark.png" /><img src="docs/media/screens/people-light.png" alt="How the district compares with Wisconsin and the nation" width="100%" /></picture><br/><sub>How the district compares with Wisconsin and the nation</sub></td></tr>
+<tr><td width="50%" valign="top"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/screens/seat-dark.png" /><img src="docs/media/screens/seat-light.png" alt="The seat: members, notes, votes, and elections" width="100%" /></picture><br/><sub>The seat: members, notes, votes, and elections</sub></td><td width="50%" valign="top"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/screens/trust-dark.png" /><img src="docs/media/screens/trust-light.png" alt="Every cross-check, in public" width="100%" /></picture><br/><sub>Every cross-check, in public</sub></td></tr>
 </table>
 
 ## 🗺 The district in one picture
