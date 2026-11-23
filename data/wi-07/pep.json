@@ -1,0 +1,1494 @@
+{
+ "generated_at": "2026-11-23T19:38:19+00:00",
+ "sources": [
+  {
+   "id": "pep",
+   "publisher": "U.S. Census Bureau",
+   "title": "County population totals and components of change: April 1, 2020 to July 1, 2025 (Vintage 2025)",
+   "url": "https://www.census.gov/programs-surveys/popest/data/tables.html",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv",
+   "vintage": "Vintage 2025",
+   "accessed": "2026-11-23",
+   "notes": null,
+   "apa": "U.S. Census Bureau. (2026). County population totals and components of change: April 1, 2020 to July 1, 2025 (Vintage 2025) [Data set]. Retrieved November 23, 2026, from https://www.census.gov/programs-surveys/popest/data/tables.html"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "pep",
+ "data": {
+  "vintage": 2025,
+  "years": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "counties": {
+   "001": {
+    "name": "Adams County",
+    "base_2020": 20651,
+    "estimates": {
+     "2020": 20687,
+     "2021": 20847,
+     "2022": 21276,
+     "2023": 21722,
+     "2024": 21565,
+     "2025": 21752
+    },
+    "components_since_2020": {
+     "births": 583,
+     "deaths": 1578,
+     "naturalchg": -995,
+     "domesticmig": 1859,
+     "internationalmig": 206,
+     "netmig": 2065
+    }
+   },
+   "003": {
+    "name": "Ashland County",
+    "base_2020": 16034,
+    "estimates": {
+     "2020": 16028,
+     "2021": 16069,
+     "2022": 16076,
+     "2023": 16134,
+     "2024": 16201,
+     "2025": 16203
+    },
+    "components_since_2020": {
+     "births": 812,
+     "deaths": 1029,
+     "naturalchg": -217,
+     "domesticmig": 263,
+     "internationalmig": 116,
+     "netmig": 379
+    }
+   },
+   "005": {
+    "name": "Barron County",
+    "base_2020": 46707,
+    "estimates": {
+     "2020": 46719,
+     "2021": 46686,
+     "2022": 46776,
+     "2023": 46886,
+     "2024": 46711,
+     "2025": 46484
+    },
+    "components_since_2020": {
+     "births": 2315,
+     "deaths": 3103,
+     "naturalchg": -788,
+     "domesticmig": 246,
+     "internationalmig": 327,
+     "netmig": 573
+    }
+   },
+   "007": {
+    "name": "Bayfield County",
+    "base_2020": 16220,
+    "estimates": {
+     "2020": 16240,
+     "2021": 16341,
+     "2022": 16672,
+     "2023": 16792,
+     "2024": 16785,
+     "2025": 16787
+    },
+    "components_since_2020": {
+     "births": 585,
+     "deaths": 982,
+     "naturalchg": -397,
+     "domesticmig": 932,
+     "internationalmig": 26,
+     "netmig": 958
+    }
+   },
+   "009": {
+    "name": "Brown County",
+    "base_2020": 268736,
+    "estimates": {
+     "2020": 268952,
+     "2021": 268971,
+     "2022": 270667,
+     "2023": 272238,
+     "2024": 274251,
+     "2025": 275803
+    },
+    "components_since_2020": {
+     "births": 15672,
+     "deaths": 12391,
+     "naturalchg": 3281,
+     "domesticmig": 456,
+     "internationalmig": 3278,
+     "netmig": 3734
+    }
+   },
+   "011": {
+    "name": "Buffalo County",
+    "base_2020": 13323,
+    "estimates": {
+     "2020": 13333,
+     "2021": 13350,
+     "2022": 13402,
+     "2023": 13450,
+     "2024": 13398,
+     "2025": 13318
+    },
+    "components_since_2020": {
+     "births": 634,
+     "deaths": 775,
+     "naturalchg": -141,
+     "domesticmig": 120,
+     "internationalmig": 13,
+     "netmig": 133
+    }
+   },
+   "013": {
+    "name": "Burnett County",
+    "base_2020": 16528,
+    "estimates": {
+     "2020": 16580,
+     "2021": 16756,
+     "2022": 16972,
+     "2023": 17106,
+     "2024": 17188,
+     "2025": 17223
+    },
+    "components_since_2020": {
+     "births": 562,
+     "deaths": 1143,
+     "naturalchg": -581,
+     "domesticmig": 1273,
+     "internationalmig": 17,
+     "netmig": 1290
+    }
+   },
+   "015": {
+    "name": "Calumet County",
+    "base_2020": 52440,
+    "estimates": {
+     "2020": 52475,
+     "2021": 52576,
+     "2022": 52795,
+     "2023": 53414,
+     "2024": 53764,
+     "2025": 53982
+    },
+    "components_since_2020": {
+     "births": 2334,
+     "deaths": 1986,
+     "naturalchg": 348,
+     "domesticmig": 765,
+     "internationalmig": 417,
+     "netmig": 1182
+    }
+   },
+   "017": {
+    "name": "Chippewa County",
+    "base_2020": 66295,
+    "estimates": {
+     "2020": 66334,
+     "2021": 66580,
+     "2022": 66774,
+     "2023": 66949,
+     "2024": 67294,
+     "2025": 67614
+    },
+    "components_since_2020": {
+     "births": 3394,
+     "deaths": 3627,
+     "naturalchg": -233,
+     "domesticmig": 1415,
+     "internationalmig": 112,
+     "netmig": 1527
+    }
+   },
+   "019": {
+    "name": "Clark County",
+    "base_2020": 34630,
+    "estimates": {
+     "2020": 34640,
+     "2021": 34746,
+     "2022": 34772,
+     "2023": 34880,
+     "2024": 34975,
+     "2025": 35052
+    },
+    "components_since_2020": {
+     "births": 3151,
+     "deaths": 2026,
+     "naturalchg": 1125,
+     "domesticmig": -1025,
+     "internationalmig": 326,
+     "netmig": -699
+    }
+   },
+   "021": {
+    "name": "Columbia County",
+    "base_2020": 58494,
+    "estimates": {
+     "2020": 58534,
+     "2021": 58455,
+     "2022": 58383,
+     "2023": 57941,
+     "2024": 58005,
+     "2025": 58132
+    },
+    "components_since_2020": {
+     "births": 2957,
+     "deaths": 3329,
+     "naturalchg": -372,
+     "domesticmig": -396,
+     "internationalmig": 368,
+     "netmig": -28
+    }
+   },
+   "023": {
+    "name": "Crawford County",
+    "base_2020": 16110,
+    "estimates": {
+     "2020": 16082,
+     "2021": 16098,
+     "2022": 16036,
+     "2023": 15948,
+     "2024": 15919,
+     "2025": 15910
+    },
+    "components_since_2020": {
+     "births": 860,
+     "deaths": 1178,
+     "naturalchg": -318,
+     "domesticmig": 76,
+     "internationalmig": 46,
+     "netmig": 122
+    }
+   },
+   "025": {
+    "name": "Dane County",
+    "base_2020": 561507,
+    "estimates": {
+     "2020": 562615,
+     "2021": 561805,
+     "2022": 570754,
+     "2023": 579299,
+     "2024": 586325,
+     "2025": 590375
+    },
+    "components_since_2020": {
+     "births": 29404,
+     "deaths": 20683,
+     "naturalchg": 8721,
+     "domesticmig": 2971,
+     "internationalmig": 16798,
+     "netmig": 19769
+    }
+   },
+   "027": {
+    "name": "Dodge County",
+    "base_2020": 89384,
+    "estimates": {
+     "2020": 89343,
+     "2021": 88707,
+     "2022": 88642,
+     "2023": 88666,
+     "2024": 88877,
+     "2025": 89097
+    },
+    "components_since_2020": {
+     "births": 3945,
+     "deaths": 5619,
+     "naturalchg": -1674,
+     "domesticmig": 484,
+     "internationalmig": 935,
+     "netmig": 1419
+    }
+   },
+   "029": {
+    "name": "Door County",
+    "base_2020": 30073,
+    "estimates": {
+     "2020": 30128,
+     "2021": 30447,
+     "2022": 30629,
+     "2023": 30581,
+     "2024": 30581,
+     "2025": 30616
+    },
+    "components_since_2020": {
+     "births": 1054,
+     "deaths": 2047,
+     "naturalchg": -993,
+     "domesticmig": 1365,
+     "internationalmig": 206,
+     "netmig": 1571
+    }
+   },
+   "031": {
+    "name": "Douglas County",
+    "base_2020": 44294,
+    "estimates": {
+     "2020": 44351,
+     "2021": 44012,
+     "2022": 44217,
+     "2023": 44102,
+     "2024": 43918,
+     "2025": 43990
+    },
+    "components_since_2020": {
+     "births": 2037,
+     "deaths": 2784,
+     "naturalchg": -747,
+     "domesticmig": 329,
+     "internationalmig": 109,
+     "netmig": 438
+    }
+   },
+   "033": {
+    "name": "Dunn County",
+    "base_2020": 45449,
+    "estimates": {
+     "2020": 45462,
+     "2021": 44534,
+     "2022": 45648,
+     "2023": 45768,
+     "2024": 46006,
+     "2025": 46223
+    },
+    "components_since_2020": {
+     "births": 2145,
+     "deaths": 2020,
+     "naturalchg": 125,
+     "domesticmig": 441,
+     "internationalmig": 190,
+     "netmig": 631
+    }
+   },
+   "035": {
+    "name": "Eau Claire County",
+    "base_2020": 105706,
+    "estimates": {
+     "2020": 105898,
+     "2021": 106035,
+     "2022": 106836,
+     "2023": 107975,
+     "2024": 108611,
+     "2025": 109033
+    },
+    "components_since_2020": {
+     "births": 5441,
+     "deaths": 5054,
+     "naturalchg": 387,
+     "domesticmig": 2175,
+     "internationalmig": 635,
+     "netmig": 2810
+    }
+   },
+   "037": {
+    "name": "Florence County",
+    "base_2020": 4559,
+    "estimates": {
+     "2020": 4565,
+     "2021": 4591,
+     "2022": 4706,
+     "2023": 4689,
+     "2024": 4682,
+     "2025": 4748
+    },
+    "components_since_2020": {
+     "births": 139,
+     "deaths": 320,
+     "naturalchg": -181,
+     "domesticmig": 366,
+     "internationalmig": 0,
+     "netmig": 366
+    }
+   },
+   "039": {
+    "name": "Fond du Lac County",
+    "base_2020": 104165,
+    "estimates": {
+     "2020": 104159,
+     "2021": 104128,
+     "2022": 104103,
+     "2023": 104349,
+     "2024": 104721,
+     "2025": 104669
+    },
+    "components_since_2020": {
+     "births": 5291,
+     "deaths": 5996,
+     "naturalchg": -705,
+     "domesticmig": -403,
+     "internationalmig": 1580,
+     "netmig": 1177
+    }
+   },
+   "041": {
+    "name": "Forest County",
+    "base_2020": 9184,
+    "estimates": {
+     "2020": 9173,
+     "2021": 9420,
+     "2022": 9344,
+     "2023": 9395,
+     "2024": 9514,
+     "2025": 9574
+    },
+    "components_since_2020": {
+     "births": 502,
+     "deaths": 666,
+     "naturalchg": -164,
+     "domesticmig": 549,
+     "internationalmig": 17,
+     "netmig": 566
+    }
+   },
+   "043": {
+    "name": "Grant County",
+    "base_2020": 51950,
+    "estimates": {
+     "2020": 51989,
+     "2021": 51277,
+     "2022": 51326,
+     "2023": 51907,
+     "2024": 52404,
+     "2025": 52446
+    },
+    "components_since_2020": {
+     "births": 3094,
+     "deaths": 2846,
+     "naturalchg": 248,
+     "domesticmig": 101,
+     "internationalmig": 198,
+     "netmig": 299
+    }
+   },
+   "045": {
+    "name": "Green County",
+    "base_2020": 37090,
+    "estimates": {
+     "2020": 37039,
+     "2021": 37087,
+     "2022": 36888,
+     "2023": 37002,
+     "2024": 37237,
+     "2025": 37227
+    },
+    "components_since_2020": {
+     "births": 1871,
+     "deaths": 2082,
+     "naturalchg": -211,
+     "domesticmig": 157,
+     "internationalmig": 180,
+     "netmig": 337
+    }
+   },
+   "047": {
+    "name": "Green Lake County",
+    "base_2020": 19013,
+    "estimates": {
+     "2020": 19016,
+     "2021": 19251,
+     "2022": 19224,
+     "2023": 19406,
+     "2024": 19332,
+     "2025": 19305
+    },
+    "components_since_2020": {
+     "births": 1014,
+     "deaths": 1370,
+     "naturalchg": -356,
+     "domesticmig": 618,
+     "internationalmig": 50,
+     "netmig": 668
+    }
+   },
+   "049": {
+    "name": "Iowa County",
+    "base_2020": 23713,
+    "estimates": {
+     "2020": 23716,
+     "2021": 23809,
+     "2022": 23950,
+     "2023": 23913,
+     "2024": 23975,
+     "2025": 23951
+    },
+    "components_since_2020": {
+     "births": 1294,
+     "deaths": 1207,
+     "naturalchg": 87,
+     "domesticmig": 66,
+     "internationalmig": 77,
+     "netmig": 143
+    }
+   },
+   "051": {
+    "name": "Iron County",
+    "base_2020": 6137,
+    "estimates": {
+     "2020": 6144,
+     "2021": 6179,
+     "2022": 6222,
+     "2023": 6249,
+     "2024": 6196,
+     "2025": 6127
+    },
+    "components_since_2020": {
+     "births": 210,
+     "deaths": 529,
+     "naturalchg": -319,
+     "domesticmig": 310,
+     "internationalmig": 2,
+     "netmig": 312
+    }
+   },
+   "053": {
+    "name": "Jackson County",
+    "base_2020": 21139,
+    "estimates": {
+     "2020": 21096,
+     "2021": 20910,
+     "2022": 20904,
+     "2023": 20931,
+     "2024": 21033,
+     "2025": 20999
+    },
+    "components_since_2020": {
+     "births": 1129,
+     "deaths": 1274,
+     "naturalchg": -145,
+     "domesticmig": -53,
+     "internationalmig": 71,
+     "netmig": 18
+    }
+   },
+   "055": {
+    "name": "Jefferson County",
+    "base_2020": 86171,
+    "estimates": {
+     "2020": 86219,
+     "2021": 85830,
+     "2022": 85883,
+     "2023": 86086,
+     "2024": 86540,
+     "2025": 86505
+    },
+    "components_since_2020": {
+     "births": 4277,
+     "deaths": 4418,
+     "naturalchg": -141,
+     "domesticmig": -168,
+     "internationalmig": 649,
+     "netmig": 481
+    }
+   },
+   "057": {
+    "name": "Juneau County",
+    "base_2020": 26720,
+    "estimates": {
+     "2020": 26779,
+     "2021": 26766,
+     "2022": 26743,
+     "2023": 26606,
+     "2024": 26646,
+     "2025": 26649
+    },
+    "components_since_2020": {
+     "births": 1109,
+     "deaths": 1841,
+     "naturalchg": -732,
+     "domesticmig": 565,
+     "internationalmig": 87,
+     "netmig": 652
+    }
+   },
+   "059": {
+    "name": "Kenosha County",
+    "base_2020": 169150,
+    "estimates": {
+     "2020": 169186,
+     "2021": 168464,
+     "2022": 167870,
+     "2023": 167852,
+     "2024": 168448,
+     "2025": 168448
+    },
+    "components_since_2020": {
+     "births": 8925,
+     "deaths": 8860,
+     "naturalchg": 65,
+     "domesticmig": -2256,
+     "internationalmig": 1398,
+     "netmig": -858
+    }
+   },
+   "061": {
+    "name": "Kewaunee County",
+    "base_2020": 20559,
+    "estimates": {
+     "2020": 20552,
+     "2021": 20580,
+     "2022": 20708,
+     "2023": 20772,
+     "2024": 20769,
+     "2025": 20758
+    },
+    "components_since_2020": {
+     "births": 1004,
+     "deaths": 1171,
+     "naturalchg": -167,
+     "domesticmig": 192,
+     "internationalmig": 167,
+     "netmig": 359
+    }
+   },
+   "063": {
+    "name": "La Crosse County",
+    "base_2020": 120796,
+    "estimates": {
+     "2020": 120955,
+     "2021": 119368,
+     "2022": 120346,
+     "2023": 120719,
+     "2024": 120963,
+     "2025": 121339
+    },
+    "components_since_2020": {
+     "births": 5839,
+     "deaths": 5992,
+     "naturalchg": -153,
+     "domesticmig": 452,
+     "internationalmig": 245,
+     "netmig": 697
+    }
+   },
+   "065": {
+    "name": "Lafayette County",
+    "base_2020": 16611,
+    "estimates": {
+     "2020": 16619,
+     "2021": 16834,
+     "2022": 16957,
+     "2023": 17067,
+     "2024": 17347,
+     "2025": 17478
+    },
+    "components_since_2020": {
+     "births": 1352,
+     "deaths": 866,
+     "naturalchg": 486,
+     "domesticmig": -39,
+     "internationalmig": 422,
+     "netmig": 383
+    }
+   },
+   "067": {
+    "name": "Langlade County",
+    "base_2020": 19493,
+    "estimates": {
+     "2020": 19465,
+     "2021": 19470,
+     "2022": 19510,
+     "2023": 19423,
+     "2024": 19502,
+     "2025": 19534
+    },
+    "components_since_2020": {
+     "births": 891,
+     "deaths": 1554,
+     "naturalchg": -663,
+     "domesticmig": 679,
+     "internationalmig": 28,
+     "netmig": 707
+    }
+   },
+   "069": {
+    "name": "Lincoln County",
+    "base_2020": 28412,
+    "estimates": {
+     "2020": 28423,
+     "2021": 28476,
+     "2022": 28341,
+     "2023": 28403,
+     "2024": 28395,
+     "2025": 28403
+    },
+    "components_since_2020": {
+     "births": 1323,
+     "deaths": 2201,
+     "naturalchg": -878,
+     "domesticmig": 750,
+     "internationalmig": 126,
+     "netmig": 876
+    }
+   },
+   "071": {
+    "name": "Manitowoc County",
+    "base_2020": 81364,
+    "estimates": {
+     "2020": 81401,
+     "2021": 81544,
+     "2022": 81400,
+     "2023": 81600,
+     "2024": 81883,
+     "2025": 81710
+    },
+    "components_since_2020": {
+     "births": 3822,
+     "deaths": 5020,
+     "naturalchg": -1198,
+     "domesticmig": 619,
+     "internationalmig": 910,
+     "netmig": 1529
+    }
+   },
+   "073": {
+    "name": "Marathon County",
+    "base_2020": 138063,
+    "estimates": {
+     "2020": 138119,
+     "2021": 137832,
+     "2022": 138207,
+     "2023": 138768,
+     "2024": 139094,
+     "2025": 139432
+    },
+    "components_since_2020": {
+     "births": 7494,
+     "deaths": 7388,
+     "naturalchg": 106,
+     "domesticmig": -35,
+     "internationalmig": 1319,
+     "netmig": 1284
+    }
+   },
+   "075": {
+    "name": "Marinette County",
+    "base_2020": 41874,
+    "estimates": {
+     "2020": 41887,
+     "2021": 41860,
+     "2022": 41971,
+     "2023": 42109,
+     "2024": 42390,
+     "2025": 42574
+    },
+    "components_since_2020": {
+     "births": 1895,
+     "deaths": 3113,
+     "naturalchg": -1218,
+     "domesticmig": 1760,
+     "internationalmig": 141,
+     "netmig": 1901
+    }
+   },
+   "077": {
+    "name": "Marquette County",
+    "base_2020": 15595,
+    "estimates": {
+     "2020": 15594,
+     "2021": 15783,
+     "2022": 15797,
+     "2023": 15908,
+     "2024": 15838,
+     "2025": 15927
+    },
+    "components_since_2020": {
+     "births": 680,
+     "deaths": 1187,
+     "naturalchg": -507,
+     "domesticmig": 787,
+     "internationalmig": 67,
+     "netmig": 854
+    }
+   },
+   "078": {
+    "name": "Menominee County",
+    "base_2020": 4250,
+    "estimates": {
+     "2020": 4258,
+     "2021": 4294,
+     "2022": 4192,
+     "2023": 4200,
+     "2024": 4230,
+     "2025": 4199
+    },
+    "components_since_2020": {
+     "births": 341,
+     "deaths": 426,
+     "naturalchg": -85,
+     "domesticmig": 31,
+     "internationalmig": 0,
+     "netmig": 31
+    }
+   },
+   "079": {
+    "name": "Milwaukee County",
+    "base_2020": 939496,
+    "estimates": {
+     "2020": 938606,
+     "2021": 924701,
+     "2022": 921471,
+     "2023": 921609,
+     "2024": 924323,
+     "2025": 924216
+    },
+    "components_since_2020": {
+     "births": 61108,
+     "deaths": 48659,
+     "naturalchg": 12449,
+     "domesticmig": -46369,
+     "internationalmig": 19305,
+     "netmig": -27064
+    }
+   },
+   "081": {
+    "name": "Monroe County",
+    "base_2020": 46276,
+    "estimates": {
+     "2020": 46307,
+     "2021": 46174,
+     "2022": 46043,
+     "2023": 46246,
+     "2024": 46505,
+     "2025": 46572
+    },
+    "components_since_2020": {
+     "births": 2960,
+     "deaths": 2682,
+     "naturalchg": 278,
+     "domesticmig": -308,
+     "internationalmig": 321,
+     "netmig": 13
+    }
+   },
+   "083": {
+    "name": "Oconto County",
+    "base_2020": 38967,
+    "estimates": {
+     "2020": 39077,
+     "2021": 39417,
+     "2022": 39639,
+     "2023": 39745,
+     "2024": 40006,
+     "2025": 40195
+    },
+    "components_since_2020": {
+     "births": 1780,
+     "deaths": 2301,
+     "naturalchg": -521,
+     "domesticmig": 1704,
+     "internationalmig": 63,
+     "netmig": 1767
+    }
+   },
+   "085": {
+    "name": "Oneida County",
+    "base_2020": 37840,
+    "estimates": {
+     "2020": 37864,
+     "2021": 38298,
+     "2022": 38225,
+     "2023": 38156,
+     "2024": 38175,
+     "2025": 38131
+    },
+    "components_since_2020": {
+     "births": 1390,
+     "deaths": 2840,
+     "naturalchg": -1450,
+     "domesticmig": 1723,
+     "internationalmig": 69,
+     "netmig": 1792
+    }
+   },
+   "087": {
+    "name": "Outagamie County",
+    "base_2020": 190700,
+    "estimates": {
+     "2020": 190959,
+     "2021": 191386,
+     "2022": 192510,
+     "2023": 193628,
+     "2024": 194785,
+     "2025": 195894
+    },
+    "components_since_2020": {
+     "births": 10675,
+     "deaths": 8890,
+     "naturalchg": 1785,
+     "domesticmig": 1962,
+     "internationalmig": 1404,
+     "netmig": 3366
+    }
+   },
+   "089": {
+    "name": "Ozaukee County",
+    "base_2020": 91504,
+    "estimates": {
+     "2020": 91631,
+     "2021": 92624,
+     "2022": 93080,
+     "2023": 93478,
+     "2024": 93665,
+     "2025": 94346
+    },
+    "components_since_2020": {
+     "births": 4127,
+     "deaths": 4691,
+     "naturalchg": -564,
+     "domesticmig": 2765,
+     "internationalmig": 673,
+     "netmig": 3438
+    }
+   },
+   "091": {
+    "name": "Pepin County",
+    "base_2020": 7326,
+    "estimates": {
+     "2020": 7349,
+     "2021": 7383,
+     "2022": 7402,
+     "2023": 7478,
+     "2024": 7541,
+     "2025": 7513
+    },
+    "components_since_2020": {
+     "births": 408,
+     "deaths": 368,
+     "naturalchg": 40,
+     "domesticmig": 116,
+     "internationalmig": 36,
+     "netmig": 152
+    }
+   },
+   "093": {
+    "name": "Pierce County",
+    "base_2020": 42203,
+    "estimates": {
+     "2020": 42221,
+     "2021": 41602,
+     "2022": 42557,
+     "2023": 43070,
+     "2024": 43306,
+     "2025": 43519
+    },
+    "components_since_2020": {
+     "births": 2057,
+     "deaths": 1812,
+     "naturalchg": 245,
+     "domesticmig": 988,
+     "internationalmig": 70,
+     "netmig": 1058
+    }
+   },
+   "095": {
+    "name": "Polk County",
+    "base_2020": 44974,
+    "estimates": {
+     "2020": 45028,
+     "2021": 45459,
+     "2022": 45590,
+     "2023": 45775,
+     "2024": 45772,
+     "2025": 45803
+    },
+    "components_since_2020": {
+     "births": 2150,
+     "deaths": 2877,
+     "naturalchg": -727,
+     "domesticmig": 1539,
+     "internationalmig": 33,
+     "netmig": 1572
+    }
+   },
+   "097": {
+    "name": "Portage County",
+    "base_2020": 70380,
+    "estimates": {
+     "2020": 70423,
+     "2021": 69465,
+     "2022": 70764,
+     "2023": 71361,
+     "2024": 71758,
+     "2025": 71943
+    },
+    "components_since_2020": {
+     "births": 2936,
+     "deaths": 3474,
+     "naturalchg": -538,
+     "domesticmig": 1422,
+     "internationalmig": 623,
+     "netmig": 2045
+    }
+   },
+   "099": {
+    "name": "Price County",
+    "base_2020": 14053,
+    "estimates": {
+     "2020": 14032,
+     "2021": 14061,
+     "2022": 14167,
+     "2023": 14094,
+     "2024": 14112,
+     "2025": 13988
+    },
+    "components_since_2020": {
+     "births": 508,
+     "deaths": 1044,
+     "naturalchg": -536,
+     "domesticmig": 428,
+     "internationalmig": 35,
+     "netmig": 463
+    }
+   },
+   "101": {
+    "name": "Racine County",
+    "base_2020": 198221,
+    "estimates": {
+     "2020": 198061,
+     "2021": 196863,
+     "2022": 196642,
+     "2023": 197390,
+     "2024": 198441,
+     "2025": 198919
+    },
+    "components_since_2020": {
+     "births": 10969,
+     "deaths": 11399,
+     "naturalchg": -430,
+     "domesticmig": -492,
+     "internationalmig": 1687,
+     "netmig": 1195
+    }
+   },
+   "103": {
+    "name": "Richland County",
+    "base_2020": 17307,
+    "estimates": {
+     "2020": 17281,
+     "2021": 17203,
+     "2022": 17167,
+     "2023": 17270,
+     "2024": 17129,
+     "2025": 17036
+    },
+    "components_since_2020": {
+     "births": 852,
+     "deaths": 1153,
+     "naturalchg": -301,
+     "domesticmig": -115,
+     "internationalmig": 145,
+     "netmig": 30
+    }
+   },
+   "105": {
+    "name": "Rock County",
+    "base_2020": 163684,
+    "estimates": {
+     "2020": 163763,
+     "2021": 164150,
+     "2022": 163954,
+     "2023": 164619,
+     "2024": 165665,
+     "2025": 166472
+    },
+    "components_since_2020": {
+     "births": 9401,
+     "deaths": 9424,
+     "naturalchg": -23,
+     "domesticmig": 1990,
+     "internationalmig": 777,
+     "netmig": 2767
+    }
+   },
+   "107": {
+    "name": "Rusk County",
+    "base_2020": 14181,
+    "estimates": {
+     "2020": 14169,
+     "2021": 14099,
+     "2022": 14160,
+     "2023": 14233,
+     "2024": 14126,
+     "2025": 14146
+    },
+    "components_since_2020": {
+     "births": 632,
+     "deaths": 1039,
+     "naturalchg": -407,
+     "domesticmig": 335,
+     "internationalmig": 28,
+     "netmig": 363
+    }
+   },
+   "109": {
+    "name": "St. Croix County",
+    "base_2020": 93534,
+    "estimates": {
+     "2020": 93875,
+     "2021": 95016,
+     "2022": 96116,
+     "2023": 96976,
+     "2024": 97654,
+     "2025": 98276
+    },
+    "components_since_2020": {
+     "births": 5213,
+     "deaths": 4081,
+     "naturalchg": 1132,
+     "domesticmig": 3181,
+     "internationalmig": 409,
+     "netmig": 3590
+    }
+   },
+   "111": {
+    "name": "Sauk County",
+    "base_2020": 65774,
+    "estimates": {
+     "2020": 65796,
+     "2021": 65713,
+     "2022": 65944,
+     "2023": 66216,
+     "2024": 66553,
+     "2025": 66652
+    },
+    "components_since_2020": {
+     "births": 3752,
+     "deaths": 3941,
+     "naturalchg": -189,
+     "domesticmig": -13,
+     "internationalmig": 1062,
+     "netmig": 1049
+    }
+   },
+   "113": {
+    "name": "Sawyer County",
+    "base_2020": 18084,
+    "estimates": {
+     "2020": 18122,
+     "2021": 18223,
+     "2022": 18556,
+     "2023": 18587,
+     "2024": 18791,
+     "2025": 18846
+    },
+    "components_since_2020": {
+     "births": 746,
+     "deaths": 1322,
+     "naturalchg": -576,
+     "domesticmig": 1286,
+     "internationalmig": 41,
+     "netmig": 1327
+    }
+   },
+   "115": {
+    "name": "Shawano County",
+    "base_2020": 40874,
+    "estimates": {
+     "2020": 40859,
+     "2021": 40809,
+     "2022": 40976,
+     "2023": 41140,
+     "2024": 41406,
+     "2025": 41560
+    },
+    "components_since_2020": {
+     "births": 2298,
+     "deaths": 2669,
+     "naturalchg": -371,
+     "domesticmig": 864,
+     "internationalmig": 197,
+     "netmig": 1061
+    }
+   },
+   "117": {
+    "name": "Sheboygan County",
+    "base_2020": 118034,
+    "estimates": {
+     "2020": 118040,
+     "2021": 117681,
+     "2022": 117787,
+     "2023": 117891,
+     "2024": 118091,
+     "2025": 118047
+    },
+    "components_since_2020": {
+     "births": 5824,
+     "deaths": 6591,
+     "naturalchg": -767,
+     "domesticmig": -616,
+     "internationalmig": 1389,
+     "netmig": 773
+    }
+   },
+   "119": {
+    "name": "Taylor County",
+    "base_2020": 19917,
+    "estimates": {
+     "2020": 19942,
+     "2021": 19953,
+     "2022": 19976,
+     "2023": 20117,
+     "2024": 20097,
+     "2025": 20118
+    },
+    "components_since_2020": {
+     "births": 1067,
+     "deaths": 1148,
+     "naturalchg": -81,
+     "domesticmig": 124,
+     "internationalmig": 157,
+     "netmig": 281
+    }
+   },
+   "121": {
+    "name": "Trempealeau County",
+    "base_2020": 30770,
+    "estimates": {
+     "2020": 30825,
+     "2021": 30741,
+     "2022": 30923,
+     "2023": 31006,
+     "2024": 30928,
+     "2025": 31171
+    },
+    "components_since_2020": {
+     "births": 2087,
+     "deaths": 1530,
+     "naturalchg": 557,
+     "domesticmig": -483,
+     "internationalmig": 334,
+     "netmig": -149
+    }
+   },
+   "123": {
+    "name": "Vernon County",
+    "base_2020": 30710,
+    "estimates": {
+     "2020": 30695,
+     "2021": 30914,
+     "2022": 31080,
+     "2023": 31115,
+     "2024": 31365,
+     "2025": 31443
+    },
+    "components_since_2020": {
+     "births": 2207,
+     "deaths": 1900,
+     "naturalchg": 307,
+     "domesticmig": 365,
+     "internationalmig": 64,
+     "netmig": 429
+    }
+   },
+   "125": {
+    "name": "Vilas County",
+    "base_2020": 23051,
+    "estimates": {
+     "2020": 23093,
+     "2021": 23489,
+     "2022": 23722,
+     "2023": 23822,
+     "2024": 23753,
+     "2025": 23761
+    },
+    "components_since_2020": {
+     "births": 745,
+     "deaths": 1882,
+     "naturalchg": -1137,
+     "domesticmig": 1876,
+     "internationalmig": -9,
+     "netmig": 1867
+    }
+   },
+   "127": {
+    "name": "Walworth County",
+    "base_2020": 105222,
+    "estimates": {
+     "2020": 105324,
+     "2021": 105273,
+     "2022": 105843,
+     "2023": 106192,
+     "2024": 106123,
+     "2025": 106127
+    },
+    "components_since_2020": {
+     "births": 4705,
+     "deaths": 5655,
+     "naturalchg": -950,
+     "domesticmig": 978,
+     "internationalmig": 817,
+     "netmig": 1795
+    }
+   },
+   "129": {
+    "name": "Washburn County",
+    "base_2020": 16624,
+    "estimates": {
+     "2020": 16618,
+     "2021": 16755,
+     "2022": 16905,
+     "2023": 16996,
+     "2024": 17024,
+     "2025": 17087
+    },
+    "components_since_2020": {
+     "births": 647,
+     "deaths": 1265,
+     "naturalchg": -618,
+     "domesticmig": 1072,
+     "internationalmig": 16,
+     "netmig": 1088
+    }
+   },
+   "131": {
+    "name": "Washington County",
+    "base_2020": 136770,
+    "estimates": {
+     "2020": 136806,
+     "2021": 137395,
+     "2022": 138062,
+     "2023": 138527,
+     "2024": 138744,
+     "2025": 139238
+    },
+    "components_since_2020": {
+     "births": 6596,
+     "deaths": 7162,
+     "naturalchg": -566,
+     "domesticmig": 2548,
+     "internationalmig": 473,
+     "netmig": 3021
+    }
+   },
+   "133": {
+    "name": "Waukesha County",
+    "base_2020": 406989,
+    "estimates": {
+     "2020": 407506,
+     "2021": 409199,
+     "2022": 410846,
+     "2023": 413581,
+     "2024": 415766,
+     "2025": 417210
+    },
+    "components_since_2020": {
+     "births": 19387,
+     "deaths": 20906,
+     "naturalchg": -1519,
+     "domesticmig": 8376,
+     "internationalmig": 3309,
+     "netmig": 11685
+    }
+   },
+   "135": {
+    "name": "Waupaca County",
+    "base_2020": 51824,
+    "estimates": {
+     "2020": 51799,
+     "2021": 51886,
+     "2022": 51660,
+     "2023": 51432,
+     "2024": 51429,
+     "2025": 51461
+    },
+    "components_since_2020": {
+     "births": 2508,
+     "deaths": 3768,
+     "naturalchg": -1260,
+     "domesticmig": 659,
+     "internationalmig": 245,
+     "netmig": 904
+    }
+   },
+   "137": {
+    "name": "Waushara County",
+    "base_2020": 24506,
+    "estimates": {
+     "2020": 24532,
+     "2021": 24755,
+     "2022": 24923,
+     "2023": 25045,
+     "2024": 25073,
+     "2025": 25223
+    },
+    "components_since_2020": {
+     "births": 971,
+     "deaths": 1701,
+     "naturalchg": -730,
+     "domesticmig": 1358,
+     "internationalmig": 90,
+     "netmig": 1448
+    }
+   },
+   "139": {
+    "name": "Winnebago County",
+    "base_2020": 171740,
+    "estimates": {
+     "2020": 171833,
+     "2021": 170651,
+     "2022": 170984,
+     "2023": 172118,
+     "2024": 173294,
+     "2025": 174218
+    },
+    "components_since_2020": {
+     "births": 8848,
+     "deaths": 8988,
+     "naturalchg": -140,
+     "domesticmig": 1253,
+     "internationalmig": 1374,
+     "netmig": 2627
+    }
+   },
+   "141": {
+    "name": "Wood County",
+    "base_2020": 74199,
+    "estimates": {
+     "2020": 74180,
+     "2021": 74022,
+     "2022": 73879,
+     "2023": 74232,
+     "2024": 74255,
+     "2025": 74060
+    },
+    "components_since_2020": {
+     "births": 3927,
+     "deaths": 4997,
+     "naturalchg": -1070,
+     "domesticmig": 354,
+     "internationalmig": 565,
+     "netmig": 919
+    }
+   }
+  },
+  "state": {
+   "name": "Wisconsin",
+   "base_2020": 5894323,
+   "estimates": {
+    "2020": 5897371,
+    "2021": 5882128,
+    "2022": 5903472,
+    "2023": 5930350,
+    "2024": 5957168,
+    "2025": 5972787
+   },
+   "components_since_2020": {
+    "births": 314862,
+    "deaths": 313840,
+    "naturalchg": 1022,
+    "domesticmig": 9667,
+    "internationalmig": 67661,
+    "netmig": 77328
+   }
+  },
+  "reference_date": "July 1, 2025"
+ }
+}

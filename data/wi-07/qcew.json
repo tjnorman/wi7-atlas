@@ -1,0 +1,1579 @@
+{
+ "generated_at": "2026-11-23T19:38:33+00:00",
+ "sources": [
+  {
+   "id": "bls-qcew",
+   "publisher": "U.S. Bureau of Labor Statistics",
+   "title": "Quarterly Census of Employment and Wages: 2025 annual averages by county",
+   "url": "https://www.bls.gov/cew/",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://data.bls.gov/cew/data/api/2025/a/area/55XXX.csv",
+   "vintage": "2025 annual averages",
+   "accessed": "2026-11-23",
+   "notes": "Covers jobs insured under unemployment insurance; counts jobs by where people work, not where they live.",
+   "apa": "U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 23, 2026, from https://www.bls.gov/cew/"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "qcew",
+ "data": {
+  "year": 2025,
+  "counties": {
+   "003": {
+    "jobs": 7864,
+    "establishments": 622,
+    "avg_annual_pay": 53468,
+    "private_sectors": [
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 1563,
+      "avg_annual_pay": 71152
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 1330,
+      "avg_annual_pay": 40507
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 935,
+      "avg_annual_pay": 64043
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 702,
+      "avg_annual_pay": 22234
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 562,
+      "avg_annual_pay": 70328
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 435,
+      "avg_annual_pay": 54586
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 236,
+      "avg_annual_pay": 42400
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 214,
+      "avg_annual_pay": 69223
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 83,
+      "avg_annual_pay": 44883
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 36,
+      "avg_annual_pay": 47477
+     }
+    ]
+   },
+   "005": {
+    "jobs": 21222,
+    "establishments": 1608,
+    "avg_annual_pay": 49920,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 4787,
+      "avg_annual_pay": 62363
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 4007,
+      "avg_annual_pay": 40407
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 3240,
+      "avg_annual_pay": 55261
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 2049,
+      "avg_annual_pay": 18218
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 1367,
+      "avg_annual_pay": 52944
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 750,
+      "avg_annual_pay": 64373
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 609,
+      "avg_annual_pay": 67080
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 468,
+      "avg_annual_pay": 58611
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 306,
+      "avg_annual_pay": 43115
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 163,
+      "avg_annual_pay": 72374
+     }
+    ]
+   },
+   "007": {
+    "jobs": 4295,
+    "establishments": 584,
+    "avg_annual_pay": 46478,
+    "private_sectors": [
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 844,
+      "avg_annual_pay": 23905
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 608,
+      "avg_annual_pay": 46804
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 370,
+      "avg_annual_pay": 96899
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 261,
+      "avg_annual_pay": 43542
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 103,
+      "avg_annual_pay": 62383
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 76,
+      "avg_annual_pay": 36142
+     }
+    ]
+   },
+   "013": {
+    "jobs": 5212,
+    "establishments": 479,
+    "avg_annual_pay": 46693,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 901,
+      "avg_annual_pay": 67194
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 740,
+      "avg_annual_pay": 42705
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 636,
+      "avg_annual_pay": 17752
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 589,
+      "avg_annual_pay": 52603
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 190,
+      "avg_annual_pay": 29501
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 182,
+      "avg_annual_pay": 56513
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 178,
+      "avg_annual_pay": 61612
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 108,
+      "avg_annual_pay": 69814
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 80,
+      "avg_annual_pay": 55516
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 45,
+      "avg_annual_pay": 61806
+     }
+    ]
+   },
+   "017": {
+    "jobs": 27224,
+    "establishments": 2040,
+    "avg_annual_pay": 55235,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 6122,
+      "avg_annual_pay": 50790
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 5566,
+      "avg_annual_pay": 67021
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 3592,
+      "avg_annual_pay": 48437
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 2512,
+      "avg_annual_pay": 19217
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 2063,
+      "avg_annual_pay": 85740
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 1759,
+      "avg_annual_pay": 67160
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 766,
+      "avg_annual_pay": 40173
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 655,
+      "avg_annual_pay": 58223
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 420,
+      "avg_annual_pay": 45320
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 122,
+      "avg_annual_pay": 67759
+     }
+    ]
+   },
+   "019": {
+    "jobs": 11428,
+    "establishments": 961,
+    "avg_annual_pay": 53555,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 3607,
+      "avg_annual_pay": 65532
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 2345,
+      "avg_annual_pay": 48355
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 922,
+      "avg_annual_pay": 54198
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 739,
+      "avg_annual_pay": 77656
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 678,
+      "avg_annual_pay": 43206
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 508,
+      "avg_annual_pay": 13332
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 228,
+      "avg_annual_pay": 37725
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 220,
+      "avg_annual_pay": 62688
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 155,
+      "avg_annual_pay": 59632
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 62,
+      "avg_annual_pay": 33781
+     }
+    ]
+   },
+   "031": {
+    "jobs": 15643,
+    "establishments": 1247,
+    "avg_annual_pay": 53570,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 3989,
+      "avg_annual_pay": 56253
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 2444,
+      "avg_annual_pay": 20048
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 1863,
+      "avg_annual_pay": 85279
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 1861,
+      "avg_annual_pay": 45970
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 672,
+      "avg_annual_pay": 60514
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 574,
+      "avg_annual_pay": 64425
+     }
+    ]
+   },
+   "037": {
+    "jobs": 954,
+    "establishments": 136,
+    "avg_annual_pay": 37295,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 156,
+      "avg_annual_pay": 36399
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 42,
+      "avg_annual_pay": 30300
+     }
+    ]
+   },
+   "041": {
+    "jobs": 3222,
+    "establishments": 301,
+    "avg_annual_pay": 47054,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 356,
+      "avg_annual_pay": 35388
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 232,
+      "avg_annual_pay": 57062
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 110,
+      "avg_annual_pay": 42500
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 75,
+      "avg_annual_pay": 47063
+     }
+    ]
+   },
+   "051": {
+    "jobs": 1615,
+    "establishments": 227,
+    "avg_annual_pay": 42728,
+    "private_sectors": [
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 270,
+      "avg_annual_pay": 38057
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 257,
+      "avg_annual_pay": 36102
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 199,
+      "avg_annual_pay": 57193
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 196,
+      "avg_annual_pay": 32313
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 53,
+      "avg_annual_pay": 45748
+     }
+    ]
+   },
+   "053": {
+    "jobs": 7570,
+    "establishments": 494,
+    "avg_annual_pay": 53167,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 1634,
+      "avg_annual_pay": 42710
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 777,
+      "avg_annual_pay": 63613
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 691,
+      "avg_annual_pay": 59248
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 618,
+      "avg_annual_pay": 15889
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 516,
+      "avg_annual_pay": 103490
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 486,
+      "avg_annual_pay": 54854
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 192,
+      "avg_annual_pay": 54416
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 168,
+      "avg_annual_pay": 50211
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 97,
+      "avg_annual_pay": 28068
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 20,
+      "avg_annual_pay": 45435
+     }
+    ]
+   },
+   "057": {
+    "jobs": 9194,
+    "establishments": 738,
+    "avg_annual_pay": 53282,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 1726,
+      "avg_annual_pay": 61709
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 1587,
+      "avg_annual_pay": 44412
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 1288,
+      "avg_annual_pay": 55596
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 952,
+      "avg_annual_pay": 18283
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 373,
+      "avg_annual_pay": 72983
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 307,
+      "avg_annual_pay": 55456
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 194,
+      "avg_annual_pay": 58672
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 144,
+      "avg_annual_pay": 64083
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 121,
+      "avg_annual_pay": 50097
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 45,
+      "avg_annual_pay": 73042
+     }
+    ]
+   },
+   "067": {
+    "jobs": 7152,
+    "establishments": 660,
+    "avg_annual_pay": 45097,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 2172,
+      "avg_annual_pay": 41277
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 1309,
+      "avg_annual_pay": 57286
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 775,
+      "avg_annual_pay": 45706
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 651,
+      "avg_annual_pay": 17372
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 374,
+      "avg_annual_pay": 46566
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 307,
+      "avg_annual_pay": 69310
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 278,
+      "avg_annual_pay": 42476
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 227,
+      "avg_annual_pay": 62387
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 175,
+      "avg_annual_pay": 31320
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 16,
+      "avg_annual_pay": 44169
+     }
+    ]
+   },
+   "069": {
+    "jobs": 9938,
+    "establishments": 819,
+    "avg_annual_pay": 54291,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 2213,
+      "avg_annual_pay": 68654
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 1890,
+      "avg_annual_pay": 42958
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 1019,
+      "avg_annual_pay": 16147
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 961,
+      "avg_annual_pay": 51313
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 854,
+      "avg_annual_pay": 84021
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 488,
+      "avg_annual_pay": 56916
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 403,
+      "avg_annual_pay": 68222
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 192,
+      "avg_annual_pay": 46208
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 192,
+      "avg_annual_pay": 30480
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 33,
+      "avg_annual_pay": 45791
+     }
+    ]
+   },
+   "073": {
+    "jobs": 69778,
+    "establishments": 4072,
+    "avg_annual_pay": 60545,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 18025,
+      "avg_annual_pay": 71364
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 13125,
+      "avg_annual_pay": 49990
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 10680,
+      "avg_annual_pay": 71748
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 6254,
+      "avg_annual_pay": 20077
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 4315,
+      "avg_annual_pay": 63714
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 3994,
+      "avg_annual_pay": 82564
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 3078,
+      "avg_annual_pay": 79553
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 1461,
+      "avg_annual_pay": 49117
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 1255,
+      "avg_annual_pay": 47311
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 389,
+      "avg_annual_pay": 63408
+     }
+    ]
+   },
+   "081": {
+    "jobs": 21034,
+    "establishments": 1349,
+    "avg_annual_pay": 55616,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 4749,
+      "avg_annual_pay": 52565
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 3900,
+      "avg_annual_pay": 60523
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 2320,
+      "avg_annual_pay": 53854
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 1696,
+      "avg_annual_pay": 19516
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 909,
+      "avg_annual_pay": 73554
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 854,
+      "avg_annual_pay": 71115
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 770,
+      "avg_annual_pay": 72249
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 378,
+      "avg_annual_pay": 64095
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 376,
+      "avg_annual_pay": 40750
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 61,
+      "avg_annual_pay": 55622
+     }
+    ]
+   },
+   "085": {
+    "jobs": 17262,
+    "establishments": 1518,
+    "avg_annual_pay": 54389,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 4081,
+      "avg_annual_pay": 44205
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 3528,
+      "avg_annual_pay": 68594
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 2367,
+      "avg_annual_pay": 24666
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 1600,
+      "avg_annual_pay": 70266
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 1030,
+      "avg_annual_pay": 74401
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 866,
+      "avg_annual_pay": 59789
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 628,
+      "avg_annual_pay": 39093
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 505,
+      "avg_annual_pay": 74613
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 222,
+      "avg_annual_pay": 63288
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 169,
+      "avg_annual_pay": 44555
+     }
+    ]
+   },
+   "095": {
+    "jobs": 15663,
+    "establishments": 1324,
+    "avg_annual_pay": 50000,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 3525,
+      "avg_annual_pay": 61785
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 2790,
+      "avg_annual_pay": 57599
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 2630,
+      "avg_annual_pay": 39503
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 1515,
+      "avg_annual_pay": 18480
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 953,
+      "avg_annual_pay": 52040
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 660,
+      "avg_annual_pay": 64597
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 326,
+      "avg_annual_pay": 64763
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 326,
+      "avg_annual_pay": 73996
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 310,
+      "avg_annual_pay": 41434
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 141,
+      "avg_annual_pay": 60180
+     }
+    ]
+   },
+   "099": {
+    "jobs": 4702,
+    "establishments": 430,
+    "avg_annual_pay": 50229,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 1614,
+      "avg_annual_pay": 58604
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 696,
+      "avg_annual_pay": 36612
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 459,
+      "avg_annual_pay": 53389
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 315,
+      "avg_annual_pay": 83979
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 258,
+      "avg_annual_pay": 16148
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 131,
+      "avg_annual_pay": 40461
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 127,
+      "avg_annual_pay": 64050
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 122,
+      "avg_annual_pay": 44841
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 67,
+      "avg_annual_pay": 41504
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 27,
+      "avg_annual_pay": 57019
+     }
+    ]
+   },
+   "107": {
+    "jobs": 4396,
+    "establishments": 411,
+    "avg_annual_pay": 46724,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 1035,
+      "avg_annual_pay": 51071
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 812,
+      "avg_annual_pay": 43166
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 613,
+      "avg_annual_pay": 48306
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 393,
+      "avg_annual_pay": 70208
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 298,
+      "avg_annual_pay": 16995
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 141,
+      "avg_annual_pay": 48910
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 100,
+      "avg_annual_pay": 55476
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 81,
+      "avg_annual_pay": 64447
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 67,
+      "avg_annual_pay": 42480
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 39,
+      "avg_annual_pay": 51238
+     }
+    ]
+   },
+   "113": {
+    "jobs": 7329,
+    "establishments": 722,
+    "avg_annual_pay": 50741,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 1360,
+      "avg_annual_pay": 38929
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 1028,
+      "avg_annual_pay": 25491
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 1020,
+      "avg_annual_pay": 66489
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 656,
+      "avg_annual_pay": 77905
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 393,
+      "avg_annual_pay": 52223
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 298,
+      "avg_annual_pay": 59132
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 230,
+      "avg_annual_pay": 64521
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 137,
+      "avg_annual_pay": 42138
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 119,
+      "avg_annual_pay": 53851
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 28,
+      "avg_annual_pay": 39416
+     }
+    ]
+   },
+   "109": {
+    "jobs": 37379,
+    "establishments": 2962,
+    "avg_annual_pay": 56795,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 7936,
+      "avg_annual_pay": 52269
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 6809,
+      "avg_annual_pay": 70341
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 5684,
+      "avg_annual_pay": 61738
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 4840,
+      "avg_annual_pay": 20593
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 2552,
+      "avg_annual_pay": 77835
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 2168,
+      "avg_annual_pay": 75410
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 1154,
+      "avg_annual_pay": 90579
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 1132,
+      "avg_annual_pay": 42373
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 316,
+      "avg_annual_pay": 52658
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 170,
+      "avg_annual_pay": 75991
+     }
+    ]
+   },
+   "119": {
+    "jobs": 7776,
+    "establishments": 537,
+    "avg_annual_pay": 51947,
+    "private_sectors": [
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 2639,
+      "avg_annual_pay": 58764
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 1343,
+      "avg_annual_pay": 43044
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 719,
+      "avg_annual_pay": 52859
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 640,
+      "avg_annual_pay": 15459
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 476,
+      "avg_annual_pay": 91525
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 285,
+      "avg_annual_pay": 41927
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 254,
+      "avg_annual_pay": 67537
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 249,
+      "avg_annual_pay": 76825
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 120,
+      "avg_annual_pay": 40009
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 43,
+      "avg_annual_pay": 55529
+     }
+    ]
+   },
+   "125": {
+    "jobs": 8411,
+    "establishments": 1048,
+    "avg_annual_pay": 47284,
+    "private_sectors": [
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 1901,
+      "avg_annual_pay": 26896
+     },
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 1595,
+      "avg_annual_pay": 42436
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 644,
+      "avg_annual_pay": 60642
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 550,
+      "avg_annual_pay": 61538
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 492,
+      "avg_annual_pay": 80111
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 434,
+      "avg_annual_pay": 48340
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 279,
+      "avg_annual_pay": 58710
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 135,
+      "avg_annual_pay": 45525
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 97,
+      "avg_annual_pay": 82899
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 65,
+      "avg_annual_pay": 56036
+     }
+    ]
+   },
+   "129": {
+    "jobs": 5459,
+    "establishments": 610,
+    "avg_annual_pay": 46789,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 1004,
+      "avg_annual_pay": 40791
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 935,
+      "avg_annual_pay": 51074
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 753,
+      "avg_annual_pay": 51836
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 646,
+      "avg_annual_pay": 20017
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 319,
+      "avg_annual_pay": 99096
+     }
+    ]
+   },
+   "141": {
+    "jobs": 35407,
+    "establishments": 2136,
+    "avg_annual_pay": 59574,
+    "private_sectors": [
+     {
+      "code": "1021",
+      "label": "Trade, transportation, and utilities",
+      "jobs": 8489,
+      "avg_annual_pay": 47889
+     },
+     {
+      "code": "1025",
+      "label": "Education and health services",
+      "jobs": 7718,
+      "avg_annual_pay": 75651
+     },
+     {
+      "code": "1013",
+      "label": "Manufacturing",
+      "jobs": 4320,
+      "avg_annual_pay": 67784
+     },
+     {
+      "code": "1026",
+      "label": "Leisure and hospitality",
+      "jobs": 2866,
+      "avg_annual_pay": 22035
+     },
+     {
+      "code": "1024",
+      "label": "Professional and business services",
+      "jobs": 1792,
+      "avg_annual_pay": 70000
+     },
+     {
+      "code": "1023",
+      "label": "Financial activities",
+      "jobs": 1725,
+      "avg_annual_pay": 72717
+     },
+     {
+      "code": "1012",
+      "label": "Construction",
+      "jobs": 1663,
+      "avg_annual_pay": 77440
+     },
+     {
+      "code": "1027",
+      "label": "Other services",
+      "jobs": 1032,
+      "avg_annual_pay": 36172
+     },
+     {
+      "code": "1022",
+      "label": "Information",
+      "jobs": 953,
+      "avg_annual_pay": 87256
+     },
+     {
+      "code": "1011",
+      "label": "Natural resources and mining",
+      "jobs": 513,
+      "avg_annual_pay": 53296
+     }
+    ]
+   }
+  },
+  "state": {
+   "jobs": 2945816,
+   "avg_annual_pay": 66160
+  }
+ }
+}

@@ -1,0 +1,405 @@
+{
+ "generated_at": "2026-11-23T19:38:35+00:00",
+ "sources": [
+  {
+   "id": "usaspending",
+   "publisher": "U.S. Department of the Treasury, Bureau of the Fiscal Service",
+   "title": "USAspending.gov award obligations by place of performance",
+   "url": "https://www.usaspending.gov/search",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://api.usaspending.gov/api/v2/search/spending_over_time/ (place of performance WI-07, current district lines)",
+   "vintage": null,
+   "accessed": "2026-11-23",
+   "notes": "Obligations are commitments to spend, reported by agencies and revised over time. Awards are placed by where the work happens. Some payments to individuals are reported only at county or state level and are not included in district totals.",
+   "apa": "U.S. Department of the Treasury, Bureau of the Fiscal Service. (2026). USAspending.gov award obligations by place of performance [Data set]. Retrieved November 23, 2026, from https://www.usaspending.gov/search"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "usaspending",
+ "data": {
+  "last_complete_fy": 2026,
+  "award_types": [
+   {
+    "id": "contracts",
+    "label": "Contracts"
+   },
+   {
+    "id": "grants",
+    "label": "Grants"
+   },
+   {
+    "id": "direct",
+    "label": "Direct payments"
+   },
+   {
+    "id": "loans",
+    "label": "Loans"
+   },
+   {
+    "id": "idv",
+    "label": "Indefinite delivery vehicles"
+   },
+   {
+    "id": "other",
+    "label": "Other assistance"
+   }
+  ],
+  "years": [
+   {
+    "fy": 2018,
+    "total": 3467927857.6,
+    "contracts": 52191070.91,
+    "grants": 191451697.61,
+    "direct": 3064283589.95,
+    "loans": 6181055.56,
+    "idv": 0,
+    "other": 153820443.57
+   },
+   {
+    "fy": 2019,
+    "total": 3675446293.43,
+    "contracts": 70934885.45,
+    "grants": 184765352.93,
+    "direct": 3267327820.41,
+    "loans": 1663406.72,
+    "idv": 0,
+    "other": 150754827.92
+   },
+   {
+    "fy": 2020,
+    "total": 5120553032.4800005,
+    "contracts": 103260164.34,
+    "grants": 286555347.39,
+    "direct": 3574042848.59,
+    "loans": 1015077340.65,
+    "idv": 0,
+    "other": 141617331.51
+   },
+   {
+    "fy": 2021,
+    "total": 5033727185.66,
+    "contracts": 77322048.74,
+    "grants": 377027729.41,
+    "direct": 4005421225.77,
+    "loans": 426050306.89,
+    "idv": 0,
+    "other": 147905874.85
+   },
+   {
+    "fy": 2022,
+    "total": 4503773431.31,
+    "contracts": 53214523.41,
+    "grants": 383746824.21,
+    "direct": 3828687637.27,
+    "loans": 16475198.39,
+    "idv": 0,
+    "other": 221649248.03
+   },
+   {
+    "fy": 2023,
+    "total": 4721024981.360001,
+    "contracts": 62574367.81,
+    "grants": 309581892.93,
+    "direct": 4275702741.34,
+    "loans": -1021620.8,
+    "idv": 0,
+    "other": 74187600.08
+   },
+   {
+    "fy": 2024,
+    "total": 5089862028.17,
+    "contracts": 115845861.91,
+    "grants": 370697521.94,
+    "direct": 4566861784.17,
+    "loans": 5218309.14,
+    "idv": 0,
+    "other": 31238551.009999998
+   },
+   {
+    "fy": 2025,
+    "total": 5432043835.08,
+    "contracts": 70822266.31,
+    "grants": 300475695.16,
+    "direct": 5035752848.39,
+    "loans": 4208530.72,
+    "idv": 0,
+    "other": 20784494.5
+   },
+   {
+    "fy": 2026,
+    "total": 5736701211.87,
+    "contracts": 86173409.94,
+    "grants": 304815501.52,
+    "direct": 5313733173.26,
+    "loans": 1647804.06,
+    "idv": 0,
+    "other": 30331323.09
+   }
+  ],
+  "top_agencies": [
+   {
+    "name": "Social Security Administration",
+    "code": "SSA",
+    "amount": 4554418020.0
+   },
+   {
+    "name": "Department of Veterans Affairs",
+    "code": "VA",
+    "amount": 468584982.83
+   },
+   {
+    "name": "Department of Transportation",
+    "code": "DOT",
+    "amount": 175382803.49
+   },
+   {
+    "name": "Department of Health and Human Services",
+    "code": "HHS",
+    "amount": 122418172.65
+   },
+   {
+    "name": "Department of Agriculture",
+    "code": "USDA",
+    "amount": 115165273.35
+   },
+   {
+    "name": "Department of the Interior",
+    "code": "DOI",
+    "amount": 64493436.16
+   },
+   {
+    "name": "Railroad Retirement Board",
+    "code": "RRB",
+    "amount": 64319492.33
+   },
+   {
+    "name": "Department of Housing and Urban Development",
+    "code": "HUD",
+    "amount": 59640673.69
+   },
+   {
+    "name": "Department of Education",
+    "code": "ED",
+    "amount": 43800561.7
+   },
+   {
+    "name": "Department of Defense",
+    "code": "DOD",
+    "amount": 38888749.71
+   }
+  ],
+  "top_programs": [
+   {
+    "name": "Social Security Retirement Insurance",
+    "code": "96.002",
+    "amount": 3839374990.0
+   },
+   {
+    "name": "Veterans Compensation for Service-Connected Disability",
+    "code": "64.109",
+    "amount": 399556309.0
+   },
+   {
+    "name": "Social Security Disability Insurance",
+    "code": "96.001",
+    "amount": 390268499.0
+   },
+   {
+    "name": "Social Security Survivors Insurance",
+    "code": "96.004",
+    "amount": 245228348.0
+   },
+   {
+    "name": "Supplemental Security Income",
+    "code": "96.006",
+    "amount": 79546183.0
+   },
+   {
+    "name": "Social Insurance for Railroad Workers",
+    "code": "57.001",
+    "amount": 64319492.33
+   },
+   {
+    "name": "National Highway Performance Program (NHPP)",
+    "code": "20.279",
+    "amount": 60585812.73
+   },
+   {
+    "name": "Supplemental Disaster Relief Program",
+    "code": "10.988",
+    "amount": 39071387.31
+   },
+   {
+    "name": "Surface Transportation Block Grant Program",
+    "code": "20.287",
+    "amount": 39012857.47
+   },
+   {
+    "name": "Head Start",
+    "code": "93.600",
+    "amount": 31353932.03
+   }
+  ],
+  "counties_whole": {
+   "007": {
+    "name": "Bayfield County",
+    "amount": 193221542.55,
+    "per_capita": 11912.55,
+    "population": 16220
+   },
+   "057": {
+    "name": "Juneau County",
+    "amount": 249874493.51,
+    "per_capita": 9352.29,
+    "population": 26718
+   },
+   "113": {
+    "name": "Sawyer County",
+    "amount": 220799364.61,
+    "per_capita": 12216.41,
+    "population": 18074
+   },
+   "107": {
+    "name": "Rusk County",
+    "amount": 125451305.23,
+    "per_capita": 8842.07,
+    "population": 14188
+   },
+   "095": {
+    "name": "Polk County",
+    "amount": 380145759.73,
+    "per_capita": 8452.0,
+    "population": 44977
+   },
+   "031": {
+    "name": "Douglas County",
+    "amount": 389150932.86,
+    "per_capita": 8785.44,
+    "population": 44295
+   },
+   "005": {
+    "name": "Barron County",
+    "amount": 398985324.5,
+    "per_capita": 8541.57,
+    "population": 46711
+   },
+   "041": {
+    "name": "Forest County",
+    "amount": 99533267.35,
+    "per_capita": 10843.59,
+    "population": 9179
+   },
+   "099": {
+    "name": "Price County",
+    "amount": 141439207.7,
+    "per_capita": 10063.98,
+    "population": 14054
+   },
+   "019": {
+    "name": "Clark County",
+    "amount": 218394538.03,
+    "per_capita": 6301.24,
+    "population": 34659
+   },
+   "037": {
+    "name": "Florence County",
+    "amount": 49819579.05,
+    "per_capita": 10930.14,
+    "population": 4558
+   },
+   "069": {
+    "name": "Lincoln County",
+    "amount": 258971210.48,
+    "per_capita": 9113.89,
+    "population": 28415
+   },
+   "119": {
+    "name": "Taylor County",
+    "amount": 131712493.27,
+    "per_capita": 6614.4,
+    "population": 19913
+   },
+   "109": {
+    "name": "St. Croix County",
+    "amount": 627618209.36,
+    "per_capita": 6709.91,
+    "population": 93536
+   },
+   "013": {
+    "name": "Burnett County",
+    "amount": 208085076.5,
+    "per_capita": 12591.38,
+    "population": 16526
+   },
+   "073": {
+    "name": "Marathon County",
+    "amount": 983616225.12,
+    "per_capita": 7126.98,
+    "population": 138013
+   },
+   "053": {
+    "name": "Jackson County",
+    "amount": 153743768.48,
+    "per_capita": 7270.93,
+    "population": 21145
+   },
+   "085": {
+    "name": "Oneida County",
+    "amount": 391591129.41,
+    "per_capita": 10347.24,
+    "population": 37845
+   },
+   "051": {
+    "name": "Iron County",
+    "amount": 65316337.42,
+    "per_capita": 10643.04,
+    "population": 6137
+   },
+   "003": {
+    "name": "Ashland County",
+    "amount": 168259747.56,
+    "per_capita": 10498.52,
+    "population": 16027
+   },
+   "125": {
+    "name": "Vilas County",
+    "amount": 290648774.14,
+    "per_capita": 12611.13,
+    "population": 23047
+   },
+   "017": {
+    "name": "Chippewa County",
+    "amount": 495802321.13,
+    "per_capita": 7478.5,
+    "population": 66297
+   },
+   "081": {
+    "name": "Monroe County",
+    "amount": 472955005.5,
+    "per_capita": 10220.75,
+    "population": 46274
+   },
+   "141": {
+    "name": "Wood County",
+    "amount": 1577499839.29,
+    "per_capita": 21258.1,
+    "population": 74207
+   },
+   "067": {
+    "name": "Langlade County",
+    "amount": 186323025.94,
+    "per_capita": 9559.44,
+    "population": 19491
+   },
+   "129": {
+    "name": "Washburn County",
+    "amount": 187610361.99,
+    "per_capita": 11286.19,
+    "population": 16623
+   }
+  },
+  "district_total_by_geography": 5736701211.87,
+  "as_of": "2026-11-23"
+ }
+}

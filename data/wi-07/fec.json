@@ -1,0 +1,253 @@
+{
+ "generated_at": "2026-11-23T19:38:39+00:00",
+ "sources": [
+  {
+   "id": "fec",
+   "publisher": "Federal Election Commission",
+   "title": "Candidate financial totals, U.S. House",
+   "url": "https://www.fec.gov/data/elections/house/WI/07/2026/",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://api.open.fec.gov/v1/candidates/totals/?election_year=...&office=H&state=WI&district=07",
+   "vintage": null,
+   "accessed": "2026-11-23",
+   "notes": "Totals cover each candidate's principal campaign committee for the two-year cycle, through its latest report.",
+   "apa": "Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 23, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "fec",
+ "data": {
+  "cycles": {
+   "2020": [
+    {
+     "candidate_id": "H0WI07101",
+     "name": "TIFFANY, TOM",
+     "party": "REPUBLICAN PARTY",
+     "status": "Incumbent",
+     "receipts": 2652454.74,
+     "disbursements": 2529735.4,
+     "cash_on_hand": 122719.34,
+     "coverage_end": "2020-12-31",
+     "url": "https://www.fec.gov/data/candidate/H0WI07101/?cycle=2020"
+    },
+    {
+     "candidate_id": "H0WI07135",
+     "name": "ZUNKER, TRICIA",
+     "party": "DEMOCRATIC PARTY",
+     "status": "Challenger",
+     "receipts": 1276509.66,
+     "disbursements": 1247242.62,
+     "cash_on_hand": 29267.04,
+     "coverage_end": "2020-12-31",
+     "url": "https://www.fec.gov/data/candidate/H0WI07135/?cycle=2020"
+    },
+    {
+     "candidate_id": "H0WI07051",
+     "name": "DUFFY, SEAN",
+     "party": "REPUBLICAN PARTY",
+     "status": "Incumbent",
+     "receipts": 1181751.43,
+     "disbursements": 922786.62,
+     "cash_on_hand": 2046438.4,
+     "coverage_end": "2020-12-31",
+     "url": "https://www.fec.gov/data/candidate/H0WI07051/?cycle=2020"
+    },
+    {
+     "candidate_id": "H0WI07127",
+     "name": "CHURCH, JASON",
+     "party": "REPUBLICAN PARTY",
+     "status": "Challenger",
+     "receipts": 810839.67,
+     "disbursements": 810839.67,
+     "cash_on_hand": 0.0,
+     "coverage_end": "2020-12-31",
+     "url": "https://www.fec.gov/data/candidate/H0WI07127/?cycle=2020"
+    },
+    {
+     "candidate_id": "H0WI07119",
+     "name": "OPELA, MICHAEL PAUL MR. SR.",
+     "party": "REPUBLICAN PARTY",
+     "status": "Challenger",
+     "receipts": 6971.0,
+     "disbursements": 6714.0,
+     "cash_on_hand": 257.0,
+     "coverage_end": "2020-06-30",
+     "url": "https://www.fec.gov/data/candidate/H0WI07119/?cycle=2020"
+    }
+   ],
+   "2022": [
+    {
+     "candidate_id": "H0WI07101",
+     "name": "TIFFANY, TOM",
+     "party": "REPUBLICAN PARTY",
+     "status": "Incumbent",
+     "receipts": 1181268.65,
+     "disbursements": 964317.83,
+     "cash_on_hand": 339670.16,
+     "coverage_end": "2022-12-31",
+     "url": "https://www.fec.gov/data/candidate/H0WI07101/?cycle=2022"
+    },
+    {
+     "candidate_id": "H2WI07123",
+     "name": "AUSMAN, RICHARD",
+     "party": "DEMOCRATIC PARTY",
+     "status": "Challenger",
+     "receipts": 105619.13,
+     "disbursements": 95603.59,
+     "cash_on_hand": 13829.01,
+     "coverage_end": "2022-12-31",
+     "url": "https://www.fec.gov/data/candidate/H2WI07123/?cycle=2022"
+    },
+    {
+     "candidate_id": "H2WI07115",
+     "name": "KUNELIUS, DAVID WALTER",
+     "party": "REPUBLICAN PARTY",
+     "status": "Challenger",
+     "receipts": 8100.0,
+     "disbursements": 8077.84,
+     "cash_on_hand": 0.0,
+     "coverage_end": "2022-12-31",
+     "url": "https://www.fec.gov/data/candidate/H2WI07115/?cycle=2022"
+    }
+   ],
+   "2024": [
+    {
+     "candidate_id": "H0WI07101",
+     "name": "TIFFANY, TOM",
+     "party": "REPUBLICAN PARTY",
+     "status": "Incumbent",
+     "receipts": 1248250.19,
+     "disbursements": 1411979.97,
+     "cash_on_hand": 175940.38,
+     "coverage_end": "2024-12-31",
+     "url": "https://www.fec.gov/data/candidate/H0WI07101/?cycle=2024"
+    },
+    {
+     "candidate_id": "H4WI07129",
+     "name": "KILBOURN, KYLE",
+     "party": "DEMOCRATIC PARTY",
+     "status": "Challenger",
+     "receipts": 233031.36,
+     "disbursements": 218055.19,
+     "cash_on_hand": 14976.17,
+     "coverage_end": "2024-12-31",
+     "url": "https://www.fec.gov/data/candidate/H4WI07129/?cycle=2024"
+    },
+    {
+     "candidate_id": "H4WI07145",
+     "name": "DURANCEAU, ELSA",
+     "party": "DEMOCRATIC PARTY",
+     "status": "Challenger",
+     "receipts": 10147.16,
+     "disbursements": 9447.66,
+     "cash_on_hand": 173.07,
+     "coverage_end": "2024-07-24",
+     "url": "https://www.fec.gov/data/candidate/H4WI07145/?cycle=2024"
+    }
+   ],
+   "2026": [
+    {
+     "candidate_id": "H6WI07215",
+     "name": "WASSGREN, PAUL",
+     "party": "REPUBLICAN PARTY",
+     "status": "Open seat",
+     "receipts": 3403945.86,
+     "disbursements": 3403945.86,
+     "cash_on_hand": 0.0,
+     "coverage_end": "2026-06-30",
+     "url": "https://www.fec.gov/data/candidate/H6WI07215/?cycle=2026"
+    },
+    {
+     "candidate_id": "H6WI07223",
+     "name": "ALFONSO, MICHAEL",
+     "party": "REPUBLICAN PARTY",
+     "status": "Open seat",
+     "receipts": 1770041.24,
+     "disbursements": 1343102.67,
+     "cash_on_hand": 426938.57,
+     "coverage_end": "2026-10-14",
+     "url": "https://www.fec.gov/data/candidate/H6WI07223/?cycle=2026"
+    },
+    {
+     "candidate_id": "H6WI07249",
+     "name": "HERMENING, KEVIN",
+     "party": "REPUBLICAN PARTY",
+     "status": "Open seat",
+     "receipts": 1591952.4,
+     "disbursements": 1540903.56,
+     "cash_on_hand": 51048.84,
+     "coverage_end": "2026-09-30",
+     "url": "https://www.fec.gov/data/candidate/H6WI07249/?cycle=2026"
+    },
+    {
+     "candidate_id": "H6WI07207",
+     "name": "CLARK, FREDERIC",
+     "party": "DEMOCRATIC PARTY",
+     "status": "Open seat",
+     "receipts": 863780.13,
+     "disbursements": 602936.26,
+     "cash_on_hand": 260843.87,
+     "coverage_end": "2026-10-14",
+     "url": "https://www.fec.gov/data/candidate/H6WI07207/?cycle=2026"
+    },
+    {
+     "candidate_id": "H0WI03159",
+     "name": "EBBEN, JESSI",
+     "party": "REPUBLICAN PARTY",
+     "status": "Open seat",
+     "receipts": 555645.43,
+     "disbursements": 496402.39,
+     "cash_on_hand": 60845.36,
+     "coverage_end": "2026-09-30",
+     "url": "https://www.fec.gov/data/candidate/H0WI03159/?cycle=2026"
+    },
+    {
+     "candidate_id": "H0WI07101",
+     "name": "TIFFANY, TOM",
+     "party": "REPUBLICAN PARTY",
+     "status": "Incumbent",
+     "receipts": 170882.01,
+     "disbursements": 326459.61,
+     "cash_on_hand": 20362.78,
+     "coverage_end": "2026-10-14",
+     "url": "https://www.fec.gov/data/candidate/H0WI07101/?cycle=2026"
+    },
+    {
+     "candidate_id": "H6WI07231",
+     "name": "MURRAY, GINGER L",
+     "party": "DEMOCRATIC PARTY",
+     "status": "Open seat",
+     "receipts": 159920.57,
+     "disbursements": 138920.16,
+     "cash_on_hand": 21000.41,
+     "coverage_end": "2026-07-22",
+     "url": "https://www.fec.gov/data/candidate/H6WI07231/?cycle=2026"
+    },
+    {
+     "candidate_id": "H6WI07199",
+     "name": "ARMSTRONG, CHRISTOPHER CAMPBELL",
+     "party": "DEMOCRATIC PARTY",
+     "status": "Open seat",
+     "receipts": 38552.07,
+     "disbursements": 38875.25,
+     "cash_on_hand": -323.18,
+     "coverage_end": "2026-09-30",
+     "url": "https://www.fec.gov/data/candidate/H6WI07199/?cycle=2026"
+    },
+    {
+     "candidate_id": "H6WI07256",
+     "name": "THRELFALL-BAUM, NIINA",
+     "party": "REPUBLICAN PARTY",
+     "status": "Open seat",
+     "receipts": 25273.82,
+     "disbursements": 21024.38,
+     "cash_on_hand": 4249.44,
+     "coverage_end": "2026-07-22",
+     "url": "https://www.fec.gov/data/candidate/H6WI07256/?cycle=2026"
+    }
+   ]
+  },
+  "as_of": "2026-11-23"
+ }
+}

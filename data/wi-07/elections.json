@@ -1,0 +1,830 @@
+{
+ "generated_at": "2026-11-23T19:38:37+00:00",
+ "sources": [
+  {
+   "id": "medsl-house",
+   "publisher": "MIT Election Data and Science Lab",
+   "title": "U.S. House 1976-2018 (constituency returns)",
+   "url": "https://github.com/MEDSL/constituency-returns",
+   "year": "2019",
+   "kind": "Data set",
+   "query": "https://raw.githubusercontent.com/MEDSL/constituency-returns/HEAD/1976-2018-house.csv",
+   "vintage": null,
+   "accessed": "2026-11-23",
+   "notes": "Compiled from official state results. General elections only; special elections excluded.",
+   "apa": "MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 23, 2026, from https://github.com/MEDSL/constituency-returns"
+  },
+  {
+   "id": "fec-results",
+   "publisher": "Federal Election Commission",
+   "title": "Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022)",
+   "url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+   "year": "2023",
+   "kind": "Data set",
+   "query": "https://www.fec.gov/resources/cms-content/documents/federalelectionsYYYY.xlsx",
+   "vintage": null,
+   "accessed": "2026-11-23",
+   "notes": "Official, certified results as reported by state election offices.",
+   "apa": "Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 23, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "elections",
+ "data": {
+  "results": [
+   {
+    "year": 1976,
+    "total_votes": 233937,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 171366,
+      "pct": 73.25305530976289,
+      "writein": false
+     },
+     {
+      "name": "Frank A. Savino",
+      "party": "Republican",
+      "votes": 60952,
+      "pct": 26.054878022715517,
+      "writein": false
+     },
+     {
+      "name": "George Olishkewych",
+      "party": "American",
+      "votes": 1575,
+      "pct": 0.6732581848959335,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 44,
+      "pct": 0.018808482625664175,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1978,
+    "total_votes": 178304,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 110874,
+      "pct": 62.18256460875808,
+      "writein": false
+     },
+     {
+      "name": "Vinton A. Vesta",
+      "party": "Republican",
+      "votes": 65750,
+      "pct": 36.87522433596554,
+      "writein": false
+     },
+     {
+      "name": "George Olishkewych",
+      "party": "Conservative",
+      "votes": 1678,
+      "pct": 0.9410893754486719,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 2,
+      "pct": 0.0011216798277099785,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1980,
+    "total_votes": 254107,
+    "candidates": [
+     {
+      "name": "David Obey",
+      "party": "Democrat",
+      "votes": 164340,
+      "pct": 64.67354303502069,
+      "writein": false
+     },
+     {
+      "name": "Vinton A. Vesta",
+      "party": "Republican",
+      "votes": 89745,
+      "pct": 35.31779919482737,
+      "writein": false
+     },
+     {
+      "name": "Na",
+      "party": "Na",
+      "votes": 22,
+      "pct": 0.008657770151943866,
+      "writein": true
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1982,
+    "total_votes": 179668,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 122124,
+      "pct": 67.9720373132667,
+      "writein": false
+     },
+     {
+      "name": "Bernard A. Zimmerman",
+      "party": "Republican",
+      "votes": 57535,
+      "pct": 32.022953447469774,
+      "writein": false
+     },
+     {
+      "name": "Na",
+      "party": "Na",
+      "votes": 9,
+      "pct": 0.005009239263530512,
+      "writein": true
+     }
+    ],
+    "new_lines": true,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1984,
+    "total_votes": 238652,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 146131,
+      "pct": 61.2318354759231,
+      "writein": false
+     },
+     {
+      "name": "Mark G. Michaelsen",
+      "party": "Republican",
+      "votes": 92507,
+      "pct": 38.76229824179139,
+      "writein": false
+     },
+     {
+      "name": "Other",
+      "party": null,
+      "votes": 14,
+      "pct": 0.005866282285503579,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1986,
+    "total_votes": 171712,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 106700,
+      "pct": 62.13893030190086,
+      "writein": false
+     },
+     {
+      "name": "Kevin J. Hermening",
+      "party": "Republican",
+      "votes": 63408,
+      "pct": 36.92694744688781,
+      "writein": false
+     },
+     {
+      "name": "Joseph D. Damrell",
+      "party": "Labor And Farm",
+      "votes": 1599,
+      "pct": 0.9312103988073053,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 5,
+      "pct": 0.002911852404025345,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1988,
+    "total_votes": 230179,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 142197,
+      "pct": 61.77670421715274,
+      "writein": false
+     },
+     {
+      "name": "Kevin J. Hermening",
+      "party": "Republican",
+      "votes": 86077,
+      "pct": 37.39567901502743,
+      "writein": false
+     },
+     {
+      "name": "John Thomas Alan Duelge",
+      "party": "Independent",
+      "votes": 1893,
+      "pct": 0.8224034338493086,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 12,
+      "pct": 0.005213333970518597,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1990,
+    "total_votes": 161041,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 100069,
+      "pct": 62.1388342099217,
+      "writein": false
+     },
+     {
+      "name": "John L. McEwen",
+      "party": "Republican",
+      "votes": 60961,
+      "pct": 37.8543352314007,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 11,
+      "pct": 0.00683055867760384,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1992,
+    "total_votes": 257982,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 166200,
+      "pct": 64.4230992859967,
+      "writein": false
+     },
+     {
+      "name": "Dale R. Vannes",
+      "party": "Republican",
+      "votes": 91772,
+      "pct": 35.573024474575746,
+      "writein": false
+     },
+     {
+      "name": "Blank Vote/Scattering",
+      "party": null,
+      "votes": 10,
+      "pct": 0.0038762394275569613,
+      "writein": false
+     }
+    ],
+    "new_lines": true,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1994,
+    "total_votes": 178921,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 97184,
+      "pct": 54.3167096092689,
+      "writein": false
+     },
+     {
+      "name": "Scott West",
+      "party": "Republican",
+      "votes": 81706,
+      "pct": 45.665964308270134,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 31,
+      "pct": 0.017326082460974397,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1996,
+    "total_votes": 240898,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 137428,
+      "pct": 57.04821127614177,
+      "writein": false
+     },
+     {
+      "name": "Scott West",
+      "party": "Republican",
+      "votes": 103365,
+      "pct": 42.908201811555095,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 105,
+      "pct": 0.04358691230313245,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 1998,
+    "total_votes": 190865,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 115613,
+      "pct": 60.573179996332485,
+      "writein": false
+     },
+     {
+      "name": "Scott West",
+      "party": "Republican",
+      "votes": 75049,
+      "pct": 39.32046210672465,
+      "writein": false
+     },
+     {
+      "name": "Blank Vote/Scattering",
+      "party": null,
+      "votes": 203,
+      "pct": 0.10635789694286538,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2000,
+    "total_votes": 273460,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 173007,
+      "pct": 63.26592554669787,
+      "writein": false
+     },
+     {
+      "name": "Sean Cronin",
+      "party": "Republican",
+      "votes": 100264,
+      "pct": 36.66496014042273,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 189,
+      "pct": 0.06911431287939736,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2002,
+    "total_votes": 227955,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 146364,
+      "pct": 64.20740935710995,
+      "writein": false
+     },
+     {
+      "name": "Joe Rothbauer",
+      "party": "Republican",
+      "votes": 81518,
+      "pct": 35.76056677853085,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 73,
+      "pct": 0.0320238643591937,
+      "writein": false
+     }
+    ],
+    "new_lines": true,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2004,
+    "total_votes": 281752,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 241306,
+      "pct": 85.64482239700162,
+      "writein": false
+     },
+     {
+      "name": "Mike Miles",
+      "party": "Wisconsin Green",
+      "votes": 26518,
+      "pct": 9.411823163633267,
+      "writein": false
+     },
+     {
+      "name": "Larry Oftedahl",
+      "party": "Constitution",
+      "votes": 12841,
+      "pct": 4.557554161106221,
+      "writein": false
+     },
+     {
+      "name": "Blank Vote/Scattering",
+      "party": null,
+      "votes": 1087,
+      "pct": 0.38580027825889435,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2006,
+    "total_votes": 260428,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 161903,
+      "pct": 62.168046446618646,
+      "writein": false
+     },
+     {
+      "name": "Nick Reid",
+      "party": "Republican",
+      "votes": 91069,
+      "pct": 34.96897415024498,
+      "writein": false
+     },
+     {
+      "name": "Mike Miles",
+      "party": "Wisconsin Green",
+      "votes": 7391,
+      "pct": 2.8380204893483034,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 65,
+      "pct": 0.024958913788071944,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2008,
+    "total_votes": 349837,
+    "candidates": [
+     {
+      "name": "David R. Obey",
+      "party": "Democrat",
+      "votes": 212666,
+      "pct": 60.79002506881776,
+      "writein": false
+     },
+     {
+      "name": "Dan Mielke",
+      "party": "Republican",
+      "votes": 136938,
+      "pct": 39.14337248490011,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 233,
+      "pct": 0.06660244628212568,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2010,
+    "total_votes": 254389,
+    "candidates": [
+     {
+      "name": "Sean Duffy",
+      "party": "Republican",
+      "votes": 132551,
+      "pct": 52.10563349830378,
+      "writein": false
+     },
+     {
+      "name": "Julie M. Lassa",
+      "party": "Democrat",
+      "votes": 113018,
+      "pct": 44.4272354543632,
+      "writein": false
+     },
+     {
+      "name": "Gary Kauther",
+      "party": "Independent No War Bailout",
+      "votes": 8397,
+      "pct": 3.300850272613989,
+      "writein": false
+     },
+     {
+      "name": "Blank Vote/Scattering",
+      "party": null,
+      "votes": 423,
+      "pct": 0.16628077471903266,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2012,
+    "total_votes": 359669,
+    "candidates": [
+     {
+      "name": "Sean P. Duffy",
+      "party": "Republican",
+      "votes": 201720,
+      "pct": 56.084900283316045,
+      "writein": false
+     },
+     {
+      "name": "Pat Kreitlow",
+      "party": "Democrat",
+      "votes": 157524,
+      "pct": 43.79693551571028,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 405,
+      "pct": 0.11260353269255899,
+      "writein": false
+     },
+     {
+      "name": "Na",
+      "party": "Na",
+      "votes": 20,
+      "pct": 0.005560668281114024,
+      "writein": true
+     }
+    ],
+    "new_lines": true,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2014,
+    "total_votes": 286603,
+    "candidates": [
+     {
+      "name": "Sean P. Duffy",
+      "party": "Republican",
+      "votes": 169891,
+      "pct": 59.27746743753555,
+      "writein": false
+     },
+     {
+      "name": "Kelly Westland",
+      "party": "Democrat",
+      "votes": 112949,
+      "pct": 39.40956654326717,
+      "writein": false
+     },
+     {
+      "name": "Lawrence Dale",
+      "party": "Green",
+      "votes": 3686,
+      "pct": 1.286099587233909,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 42,
+      "pct": 0.01465441743456977,
+      "writein": false
+     },
+     {
+      "name": "Na",
+      "party": "Na",
+      "votes": 30,
+      "pct": 0.010467441024692693,
+      "writein": true
+     },
+     {
+      "name": "John Schiess",
+      "party": "Republican",
+      "votes": 5,
+      "pct": 0.001744573504115449,
+      "writein": true
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2016,
+    "total_votes": 362271,
+    "candidates": [
+     {
+      "name": "Sean P. Duffy",
+      "party": "Republican",
+      "votes": 223418,
+      "pct": 61.67151110632648,
+      "writein": false
+     },
+     {
+      "name": "Mary Hoeft",
+      "party": "Democrat",
+      "votes": 138643,
+      "pct": 38.27052123962448,
+      "writein": false
+     },
+     {
+      "name": "scatter",
+      "party": null,
+      "votes": 210,
+      "pct": 0.05796765404904063,
+      "writein": false
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2018,
+    "total_votes": 322840,
+    "candidates": [
+     {
+      "name": "Sean P. Duffy",
+      "party": "Republican",
+      "votes": 194061,
+      "pct": 60.11058109280139,
+      "writein": false
+     },
+     {
+      "name": "Margaret Engebretson",
+      "party": "Democrat",
+      "votes": 124307,
+      "pct": 38.5042126130591,
+      "writein": false
+     },
+     {
+      "name": "Ken Driessen",
+      "party": "Independent",
+      "votes": 4416,
+      "pct": 1.367860240366745,
+      "writein": false
+     },
+     {
+      "name": "Na",
+      "party": "Na",
+      "votes": 56,
+      "pct": 0.017346053772766695,
+      "writein": true
+     }
+    ],
+    "new_lines": false,
+    "source": "medsl-house"
+   },
+   {
+    "year": 2020,
+    "total_votes": 415007,
+    "candidates": [
+     {
+      "name": "Tom Tiffany",
+      "party": "Republican",
+      "votes": 252048,
+      "pct": 60.733433411966544,
+      "writein": false
+     },
+     {
+      "name": "Tricia Zunker",
+      "party": "Democrat",
+      "votes": 162741,
+      "pct": 39.214037353586804,
+      "writein": false
+     },
+     {
+      "name": "Scattering (write-ins)",
+      "party": "Write-in",
+      "votes": 218,
+      "pct": 0.052529234446647886,
+      "writein": true
+     }
+    ],
+    "new_lines": false,
+    "source": "fec-results"
+   },
+   {
+    "year": 2022,
+    "total_votes": 338268,
+    "candidates": [
+     {
+      "name": "Tom Tiffany",
+      "party": "Republican",
+      "votes": 209224,
+      "pct": 61.85154965885038,
+      "writein": false
+     },
+     {
+      "name": "Richard Dick Ausman",
+      "party": "Democrat",
+      "votes": 128877,
+      "pct": 38.09908120188726,
+      "writein": false
+     },
+     {
+      "name": "Scattering (write-ins)",
+      "party": "Write-in",
+      "votes": 167,
+      "pct": 0.04936913926236002,
+      "writein": true
+     }
+    ],
+    "new_lines": true,
+    "source": "fec-results"
+   }
+  ],
+  "redistricting_years": [
+   1982,
+   1992,
+   2002,
+   2012,
+   2022
+  ],
+  "fec_years": [
+   2018,
+   2020,
+   2022
+  ],
+  "latest_year": 2022
+ }
+}

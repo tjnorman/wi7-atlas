@@ -1,0 +1,211 @@
+{
+ "generated_at": "2026-11-23T19:42:32+00:00",
+ "summary": {
+  "total": 17,
+  "pass": 17,
+  "ok": true
+ },
+ "checks": [
+  {
+   "id": "acs-labels",
+   "title": "Every Census variable means what the atlas says it means",
+   "status": "pass",
+   "detail": "210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found).",
+   "sources": [
+    "acs1",
+    "acs5"
+   ]
+  },
+  {
+   "id": "election-sources-agree",
+   "title": "Two election compilations agree on the same race",
+   "status": "pass",
+   "detail": "2018 general election: MIT Election Lab has Sean P. Duffy with 194,061 votes; the FEC compilation has Sean P. Duffy with 194,061 votes (tolerance 0.2%).",
+   "sources": [
+    "medsl-house",
+    "fec-results"
+   ]
+  },
+  {
+   "id": "county-list",
+   "title": "The district's counties match the recorded list (26 counties: 21 whole, 5 split)",
+   "status": "pass",
+   "detail": "Census relationship file: 26 counties with land in the district, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. Recorded: 26 counties, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood.",
+   "sources": [
+    "census-rel"
+   ],
+   "values": {
+    "counties": 26,
+    "whole": 21,
+    "split": [
+     "Chippewa",
+     "Jackson",
+     "Juneau",
+     "Monroe",
+     "Wood"
+    ]
+   }
+  },
+  {
+   "id": "pop-2020",
+   "title": "2020 Census population agrees three ways (district total, sum of county parts, recorded figure)",
+   "status": "pass",
+   "detail": "District total 736,715; sum of county parts 736,715; recorded 736,715.",
+   "sources": [
+    "census-cd119"
+   ],
+   "values": {
+    "district": 736715,
+    "sum_of_parts": 736715,
+    "recorded": 736715
+   }
+  },
+  {
+   "id": "whole-county-pop",
+   "title": "For whole counties, two Census files report the same 2020 population",
+   "status": "pass",
+   "detail": "21 of 21 whole counties match between the 119th District Summary File and the 2020 redistricting file.",
+   "sources": [
+    "census-cd119",
+    "census-pl"
+   ],
+   "values": {}
+  },
+  {
+   "id": "land-area",
+   "title": "Land area agrees between the boundary file, the relationship file, and the recorded figure",
+   "status": "pass",
+   "detail": "Boundary file 23,111 sq mi; relationship file 23,111 sq mi; Gazetteer 23,111 sq mi; recorded 23,111 sq mi (tolerance 0.5% between Census files, 1% against the recorded figure).",
+   "sources": [
+    "census-cb",
+    "census-rel",
+    "census-gaz"
+   ],
+   "values": {
+    "boundary": 23110.74809846706,
+    "relationship": 23110.59342362573,
+    "gazetteer": 23110.539,
+    "recorded": 23111
+   }
+  },
+  {
+   "id": "acs-share",
+   "title": "The district holds about one-eighth of Wisconsin's people, as its eight equal districts should",
+   "status": "pass",
+   "detail": "ACS 2025 1-year: district 12.6% of the state (expected 11.5% to 13.5%).",
+   "sources": [
+    "acs1"
+   ],
+   "values": {
+    "share": 0.12568152857284212
+   }
+  },
+  {
+   "id": "pep-base",
+   "title": "County population estimates start from the 2020 Census counts",
+   "status": "pass",
+   "detail": "26 counties compared; largest gap between the estimates base and the census count is 0.08% (Clark). Tolerance 1%.",
+   "sources": [
+    "pep",
+    "census-pl"
+   ],
+   "values": {}
+  },
+  {
+   "id": "seat-holder",
+   "title": "Two independent records name the same sitting member",
+   "status": "pass",
+   "detail": "congress-legislators: Thomas P. Tiffany (T000165); Clerk of the House: Thomas P. Tiffany (T000165).",
+   "sources": [
+    "congress-legislators",
+    "clerk-members"
+   ],
+   "values": {}
+  },
+  {
+   "id": "election-winner",
+   "title": "The most recent election winner in the results file is the member who took office after it",
+   "status": "pass",
+   "detail": "FEC certified results: Tom Tiffany won in 2022. congress-legislators: term starting 2023-01-03 held by Thomas P. Tiffany.",
+   "sources": [
+    "medsl-house",
+    "congress-legislators"
+   ],
+   "values": {}
+  },
+  {
+   "id": "usaspending-total",
+   "title": "Two USAspending endpoints report the same district total for the last full fiscal year",
+   "status": "pass",
+   "detail": "FY2026: spending over time $5,736,701,212; spending by geography $5,736,701,212 (tolerance 1%).",
+   "sources": [
+    "usaspending"
+   ],
+   "values": {}
+  },
+  {
+   "id": "roll-calls",
+   "title": "No House roll call is missing from the vote record",
+   "status": "pass",
+   "detail": "689 roll calls read for the 119th Congress; none missing.",
+   "sources": [
+    "clerk-votes"
+   ],
+   "values": {}
+  },
+  {
+   "id": "laus-current",
+   "title": "Every county has unemployment data through the same latest month",
+   "status": "pass",
+   "detail": "County data through 2026-09. All counties current. National data run through 2026-10; the atlas compares counties, Wisconsin, and the nation in the same month.",
+   "sources": [
+    "bls-laus"
+   ],
+   "values": {}
+  },
+  {
+   "id": "fec-member",
+   "title": "The sitting member's campaign appears in FEC records for the election they won",
+   "status": "pass",
+   "detail": "3 candidates with financial activity in the 2022 cycle; found Tiffany.",
+   "sources": [
+    "fec",
+    "congress-legislators"
+   ],
+   "values": {}
+  },
+  {
+   "id": "note-election-2026",
+   "title": "Curated note reviewed on schedule: 2026 general election",
+   "status": "pass",
+   "detail": "Status unofficial; verified 2026-11-20; review by 2026-12-02.",
+   "sources": [
+    "wpr-2026-alfonso",
+    "wis-stat-7-70",
+    "brennan-2026-wi-certification"
+   ],
+   "values": {}
+  },
+  {
+   "id": "note-seat-transition",
+   "title": "Curated note reviewed on schedule: Change of member on January 3, 2027",
+   "status": "pass",
+   "detail": "Status scheduled; verified 2026-11-20; review by 2027-01-04.",
+   "sources": [
+    "wpr-2026-results",
+    "us-const-amend-20"
+   ],
+   "values": {}
+  },
+  {
+   "id": "note-map-119",
+   "title": "Curated note reviewed on schedule: Same lines for the 118th and 119th Congresses",
+   "status": "pass",
+   "detail": "Status verified; verified 2026-11-20; review by 2027-06-30.",
+   "sources": [
+    "census-bef-119"
+   ],
+   "values": {}
+  }
+ ]
+}
