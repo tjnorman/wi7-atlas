@@ -70,11 +70,13 @@ def test_acs_summarize_computes_shares():
 
     row = {v: 0.0 for v in acs.all_variables()}
     row.update({"B01003_001E": 1000.0, "B01001_001E": 1000.0, "B17001_001E": 900.0, "B17001_002E": 90.0,
-                "B15003_001E": 600.0, "B15003_022E": 100.0, "B15003_023E": 50.0,
+                "B15003_001E": 600.0, "B15003_022E": 100.0, "B15003_023E": 50.0, "B15003_017E": 200.0,
                 "B08013_001E": 24000.0, "B08303_001E": 1000.0, "B03002_001E": 1000.0, "B03002_005E": 30.0,
                 "B01001_020E": 50.0, "B01001_044E": 70.0})
-    s = acs.summarize(row, bad=set())
+    edu = {"total": "B15003_001E", "hs": ["B15003_017E", "B15003_022E", "B15003_023E"], "ba": ["B15003_022E", "B15003_023E"]}
+    s = acs.summarize(row, bad=set(), edu=edu)
     assert s["metrics"]["poverty_pct"] == pytest.approx(10.0)
+    assert s["metrics"]["hs_plus_pct"] == pytest.approx(350 / 6)
     assert s["metrics"]["bachelors_plus_pct"] == pytest.approx(25.0)
     assert s["metrics"]["mean_commute_min"] == pytest.approx(24.0)
     assert s["metrics"]["age_65_plus_pct"] == pytest.approx(12.0)
@@ -316,3 +318,30 @@ def test_bls_series_ids_have_the_official_length():
     assert county_series("55", "003") == "LAUCN550030000000003"
     assert state_series("55") == "LAUST550000000000003"
     assert len(county_series("55", "003")) == len(state_series("55")) == 20
+
+
+def _labels(rows):
+    lab = {"B15003_001E": "Estimate!!Total:"}
+    for i, name in enumerate(rows, start=2):
+        lab[f"B15003_{i:03d}E"] = f"Estimate!!Total:!!{name}"
+    return lab
+
+
+def test_education_rows_found_by_label_in_old_and_new_layouts():
+    from pipeline.sources import acs
+
+    old = _labels(["No schooling completed"] + [f"Grade {g}" for g in range(1, 15)] +
+                  ["Regular high school diploma", "GED or alternative credential", "Some college, less than 1 year",
+                   "Some college, 1 or more years, no degree", "Associate's degree", "Bachelor's degree",
+                   "Master's degree", "Professional school degree", "Doctorate degree"])
+    e = acs.edu_vars(old)
+    assert e["ba"] == ["B15003_022E", "B15003_023E", "B15003_024E", "B15003_025E"]
+    assert len(e["hs"]) == 9
+    # A renumbered layout like the 2025 release: fewer rows below high school.
+    new = _labels(["No schooling completed", "Nursery school to 12th grade, no diploma"] + [f"Other {g}" for g in range(11)] +
+                  ["Regular high school diploma", "GED or alternative credential", "Some college, no degree",
+                   "Associate's degree", "Bachelor's degree", "Master's degree", "Professional school degree", "Doctorate degree"])
+    e2 = acs.edu_vars(new)
+    assert [new[v].split("!!")[-1] for v in e2["ba"]] == ["Bachelor's degree", "Master's degree", "Professional school degree", "Doctorate degree"]
+    assert all("no diploma" not in new[v].lower() for v in e2["hs"])
+    assert len(e2["hs"]) == 8

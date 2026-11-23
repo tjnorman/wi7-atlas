@@ -40,15 +40,6 @@ EXPECT: dict[str, str] = {
     "B17001_001E": "=estimate!!total",
     "B17001_002E": "income in the past 12 months below poverty level",
     "B15003_001E": "=estimate!!total",
-    "B15003_017E": "regular high school diploma",
-    "B15003_018E": "ged or alternative credential",
-    "B15003_019E": "some college, less than 1 year",
-    "B15003_020E": "some college, 1 or more years, no degree",
-    "B15003_021E": "associate's degree",
-    "B15003_022E": "bachelor's degree",
-    "B15003_023E": "master's degree",
-    "B15003_024E": "professional school degree",
-    "B15003_025E": "doctorate degree",
     "B21001_001E": "=estimate!!total",
     "B21001_002E": "=estimate!!total!!veteran",
     "B25077_001E": "median value",
@@ -156,10 +147,6 @@ METRICS: list[Metric] = [
     Metric("per_capita_income", "Per capita income", "usd", ["B19301_001E"], moe="B19301_001M", universe="All residents"),
     Metric("poverty_pct", "Below the poverty line", "pct", ["B17001_002E"], ["B17001_001E"],
            universe="People whose poverty status is determined"),
-    Metric("hs_plus_pct", "High school diploma or more", "pct",
-           [f"B15003_{i:03d}E" for i in range(17, 26)], ["B15003_001E"], universe="Adults 25 and older"),
-    Metric("bachelors_plus_pct", "Bachelor's degree or more", "pct",
-           [f"B15003_{i:03d}E" for i in range(22, 26)], ["B15003_001E"], universe="Adults 25 and older"),
     Metric("veterans_pct", "Veterans", "pct", ["B21001_002E"], ["B21001_001E"], universe="Civilian adults 18 and older"),
     Metric("median_home_value", "Median home value", "usd", ["B25077_001E"], moe="B25077_001M",
            universe="Owner-occupied homes"),
@@ -183,6 +170,35 @@ METRICS: list[Metric] = [
     Metric("avg_household_size", "Average household size", "persons", ["B25010_001E"], universe="Occupied homes"),
     Metric("housing_units", "Housing units", "count", ["B25001_001E"], moe="B25001_001M", universe="All housing units"),
 ]
+
+# Education rows are found by their official labels each year. The Census Bureau
+# renumbered table B15003 in the 2025 release (B15003_022E moved from "Bachelor's
+# degree" to "Professional school degree"), so variable numbers cannot be trusted.
+EDU_GROUP = "B15003"
+EDU_HS = ("high school diploma", "ged", "some college", "associate", "bachelor", "master", "professional school", "doctorate")
+EDU_BA = ("bachelor", "master", "professional school", "doctorate")
+EDU_METRICS = [
+    {"id": "hs_plus_pct", "label": "High school diploma or more", "unit": "pct", "universe": "Adults 25 and older", "note": ""},
+    {"id": "bachelors_plus_pct", "label": "Bachelor's degree or more", "unit": "pct", "universe": "Adults 25 and older", "note": ""},
+]
+
+
+def edu_vars(labels: dict[str, str]) -> dict | None:
+    """Pick the B15003 rows directly under Total whose names match each level."""
+    rows = {}
+    for var, lab in labels.items():
+        if not (var.startswith(EDU_GROUP + "_") and var.endswith("E")):
+            continue
+        parts = census.normalize_label(lab).split("!!")
+        if len(parts) == 3 and parts[:2] == ["estimate", "total"]:
+            rows[var] = parts[2]
+    total = f"{EDU_GROUP}_001E" if census.normalize_label(labels.get(f"{EDU_GROUP}_001E", "")) == "estimate!!total" else None
+    hs = sorted(v for v, name in rows.items() if any(k in name for k in EDU_HS) and "no diploma" not in name)
+    ba = sorted(v for v, name in rows.items() if any(k in name for k in EDU_BA))
+    if not total or len(ba) < 3 or len(hs) < len(ba) + 2:
+        return None
+    return {"total": total, "hs": hs, "ba": ba, "rows": {v: rows[v] for v in hs}}
+
 
 # Mean commute is a ratio of an aggregate to a count, not a percentage.
 COMMUTE = ("B08013_001E", "B08303_001E")
@@ -240,9 +256,9 @@ def all_variables() -> list[str]:
     return list(dict.fromkeys(vs))
 
 
-def verify_labels(fetcher: Fetcher, path: str) -> tuple[list[dict], set[str]]:
-    """Check every variable's official label. Returns (checks, bad_vars)."""
-    groups = sorted({v.split("_")[0] for v in EXPECT})
+def verify_labels(fetcher: Fetcher, path: str) -> tuple[list[dict], set[str], dict[str, str]]:
+    """Check every variable's official label. Returns (checks, bad_vars, labels)."""
+    groups = sorted({v.split("_")[0] for v in EXPECT} | {EDU_GROUP})
     labels: dict[str, str] = {}
     for g in groups:
         labels.update(census.group_labels(fetcher, path, g))
@@ -256,12 +272,16 @@ def verify_labels(fetcher: Fetcher, path: str) -> tuple[list[dict], set[str]]:
         if not ok:
             bad.add(var)
         checks.append({"variable": var, "expected": expected, "official_label": actual, "ok": ok})
-    return checks, bad
+    return checks, bad, labels
 
 
-def summarize(row: dict, bad: set[str]) -> dict:
+def summarize(row: dict, bad: set[str], edu: dict | None = None) -> dict:
     """Compute every metric and breakdown for one geography row."""
     out: dict = {"metrics": {}, "moe": {}}
+    tot = row.get(edu["total"]) if edu else None
+    for key, cols in (("hs_plus_pct", "hs"), ("bachelors_plus_pct", "ba")):
+        vals = [row.get(v) for v in edu[cols]] if edu else []
+        out["metrics"][key] = (100 * sum(vals) / tot) if edu and tot and all(v is not None for v in vals) else None
     for m in METRICS:
         if bad.intersection(m.num + m.den):
             out["metrics"][m.id] = None
@@ -295,7 +315,6 @@ def summarize(row: dict, bad: set[str]) -> dict:
 
 def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]]:
     """Return (payload, sources, checks)."""
-    vars_ = all_variables()
     year_now = datetime.now(timezone.utc).year
     cd_for = f"congressional district:{d.district}"
     st_in = f"state:{d.state_fips}"
@@ -304,52 +323,80 @@ def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]
         return bool(census.query(fetcher, f"{y}/acs/acs1", ["B01003_001E"], cd_for, st_in))
 
     def probe5(y: int) -> bool:
-        return bool(census.query(fetcher, f"{y}/acs/acs5", ["B01003_001E"], f"county:*", st_in))
+        return bool(census.query(fetcher, f"{y}/acs/acs5", ["B01003_001E"], "county:*", st_in))
 
     y1 = census.first_available(fetcher, [year_now - 1, year_now - 2, year_now - 3], probe1)
     y5 = census.first_available(fetcher, [year_now - 1, year_now - 2, year_now - 3], probe5)
 
-    label_checks, bad = verify_labels(fetcher, f"{y1}/acs/acs1")
-    label_checks5, bad5 = verify_labels(fetcher, f"{y5}/acs/acs5")
-    bad |= bad5
+    prepared: dict[str, dict] = {}
 
-    district_rows = census.query(fetcher, f"{y1}/acs/acs1", vars_, cd_for, st_in)
-    state_rows = census.query(fetcher, f"{y1}/acs/acs1", vars_, st_in)
-    us_rows = census.query(fetcher, f"{y1}/acs/acs1", vars_, "us:1")
-    county_rows = census.query(fetcher, f"{y5}/acs/acs5", vars_, "county:*", st_in)
-    district5 = census.query(fetcher, f"{y5}/acs/acs5", vars_, cd_for, st_in)
-    state5 = census.query(fetcher, f"{y5}/acs/acs5", vars_, st_in)
+    def prepare(path: str) -> dict:
+        """Verify labels for one dataset and decide which variables are safe to request."""
+        if path not in prepared:
+            checks_, bad_, labels_ = verify_labels(fetcher, path)
+            edu = edu_vars(labels_)
+            safe = []
+            for v in all_variables():
+                base = v[:-1] + "E"          # a margin of error follows its estimate
+                if base not in bad_ and base in labels_:
+                    safe.append(v)
+            if edu:
+                safe += [edu["total"], *edu["hs"]]
+            prepared[path] = {"checks": checks_, "bad": bad_, "edu": edu, "vars": list(dict.fromkeys(safe))}
+        return prepared[path]
+
+    p1, p5 = prepare(f"{y1}/acs/acs1"), prepare(f"{y5}/acs/acs5")
+
+    def rows_for(path: str, for_: str, in_: str | None = None) -> list[dict]:
+        return census.query(fetcher, path, prepare(path)["vars"], for_, in_)
+
+    def summ(path: str, row: dict) -> dict:
+        pp = prepare(path)
+        return summarize(row, pp["bad"], pp["edu"])
+
+    a1, a5 = f"{y1}/acs/acs1", f"{y5}/acs/acs5"
+    district_rows = rows_for(a1, cd_for, st_in)
+    state_rows = rows_for(a1, st_in)
+    us_rows = rows_for(a1, "us:1")
+    county_rows = rows_for(a5, "county:*", st_in)
+    district5 = rows_for(a5, cd_for, st_in)
+    state5 = rows_for(a5, st_in)
 
     trend: dict[str, dict] = {}
     for y in range(d.comparable_acs1_years_from, y1 + 1):
+        path = f"{y}/acs/acs1"
         try:
-            rows = district_rows if y == y1 else census.query(fetcher, f"{y}/acs/acs1", vars_, cd_for, st_in)
+            rows = district_rows if y == y1 else rows_for(path, cd_for, st_in)
         except FetchError:
             continue
         if rows:
-            s = summarize(rows[0], bad)
-            trend[str(y)] = {k: s["metrics"].get(k) for k in (
+            s_ = summ(path, rows[0])
+            trend[str(y)] = {k: s_["metrics"].get(k) for k in (
                 "population", "median_household_income", "poverty_pct", "median_age",
                 "bachelors_plus_pct", "broadband_pct", "median_home_value", "age_65_plus_pct",
                 "uninsured_pct", "work_from_home_pct")}
 
+    bad = p1["bad"] | p5["bad"]
+    label_checks = p1["checks"] + p5["checks"]
+    edu_ok = bool(p1["edu"] and p5["edu"])
     payload = {
         "vintage": {"acs1": y1, "acs5": y5},
         "metrics": [
             {"id": m.id, "label": m.label, "unit": m.unit, "universe": m.universe, "note": m.note}
             for m in METRICS
-        ] + [{"id": "mean_commute_min", "label": "Average commute", "unit": "minutes",
+        ] + EDU_METRICS + [{"id": "mean_commute_min", "label": "Average commute", "unit": "minutes",
               "universe": "Workers 16 and older who do not work at home", "note": ""}],
-        "district": summarize(district_rows[0], bad) if district_rows else None,
-        "state": summarize(state_rows[0], bad) if state_rows else None,
-        "us": summarize(us_rows[0], bad) if us_rows else None,
-        "district_5yr": summarize(district5[0], bad) if district5 else None,
-        "state_5yr": summarize(state5[0], bad) if state5 else None,
+        "district": summ(a1, district_rows[0]) if district_rows else None,
+        "state": summ(a1, state_rows[0]) if state_rows else None,
+        "us": summ(a1, us_rows[0]) if us_rows else None,
+        "district_5yr": summ(a5, district5[0]) if district5 else None,
+        "state_5yr": summ(a5, state5[0]) if state5 else None,
         "counties": {
-            r["county"]: {"name": r["NAME"].split(",")[0], **summarize(r, bad)} for r in county_rows
+            r["county"]: {"name": r["NAME"].split(",")[0], **summ(a5, r)} for r in county_rows
         },
         "district_trend": trend,
-        "label_checks": label_checks + label_checks5,
+        "label_checks": label_checks,
+        "education_rows": {"acs1": p1["edu"], "acs5": p5["edu"]},
         "dropped_variables": sorted(bad),
     }
     sources = [
@@ -374,13 +421,17 @@ def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]
             notes="County figures (5-year estimates are the most reliable for small counties).",
         ),
     ]
+    n = len(label_checks)
+    detail = (f"{n - len([c for c in label_checks if not c['ok']])} of {n} variable labels matched the Census Bureau's "
+              f"official definitions for ACS {y1} 1-year and ACS {y5} 5-year. Education rows were chosen by label "
+              f"({'found' if edu_ok else 'NOT found'}).")
+    if bad:
+        detail += f" Left out because the label did not match or the variable no longer exists: {', '.join(sorted(bad))}."
     checks = [{
         "id": "acs-labels",
         "title": "Every Census variable means what the atlas says it means",
-        "status": "pass" if not bad else "fail",
-        "detail": (f"{len(label_checks) + len(label_checks5)} variable labels matched the Census Bureau's "
-                   f"official definitions for ACS {y1} 1-year and ACS {y5} 5-year.")
-                  if not bad else f"Labels did not match for: {', '.join(sorted(bad))}. Those metrics were left out.",
+        "status": "pass" if not bad and edu_ok else "warn",
+        "detail": detail,
         "sources": ["acs1", "acs5"],
     }]
     return payload, sources, checks
