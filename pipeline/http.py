@@ -19,7 +19,7 @@ from typing import Any
 import requests
 
 USER_AGENT = (
-    "wi7-atlas/1.0 (+https://github.com/Normansrule/wi7-atlas; "
+    "wi7-atlas/1.0 (+https://github.com/tjnorman/wi7-atlas; "
     "nonpartisan public-data pipeline)"
 )
 SECRET_PARAMS = re.compile(r"(api_key|key|registrationkey|registration_key)=[^&]+", re.I)

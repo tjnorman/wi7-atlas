@@ -6,8 +6,8 @@ authors:
     given-names: Thomas J.
 type: software
 license: MIT
-repository-code: "https://github.com/Normansrule/wi7-atlas"
-url: "https://normansrule.github.io/wi7-atlas/"
+repository-code: "https://github.com/tjnorman/wi7-atlas"
+url: "https://tjnorman.github.io/wi7-atlas/"
 version: 1.0.0
 date-released: 2026-11-20
 keywords: [Wisconsin, congressional district, open data, census, civic technology]

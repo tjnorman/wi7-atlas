@@ -25,8 +25,8 @@ congress: 119           # Congress whose boundaries the atlas maps
 comparable_acs1_years_from: 2022
 
 publisher: Thomas J. Norman
-repo: Normansrule/wi7-atlas
-site_url: https://normansrule.github.io/wi7-atlas/
+repo: tjnorman/wi7-atlas
+site_url: https://tjnorman.github.io/wi7-atlas/
 companion_sites:
   - name: widistrict7.com
     url: https://widistrict7.com/
