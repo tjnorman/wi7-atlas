@@ -58,7 +58,7 @@ def run(d: District, data: dict[str, dict | None], notes: list[dict], extra: lis
 
     # 2. 2020 population: district total vs sum of county parts vs recorded figure
     t = "2020 Census population agrees three ways (district total, sum of county parts, recorded figure)"
-    if geo and geo.get("pop_2020"):
+    if geo and geo.get("pop_2020") and geo.get("pop_2020_sum_of_parts") is not None:
         a, b, c = geo["pop_2020"], geo["pop_2020_sum_of_parts"], exp.get("census_2020_population")
         out.append(check("pop-2020", t, "pass" if a == b == c else "fail",
                          f"District total {fmt(a)}; sum of county parts {fmt(b)}; recorded {fmt(c)}.",
@@ -68,7 +68,7 @@ def run(d: District, data: dict[str, dict | None], notes: list[dict], extra: lis
 
     # 3. Whole counties: CD119 file and redistricting file report the same people
     t = "For whole counties, two Census files report the same 2020 population"
-    if geo:
+    if geo and any(c.get("pop_2020_in_district") is not None for c in geo["counties"]):
         bad = [c["short_name"] for c in geo["counties"]
                if c["whole"] and c["pop_2020_in_district"] != c["pop_2020_county"]]
         n = sum(1 for c in geo["counties"] if c["whole"])

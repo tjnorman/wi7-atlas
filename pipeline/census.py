@@ -60,6 +60,9 @@ def query(
             rows = json.loads(raw.decode("utf-8"))
         except (json.JSONDecodeError, UnicodeDecodeError):
             snippet = raw[:240].decode("utf-8", "replace").replace("\n", " ")
+            if "Missing Key" in snippet or "Invalid Key" in snippet:
+                raise FetchError("The Census Data API requires a key: add a free key as the CENSUS_API_KEY "
+                                 "repository secret (https://api.census.gov/data/key_signup.html).")
             raise FetchError(f"Census API returned non-JSON for {path} ({for_}): {snippet}")
         header, body = rows[0], rows[1:]
         geo_cols = [h for h in header if h != "NAME" and h not in chunk]

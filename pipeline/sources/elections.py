@@ -141,7 +141,7 @@ def parse_fec_xlsx(content: bytes, year: int, state_po: str, district: int) -> d
 
 def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]]:
     start = int(d.trends.get("house_results_from", 1976))
-    medsl = parse(fetcher.text(MEDSL_URL), d.state_abbr, d.district_number, start)
+    medsl = parse(fetcher.fetch(MEDSL_URL).decode("utf-8", errors="replace"), d.state_abbr, d.district_number, start)
     now = datetime.now(timezone.utc).year
     fec_years, fec_results = [], {}
     for y in range(2018, now + 1, 2):

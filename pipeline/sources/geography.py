@@ -178,8 +178,14 @@ def boundaries(fetcher: Fetcher, d: District, out_dir: pathlib.Path) -> tuple[di
 
 def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, list[Source], list[dict]]:
     rel, rel_url = relationship(fetcher, d)
-    part_pop, district_pop_2020, cd_dataset = county_part_population(fetcher, d)
-    pop2020 = county_population_2020(fetcher, d)
+    checks: list[dict] = []
+    try:
+        part_pop, district_pop_2020, cd_dataset = county_part_population(fetcher, d)
+        pop2020 = county_population_2020(fetcher, d)
+    except FetchError as exc:  # keep the map and county list; population fields stay empty
+        part_pop, district_pop_2020, cd_dataset, pop2020 = {}, None, f"2020/dec/cd{d.congress}", {}
+        checks.append({"id": "census-api", "title": "The Census Data API answered", "status": "fail",
+                       "detail": str(exc)[:300], "sources": ["census-cd119"]})
     shapes, shape_year = boundaries(fetcher, d, geo_dir)
 
     counties = []
@@ -198,7 +204,7 @@ def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, l
             "land_part_sq_mi": p["land_part_sq_m"] / SQ_M_PER_SQ_MI,
             "pop_2020_county": pop2020.get(cf),
             "pop_2020_in_district": part_pop.get(cf),
-            "pop_share_in_district": (part_pop.get(cf, 0) / pop2020[cf]) if pop2020.get(cf) else None,
+            "pop_share_in_district": (part_pop.get(cf, 0) / pop2020[cf]) if pop2020.get(cf) and cf in part_pop else None,
         })
 
     payload = {
@@ -209,7 +215,7 @@ def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, l
         "whole_count": sum(1 for c in counties if c["whole"]),
         "split": [c["short_name"] for c in counties if not c["whole"]],
         "pop_2020": district_pop_2020,
-        "pop_2020_sum_of_parts": sum(c["pop_2020_in_district"] or 0 for c in counties),
+        "pop_2020_sum_of_parts": sum(c["pop_2020_in_district"] or 0 for c in counties) if part_pop else None,
         "land_sq_mi_relationship": sum(c["land_part_sq_mi"] for c in counties),
         "boundary": shapes,
         "cd_dataset": cd_dataset,
@@ -252,4 +258,4 @@ def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, l
             vintage="2020 Census",
         ),
     ]
-    return payload, sources, []
+    return payload, sources, checks
