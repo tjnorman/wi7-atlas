@@ -127,4 +127,6 @@ def run(d: District, only: list[str] | None = None) -> dict:
     summ = summary.build(d, data, integrity, notes, manifest)
     write_json(out / "summary.json", summ)
     print(f"  checks: {integrity['summary']}")
+    for c in results:
+        print(f"    {c['status']:5} {c['id']}: {c['detail'][:300]}")
     return {"manifest": manifest, "integrity": integrity, "summary": summ}
