@@ -112,7 +112,15 @@ def build(d: District, data: dict, integrity: dict, notes: list[dict], manifest:
             sources.setdefault(s["id"], {"id": s["id"], "apa": s["apa"], "url": s["url"], "publisher": "",
                                          "title": "", "kind": "Reference"})
 
+    month = (laus or {}).get("latest_month")
+    for c in counties:  # compare every county in the same month
+        s_ = (laus or {}).get("series", {}).get(c["county_fips"]) or []
+        c["unemployment"] = next((p for p in reversed(s_) if p["date"] == month), None) if month else None
     rates = [c["unemployment"]["rate"] for c in counties if c.get("unemployment")]
+
+    def rate_at(key):
+        pts = (laus or {}).get("series", {}).get(key) or []
+        return next((p["rate"] for p in pts if p["date"] == month), None)
     member = (leg or {}).get("current")
     return {
         "district": {"id": d.id, "name": d.name, "short_name": d.short_name, "tagline": d.tagline,
@@ -124,8 +132,7 @@ def build(d: District, data: dict, integrity: dict, notes: list[dict], manifest:
         "members_count": len((leg or {}).get("members", [])),
         "unemployment": {"month": (laus or {}).get("latest_month"), "month_label": month_name((laus or {}).get("latest_month")),
                          "county_min": min(rates) if rates else None, "county_max": max(rates) if rates else None,
-                         "state": ((laus or {}).get("series", {}).get("state") or [{}])[-1].get("rate"),
-                         "us": ((laus or {}).get("series", {}).get("us") or [{}])[-1].get("rate")},
+                         "state": rate_at("state"), "us": rate_at("us")},
         "latest_election": (ele or {}).get("results", [None])[-1] if ele and ele.get("results") else None,
         "votes": {k: (votes or {}).get(k) for k in ("missed_pct", "house_missed_pct", "with_party_majority_pct",
                                                     "on_winning_side_pct", "votes_cast", "yes_no_votes_while_held")} if votes else None,

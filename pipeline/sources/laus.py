@@ -69,8 +69,10 @@ def fetch(fetcher: Fetcher, d: District, county_fips: list[str]) -> tuple[dict, 
         y = end + 1
     for k in series_out:
         series_out[k] = sorted({p["date"]: p for p in series_out[k]}.values(), key=lambda p: p["date"])
-    latest = max((p["date"] for pts in series_out.values() for p in pts), default=None)
+    county_last = [series_out[c][-1]["date"] for c in county_fips if series_out.get(c)]
+    latest = min(county_last) if county_last else None   # the newest month every county has
     payload = {"series": series_out, "latest_month": latest, "seasonally_adjusted": False,
+               "national_latest_month": (series_out.get("us") or [{}])[-1].get("date"),
                "series_ids": {v: k for k, v in ids.items()}}
     src = Source(
         id="bls-laus",

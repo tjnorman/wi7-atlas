@@ -50,6 +50,7 @@ jobs:
           FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
           ATLAS_USE_CACHE: "0"
         run: |
+          python -c "import os; [print(k, 'present' if os.environ.get(k, '').strip() else 'not set') for k in ('CENSUS_API_KEY','BLS_API_KEY','FEC_API_KEY')]"
           if [ -n "${{ github.event.inputs.only }}" ]; then
             python -m pipeline build --only "${{ github.event.inputs.only }}"
           else

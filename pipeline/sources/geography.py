@@ -27,6 +27,29 @@ from ..provenance import Source
 SQ_M_PER_SQ_MI = 2_589_988.110336
 GENZ = "https://www2.census.gov/geo/tiger/GENZ{y}/shp/cb_{y}_us_{layer}_500k.zip"
 REL = "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd{c}20_county20_st{s}.txt"
+GAZ = "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/{y}_Gazetteer/{y}_Gaz_{c}CDs_national.zip"
+
+
+def gazetteer_land(fetcher: Fetcher, d: District) -> tuple[float | None, str | None]:
+    """Land area of the district from the Census Gazetteer (a third, independent Census product)."""
+    import zipfile
+
+    year_now = datetime.now(timezone.utc).year
+    for y in (year_now, year_now - 1, year_now - 2):
+        url = GAZ.format(y=y, c=d.congress)
+        try:
+            raw = fetcher.fetch(url)
+        except FetchError:
+            continue
+        with zipfile.ZipFile(io.BytesIO(raw)) as z:
+            name = next(n for n in z.namelist() if n.endswith(".txt"))
+            text = z.read(name).decode("utf-8", "replace")
+        reader = csv.DictReader(io.StringIO(text), delimiter="\t")
+        for row in reader:
+            row = {k.strip(): (v or "").strip() for k, v in row.items() if k}
+            if row.get("GEOID") == d.geoid:
+                return float(row["ALAND_SQMI"]), url
+    return None, None
 
 
 def _shapes(zip_bytes: bytes, keep) -> list[dict]:
@@ -187,6 +210,10 @@ def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, l
         checks.append({"id": "census-api", "title": "The Census Data API answered", "status": "fail",
                        "detail": str(exc)[:300], "sources": ["census-cd119"]})
     shapes, shape_year = boundaries(fetcher, d, geo_dir)
+    try:
+        gaz_land, gaz_url = gazetteer_land(fetcher, d)
+    except Exception:  # the Gazetteer is a cross-check; its absence should not stop the build
+        gaz_land, gaz_url = None, None
 
     counties = []
     for p in sorted(rel, key=lambda r: r["name"]):
@@ -217,6 +244,7 @@ def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, l
         "pop_2020": district_pop_2020,
         "pop_2020_sum_of_parts": sum(c["pop_2020_in_district"] or 0 for c in counties) if part_pop else None,
         "land_sq_mi_relationship": sum(c["land_part_sq_mi"] for c in counties),
+        "land_sq_mi_gazetteer": gaz_land,
         "boundary": shapes,
         "cd_dataset": cd_dataset,
     }
@@ -248,6 +276,14 @@ def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, l
             vintage="2020 Census",
             query=f"https://api.census.gov/data/{cd_dataset}?get=NAME,P1_001N&for=county%20(or%20part):*"
                   f"&in=state:{d.state_fips}%20congressional%20district:{d.district}",
+        ),
+        Source(
+            id="census-gaz",
+            publisher="U.S. Census Bureau",
+            title=f"Gazetteer files: {d.congress}th congressional districts",
+            url="https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html",
+            year=str(datetime.now(timezone.utc).year),
+            query=gaz_url,
         ),
         Source(
             id="census-pl",

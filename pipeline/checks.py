@@ -84,12 +84,14 @@ def run(d: District, data: dict[str, dict | None], notes: list[dict], extra: lis
     if geo and geo.get("boundary"):
         a = geo["boundary"]["land_sq_mi"]
         b = geo["land_sq_mi_relationship"]
+        g = geo.get("land_sq_mi_gazetteer")
         c = exp.get("land_area_sq_mi")
-        ok = abs(a - b) / b < 0.005 and (c is None or abs(a - c) / c < 0.01)
+        ok = abs(a - b) / b < 0.005 and (g is None or abs(a - g) / g < 0.005) and (c is None or abs(a - c) / c < 0.01)
         out.append(check("land-area", t, "pass" if ok else "fail",
-                         f"Boundary file {a:,.0f} sq mi; relationship file {b:,.0f} sq mi; recorded {fmt(c)} sq mi "
+                         f"Boundary file {a:,.0f} sq mi; relationship file {b:,.0f} sq mi"
+                         + (f"; Gazetteer {g:,.0f} sq mi" if g else "") + f"; recorded {fmt(c)} sq mi "
                          f"(tolerance 0.5% between Census files, 1% against the recorded figure).",
-                         ["census-cb", "census-rel"], {"boundary": a, "relationship": b, "recorded": c}))
+                         ["census-cb", "census-rel", "census-gaz"], {"boundary": a, "relationship": b, "gazetteer": g, "recorded": c}))
     else:
         out.append(skip("land-area", t, "boundary", ["census-cb", "census-rel"]))
 
@@ -113,7 +115,10 @@ def run(d: District, data: dict[str, dict | None], notes: list[dict], extra: lis
             if p and c["pop_2020_county"]:
                 diffs.append((c["short_name"], abs(p["base_2020"] - c["pop_2020_county"]) / c["pop_2020_county"]))
         worst = max(diffs, key=lambda x: x[1]) if diffs else ("", 0)
-        out.append(check("pep-base", t, "pass" if worst[1] < 0.01 else "fail",
+        if not diffs:
+            out.append(skip("pep-base", t, "2020 Census county counts", ["pep", "census-pl"]))
+        else:
+          out.append(check("pep-base", t, "pass" if worst[1] < 0.01 else "fail",
                          f"{len(diffs)} counties compared; largest gap between the estimates base and the census count "
                          f"is {worst[1]:.2%} ({worst[0]}). Tolerance 1%.",
                          ["pep", "census-pl"]))
@@ -138,8 +143,9 @@ def run(d: District, data: dict[str, dict | None], notes: list[dict], extra: lis
         start = f"{last['year'] + 1}-01-03"
         term = next((x for x in leg["terms"] if x["start"] >= start[:7]), None)
         ok = bool(term) and term["last_name"].lower() in winner["name"].lower()
+        who = "FEC certified results" if last.get("source") == "fec-results" else "MIT Election Lab"
         out.append(check("election-winner", t, "pass" if ok else "fail",
-                         f"MIT Election Lab: {winner['name']} won in {last['year']}. congress-legislators: term "
+                         f"{who}: {winner['name']} won in {last['year']}. congress-legislators: term "
                          f"starting {term['start'] if term else 'n/a'} held by {term['name'] if term else 'n/a'}.",
                          ["medsl-house", "congress-legislators"]))
     else:
@@ -172,11 +178,13 @@ def run(d: District, data: dict[str, dict | None], notes: list[dict], extra: lis
     # 11. Unemployment data current for every county
     t = "Every county has unemployment data through the same latest month"
     if laus and geo:
-        latest = laus["latest_month"]
-        behind = [c["short_name"] for c in geo["counties"]
-                  if not laus["series"].get(c["county_fips"]) or laus["series"][c["county_fips"]][-1]["date"] != latest]
+        last = {c["short_name"]: (laus["series"].get(c["county_fips"]) or [{}])[-1].get("date") for c in geo["counties"]}
+        newest = max((v for v in last.values() if v), default=None)
+        behind = [k for k, v in last.items() if v != newest]
         out.append(check("laus-current", t, "pass" if not behind else "warn",
-                         f"Latest month {latest}." + (f" Behind: {', '.join(behind)}." if behind else " All counties current."),
+                         f"County data through {newest}." + (f" Behind: {', '.join(behind)}." if behind else " All counties current.")
+                         + (f" National data run through {laus.get('national_latest_month')}; the atlas compares counties, "
+                            f"Wisconsin, and the nation in the same month." if laus.get("national_latest_month") != newest else ""),
                          ["bls-laus"]))
     else:
         out.append(skip("laus-current", t, "unemployment data", ["bls-laus"]))

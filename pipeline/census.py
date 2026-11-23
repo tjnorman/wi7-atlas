@@ -48,7 +48,7 @@ def query(
         params = {"get": ",".join(["NAME", *chunk]), "for": for_}
         if in_:
             params["in"] = in_
-        key = os.environ.get("CENSUS_API_KEY")
+        key = (os.environ.get("CENSUS_API_KEY") or "").strip()
         if key:
             params["key"] = key
         # The Census API documents spaces as %20 in geography names ("congressional district").
@@ -60,9 +60,12 @@ def query(
             rows = json.loads(raw.decode("utf-8"))
         except (json.JSONDecodeError, UnicodeDecodeError):
             snippet = raw[:240].decode("utf-8", "replace").replace("\n", " ")
-            if "Missing Key" in snippet or "Invalid Key" in snippet:
-                raise FetchError("The Census Data API requires a key: add a free key as the CENSUS_API_KEY "
-                                 "repository secret (https://api.census.gov/data/key_signup.html).")
+            if "Missing Key" in snippet:
+                raise FetchError("The Census Data API requires a key and none was sent: add a free key as the "
+                                 "CENSUS_API_KEY repository secret (https://api.census.gov/data/key_signup.html).")
+            if "Invalid Key" in snippet:
+                raise FetchError("The Census Data API rejected the key in CENSUS_API_KEY. Check that it was activated "
+                                 "from the Census Bureau's email and pasted without extra spaces.")
             raise FetchError(f"Census API returned non-JSON for {path} ({for_}): {snippet}")
         header, body = rows[0], rows[1:]
         geo_cols = [h for h in header if h != "NAME" and h not in chunk]
