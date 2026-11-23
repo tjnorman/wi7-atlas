@@ -180,8 +180,12 @@ def run(d: District, data: dict[str, dict | None], notes: list[dict], extra: lis
     if laus and geo:
         last = {c["short_name"]: (laus["series"].get(c["county_fips"]) or [{}])[-1].get("date") for c in geo["counties"]}
         newest = max((v for v in last.values() if v), default=None)
+        if newest is None:
+            out.append(check("laus-current", t, "fail", "No county unemployment data was returned.", ["bls-laus"]))
+            newest = "none"
         behind = [k for k, v in last.items() if v != newest]
-        out.append(check("laus-current", t, "pass" if not behind else "warn",
+        if newest != "none":
+          out.append(check("laus-current", t, "pass" if not behind else "warn",
                          f"County data through {newest}." + (f" Behind: {', '.join(behind)}." if behind else " All counties current.")
                          + (f" National data run through {laus.get('national_latest_month')}; the atlas compares counties, "
                             f"Wisconsin, and the nation in the same month." if laus.get("national_latest_month") != newest else ""),

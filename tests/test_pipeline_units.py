@@ -308,3 +308,11 @@ def test_surname_normalization():
 
     assert surname("Sean P. Duffy") == surname("Sean P Duffy") == "duffy"
     assert surname("David R. Obey Jr.") == "obey"
+
+
+def test_bls_series_ids_have_the_official_length():
+    from pipeline.sources.laus import county_series, state_series
+
+    assert county_series("55", "003") == "LAUCN550030000000003"
+    assert state_series("55") == "LAUST550000000000003"
+    assert len(county_series("55", "003")) == len(state_series("55")) == 20

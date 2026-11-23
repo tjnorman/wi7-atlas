@@ -41,7 +41,10 @@ expectations:
   whole_county_count: 21
   split_counties: [Chippewa, Jackson, Juneau, Monroe, Wood]
   census_2020_population: 736715
-  land_area_sq_mi: 18787
+  # Corrected Nov 23, 2026: the 18,787 sq mi shown on widistrict7.com disagreed with
+  # three Census products (boundary file, relationship file, Gazetteer), which all
+  # report about 23,111 sq mi of land for the 119th Congress district.
+  land_area_sq_mi: 23111
 
 # Comparison geographies shown beside the district.
 comparisons:

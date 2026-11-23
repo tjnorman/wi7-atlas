@@ -11,14 +11,17 @@ from ..provenance import Source
 
 V1 = "https://api.bls.gov/publicAPI/v1/timeseries/data/"
 V2 = "https://api.bls.gov/publicAPI/v2/timeseries/data/"
+messages: list[str] = []
 
 
 def county_series(state_fips: str, county_fips: str, measure: str = "03") -> str:
-    return f"LAUCN{state_fips}{county_fips}0000000{measure}"
+    """BLS LAUS county series: LAU + CN + 15-character area code (5-digit FIPS + 8 zeros) + 2-digit measure."""
+    return f"LAUCN{state_fips}{county_fips}00000000{measure}"
 
 
 def state_series(state_fips: str, measure: str = "03") -> str:
-    return f"LAUST{state_fips}0000000000{measure}"
+    """BLS LAUS statewide series: LAU + ST + 15-character area code (2-digit FIPS + 11 zeros) + measure."""
+    return f"LAUST{state_fips}00000000000{measure}"
 
 
 US_SERIES = "LNU04000000"  # national unemployment rate, not seasonally adjusted (to match county data)
@@ -34,6 +37,7 @@ def _request(fetcher: Fetcher, series: list[str], start: int, end: int) -> list[
     data = fetcher.json(url, method="POST", json_body=body)
     if data.get("status") != "REQUEST_SUCCEEDED":
         raise FetchError(f"BLS: {data.get('status')} {data.get('message')}")
+    messages.extend(str(m) for m in (data.get("message") or []))
     return data["Results"]["series"]
 
 
@@ -69,6 +73,10 @@ def fetch(fetcher: Fetcher, d: District, county_fips: list[str]) -> tuple[dict, 
         y = end + 1
     for k in series_out:
         series_out[k] = sorted({p["date"]: p for p in series_out[k]}.values(), key=lambda p: p["date"])
+    missing = [c for c in county_fips if not series_out.get(c)]
+    if missing:
+        raise FetchError(f"BLS returned no data for {len(missing)} of {len(county_fips)} county series "
+                         f"(for example {county_series(d.state_fips, missing[0])}). Messages: {'; '.join(messages[:3])}")
     county_last = [series_out[c][-1]["date"] for c in county_fips if series_out.get(c)]
     latest = min(county_last) if county_last else None   # the newest month every county has
     payload = {"series": series_out, "latest_month": latest, "seasonally_adjusted": False,
