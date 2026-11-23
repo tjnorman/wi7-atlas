@@ -296,6 +296,7 @@ td.num, th.num { text-align: right; }
 .downloads a { display: flex; justify-content: space-between; padding: 10px 14px; background: var(--bg-2); border-radius: 12px; color: var(--ink); font-size: 14px; }
 .downloads a span { color: var(--muted); }
 .sources { padding-left: 22px; font-size: 14px; color: var(--ink-2); display: grid; gap: 10px; }
+.sources li, .note .refs, .fine, .checks .cd, td { overflow-wrap: anywhere; }
 .sources li:target { background: var(--accent-soft); border-radius: 8px; }
 .sources .q { display: block; font-family: var(--mono); font-size: 11px; color: var(--faint); word-break: break-all; margin-top: 3px; }
 
