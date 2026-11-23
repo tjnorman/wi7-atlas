@@ -172,7 +172,7 @@ The pipeline, the checks, the charts, and the website read everything district-s
 
 ```bash
 git clone https://github.com/{{repo}}.git && cd {{repo_name}}
-pip install -r requirements.txt && npm ci        # Python pipeline, mapshaper for the map
+pip install -r requirements.txt && npm install  # Python pipeline, mapshaper for the map
 python -m pipeline all                           # fetch, check, chart, and write README.md
 python -m http.server -d site 8000               # then open http://localhost:8000
 python -m pytest                                 # unit tests and site checks

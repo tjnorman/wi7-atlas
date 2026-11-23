@@ -32,7 +32,7 @@ python -m pipeline all --district <id>
 ## Development
 
 ```bash
-pip install -r requirements.txt && npm ci
+pip install -r requirements.txt && npm install
 python -m pipeline all
 python -m pytest
 python -m http.server -d site 8000

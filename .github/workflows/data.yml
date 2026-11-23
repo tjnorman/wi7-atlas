@@ -36,7 +36,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: pip install -r requirements.txt
-      - run: npm ci
+      - run: npm install --no-audit --no-fund
       - name: Restore HTTP cache (roll calls and other files that never change)
         uses: actions/cache@v4
         with:
