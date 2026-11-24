@@ -69,8 +69,6 @@ def fetch(fetcher: Fetcher, d: District, county_names: dict[str, str]) -> tuple[
             continue
         pid = str(r.get("PROJECT_ID") or "").strip()
         county = " ".join(str(r.get("COUNTY") or "").split()).title()
-        if county.upper() not in ours:
-            outside.add(county)
         rng = cost_range(r.get("CONSTRUCTION_COST_RANGE_WD"))
         if r.get("LAST_REFRESH_DATE"):
             refreshed = max(refreshed or 0, int(r["LAST_REFRESH_DATE"]))
@@ -87,6 +85,16 @@ def fetch(fetcher: Fetcher, d: District, county_names: dict[str, str]) -> tuple[
         p["miles"] = round(max(p["miles"], float(r.get("MILES") or 0)), 2)
     plist = sorted(projects.values(), key=lambda p: (p["year"], p["counties"], p["route"], p["id"]))
     unpriced = sum(1 for p in plist if p["cost_low"] is None)
+    # A project tagged to the district but listed under another county is either region-wide or a
+    # boundary project shared with a neighboring district. One tagged to this district alone is odd.
+    region = [p for p in plist if any("region wide" in c.lower() for c in p["counties"])]
+    neighbor = [p for p in plist if p not in region and not any(c.upper() in ours for c in p["counties"])]
+    for p in region:
+        p["scope"] = "region-wide"
+    for p in neighbor:
+        p["scope"] = "neighboring county"
+    odd = [p for p in neighbor if not p["shared_with_districts"]]
+    outside = {c for p in odd for c in p["counties"]}
     if not plist:
         raise ValueError("WisDOT returned no projects tagged with this district")
 
@@ -102,17 +110,20 @@ def fetch(fetcher: Fetcher, d: District, county_names: dict[str, str]) -> tuple[
         "by_year": [{"year": y, **total([p for p in plist if p["year"] == y])} for y in years],
         "by_county": [{"county": c, **total([p for p in plist if c in p["counties"]])} for c in counties],
         "shared": sum(1 for p in plist if p["shared_with_districts"]),
+        "region_wide": len(region), "neighboring_county": len(neighbor),
         "projects": plist,
         "note": ("WisDOT gives each project's construction cost as a range, so totals are a low and a high sum. A project "
                  "that crosses a district line is counted in full here. The program is a plan and changes."),
     }
     checks = [{
-        "id": "wisdot-program", "title": "WisDOT projects tagged to the district fall in its counties",
+        "id": "wisdot-program", "title": "WisDOT projects tagged to the district are in its counties, shared, or region-wide",
         "status": "pass" if not outside else "warn", "sources": ["wisdot-six-year"],
         "values": {"rows": len(rows), "projects": len(plist), "unpriced": unpriced},
         "detail": f"{len(plist)} projects from {len(rows)} rows carry WisDOT's tag for district {d.district_number}; "
                   f"{unpriced} have no readable cost range."
-                  + (f" Counties outside the district's list: {', '.join(sorted(outside))}." if outside else " All are in the district's counties."),
+                  + f" {len(region)} are region-wide and {len(neighbor)} are in a neighboring county."
+                  + (f" Tagged to this district alone but listed under another county: {', '.join(sorted(outside))}." if outside
+                     else " Every project listed under a neighboring county is shared with another district."),
     }]
     src = Source(
         id="wisdot-six-year", publisher="Wisconsin Department of Transportation",

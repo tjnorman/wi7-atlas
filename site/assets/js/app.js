@@ -551,7 +551,7 @@ function roadsSection() {
   const show = () => { const c = sel.value; $("#roads-table").innerHTML = head + `<tbody>${r.projects.filter((p) => !c || p.counties.includes(c)).map(row).join("")}</tbody>`; };
   sel.onchange = show;
   show();
-  $("#roads-source").innerHTML = sourceLine(["wisdot-six-year"], `${F.esc(r.note)} ${r.shared} of these projects also touch another district.${r.unpriced ? ` ${r.unpriced} have no cost range and are left out of the sums.` : ""} WisDOT last refreshed the list on ${F.longDate(r.as_of)}.`);
+  $("#roads-source").innerHTML = sourceLine(["wisdot-six-year"], `${F.esc(r.note)} ${r.shared} of these projects also touch another district${r.neighboring_county ? `, including ${r.neighboring_county} listed under a neighboring county` : ""}${r.region_wide ? `, and ${r.region_wide} cover a whole WisDOT region` : ""}.${r.unpriced ? ` ${r.unpriced} have no cost range and are left out of the sums.` : ""} WisDOT last refreshed the list on ${F.longDate(r.as_of)}.`);
 }
 
 // ---------------------------------------------------------------- public works (bridge update)
