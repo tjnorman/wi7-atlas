@@ -19,8 +19,8 @@
 [![Tests](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml)
 [![Data refresh](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml)
 [![Deploy to Pages](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml)
-[![Cross-checks](https://img.shields.io/badge/cross--checks-23_of_23_passing-2e7d32)](#-how-every-number-is-checked)
-[![Sources](https://img.shields.io/badge/primary_sources-10-0071e3)](#-sources)
+[![Cross-checks](https://img.shields.io/badge/cross--checks-24_of_25_passing-b26a00)](#-how-every-number-is-checked)
+[![Sources](https://img.shields.io/badge/primary_sources-11-0071e3)](#-sources)
 [![Data as of](https://img.shields.io/badge/data_as_of-2026--11--24-555)](data/wi-07/manifest.json)
 ![Nonpartisan](https://img.shields.io/badge/nonpartisan-follows_the_seat-555)
 [![License: MIT](https://img.shields.io/badge/code-MIT-1f4e9c)](LICENSE)
@@ -67,7 +67,7 @@ Each figure carries its publisher, the exact query, the data vintage, and the da
 <td width="33%" valign="top">
 
 ### 🔁 Refreshed and re-checked
-A scheduled GitHub Action rebuilds the data each week, runs 23 cross-checks between independent sources, and redraws every chart in this README.
+A scheduled GitHub Action rebuilds the data each week, runs 25 cross-checks between independent sources, and redraws every chart in this README.
 
 </td>
 </tr>
@@ -161,6 +161,139 @@ On 368,470 individual returns for tax year 2023, people living in the district r
 | [University of Wisconsin-Superior](https://www.uwsuper.edu/) | Superior | Douglas | Public | Four or more years |
 
 <sub>Source: National Center for Education Statistics, IPEDS directory file HD2024. IPEDS lists each institution once, at its main address. Branch campuses and outreach centers inside the district that report under a parent institution are not listed.</sub>
+
+## 📻 Radio and television
+
+114 licensed stations transmit from inside the district: 77 FM, 27 AM, and 10 television.
+
+<details><summary><b>Every station</b></summary>
+
+| Call sign | Frequency | Type | Licensed to | Licensee |
+|---|---|---|---|---|
+| WLAK | 1260 kHz | AM radio | Amery | Civic Media, Inc. |
+| WATK | 900 kHz | AM radio | Antigo | Results Broadcasting Inc. |
+| WATW | 1400 kHz | AM radio | Ashland | Heartland Comm. License, Llc |
+| WLBL | 930 kHz | AM radio | Auburndale | State Of Wisconsin - Educational Communications Board |
+| WERL | 950 kHz | AM radio | Eagle River | Heartland Comm. License, Llc |
+| WBZH | 910 kHz | AM radio | Hayward | Civic Media, Inc. |
+| WDGY | 740 kHz | AM radio | Hudson | Wrpx, Inc. |
+| WHRY | 1450 kHz | AM radio | Hurley | Baroka Broadcasting, Inc. |
+| WLDY | 1340 kHz | AM radio | Ladysmith | Zoe Communications Inc |
+| WDLB | 1450 kHz | AM radio | Marshfield | Central Wisconsin Broadcasting, Inc. |
+| WIGM | 1490 kHz | AM radio | Medford | Wigm, Inc. |
+| WJMT | 730 kHz | AM radio | Merrill | Sunrise Broadcasting Llc. |
+| WLKD | 1570 kHz | AM radio | Minocqua | Raven License Sub, Llc |
+| WCCN | 1370 kHz | AM radio | Neillsville | Central Wisconsin Broadcasting, Inc. |
+| WIXK | 1590 kHz | AM radio | New Richmond | Hmong Radio Broadcast, Llc |
+| WPFP | 980 kHz | AM radio | Park Falls | Civic Media, Inc. |
+| WOBT | 1240 kHz | AM radio | Rhinelander | Nrg License Sub, Llc |
+| WAQE | 1090 kHz | AM radio | Rice Lake | Amc Partners Rice Lake, Llc |
+| WJMC | 1240 kHz | AM radio | Rice Lake | Amc Partners Rice Lake, Llc |
+| WEVR | 1550 kHz | AM radio | River Falls | Hanten Broadcasting Co. Inc. |
+| WRIG | 1390 kHz | AM radio | Schofield | Wrig, Inc. |
+| WXNK | 940 kHz | AM radio | Shell Lake | Zoe Communications, Inc. |
+| WDSM | 710 kHz | AM radio | Superior | Midwest Communications, Inc. |
+| WDUL | 970 kHz | AM radio | Superior | Midwest Communications, Inc. |
+| WJJQ | 810 kHz | AM radio | Tomahawk | Albert Broadcasting Ii Llc |
+| WSAU | 550 kHz | AM radio | Wausau | Wrig, Inc. |
+| WXCO | 1230 kHz | AM radio | Wausau | Civic Media, Inc. |
+| WPCA-LP | 93.1 MHz | Low-power FM radio | Amery | Dream Center, Inc. |
+| WACD | 106.1 MHz | FM radio | Antigo | Results Broadcasting Inc. |
+| WRLO-FM | 105.3 MHz | FM radio | Antigo | Nrg License Sub, Llc |
+| WBSZ | 93.3 MHz | FM radio | Ashland | Heartland Comm. License, Llc |
+| WDNW | 91.9 MHz | FM radio | Ashland | University Of Northwestern - St. Paul |
+| WJJH | 96.7 MHz | FM radio | Ashland | Heartland Comm. License, Llc |
+| WUWS | 90.9 MHz | FM radio | Ashland | Board Of Regents Of The University Of Wisconsin System |
+| WWMD-LP | 94.3 MHz | Low-power FM radio | Ashland | Holy Family Radio Association |
+| WSCM | 95.7 MHz | FM radio | Baldwin | Civic Media, Inc. |
+| WZEZ | 104.9 MHz | FM radio | Balsam Lake | Zoe Communications, Inc. |
+| WAQE-FM | 97.7 MHz | FM radio | Barron | Amc Partners Rice Lake, Llc |
+| WYNW | 92.9 MHz | FM radio | Birnamwood | Relevant Radio, Inc. |
+| WHSA | 89.9 MHz | FM radio | Brule | State Of Wisconsin - Educational Communications Board |
+| WPGR-LP | 105.7 MHz | Low-power FM radio | Clear Lake | Clear Lake Christian Radio, Inc. |
+| WCWL-LP | 103.5 MHz | Low-power FM radio | Clearwater Lake | Northern Lakes Radio, Inc. |
+| WGNW | 99.9 MHz | FM radio | Cornell | The Family Radio Network, Inc. |
+| WEQC | 103.9 MHz | FM radio | Crandon | The Salvation Poem Foundation, Inc. |
+| WRJO | 94.5 MHz | FM radio | Eagle River | Heartland Comm. License, Llc |
+| WVCF | 90.5 MHz | FM radio | Eau Claire | Vcy America, Inc. |
+| WMVM | 90.7 MHz | FM radio | Goodman | Wrvm, Inc. |
+| WWIB | 103.7 MHz | FM radio | Hallie | Stewards Of Sound, Inc. |
+| WHSM-FM | 101.1 MHz | FM radio | Hayward | Civic Media, Inc. |
+| WRLS-FM | 92.3 MHz | FM radio | Hayward | Vacationland Broadcasting, Inc. |
+| WNXR | 107.3 MHz | FM radio | Iron River | Heartland Comm. License, Llc |
+| WLDF | 92.9 MHz | FM radio | Lac Du Flambeau | L.D.F. Business Development Corp. |
+| WJBL | 93.1 MHz | FM radio | Ladysmith | Zoe Communications Inc |
+| WCWB | 104.9 MHz | FM radio | Marathon | Muzzy Broadcast Group, Llc |
+| WKEB | 99.3 MHz | FM radio | Medford | Wigm, Incorporated |
+| WDYD-LP | 102.5 MHz | Low-power FM radio | Merrill | The New Testament Church, Inc. |
+| WHJL | 88.1 MHz | FM radio | Merrill | Wrvm, Inc. |
+| WXVM | 104.1 MHz | FM radio | Merrill | Wrvm, Inc. |
+| WMQA-FM | 95.9 MHz | FM radio | Minocqua | Raven License Sub, Llc |
+| WQMN | 88.7 MHz | FM radio | Minocqua | Radio 74 Internationale |
+| WOZZ | 94.7 MHz | FM radio | Mosinee | Wrig, Inc. |
+| WCCN-FM | 107.5 MHz | FM radio | Neillsville | Central Wisconsin Broadcasting, Inc. |
+| WPKG | 92.7 MHz | FM radio | Neillsville | Central Wisconsin Broadcasting, Inc. |
+| WVCS | 90.1 MHz | FM radio | Owen | Vcy America, Inc. |
+| WCQM | 98.3 MHz | FM radio | Park Falls | Civic Media, Inc. |
+| WHBM | 90.3 MHz | FM radio | Park Falls | State Of Wisconsin - Educational Communications Board |
+| WOJB | 88.9 MHz | FM radio | Reserve | Lac Courte Oreilles Ojibwa Public |
+| KSPP | 89.1 MHz | FM radio | Rhinelander | Northwoods Catholic Radio |
+| WHDG | 97.3 MHz | FM radio | Rhinelander | Raven License Sub, Llc |
+| WHSF | 89.9 MHz | FM radio | Rhinelander | State Of Wisconsin - Educational Communications Board |
+| WNWX | 96.5 MHz | FM radio | Rhinelander | Heartland Comm. License, Llc |
+| WRHN | 100.1 MHz | FM radio | Rhinelander | Nrg License Sub, Llc |
+| WXPR | 91.7 MHz | FM radio | Rhinelander | White Pine Community Broadcasting, Inc. |
+| WEPP-FM | 90.7 MHz | FM radio | Rice Lake | State Of Wisconsin Educational Communications Board |
+| WGIF | 90.1 MHz | FM radio | Rice Lake | Barron Calvary Baptist Church, Inc |
+| WJMC-FM | 96.1 MHz | FM radio | Rice Lake | Amc Partners Rice Lake, Llc |
+| WKFX | 99.1 MHz | FM radio | Rice Lake | Amc Partners Rice Lake, Llc |
+| WWJP-LP | 101.7 MHz | Low-power FM radio | Rice Lake | Meadow Creek Christian Radio Corporation |
+| WYRL-LP | 105.5 MHz | Low-power FM radio | Rice Lake | Law Enforcement Foundation Of Barron County |
+| WEVR-FM | 106.3 MHz | FM radio | River Falls | Hanten Broadcasting Company, Inc. |
+| WRFW | 88.7 MHz | FM radio | River Falls | Board Of Regents Of The University Of Wisconsin System |
+| WAVL | 100.5 MHz | FM radio | Rothschild | Sunrise Broadcasting Llc. |
+| WPLT | 106.3 MHz | FM radio | Sarona | Zoe Communications, Inc. |
+| WXCX | 105.7 MHz | FM radio | Siren | Zoe Communications, Inc. |
+| WOSQ | 92.3 MHz | FM radio | Spencer | Central Wisconsin Broadcasting, Inc. |
+| WGMO | 95.3 MHz | FM radio | Spooner | Zoe Communications, Inc. |
+| WASB-LP | 96.5 MHz | Low-power FM radio | Stanley-Boyd-Cadott | All Saints Catholic Parish |
+| WGHF-LP | 93.7 MHz | Low-power FM radio | Superior | Superior Seventh-Day Adventist Church |
+| WCYE | 93.7 MHz | FM radio | Three Lakes | Heartland Comm. License, Llc |
+| WEQR | 100.9 MHz | FM radio | Tomahawk | The Salvation Poem Foundation, Inc. |
+| WGBT | 91.3 MHz | FM radio | Tomahawk | Radio 74 Internationale |
+| WJJQ-FM | 92.5 MHz | FM radio | Tomahawk | Albert Broadcasting Ii Llc |
+| WLBI-LP | 107.1 MHz | Low-power FM radio | Tomahawk | Above And Beyond Broadcasting, Inc. |
+| WEGZ | 105.9 MHz | FM radio | Washburn | Keweenaw Bay Broadcasting, Inc. |
+| WHWA | 104.7 MHz | FM radio | Washburn | State Of Wisconsin - Educational Communications Board |
+| WBCV | 107.9 MHz | FM radio | Wausau | Nrg License Sub, Llc |
+| WCLQ | 89.5 MHz | FM radio | Wausau | Christian Life Communications, Inc. |
+| WDEZ | 101.9 MHz | FM radio | Wausau | Wrig, Inc. |
+| WHRM | 90.9 MHz | FM radio | Wausau | State Of Wisconsin - Educational Communications Board |
+| WIFC | 95.5 MHz | FM radio | Wausau | Wrig, Inc. |
+| WLBL-FM | 91.9 MHz | FM radio | Wausau | State Of Wisconsin - Educational Communications Board |
+| WNRB-LP | 93.3 MHz | Low-power FM radio | Wausau | Wausau Area Hmong Mutual Association |
+| WXPW | 91.9 MHz | FM radio | Wausau | White Pine Community Broadcasting, Inc. |
+| WWEN | 88.1 MHz | FM radio | Wentworth | Real Presence Radio |
+| WTPX-TV | Channel 19 | Full-power television | Antigo | Ion Television License, Llc |
+| WMOW | Channel 13 | Full-power television | Crandon | Wausau Tv License Company, Llc |
+| WNWE | Channel 26 | Full-power television | Eagle River | Gray Television Licensee, Llc |
+| WYOW | Channel 28 | Full-power television | Eagle River | Gray Television Licensee, Llc |
+| WLEF-TV | Channel 36 | Full-power television | Park Falls | State Of Wisconsin - Educational Communications Board |
+| WJFW-TV | Channel 16 | Full-power television | Rhinelander | Northland Television, Llc |
+| WAOW | Channel 9 | Full-power television | Wausau | Wausau Tv License Company, Llc |
+| WHRM-TV | Channel 24 | Full-power television | Wausau | State Of Wisconsin - Educational Communications Board |
+| WSAW-TV | Channel 7 | Full-power television | Wausau | Gray Television Licensee, Llc |
+| WZAW-LD | Channel 33 | Low-power television | Wausau | Gray Television Licensee, Llc |
+
+</details>
+
+<sub>Source: Federal Communications Commission AM, FM, and TV queries, as of 2026-11-24. Listed: licensed stations whose transmitter stands inside the district outline. Translators and boosters are left out. Stations that are received in the district from transmitters outside it are not listed.</sub>
+
+## 🏘 Cities, villages, and towns
+
+The district takes in all or part of **607 municipalities**: 51 cities, 90 villages, and 466 towns. 8 of them are themselves divided by the district line. The full list, with each one's status, is in [`data/wi-07/municipalities.json`](data/wi-07/municipalities.json).
+
+<sub>Source: U.S. Census Bureau, congressional district to county subdivision relationship file. A municipality that crosses a county line is listed once in each county. Status is by share of land area as of the 2020 Census; the file has no population by part.</sub>
 
 ## 🗳 Representation and elections
 
@@ -296,7 +429,7 @@ Three rules keep the atlas honest:
 2. **A label check before any Census number is used.** Every Census variable's official label is compared with what the atlas says it means. If a table is renumbered, that measure is dropped and the check fails in public.
 3. **Nothing unofficial without a label and a review date.** Hand-written notes (like a race called by news organizations before certification) carry sources, a verification date, and a review-by date; an overdue note turns the check yellow.
 
-**Latest build: 23 of 23 checks passing**.
+**Latest build: 24 of 25 checks passing**, 1 for review.
 
 | | Check | What was compared |
 |---|---|---|
@@ -308,6 +441,8 @@ Three rules keep the atlas honest:
 | ✅ Pass | Two election compilations agree on the same race | 2018 general election: MIT Election Lab has Sean P. Duffy with 194,061 votes; the FEC compilation has Sean P. Duffy with 194,061 votes (tolerance 0.2%). |
 | ✅ Pass | College directory variables match the IPEDS dictionary | 13 of 13 variables confirmed against the 2024 dictionary. |
 | ✅ Pass | IPEDS district codes agree with the district outline | All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does. |
+| ✅ Pass | Every county in the district has municipalities in the district | 607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties. |
+| ⚠️ Review | FCC station records have the expected layout | 720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. Skipped 17 licensed records without a standard call sign: DWCCX, W19DP-D, W19DP-D, W20FH-D, W21EW-D, W22FK-D. |
 | ✅ Pass | The district's counties match the recorded list (26 counties: 21 whole, 5 split) | Census relationship file: 26 counties with land in the district, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. Recorded: 26 counties, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. |
 | ✅ Pass | 2020 Census population agrees three ways (district total, sum of county parts, recorded figure) | District total 736,715; sum of county parts 736,715; recorded 736,715. |
 | ✅ Pass | For whole counties, two Census files report the same 2020 population | 21 of 21 whole counties match between the 119th District Summary File and the 2020 redistricting file. |
@@ -331,7 +466,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T06:07:53+00:00",
+  "generated_at": "2026-11-24T06:44:32+00:00",
   "sources": [
     {
       "id": "acs1",
@@ -412,6 +547,7 @@ tests/                 pytest unit tests and Playwright site checks
 ## 📚 Sources
 
 - Brennan Center for Justice. (2026, August 3). Wisconsin election certification processes and guardrails.
+- Federal Communications Commission, Media Bureau. (2026). AM Query, FM Query, and TV Query: licensed broadcast stations [Data set]. Retrieved November 24, 2026, from https://www.fcc.gov/media/radio/am-query
 - Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/
 - Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/
 - Internal Revenue Service, Statistics of Income Division. (2026). Individual income tax returns: Congressional district data, tax year 2023 [Data set]. Retrieved November 24, 2026, from https://www.irs.gov/statistics/soi-tax-stats-data-by-congressional-district-2023
@@ -425,6 +561,7 @@ tests/                 pytest unit tests and Playwright site checks
 - U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/cew/
 - U.S. Census Bureau. (2021). 2020 Census redistricting data (Public Law 94-171) [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2020/dec/pl
 - U.S. Census Bureau. (2024). 119th Congressional District to 2020 county relationship file (Wisconsin) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html
+- U.S. Census Bureau. (2024). 119th Congressional District to 2020 county subdivision relationship file (Wisconsin) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html
 - U.S. Census Bureau. (2024). 2024 Gazetteer files: 119th congressional districts [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html
 - U.S. Census Bureau. (2025). 119th Congress block equivalency files.
 - U.S. Census Bureau. (2025). 2020 Census 119th Congressional District Summary File [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2020/dec/cd119

@@ -1,8 +1,9 @@
 {
- "generated_at": "2026-11-24T06:40:54+00:00",
+ "generated_at": "2026-11-24T07:24:02+00:00",
  "summary": {
-  "total": 23,
-  "pass": 23,
+  "total": 25,
+  "pass": 24,
+  "warn": 1,
   "ok": true
  },
  "checks": [
@@ -98,6 +99,33 @@
     "disagree": 0
    },
    "detail": "All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does."
+  },
+  {
+   "id": "municipalities-cover",
+   "title": "Every county in the district has municipalities in the district",
+   "status": "pass",
+   "sources": [
+    "census-cousub-rel",
+    "census-rel"
+   ],
+   "values": {
+    "counties": 26,
+    "in_district": 607
+   },
+   "detail": "607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties."
+  },
+  {
+   "id": "fcc-layout",
+   "title": "FCC station records have the expected layout",
+   "status": "warn",
+   "sources": [
+    "fcc-queries"
+   ],
+   "values": {
+    "rows": 720,
+    "readable": 720
+   },
+   "detail": "720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. Skipped 17 licensed records without a standard call sign: DWCCX, W19DP-D, W19DP-D, W20FH-D, W21EW-D, W22FK-D."
   },
   {
    "id": "county-list",

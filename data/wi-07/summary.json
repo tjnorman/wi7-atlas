@@ -11,7 +11,7 @@
   "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-24T06:40:54+00:00",
+ "built_at": "2026-11-24T07:24:02+00:00",
  "headline": [
   {
    "id": "population",
@@ -1380,6 +1380,19 @@
    "kind": "Reference"
   },
   {
+   "id": "fcc-queries",
+   "publisher": "Federal Communications Commission, Media Bureau",
+   "title": "AM Query, FM Query, and TV Query: licensed broadcast stations",
+   "url": "https://www.fcc.gov/media/radio/am-query",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://transition.fcc.gov/fcc-bin/fmq?state=WI&serv=FM&status=L&list=4 (and amq, tvq)",
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": "Licensing records as of the retrieval date; the FCC updates them continuously. The output has no column names, so each row's layout is checked before use. Coordinates are transmitter sites.",
+   "apa": "Federal Communications Commission, Media Bureau. (2026). AM Query, FM Query, and TV Query: licensed broadcast stations [Data set]. Retrieved November 24, 2026, from https://www.fcc.gov/media/radio/am-query"
+  },
+  {
    "id": "fec",
    "publisher": "Federal Election Commission",
    "title": "Candidate financial totals, U.S. House",
@@ -1536,6 +1549,19 @@
    "apa": "U.S. Census Bureau. (2024). 119th Congressional District to 2020 county relationship file (Wisconsin) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html"
   },
   {
+   "id": "census-cousub-rel",
+   "publisher": "U.S. Census Bureau",
+   "title": "119th Congressional District to 2020 county subdivision relationship file (Wisconsin)",
+   "url": "https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html",
+   "year": "2024",
+   "kind": "Data set",
+   "query": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_cousub20_st55.txt",
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "U.S. Census Bureau. (2024). 119th Congressional District to 2020 county subdivision relationship file (Wisconsin) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html"
+  },
+  {
    "id": "census-cd119",
    "publisher": "U.S. Census Bureau",
    "title": "2020 Census 119th Congressional District Summary File",
@@ -1641,24 +1667,27 @@
   }
  ],
  "integrity": {
-  "total": 23,
-  "pass": 23,
+  "total": 25,
+  "pass": 24,
+  "warn": 1,
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-24T06:06:22+00:00",
-  "legislators": "2026-11-24T06:06:29+00:00",
-  "acs": "2026-11-24T06:06:39+00:00",
-  "pep": "2026-11-24T06:07:53+00:00",
-  "laus": "2026-11-24T06:07:54+00:00",
-  "qcew": "2026-11-24T06:07:56+00:00",
-  "usaspending": "2026-11-24T06:08:06+00:00",
-  "elections": "2026-11-24T06:08:10+00:00",
-  "fec": "2026-11-24T06:08:13+00:00",
-  "votes": "2026-11-24T06:08:15+00:00",
-  "irs": "2026-11-24T06:08:08+00:00",
-  "cameras": "2026-11-24T06:40:47+00:00",
-  "colleges": "2026-11-24T06:40:48+00:00"
+  "geography": "2026-11-24T06:43:10+00:00",
+  "legislators": "2026-11-24T06:43:17+00:00",
+  "acs": "2026-11-24T06:43:24+00:00",
+  "pep": "2026-11-24T06:44:33+00:00",
+  "laus": "2026-11-24T06:44:33+00:00",
+  "qcew": "2026-11-24T06:44:36+00:00",
+  "usaspending": "2026-11-24T06:44:47+00:00",
+  "elections": "2026-11-24T06:44:50+00:00",
+  "fec": "2026-11-24T06:44:53+00:00",
+  "votes": "2026-11-24T06:44:54+00:00",
+  "irs": "2026-11-24T06:44:49+00:00",
+  "cameras": "2026-11-24T07:22:22+00:00",
+  "colleges": "2026-11-24T07:23:54+00:00",
+  "municipalities": "2026-11-24T07:23:57+00:00",
+  "broadcast": "2026-11-24T07:23:58+00:00"
  },
  "status": {
   "geography": "ok",
@@ -1673,6 +1702,8 @@
   "votes": "ok",
   "irs": "ok",
   "cameras": "ok",
-  "colleges": "ok"
+  "colleges": "ok",
+  "municipalities": "ok",
+  "broadcast": "ok"
  }
 }
