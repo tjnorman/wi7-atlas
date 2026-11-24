@@ -19,7 +19,7 @@
 [![Tests](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml)
 [![Data refresh](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml)
 [![Deploy to Pages](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml)
-[![Cross-checks](https://img.shields.io/badge/cross--checks-28_of_28_passing-2e7d32)](#-how-every-number-is-checked)
+[![Cross-checks](https://img.shields.io/badge/cross--checks-30_of_30_passing-2e7d32)](#-how-every-number-is-checked)
 [![Sources](https://img.shields.io/badge/primary_sources-15-0071e3)](#-sources)
 [![Data as of](https://img.shields.io/badge/data_as_of-2026--11--24-555)](data/wi-07/manifest.json)
 ![Nonpartisan](https://img.shields.io/badge/nonpartisan-follows_the_seat-555)
@@ -67,7 +67,7 @@ Each figure carries its publisher, the exact query, the data vintage, and the da
 <td width="33%" valign="top">
 
 ### 🔁 Refreshed and re-checked
-A scheduled GitHub Action rebuilds the data each week, runs 28 cross-checks between independent sources, and redraws every chart in this README.
+A scheduled GitHub Action rebuilds the data each week, runs 30 cross-checks between independent sources, and redraws every chart in this README.
 
 </td>
 </tr>
@@ -178,7 +178,7 @@ On 368,470 individual returns for tax year 2023, people living in the district r
 | WLAK | 1260 kHz | AM radio | Amery | Civic Media, Inc. |  |
 | WATK | 900 kHz | AM radio | Antigo | Results Broadcasting Inc. |  |
 | WATW | 1400 kHz | AM radio | Ashland | Heartland Comm. License, Llc |  |
-| WLBL | 930 kHz | AM radio | Auburndale | State Of Wisconsin - Educational Communications Board |  |
+| WLBL | 930 kHz | AM radio | Auburndale | State Of Wisconsin - Educational Communications Board | [Wisconsin Public Radio](https://www.wpr.org/ways-to-listen) |
 | WERL | 950 kHz | AM radio | Eagle River | Heartland Comm. License, Llc |  |
 | WBZH | 910 kHz | AM radio | Hayward | Civic Media, Inc. |  |
 | WDGY | 740 kHz | AM radio | Hudson | Wrpx, Inc. |  |
@@ -214,7 +214,7 @@ On 368,470 individual returns for tax year 2023, people living in the district r
 | WZEZ | 104.9 MHz | FM radio | Balsam Lake | Zoe Communications, Inc. |  |
 | WAQE-FM | 97.7 MHz | FM radio | Barron | Amc Partners Rice Lake, Llc |  |
 | WYNW | 92.9 MHz | FM radio | Birnamwood | Relevant Radio, Inc. |  |
-| WHSA | 89.9 MHz | FM radio | Brule | State Of Wisconsin - Educational Communications Board |  |
+| WHSA | 89.9 MHz | FM radio | Brule | State Of Wisconsin - Educational Communications Board | [Wisconsin Public Radio](https://www.wpr.org/ways-to-listen) |
 | WPGR-LP | 105.7 MHz | Low-power FM radio | Clear Lake | Clear Lake Christian Radio, Inc. |  |
 | WCWL-LP | 103.5 MHz | Low-power FM radio | Clearwater Lake | Northern Lakes Radio, Inc. |  |
 | WGNW | 99.9 MHz | FM radio | Cornell | The Family Radio Network, Inc. |  |
@@ -240,15 +240,15 @@ On 368,470 individual returns for tax year 2023, people living in the district r
 | WPKG | 92.7 MHz | FM radio | Neillsville | Central Wisconsin Broadcasting, Inc. |  |
 | WVCS | 90.1 MHz | FM radio | Owen | Vcy America, Inc. |  |
 | WCQM | 98.3 MHz | FM radio | Park Falls | Civic Media, Inc. |  |
-| WHBM | 90.3 MHz | FM radio | Park Falls | State Of Wisconsin - Educational Communications Board |  |
+| WHBM | 90.3 MHz | FM radio | Park Falls | State Of Wisconsin - Educational Communications Board | [Wisconsin Public Radio](https://www.wpr.org/ways-to-listen) |
 | WOJB | 88.9 MHz | FM radio | Reserve | Lac Courte Oreilles Ojibwa Public |  |
 | KSPP | 89.1 MHz | FM radio | Rhinelander | Northwoods Catholic Radio |  |
 | WHDG | 97.3 MHz | FM radio | Rhinelander | Raven License Sub, Llc |  |
-| WHSF | 89.9 MHz | FM radio | Rhinelander | State Of Wisconsin - Educational Communications Board |  |
+| WHSF | 89.9 MHz | FM radio | Rhinelander | State Of Wisconsin - Educational Communications Board | [Wisconsin Public Radio](https://www.wpr.org/ways-to-listen) |
 | WNWX | 96.5 MHz | FM radio | Rhinelander | Heartland Comm. License, Llc |  |
 | WRHN | 100.1 MHz | FM radio | Rhinelander | Nrg License Sub, Llc |  |
 | WXPR | 91.7 MHz | FM radio | Rhinelander | White Pine Community Broadcasting, Inc. |  |
-| WEPP-FM | 90.7 MHz | FM radio | Rice Lake | State Of Wisconsin Educational Communications Board |  |
+| WEPP-FM | 90.7 MHz | FM radio | Rice Lake | State Of Wisconsin Educational Communications Board | [Wisconsin Public Radio](https://www.wpr.org/ways-to-listen) |
 | WGIF | 90.1 MHz | FM radio | Rice Lake | Barron Calvary Baptist Church, Inc |  |
 | WJMC-FM | 96.1 MHz | FM radio | Rice Lake | Amc Partners Rice Lake, Llc |  |
 | WKFX | 99.1 MHz | FM radio | Rice Lake | Amc Partners Rice Lake, Llc |  |
@@ -269,13 +269,13 @@ On 368,470 individual returns for tax year 2023, people living in the district r
 | WJJQ-FM | 92.5 MHz | FM radio | Tomahawk | Albert Broadcasting Ii Llc |  |
 | WLBI-LP | 107.1 MHz | Low-power FM radio | Tomahawk | Above And Beyond Broadcasting, Inc. |  |
 | WEGZ | 105.9 MHz | FM radio | Washburn | Keweenaw Bay Broadcasting, Inc. |  |
-| WHWA | 104.7 MHz | FM radio | Washburn | State Of Wisconsin - Educational Communications Board |  |
+| WHWA | 104.7 MHz | FM radio | Washburn | State Of Wisconsin - Educational Communications Board | [Wisconsin Public Radio](https://www.wpr.org/ways-to-listen) |
 | WBCV | 107.9 MHz | FM radio | Wausau | Nrg License Sub, Llc |  |
 | WCLQ | 89.5 MHz | FM radio | Wausau | Christian Life Communications, Inc. |  |
 | WDEZ | 101.9 MHz | FM radio | Wausau | Wrig, Inc. |  |
-| WHRM | 90.9 MHz | FM radio | Wausau | State Of Wisconsin - Educational Communications Board |  |
+| WHRM | 90.9 MHz | FM radio | Wausau | State Of Wisconsin - Educational Communications Board | [Wisconsin Public Radio](https://www.wpr.org/ways-to-listen) |
 | WIFC | 95.5 MHz | FM radio | Wausau | Wrig, Inc. |  |
-| WLBL-FM | 91.9 MHz | FM radio | Wausau | State Of Wisconsin - Educational Communications Board |  |
+| WLBL-FM | 91.9 MHz | FM radio | Wausau | State Of Wisconsin - Educational Communications Board | [Wisconsin Public Radio](https://www.wpr.org/ways-to-listen) |
 | WNRB-LP | 93.3 MHz | Low-power FM radio | Wausau | Wausau Area Hmong Mutual Association |  |
 | WXPW | 91.9 MHz | FM radio | Wausau | White Pine Community Broadcasting, Inc. |  |
 | WWEN | 88.1 MHz | FM radio | Wentworth | Real Presence Radio |  |
@@ -462,22 +462,24 @@ Three rules keep the atlas honest:
 2. **A label check before any Census number is used.** Every Census variable's official label is compared with what the atlas says it means. If a table is renumbered, that measure is dropped and the check fails in public.
 3. **Nothing unofficial without a label and a review date.** Hand-written notes (like a race called by news organizations before certification) carry sources, a verification date, and a review-by date; an overdue note turns the check yellow.
 
-**Latest build: 28 of 28 checks passing**.
+**Latest build: 30 of 30 checks passing**.
 
 | | Check | What was compared |
 |---|---|---|
-| ✅ Pass | FCC station records have the expected layout | 720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. |
-| ✅ Pass | Every county in the district has municipalities in the district | 607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties. |
-| ✅ Pass | IPEDS district codes agree with the district outline | All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does. |
-| ✅ Pass | College directory variables match the IPEDS dictionary | 13 of 13 variables confirmed against the 2024 dictionary. |
-| ✅ Pass | SSA tables use the current district lines | SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th. |
-| ✅ Pass | Wisconsin's districts add up to the state total for SSI | SSI recipients: districts sum to 107,505; state row 107,505. |
-| ✅ Pass | Wisconsin's districts add up to the state total in the SSA tables | Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%). |
-| ✅ Pass | IRS file uses the current district lines | The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress. |
-| ✅ Pass | Wisconsin's districts add up to the state total in the IRS file | Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row). |
-| ✅ Pass | IRS income classes add up to the district total | Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells). |
-| ✅ Pass | IRS variables match their published descriptions | 6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range. |
 | ✅ Pass | Every Census variable means what the atlas says it means | 210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found). |
+| ✅ Pass | IRS variables match their published descriptions | 6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range. |
+| ✅ Pass | IRS income classes add up to the district total | Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells). |
+| ✅ Pass | Wisconsin's districts add up to the state total in the IRS file | Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row). |
+| ✅ Pass | IRS file uses the current district lines | The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress. |
+| ✅ Pass | Wisconsin's districts add up to the state total in the SSA tables | Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%). |
+| ✅ Pass | Wisconsin's districts add up to the state total for SSI | SSI recipients: districts sum to 107,505; state row 107,505. |
+| ✅ Pass | SSA tables use the current district lines | SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th. |
+| ✅ Pass | Two election compilations agree on the same race | 2018 general election: MIT Election Lab has Sean P. Duffy with 194,061 votes; the FEC compilation has Sean P. Duffy with 194,061 votes (tolerance 0.2%). |
+| ✅ Pass | College directory variables match the IPEDS dictionary | 13 of 13 variables confirmed against the 2024 dictionary. |
+| ✅ Pass | IPEDS district codes agree with the district outline | All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does. |
+| ✅ Pass | Every county in the district has municipalities in the district | 607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties. |
+| ✅ Pass | FCC station records have the expected layout | 720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. |
+| ✅ Pass | Listening links point at stations in the FCC records | 10 stations carry a link to their broadcaster's listening page, checked on 2026-11-24. |
 | ✅ Pass | Every project fact names an official source | 13 facts across 1 project(s), each tied to a listed page. Read on 2026-11-24; due for re-reading by 2027-03-15. |
 | ✅ Pass | The district's counties match the recorded list (26 counties: 21 whole, 5 split) | Census relationship file: 26 counties with land in the district, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. Recorded: 26 counties, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. |
 | ✅ Pass | 2020 Census population agrees three ways (district total, sum of county parts, recorded figure) | District total 736,715; sum of county parts 736,715; recorded 736,715. |
@@ -487,7 +489,7 @@ Three rules keep the atlas honest:
 | ✅ Pass | County population estimates start from the 2020 Census counts | 26 counties compared; largest gap between the estimates base and the census count is 0.08% (Clark). Tolerance 1%. |
 | ✅ Pass | Two independent records name the same sitting member | congress-legislators: Thomas P. Tiffany (T000165); Clerk of the House: Thomas P. Tiffany (T000165). |
 | ✅ Pass | The most recent election winner in the results file is the member who took office after it | FEC certified results: Tom Tiffany won in 2022. congress-legislators: term starting 2023-01-03 held by Thomas P. Tiffany. |
-| ✅ Pass | Two USAspending endpoints report the same district total for the last full fiscal year | FY2026: spending over time $5,736,701,212; spending by geography $5,736,701,212 (tolerance 1%). |
+| ✅ Pass | Two USAspending endpoints report the same district total for the last full fiscal year | FY2026: spending over time $5,736,702,979; spending by geography $5,736,702,979 (tolerance 1%). |
 | ✅ Pass | No House roll call is missing from the vote record | 5,092 roll calls read, 2017 to 2026; none missing. |
 | ✅ Pass | Every county has unemployment data through the same latest month | County data through 2026-09. All counties current. National data run through 2026-10; the atlas compares counties, Wisconsin, and the nation in the same month. |
 | ✅ Pass | The sitting member's campaign appears in FEC records for the election they won | 3 candidates with financial activity in the 2022 cycle; found Tiffany. |
@@ -502,7 +504,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T07:45:49+00:00",
+  "generated_at": "2026-11-24T16:42:13+00:00",
   "sources": [
     {
       "id": "acs1",

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T07:46:04+00:00",
+ "generated_at": "2026-11-24T16:42:39+00:00",
  "sources": [
   {
    "id": "usaspending",
@@ -78,9 +78,9 @@
    },
    {
     "fy": 2021,
-    "total": 5033727185.66,
+    "total": 5033726370.23,
     "contracts": 77322048.74,
-    "grants": 377027729.41,
+    "grants": 377026913.98,
     "direct": 4005421225.77,
     "loans": 426050306.89,
     "idv": 0,
@@ -98,9 +98,9 @@
    },
    {
     "fy": 2023,
-    "total": 4721024981.360001,
+    "total": 4720925280.91,
     "contracts": 62574367.81,
-    "grants": 309581892.93,
+    "grants": 309482192.48,
     "direct": 4275702741.34,
     "loans": -1021620.8,
     "idv": 0,
@@ -128,11 +128,11 @@
    },
    {
     "fy": 2026,
-    "total": 5736701211.87,
+    "total": 5736702979.14,
     "contracts": 86173409.94,
     "grants": 304815501.52,
     "direct": 5313733173.26,
-    "loans": 1647804.06,
+    "loans": 1649571.33,
     "idv": 0,
     "other": 30331323.09
    }
@@ -161,7 +161,7 @@
    {
     "name": "Department of Agriculture",
     "code": "USDA",
-    "amount": 115165273.35
+    "amount": 115167040.62
    },
    {
     "name": "Department of the Interior",
@@ -242,83 +242,11 @@
    }
   ],
   "counties_whole": {
-   "037": {
-    "name": "Florence County",
-    "amount": 49819579.05,
-    "per_capita": 10930.14,
-    "population": 4558
-   },
-   "051": {
-    "name": "Iron County",
-    "amount": 65316337.42,
-    "per_capita": 10643.04,
-    "population": 6137
-   },
-   "073": {
-    "name": "Marathon County",
-    "amount": 983616225.12,
-    "per_capita": 7126.98,
-    "population": 138013
-   },
-   "013": {
-    "name": "Burnett County",
-    "amount": 208085076.5,
-    "per_capita": 12591.38,
-    "population": 16526
-   },
-   "129": {
-    "name": "Washburn County",
-    "amount": 187610361.99,
-    "per_capita": 11286.19,
-    "population": 16623
-   },
-   "113": {
-    "name": "Sawyer County",
-    "amount": 220799364.61,
-    "per_capita": 12216.41,
-    "population": 18074
-   },
-   "031": {
-    "name": "Douglas County",
-    "amount": 389150932.86,
-    "per_capita": 8785.44,
-    "population": 44295
-   },
-   "067": {
-    "name": "Langlade County",
-    "amount": 186323025.94,
-    "per_capita": 9559.44,
-    "population": 19491
-   },
-   "007": {
-    "name": "Bayfield County",
-    "amount": 193221542.55,
-    "per_capita": 11912.55,
-    "population": 16220
-   },
-   "125": {
-    "name": "Vilas County",
-    "amount": 290648774.14,
-    "per_capita": 12611.13,
-    "population": 23047
-   },
    "099": {
     "name": "Price County",
     "amount": 141439207.7,
     "per_capita": 10063.98,
     "population": 14054
-   },
-   "085": {
-    "name": "Oneida County",
-    "amount": 391591129.41,
-    "per_capita": 10347.24,
-    "population": 37845
-   },
-   "017": {
-    "name": "Chippewa County",
-    "amount": 495802321.13,
-    "per_capita": 7478.5,
-    "population": 66297
    },
    "053": {
     "name": "Jackson County",
@@ -326,17 +254,11 @@
     "per_capita": 7270.93,
     "population": 21145
    },
-   "005": {
-    "name": "Barron County",
-    "amount": 398985324.5,
-    "per_capita": 8541.57,
-    "population": 46711
-   },
-   "119": {
-    "name": "Taylor County",
-    "amount": 131712493.27,
-    "per_capita": 6614.4,
-    "population": 19913
+   "003": {
+    "name": "Ashland County",
+    "amount": 168259747.56,
+    "per_capita": 10498.52,
+    "population": 16027
    },
    "019": {
     "name": "Clark County",
@@ -350,35 +272,11 @@
     "per_capita": 8452.0,
     "population": 44977
    },
-   "003": {
-    "name": "Ashland County",
-    "amount": 168259747.56,
-    "per_capita": 10498.52,
-    "population": 16027
-   },
    "057": {
     "name": "Juneau County",
-    "amount": 249874493.51,
-    "per_capita": 9352.29,
+    "amount": 249869789.51,
+    "per_capita": 9352.11,
     "population": 26718
-   },
-   "107": {
-    "name": "Rusk County",
-    "amount": 125451305.23,
-    "per_capita": 8842.07,
-    "population": 14188
-   },
-   "141": {
-    "name": "Wood County",
-    "amount": 1577499839.29,
-    "per_capita": 21258.1,
-    "population": 74207
-   },
-   "109": {
-    "name": "St. Croix County",
-    "amount": 627618209.36,
-    "per_capita": 6709.91,
-    "population": 93536
    },
    "041": {
     "name": "Forest County",
@@ -386,20 +284,122 @@
     "per_capita": 10843.59,
     "population": 9179
    },
+   "031": {
+    "name": "Douglas County",
+    "amount": 389150932.86,
+    "per_capita": 8785.44,
+    "population": 44295
+   },
+   "085": {
+    "name": "Oneida County",
+    "amount": 391591129.41,
+    "per_capita": 10347.24,
+    "population": 37845
+   },
+   "141": {
+    "name": "Wood County",
+    "amount": 1577499839.29,
+    "per_capita": 21258.1,
+    "population": 74207
+   },
+   "005": {
+    "name": "Barron County",
+    "amount": 398985324.5,
+    "per_capita": 8541.57,
+    "population": 46711
+   },
+   "107": {
+    "name": "Rusk County",
+    "amount": 125451305.23,
+    "per_capita": 8842.07,
+    "population": 14188
+   },
+   "073": {
+    "name": "Marathon County",
+    "amount": 983617992.39,
+    "per_capita": 7127.0,
+    "population": 138013
+   },
    "081": {
     "name": "Monroe County",
     "amount": 472955005.5,
     "per_capita": 10220.75,
     "population": 46274
    },
+   "051": {
+    "name": "Iron County",
+    "amount": 65316337.42,
+    "per_capita": 10643.04,
+    "population": 6137
+   },
+   "129": {
+    "name": "Washburn County",
+    "amount": 187610361.99,
+    "per_capita": 11286.19,
+    "population": 16623
+   },
+   "067": {
+    "name": "Langlade County",
+    "amount": 186323025.94,
+    "per_capita": 9559.44,
+    "population": 19491
+   },
+   "013": {
+    "name": "Burnett County",
+    "amount": 208085076.5,
+    "per_capita": 12591.38,
+    "population": 16526
+   },
    "069": {
     "name": "Lincoln County",
     "amount": 258971210.48,
     "per_capita": 9113.89,
     "population": 28415
+   },
+   "119": {
+    "name": "Taylor County",
+    "amount": 131712493.27,
+    "per_capita": 6614.4,
+    "population": 19913
+   },
+   "017": {
+    "name": "Chippewa County",
+    "amount": 495802321.13,
+    "per_capita": 7478.5,
+    "population": 66297
+   },
+   "109": {
+    "name": "St. Croix County",
+    "amount": 627618209.36,
+    "per_capita": 6709.91,
+    "population": 93536
+   },
+   "037": {
+    "name": "Florence County",
+    "amount": 49819579.05,
+    "per_capita": 10930.14,
+    "population": 4558
+   },
+   "125": {
+    "name": "Vilas County",
+    "amount": 290648774.14,
+    "per_capita": 12611.13,
+    "population": 23047
+   },
+   "007": {
+    "name": "Bayfield County",
+    "amount": 193221542.55,
+    "per_capita": 11912.55,
+    "population": 16220
+   },
+   "113": {
+    "name": "Sawyer County",
+    "amount": 220799364.61,
+    "per_capita": 12216.41,
+    "population": 18074
    }
   },
-  "district_total_by_geography": 5736701211.87,
+  "district_total_by_geography": 5736702979.14,
   "as_of": "2026-11-24"
  }
 }

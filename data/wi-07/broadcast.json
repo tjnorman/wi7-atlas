@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T07:48:24+00:00",
+ "generated_at": "2026-11-24T16:44:53+00:00",
  "sources": [
   {
    "id": "fcc-queries",
@@ -18,6 +18,18 @@
  "district": "wi-07",
  "source_module": "broadcast",
  "data": {
+  "listen": {
+   "verified_on": "2026-11-24",
+   "linked": 10,
+   "groups": [
+    {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen",
+     "note": "Wisconsin Public Radio streams its news and music networks on its website and app. Its stations are licensed to the Wisconsin Educational Communications Board or the University of Wisconsin. The link goes to the network's listening page, not to one transmitter.",
+     "stations": 10
+    }
+   ]
+  },
   "count": 117,
   "by_band": {
    "AM": 27,
@@ -75,7 +87,11 @@
     "lon": -90.03736,
     "band": "AM",
     "kind": "AM radio",
-    "transmitter_county": "Wood"
+    "transmitter_county": "Wood",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WERL",
@@ -543,7 +559,11 @@
     "lon": -91.56653,
     "band": "FM",
     "kind": "FM radio",
-    "transmitter_county": "Douglas"
+    "transmitter_county": "Douglas",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WPGR-LP",
@@ -881,7 +901,11 @@
     "lon": -90.27292,
     "band": "FM",
     "kind": "FM radio",
-    "transmitter_county": "Price"
+    "transmitter_county": "Price",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WOJB",
@@ -933,7 +957,11 @@
     "lon": -89.24875,
     "band": "FM",
     "kind": "FM radio",
-    "transmitter_county": "Oneida"
+    "transmitter_county": "Oneida",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WNWX",
@@ -985,7 +1013,11 @@
     "lon": -91.76611,
     "band": "FM",
     "kind": "FM radio",
-    "transmitter_county": "Barron"
+    "transmitter_county": "Barron",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WGIF",
@@ -1258,7 +1290,11 @@
     "lon": -90.83694,
     "band": "FM",
     "kind": "FM radio",
-    "transmitter_county": "Ashland"
+    "transmitter_county": "Ashland",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WBCV",
@@ -1310,7 +1346,11 @@
     "lon": -89.69122,
     "band": "FM",
     "kind": "FM radio",
-    "transmitter_county": "Marathon"
+    "transmitter_county": "Marathon",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WIFC",
@@ -1336,7 +1376,11 @@
     "lon": -89.69122,
     "band": "FM",
     "kind": "FM radio",
-    "transmitter_county": "Marathon"
+    "transmitter_county": "Marathon",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WNRB-LP",
@@ -1606,7 +1650,11 @@
     "lat": 46.78908,
     "lon": -92.11433,
     "band": "FM",
-    "kind": "FM radio"
+    "kind": "FM radio",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "WSSU",
@@ -1618,7 +1666,11 @@
     "lat": 46.78892,
     "lon": -92.11381,
     "band": "FM",
-    "kind": "FM radio"
+    "kind": "FM radio",
+    "listen": {
+     "label": "Wisconsin Public Radio",
+     "url": "https://www.wpr.org/ways-to-listen"
+    }
    },
    {
     "call": "KBJR-TV",
