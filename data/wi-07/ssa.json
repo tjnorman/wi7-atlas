@@ -1,0 +1,53 @@
+{
+ "generated_at": "2026-11-24T07:46:06+00:00",
+ "sources": [
+  {
+   "id": "ssa-cong-stats",
+   "publisher": "Social Security Administration, Office of Retirement and Disability Policy",
+   "title": "Congressional statistics, December 2025: Wisconsin",
+   "url": "https://www.ssa.gov/policy/docs/factsheets/cong_stats/2025/wi.html",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://www.ssa.gov/policy/docs/factsheets/cong_stats/2025/wi.html",
+   "vintage": "December 2025",
+   "accessed": "2026-11-23",
+   "notes": "Copied from the public page because SSA's website refuses automated requests; the build checks that the districts add up to the state row. Beneficiaries in current-payment status and total monthly benefits, from SSA's Master Beneficiary Record and Supplemental Security Record, placed in districts with Postal Service geographic data.",
+   "apa": "Social Security Administration, Office of Retirement and Disability Policy. (2026). Congressional statistics, December 2025: Wisconsin [Data set]. Retrieved November 23, 2026, from https://www.ssa.gov/policy/docs/factsheets/cong_stats/2025/wi.html"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "ssa",
+ "data": {
+  "year": 2025,
+  "as_of": "December 2025",
+  "released": "April 2026",
+  "retrieval": {
+   "method": "copied from the public page",
+   "verified_on": "2026-11-23",
+   "review_by": "2027-05-15",
+   "why": "SSA's website refuses automated requests, so the build cannot download the page."
+  },
+  "district": {
+   "beneficiaries": 215526.0,
+   "retired_workers": 174074.0,
+   "disabled_workers": 20019.0,
+   "age_65_or_older": 176529.0,
+   "monthly_benefits": 407365000.0,
+   "average_monthly_benefit": 1890.096786466598,
+   "ssi_recipients": 10406.0,
+   "ssi_monthly_payments": 7269000.0
+  },
+  "state": {
+   "beneficiaries": 1398745.0,
+   "retired_workers": 1114607.0,
+   "disabled_workers": 136029.0,
+   "age_65_or_older": 1143974.0,
+   "monthly_benefits": 2776804000.0,
+   "average_monthly_benefit": 1985.2110284576531,
+   "ssi_recipients": 107505.0,
+   "ssi_monthly_payments": 80995000.0
+  },
+  "note": "Counts are people receiving a benefit in December, and dollars are the total paid for that one month. The atlas does not multiply by twelve, because benefits change during the year.",
+  "not_published": "Social Security payroll taxes paid are not published by congressional district."
+ }
+}

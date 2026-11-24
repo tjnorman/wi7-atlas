@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-24T07:40:43+00:00",
+ "generated_at": "2026-11-24T07:48:24+00:00",
  "summary": {
-  "total": 25,
-  "pass": 25,
+  "total": 28,
+  "pass": 28,
   "ok": true
  },
  "checks": [
@@ -64,6 +64,45 @@
     "irs_congress": 118,
     "atlas_congress": 119
    }
+  },
+  {
+   "id": "ssa-state-sum",
+   "title": "Wisconsin's districts add up to the state total in the SSA tables",
+   "status": "pass",
+   "sources": [
+    "ssa-cong-stats"
+   ],
+   "values": {
+    "districts": 1398745.0,
+    "state_row": 1398745.0
+   },
+   "detail": "Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%)."
+  },
+  {
+   "id": "ssa-ssi-sum",
+   "title": "Wisconsin's districts add up to the state total for SSI",
+   "status": "pass",
+   "sources": [
+    "ssa-cong-stats"
+   ],
+   "values": {
+    "districts": 107505.0,
+    "state_row": 107505.0
+   },
+   "detail": "SSI recipients: districts sum to 107,505; state row 107,505."
+  },
+  {
+   "id": "ssa-district-lines",
+   "title": "SSA tables use the current district lines",
+   "status": "pass",
+   "sources": [
+    "ssa-cong-stats"
+   ],
+   "values": {
+    "ssa_congress": 119,
+    "atlas_congress": 119
+   },
+   "detail": "SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th."
   },
   {
    "id": "election-sources-agree",

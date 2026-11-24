@@ -11,7 +11,7 @@
   "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-24T07:40:43+00:00",
+ "built_at": "2026-11-24T07:48:24+00:00",
  "headline": [
   {
    "id": "population",
@@ -1510,6 +1510,19 @@
    "apa": "Open Eagle Eye (stuchapin909). (2026). Public camera registry [Data set]. Retrieved November 24, 2026, from https://github.com/stuchapin909/Open-Eagle-Eye"
   },
   {
+   "id": "ssa-cong-stats",
+   "publisher": "Social Security Administration, Office of Retirement and Disability Policy",
+   "title": "Congressional statistics, December 2025: Wisconsin",
+   "url": "https://www.ssa.gov/policy/docs/factsheets/cong_stats/2025/wi.html",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://www.ssa.gov/policy/docs/factsheets/cong_stats/2025/wi.html",
+   "vintage": "December 2025",
+   "accessed": "2026-11-23",
+   "notes": "Copied from the public page because SSA's website refuses automated requests; the build checks that the districts add up to the state row. Beneficiaries in current-payment status and total monthly benefits, from SSA's Master Beneficiary Record and Supplemental Security Record, placed in districts with Postal Service geographic data.",
+   "apa": "Social Security Administration, Office of Retirement and Disability Policy. (2026). Congressional statistics, December 2025: Wisconsin [Data set]. Retrieved November 23, 2026, from https://www.ssa.gov/policy/docs/factsheets/cong_stats/2025/wi.html"
+  },
+  {
    "id": "congress-legislators",
    "publisher": "The @unitedstates project",
    "title": "congress-legislators: Members of the United States Congress, 1789 to present",
@@ -1680,27 +1693,27 @@
   }
  ],
  "integrity": {
-  "total": 25,
-  "pass": 25,
+  "total": 28,
+  "pass": 28,
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-24T07:36:52+00:00",
-  "legislators": "2026-11-24T07:36:58+00:00",
-  "acs": "2026-11-24T07:37:06+00:00",
-  "pep": "2026-11-24T07:38:04+00:00",
-  "laus": "2026-11-24T07:38:05+00:00",
-  "qcew": "2026-11-24T07:38:07+00:00",
-  "usaspending": "2026-11-24T07:38:18+00:00",
-  "elections": "2026-11-24T07:38:22+00:00",
-  "fec": "2026-11-24T07:38:25+00:00",
-  "votes": "2026-11-24T07:38:27+00:00",
-  "irs": "2026-11-24T07:38:20+00:00",
-  "cameras": "2026-11-24T07:40:35+00:00",
-  "colleges": "2026-11-24T07:40:36+00:00",
-  "municipalities": "2026-11-24T07:40:39+00:00",
-  "broadcast": "2026-11-24T07:40:39+00:00",
-  "ssa": null
+  "geography": "2026-11-24T07:44:36+00:00",
+  "legislators": "2026-11-24T07:44:42+00:00",
+  "acs": "2026-11-24T07:44:50+00:00",
+  "pep": "2026-11-24T07:45:49+00:00",
+  "laus": "2026-11-24T07:45:49+00:00",
+  "qcew": "2026-11-24T07:45:51+00:00",
+  "usaspending": "2026-11-24T07:46:02+00:00",
+  "elections": "2026-11-24T07:46:06+00:00",
+  "fec": "2026-11-24T07:46:09+00:00",
+  "votes": "2026-11-24T07:46:11+00:00",
+  "irs": "2026-11-24T07:46:04+00:00",
+  "cameras": "2026-11-24T07:48:17+00:00",
+  "colleges": "2026-11-24T07:48:18+00:00",
+  "municipalities": "2026-11-24T07:48:20+00:00",
+  "broadcast": "2026-11-24T07:48:21+00:00",
+  "ssa": "2026-11-24T07:46:05+00:00"
  },
  "status": {
   "geography": "ok",
@@ -1718,6 +1731,6 @@
   "colleges": "ok",
   "municipalities": "ok",
   "broadcast": "ok",
-  "ssa": "missing"
+  "ssa": "ok"
  }
 }

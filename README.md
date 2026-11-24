@@ -19,8 +19,8 @@
 [![Tests](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml)
 [![Data refresh](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml)
 [![Deploy to Pages](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml)
-[![Cross-checks](https://img.shields.io/badge/cross--checks-25_of_25_passing-2e7d32)](#-how-every-number-is-checked)
-[![Sources](https://img.shields.io/badge/primary_sources-12-0071e3)](#-sources)
+[![Cross-checks](https://img.shields.io/badge/cross--checks-28_of_28_passing-2e7d32)](#-how-every-number-is-checked)
+[![Sources](https://img.shields.io/badge/primary_sources-13-0071e3)](#-sources)
 [![Data as of](https://img.shields.io/badge/data_as_of-2026--11--24-555)](data/wi-07/manifest.json)
 ![Nonpartisan](https://img.shields.io/badge/nonpartisan-follows_the_seat-555)
 [![License: MIT](https://img.shields.io/badge/code-MIT-1f4e9c)](LICENSE)
@@ -67,7 +67,7 @@ Each figure carries its publisher, the exact query, the data vintage, and the da
 <td width="33%" valign="top">
 
 ### 🔁 Refreshed and re-checked
-A scheduled GitHub Action rebuilds the data each week, runs 25 cross-checks between independent sources, and redraws every chart in this README.
+A scheduled GitHub Action rebuilds the data each week, runs 28 cross-checks between independent sources, and redraws every chart in this README.
 
 </td>
 </tr>
@@ -133,6 +133,12 @@ In fiscal year 2026, federal agencies obligated **$5.74 billion** in contracts, 
 | Department of the Interior | $64.5 million |
 
 </details>
+
+### Social Security
+
+In December 2025, **215,526** people in the district received Social Security, and the program paid them **$407.4 million** that month: 174,074 retired workers, 20,019 disabled workers, and their families and survivors. Another 10,406 people received Supplemental Security Income ($7.3 million that month).
+
+<sub>Source: Social Security Administration, Congressional Statistics, December 2025. Counts are people receiving a benefit in December, and dollars are the total paid for that one month. The atlas does not multiply by twelve, because benefits change during the year. These payments go to people directly and are not part of the award totals above. Social Security payroll taxes paid are not published by congressional district.</sub>
 
 ### What residents pay in federal income tax
 
@@ -431,7 +437,7 @@ Three rules keep the atlas honest:
 2. **A label check before any Census number is used.** Every Census variable's official label is compared with what the atlas says it means. If a table is renumbered, that measure is dropped and the check fails in public.
 3. **Nothing unofficial without a label and a review date.** Hand-written notes (like a race called by news organizations before certification) carry sources, a verification date, and a review-by date; an overdue note turns the check yellow.
 
-**Latest build: 25 of 25 checks passing**.
+**Latest build: 28 of 28 checks passing**.
 
 | | Check | What was compared |
 |---|---|---|
@@ -440,6 +446,9 @@ Three rules keep the atlas honest:
 | ✅ Pass | IRS income classes add up to the district total | Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells). |
 | ✅ Pass | Wisconsin's districts add up to the state total in the IRS file | Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row). |
 | ✅ Pass | IRS file uses the current district lines | The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress. |
+| ✅ Pass | Wisconsin's districts add up to the state total in the SSA tables | Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%). |
+| ✅ Pass | Wisconsin's districts add up to the state total for SSI | SSI recipients: districts sum to 107,505; state row 107,505. |
+| ✅ Pass | SSA tables use the current district lines | SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th. |
 | ✅ Pass | Two election compilations agree on the same race | 2018 general election: MIT Election Lab has Sean P. Duffy with 194,061 votes; the FEC compilation has Sean P. Duffy with 194,061 votes (tolerance 0.2%). |
 | ✅ Pass | College directory variables match the IPEDS dictionary | 13 of 13 variables confirmed against the 2024 dictionary. |
 | ✅ Pass | IPEDS district codes agree with the district outline | All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does. |
@@ -468,7 +477,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T07:38:04+00:00",
+  "generated_at": "2026-11-24T07:45:49+00:00",
   "sources": [
     {
       "id": "acs1",
@@ -559,6 +568,7 @@ tests/                 pytest unit tests and Playwright site checks
 - Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml
 - Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 115th to 119th Congresses (2017 to 2026) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes
 - Open Eagle Eye (stuchapin909). (2026). Public camera registry [Data set]. Retrieved November 24, 2026, from https://github.com/stuchapin909/Open-Eagle-Eye
+- Social Security Administration, Office of Retirement and Disability Policy. (2026). Congressional statistics, December 2025: Wisconsin [Data set]. Retrieved November 23, 2026, from https://www.ssa.gov/policy/docs/factsheets/cong_stats/2025/wi.html
 - The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 24, 2026, from https://github.com/unitedstates/congress-legislators
 - U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/lau/
 - U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/cew/
