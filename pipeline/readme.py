@@ -216,11 +216,12 @@ def stations_block(b: dict | None, m: dict | None) -> str:
     if b and b.get("stations"):
         n = b.get("by_band", {})
         rows = "\n".join(f"| {s['call']} | {('Channel ' + str(s['channel'])) if s['band'] == 'TV' else s.get('frequency') or ''} | "
-                         f"{s['kind']} | {s['city']} | {s.get('licensee') or ''} |" for s in b["stations"])
+                         f"{s['kind']} | {s['city']} | {s.get('licensee') or ''} | "
+                         f"{('[' + s['listen']['label'] + '](' + s['listen']['url'] + ')') if s.get('listen') else ''} |" for s in b["stations"])
         out += (f"## 📻 Radio and television\n\n{b['count']} licensed stations transmit from inside the district: "
                 f"{n.get('FM', 0)} FM, {n.get('AM', 0)} AM, and {n.get('TV', 0)} television.\n\n"
-                f"<details><summary><b>Every station</b></summary>\n\n| Call sign | Frequency | Type | Licensed to | Licensee |\n"
-                f"|---|---|---|---|---|\n{rows}\n\n</details>\n\n<sub>Source: Federal Communications Commission AM, FM, and TV queries, "
+                f"<details><summary><b>Every station</b></summary>\n\n| Call sign | Frequency | Type | Licensed to | Licensee | Listen online |\n"
+                f"|---|---|---|---|---|---|\n{rows}\n\n</details>\n\n<sub>Source: Federal Communications Commission AM, FM, and TV queries, "
                 f"as of {b['as_of']}. {b.get('rule', '')}</sub>\n")
     if m and m.get("count_in_district"):
         t = m["by_type"]
@@ -229,6 +230,17 @@ def stations_block(b: dict | None, m: dict | None) -> str:
                 f"themselves divided by the district line. The full list, with each one's status, is in "
                 f"[`data/wi-07/municipalities.json`](data/wi-07/municipalities.json).\n\n"
                 f"<sub>Source: U.S. Census Bureau, congressional district to county subdivision relationship file. {m.get('note', '')}</sub>\n")
+    return out
+
+
+def projects_block(p: dict | None) -> str:
+    out = ""
+    for x in (p or {}).get("projects", []):
+        facts = "\n".join(f"| {f['label']} | **{f['value']}** | {f.get('note') or ''} |" for f in x["facts"])
+        when = "\n".join(f"| {e['date']} | {e['text']} |" for e in x["timeline"])
+        out += (f"\n## 🌉 Bridge update: {x['title']}\n\n{x['summary']}\n\n| | | |\n|---|---|---|\n{facts}\n\n"
+                f"| When | What |\n|---|---|\n{when}\n\n<sub>Source: the Minnesota and Wisconsin transportation departments' own "
+                f"project pages and releases, read {p['verified_on']}; listed under Sources. {p.get('note', '')}</sub>\n")
     return out
 
 
@@ -460,7 +472,7 @@ def render(d: District) -> str:
         "work_text": work_text(acs, summary),
         "federal_text": fed_text,
         "colleges_block": colleges_block(_data(_load(d, "colleges"))),
-        "stations_block": stations_block(_data(_load(d, "broadcast")), _data(_load(d, "municipalities"))),
+        "stations_block": stations_block(_data(_load(d, "broadcast")), _data(_load(d, "municipalities"))) + projects_block(_data(_load(d, "projects"))),
         "taxes_text": ssa_text(_data(_load(d, "ssa"))) + taxes_text(_data(_load(d, "irs")), d.state_name),
         "agencies_table": agencies,
         "representation_text": representation_text(leg, summary),

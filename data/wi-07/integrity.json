@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T07:48:24+00:00",
+ "generated_at": "2026-11-24T16:39:32+00:00",
  "summary": {
   "total": 28,
   "pass": 28,
@@ -7,136 +7,17 @@
  },
  "checks": [
   {
-   "id": "acs-labels",
-   "title": "Every Census variable means what the atlas says it means",
+   "id": "fcc-layout",
+   "title": "FCC station records have the expected layout",
    "status": "pass",
-   "detail": "210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found).",
    "sources": [
-    "acs1",
-    "acs5"
-   ]
-  },
-  {
-   "id": "irs-labels",
-   "title": "IRS variables match their published descriptions",
-   "status": "pass",
-   "detail": "6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range.",
-   "sources": [
-    "irs-soi-cd"
-   ],
-   "values": {}
-  },
-  {
-   "id": "irs-classes-sum",
-   "title": "IRS income classes add up to the district total",
-   "status": "pass",
-   "detail": "Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells).",
-   "sources": [
-    "irs-soi-cd"
+    "fcc-queries"
    ],
    "values": {
-    "published": 3612071000.0,
-    "summed": 3612071000.0
-   }
-  },
-  {
-   "id": "irs-state-sum",
-   "title": "Wisconsin's districts add up to the state total in the IRS file",
-   "status": "pass",
-   "detail": "Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row).",
-   "sources": [
-    "irs-soi-cd"
-   ],
-   "values": {
-    "state_row": 2944320.0,
-    "district_sum": 2944320.0
-   }
-  },
-  {
-   "id": "irs-district-lines",
-   "title": "IRS file uses the current district lines",
-   "status": "pass",
-   "detail": "The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress.",
-   "sources": [
-    "irs-soi-cd"
-   ],
-   "values": {
-    "irs_congress": 118,
-    "atlas_congress": 119
-   }
-  },
-  {
-   "id": "ssa-state-sum",
-   "title": "Wisconsin's districts add up to the state total in the SSA tables",
-   "status": "pass",
-   "sources": [
-    "ssa-cong-stats"
-   ],
-   "values": {
-    "districts": 1398745.0,
-    "state_row": 1398745.0
+    "rows": 720,
+    "readable": 720
    },
-   "detail": "Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%)."
-  },
-  {
-   "id": "ssa-ssi-sum",
-   "title": "Wisconsin's districts add up to the state total for SSI",
-   "status": "pass",
-   "sources": [
-    "ssa-cong-stats"
-   ],
-   "values": {
-    "districts": 107505.0,
-    "state_row": 107505.0
-   },
-   "detail": "SSI recipients: districts sum to 107,505; state row 107,505."
-  },
-  {
-   "id": "ssa-district-lines",
-   "title": "SSA tables use the current district lines",
-   "status": "pass",
-   "sources": [
-    "ssa-cong-stats"
-   ],
-   "values": {
-    "ssa_congress": 119,
-    "atlas_congress": 119
-   },
-   "detail": "SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th."
-  },
-  {
-   "id": "election-sources-agree",
-   "title": "Two election compilations agree on the same race",
-   "status": "pass",
-   "detail": "2018 general election: MIT Election Lab has Sean P. Duffy with 194,061 votes; the FEC compilation has Sean P. Duffy with 194,061 votes (tolerance 0.2%).",
-   "sources": [
-    "medsl-house",
-    "fec-results"
-   ]
-  },
-  {
-   "id": "ipeds-labels",
-   "title": "College directory variables match the IPEDS dictionary",
-   "status": "pass",
-   "sources": [
-    "nces-ipeds-hd"
-   ],
-   "values": {},
-   "detail": "13 of 13 variables confirmed against the 2024 dictionary."
-  },
-  {
-   "id": "ipeds-district",
-   "title": "IPEDS district codes agree with the district outline",
-   "status": "pass",
-   "sources": [
-    "nces-ipeds-hd",
-    "census-cb"
-   ],
-   "values": {
-    "listed": 7,
-    "disagree": 0
-   },
-   "detail": "All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does."
+   "detail": "720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions."
   },
   {
    "id": "municipalities-cover",
@@ -153,17 +34,140 @@
    "detail": "607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties."
   },
   {
-   "id": "fcc-layout",
-   "title": "FCC station records have the expected layout",
+   "id": "ipeds-district",
+   "title": "IPEDS district codes agree with the district outline",
    "status": "pass",
    "sources": [
-    "fcc-queries"
+    "nces-ipeds-hd",
+    "census-cb"
    ],
    "values": {
-    "rows": 720,
-    "readable": 720
+    "listed": 7,
+    "disagree": 0
    },
-   "detail": "720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions."
+   "detail": "All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does."
+  },
+  {
+   "id": "ipeds-labels",
+   "title": "College directory variables match the IPEDS dictionary",
+   "status": "pass",
+   "sources": [
+    "nces-ipeds-hd"
+   ],
+   "values": {},
+   "detail": "13 of 13 variables confirmed against the 2024 dictionary."
+  },
+  {
+   "id": "ssa-district-lines",
+   "title": "SSA tables use the current district lines",
+   "status": "pass",
+   "sources": [
+    "ssa-cong-stats"
+   ],
+   "values": {
+    "ssa_congress": 119,
+    "atlas_congress": 119
+   },
+   "detail": "SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th."
+  },
+  {
+   "id": "ssa-ssi-sum",
+   "title": "Wisconsin's districts add up to the state total for SSI",
+   "status": "pass",
+   "sources": [
+    "ssa-cong-stats"
+   ],
+   "values": {
+    "districts": 107505.0,
+    "state_row": 107505.0
+   },
+   "detail": "SSI recipients: districts sum to 107,505; state row 107,505."
+  },
+  {
+   "id": "ssa-state-sum",
+   "title": "Wisconsin's districts add up to the state total in the SSA tables",
+   "status": "pass",
+   "sources": [
+    "ssa-cong-stats"
+   ],
+   "values": {
+    "districts": 1398745.0,
+    "state_row": 1398745.0
+   },
+   "detail": "Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%)."
+  },
+  {
+   "id": "irs-district-lines",
+   "title": "IRS file uses the current district lines",
+   "status": "pass",
+   "detail": "The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress.",
+   "sources": [
+    "irs-soi-cd"
+   ],
+   "values": {
+    "irs_congress": 118,
+    "atlas_congress": 119
+   }
+  },
+  {
+   "id": "irs-state-sum",
+   "title": "Wisconsin's districts add up to the state total in the IRS file",
+   "status": "pass",
+   "detail": "Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row).",
+   "sources": [
+    "irs-soi-cd"
+   ],
+   "values": {
+    "state_row": 2944320.0,
+    "district_sum": 2944320.0
+   }
+  },
+  {
+   "id": "irs-classes-sum",
+   "title": "IRS income classes add up to the district total",
+   "status": "pass",
+   "detail": "Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells).",
+   "sources": [
+    "irs-soi-cd"
+   ],
+   "values": {
+    "published": 3612071000.0,
+    "summed": 3612071000.0
+   }
+  },
+  {
+   "id": "irs-labels",
+   "title": "IRS variables match their published descriptions",
+   "status": "pass",
+   "detail": "6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range.",
+   "sources": [
+    "irs-soi-cd"
+   ],
+   "values": {}
+  },
+  {
+   "id": "acs-labels",
+   "title": "Every Census variable means what the atlas says it means",
+   "status": "pass",
+   "detail": "210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found).",
+   "sources": [
+    "acs1",
+    "acs5"
+   ]
+  },
+  {
+   "id": "projects-sourced",
+   "title": "Every project fact names an official source",
+   "status": "pass",
+   "sources": [
+    "mndot-blatnik-2026-10-30",
+    "wisdot-blatnik-faq",
+    "wisdot-blatnik-page"
+   ],
+   "values": {
+    "projects": 1
+   },
+   "detail": "13 facts across 1 project(s), each tied to a listed page. Read on 2026-11-24; due for re-reading by 2027-03-15."
   },
   {
    "id": "county-list",

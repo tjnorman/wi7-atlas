@@ -11,7 +11,7 @@
   "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-24T07:48:24+00:00",
+ "built_at": "2026-11-24T16:39:32+00:00",
  "headline": [
   {
    "id": "population",
@@ -1445,6 +1445,19 @@
    "apa": "MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns"
   },
   {
+   "id": "mndot-blatnik-2026-10-30",
+   "publisher": "Minnesota Department of Transportation",
+   "title": "Pavement marking, traffic signal work coming as part of Blatnik project",
+   "url": "https://www.dot.state.mn.us/news/2026/10/30-d1-blatnik.html",
+   "year": "2026, October 30",
+   "kind": "Press release",
+   "query": null,
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "Minnesota Department of Transportation. (2026, October 30). Pavement marking, traffic signal work coming as part of Blatnik project [Press release]. Retrieved November 24, 2026, from https://www.dot.state.mn.us/news/2026/10/30-d1-blatnik.html"
+  },
+  {
    "id": "nces-ipeds-hd",
    "publisher": "National Center for Education Statistics",
    "title": "Integrated Postsecondary Education Data System (IPEDS): Institutional Characteristics directory file, HD2024",
@@ -1690,6 +1703,32 @@
    "accessed": "2026-11-24",
    "notes": "Obligations are commitments to spend, reported by agencies and revised over time. Awards are placed by where the work happens. Some payments to individuals are reported only at county or state level and are not included in district totals.",
    "apa": "U.S. Department of the Treasury, Bureau of the Fiscal Service. (2026). USAspending.gov award obligations by place of performance [Data set]. Retrieved November 24, 2026, from https://www.usaspending.gov/search"
+  },
+  {
+   "id": "wisdot-blatnik-faq",
+   "publisher": "Wisconsin Department of Transportation",
+   "title": "Blatnik Bridge frequently asked questions and fact sheet",
+   "url": "https://www.wisconsindot.gov/Documents/projects/by-region/nw/blatnikbridge/faqs.pdf",
+   "year": "2024",
+   "kind": "Fact sheet",
+   "query": null,
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "Wisconsin Department of Transportation. (2024). Blatnik Bridge frequently asked questions and fact sheet [Fact sheet]. Retrieved November 24, 2026, from https://www.wisconsindot.gov/Documents/projects/by-region/nw/blatnikbridge/faqs.pdf"
+  },
+  {
+   "id": "wisdot-blatnik-page",
+   "publisher": "Wisconsin Department of Transportation",
+   "title": "I-535 and US 53 (Blatnik Bridge), Douglas and St. Louis counties",
+   "url": "https://wisconsindot.gov/Pages/projects/by-region/nw/blatnikbridge/default.aspx",
+   "year": "n.d.",
+   "kind": "Project page",
+   "query": null,
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "Wisconsin Department of Transportation. (n.d.). I-535 and US 53 (Blatnik Bridge), Douglas and St. Louis counties [Project page]. Retrieved November 24, 2026, from https://wisconsindot.gov/Pages/projects/by-region/nw/blatnikbridge/default.aspx"
   }
  ],
  "integrity": {
@@ -1713,7 +1752,8 @@
   "colleges": "2026-11-24T07:48:18+00:00",
   "municipalities": "2026-11-24T07:48:20+00:00",
   "broadcast": "2026-11-24T07:48:21+00:00",
-  "ssa": "2026-11-24T07:46:05+00:00"
+  "ssa": "2026-11-24T07:46:05+00:00",
+  "projects": "2026-11-24T16:39:32+00:00"
  },
  "status": {
   "geography": "ok",
@@ -1731,6 +1771,7 @@
   "colleges": "ok",
   "municipalities": "ok",
   "broadcast": "ok",
-  "ssa": "ok"
+  "ssa": "ok",
+  "projects": "ok"
  }
 }

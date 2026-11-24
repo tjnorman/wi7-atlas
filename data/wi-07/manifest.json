@@ -135,11 +135,21 @@
    "sources": [
     "ssa-cong-stats"
    ]
+  },
+  "projects": {
+   "status": "ok",
+   "updated": "2026-11-24T16:39:32+00:00",
+   "error": null,
+   "sources": [
+    "mndot-blatnik-2026-10-30",
+    "wisdot-blatnik-faq",
+    "wisdot-blatnik-page"
+   ]
   }
  },
  "district": "wi-07",
  "name": "Wisconsin's 7th Congressional District",
- "built_at": "2026-11-24T07:48:24+00:00",
- "requests": 5340,
- "requests_from_cache": 4792
+ "built_at": "2026-11-24T16:39:32+00:00",
+ "requests": 0,
+ "requests_from_cache": 0
 }

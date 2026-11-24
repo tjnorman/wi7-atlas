@@ -21,7 +21,9 @@ import pathlib
 import re
 from datetime import datetime, timezone
 
-from ..config import District
+import yaml
+
+from ..config import ROOT, District
 from ..geo import DistrictShape
 from ..http import Fetcher
 from ..provenance import Source
@@ -59,6 +61,34 @@ def parse_row(line: str) -> dict | None:
 def near(shape: DistrictShape, lon: float, lat: float, deg: float = 0.6) -> bool:
     w, s, e, n = shape.bbox
     return w - deg <= lon <= e + deg and s - deg <= lat <= n + deg
+
+
+def listen_links(stations: list[dict], path: pathlib.Path | None = None) -> tuple[dict | None, list[str]]:
+    """Attach a listening link to stations named in data/curated/station_links.yaml.
+
+    A group matches by call sign, or by words in the FCC licensee name for the bands it lists.
+    Returns a summary for the page and any call signs in the file that the FCC records lack.
+    """
+    path = path or ROOT / "data" / "curated" / "station_links.yaml"
+    if not path.exists():
+        return None, []
+    raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    have = {s["call"] for s in stations}
+    unknown, linked, groups = [], 0, []
+    for g in raw.get("groups", []):
+        calls = set(g.get("calls", []))
+        unknown += sorted(calls - have)
+        words = [w.lower() for w in g.get("licensee_contains", [])]
+        bands = set(g.get("bands", ["AM", "FM", "TV"]))
+        n = 0
+        for s in stations:
+            by_licensee = s["band"] in bands and any(w in (s.get("licensee") or "").lower() for w in words)
+            if s["call"] in calls or by_licensee:
+                s["listen"] = {"label": g["label"], "url": g["url"]}
+                n += 1
+        linked += n
+        groups.append({"label": g["label"], "url": g["url"], "note": " ".join(str(g.get("note", "")).split()), "stations": n})
+    return {"verified_on": str(raw.get("verified_on")), "linked": linked, "groups": groups}, unknown
 
 
 def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path, county_names: dict[str, str],
@@ -107,6 +137,7 @@ def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path, county_names:
     stations = sorted(inside.values(), key=order)
     outside = sorted(licensed_here.values(), key=order)
     by_band = {b: sum(1 for s in stations if s["band"] == b) for b in ("AM", "FM", "TV")}
+    links, unknown = listen_links(stations + outside)
     checks = [{
         "id": "fcc-layout", "title": "FCC station records have the expected layout",
         "status": "pass" if not set(odd_calls) else "warn", "sources": ["fcc-queries"],
@@ -114,7 +145,15 @@ def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path, county_names:
         "detail": f"{shaped:,} of {lines:,} rows had hemisphere letters and plausible coordinates in the expected positions."
                   + (f" Skipped {len(set(odd_calls))} licensed stations without a recognized call sign: {', '.join(sorted(set(odd_calls))[:6])}." if odd_calls else ""),
     }]
+    if links is not None:
+        checks.append({
+            "id": "station-links", "title": "Listening links point at stations in the FCC records",
+            "status": "pass" if not unknown else "warn", "sources": ["fcc-queries"], "values": {"linked": links["linked"]},
+            "detail": f"{links['linked']} stations carry a link to their broadcaster's listening page, checked on {links['verified_on']}."
+                      + (f" Call signs in the link file that are not in the FCC records: {', '.join(unknown)}." if unknown else ""),
+        })
     payload = {
+        "listen": links,
         "count": len(stations), "by_band": by_band, "stations": stations,
         "licensed_to_district_community_transmitter_outside": outside,
         "kinds": KINDS,

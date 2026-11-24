@@ -10,7 +10,7 @@ const BASE = params.get("data") || "data/";
 const $ = (s, r = document) => r.querySelector(s);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "ssa", "cameras", "colleges", "municipalities", "broadcast", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
+const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "ssa", "cameras", "colleges", "municipalities", "broadcast", "projects", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
 const state = { data: {}, counties: [], byFips: new Map(), topo: null, step: "outline" };
 
 async function load() {
@@ -514,8 +514,9 @@ function stationsSection() {
   box.hidden = false;
   const n = b.by_band || {};
   $("#stations-lede").innerHTML = `<strong>${b.count}</strong> licensed stations transmit from inside the district: ${n.FM || 0} FM, ${n.AM || 0} AM, and ${n.TV || 0} television.`;
-  const row = (s) => `<tr><td><b>${F.esc(s.call)}</b></td><td>${F.esc(s.band === "TV" ? `Channel ${s.channel || "—"}` : s.frequency || "—")}</td><td>${F.esc(s.kind)}</td><td>${F.esc(s.city)}</td><td>${F.esc(s.transmitter_county || "—")}</td><td>${F.esc(s.licensee || "—")}</td></tr>`;
-  const head = `<thead><tr><th>Call sign</th><th>Frequency</th><th>Type</th><th>Licensed to</th><th>Transmitter county</th><th>Licensee</th></tr></thead>`;
+  const listen = (s) => s.listen ? `<a href="${F.esc(s.listen.url)}" target="_blank" rel="noopener">${F.esc(s.listen.label)}</a>` : "";
+  const row = (s) => `<tr><td><b>${F.esc(s.call)}</b></td><td>${F.esc(s.band === "TV" ? `Channel ${s.channel || "—"}` : s.frequency || "—")}</td><td>${F.esc(s.kind)}</td><td>${F.esc(s.city)}</td><td>${F.esc(s.transmitter_county || "—")}</td><td>${F.esc(s.licensee || "—")}</td><td>${listen(s)}</td></tr>`;
+  const head = `<thead><tr><th>Call sign</th><th>Frequency</th><th>Type</th><th>Licensed to</th><th>Transmitter county</th><th>Licensee</th><th>Listen online</th></tr></thead>`;
   const bands = ["FM", "AM", "TV"].filter((k) => n[k]);
   const show = (band) => {
     $("#stations-table").innerHTML = head + `<tbody>${b.stations.filter((s) => s.band === band).map(row).join("")}</tbody>`;
@@ -530,7 +531,23 @@ function stationsSection() {
     $("#stations-outside-sum").textContent = `Licensed to a community in the district, transmitting from outside it (${out.length})`;
     $("#stations-outside-table").innerHTML = head + `<tbody>${out.map(row).join("")}</tbody>`;
   }
-  $("#stations-source").innerHTML = sourceLine(["fcc-queries"], `${F.esc(b.rule || "")} Records as of ${F.longDate(b.as_of)}.`);
+  const li = b.listen;
+  $("#stations-source").innerHTML = sourceLine(["fcc-queries"], `${F.esc(b.rule || "")} Records as of ${F.longDate(b.as_of)}.${li?.linked ? ` Listening links (${li.linked} stations so far) go to the broadcaster's own page and were checked on ${F.longDate(li.verified_on)}; a station without a link has not been checked yet, which says nothing about whether it streams. ${F.esc((li.groups || []).map((g) => g.note).join(" "))}` : ""}`);
+}
+
+// ---------------------------------------------------------------- public works (bridge update)
+function projectsSection() {
+  const p = state.data.projects, box = $("#projects");
+  if (!box || !p?.projects?.length) return;
+  box.hidden = false;
+  $("#projects-lede").textContent = `${p.note} Read from the agencies' pages on ${F.longDate(p.verified_on)}.`;
+  $("#projects-list").innerHTML = p.projects.map((x) => `<div class="panel reveal">
+    <h3>${F.esc(x.title)}</h3>
+    <p class="sub">${F.esc(x.place)}. ${F.esc(x.summary)}</p>
+    <div class="mini-stats">${x.facts.map((f) => `<div><b>${F.esc(f.value)}</b><span>${F.esc(f.label)}${f.note ? `. ${F.esc(f.note)}` : ""}</span></div>`).join("")}</div>
+    <div class="table-wrap"><table><thead><tr><th>When</th><th>What</th></tr></thead><tbody>${x.timeline.map((e) => `<tr><td>${F.esc(e.date)}</td><td>${F.esc(e.text)}</td></tr>`).join("")}</tbody></table></div>
+    <p class="fine">${sourceLine(x.sources, "Each figure and date is the agency's own published plan. The next reading of these pages is due by " + F.longDate(p.review_by) + ".")}</p>
+  </div>`).join("");
 }
 
 // ---------------------------------------------------------------- right now: cameras and aircraft
@@ -998,6 +1015,7 @@ async function film() {
   dollars();
   collegesSection();
   stationsSection();
+  projectsSection();
   liveNow();
   seat();
   counties();

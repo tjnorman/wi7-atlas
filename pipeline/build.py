@@ -15,9 +15,9 @@ from . import checks as checks_mod
 from .config import DATA_ROOT, ROOT, District
 from .http import Fetcher
 from .provenance import dataset
-from .sources import acs, broadcast, cameras, colleges, elections, fec, geography, irs, laus, legislators, municipalities, pep, qcew, ssa, usaspending, votes
+from .sources import acs, broadcast, cameras, colleges, elections, fec, geography, irs, laus, legislators, municipalities, pep, qcew, projects, ssa, usaspending, votes
 
-ORDER = ["geography", "legislators", "acs", "pep", "laus", "qcew", "usaspending", "irs", "ssa", "elections", "fec", "votes", "cameras", "colleges", "municipalities", "broadcast"]
+ORDER = ["geography", "legislators", "acs", "pep", "laus", "qcew", "usaspending", "irs", "ssa", "elections", "fec", "votes", "cameras", "colleges", "municipalities", "broadcast", "projects"]
 
 
 def data_dir(d: District) -> pathlib.Path:
@@ -93,6 +93,7 @@ def run(d: District, only: list[str] | None = None) -> dict:
         "colleges": lambda: colleges.fetch(f, d, out / "geo" / "district.simple.geojson.json"),
         "municipalities": lambda: municipalities.fetch(f, d, county_names(), split_fips()),
         "broadcast": lambda: broadcast.fetch(f, d, out / "geo" / "district.simple.geojson.json", county_names(), communities()),
+        "projects": lambda: projects.fetch(f, d),
         "cameras": lambda: cameras.fetch(f, d, out / "geo" / "district.simple.geojson.json", county_names()),
         "elections": lambda: elections.fetch(f, d),
         "fec": lambda: fec.fetch(f, d),
@@ -133,7 +134,8 @@ def run(d: District, only: list[str] | None = None) -> dict:
                (c["id"].startswith("irs-") and "irs" not in (only or [])) or \
                (c["id"].startswith("ipeds-") and "colleges" not in (only or [])) or \
                (c["id"] == "municipalities-cover" and "municipalities" not in (only or [])) or \
-               (c["id"] == "fcc-layout" and "broadcast" not in (only or [])) or \
+               (c["id"] in ("fcc-layout", "station-links") and "broadcast" not in (only or [])) or \
+               (c["id"] == "projects-sourced" and "projects" not in (only or [])) or \
                (c["id"].startswith("ssa-") and "ssa" not in (only or []))
         if c["id"] not in run_ids and only and kept:
             results.insert(0, c)

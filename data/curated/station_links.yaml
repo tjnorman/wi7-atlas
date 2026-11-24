@@ -1,0 +1,13 @@
+# Where to listen online. A link is added only after the broadcaster's own page has been read
+# and found to offer a stream. Stations without an entry simply have no link yet.
+verified_on: 2026-11-24
+groups:
+  - label: Wisconsin Public Radio
+    url: https://www.wpr.org/ways-to-listen
+    note: >-
+      Wisconsin Public Radio streams its news and music networks on its website and app. Its
+      stations are licensed to the Wisconsin Educational Communications Board or the University
+      of Wisconsin. The link goes to the network's listening page, not to one transmitter.
+    licensee_contains: ["educational communications board"]
+    bands: [AM, FM]
+    calls: [KUWS]

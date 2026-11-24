@@ -98,3 +98,11 @@ Each build runs checks that compare independent sources, listed with results on 
 ## What the atlas does not do
 
 It does not rate, endorse, or characterize candidates, officeholders, or parties, and it does not predict elections.
+
+## Public works (bridge update)
+
+Major projects are not in any data file, so they are recorded by hand in `data/curated/projects.yaml`. Each cost, date, and schedule line names the official page it was read from: a state transportation department's project page, fact sheet, or press release. News reports are not used. The build stops if a fact has no listed source, and the `projects-sourced` check turns to a warning once the review date passes, because agencies revise schedules. Figures are the agencies' published plans on the date read.
+
+## Listening links
+
+A radio station gets a "Listen online" link only after its broadcaster's own page has been read and found to offer a stream (`data/curated/station_links.yaml`). A missing link means the station has not been checked, not that it has no stream. The `station-links` check confirms that every call sign in the link file is in the FCC records.

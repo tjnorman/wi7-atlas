@@ -779,3 +779,34 @@ def test_social_security_uses_recorded_tables_when_refused(district):
     assert payload["district"]["beneficiaries"] == 215526 and payload["district"]["ssi_recipients"] == 10406
     assert all(c["status"] == "pass" for c in checks) and {c["id"] for c in checks} >= {"ssa-state-sum", "ssa-ssi-sum"}
     assert "refuses automated requests" in sources[0].notes
+
+
+# ---------------------------------------------------------------- projects and listening links
+def test_projects_need_a_source_for_every_fact(district, tmp_path):
+    import datetime as dt
+    import pytest
+    from pipeline.sources import projects
+    good = tmp_path / "p.yaml"
+    good.write_text("verified_on: 2026-11-24\nreview_by: 2027-03-15\nprojects:\n  - id: b\n    title: B\n    place: X\n    county: Y\n    summary: S\n"
+                    "    facts:\n      - {label: Cost, value: '$1', note: null, source: a}\n    timeline: []\n"
+                    "    sources:\n      - {id: a, publisher: P, title: T, year: '2026', url: 'https://example.gov/a'}\n")
+    payload, sources, checks = projects.fetch(None, district, path=good, today=dt.date(2026, 12, 1))
+    assert payload["projects"][0]["facts"][0]["value"] == "$1" and sources[0].id == "a" and checks[0]["status"] == "pass"
+    assert projects.fetch(None, district, path=good, today=dt.date(2027, 4, 1))[2][0]["status"] == "warn"
+    bad = tmp_path / "bad.yaml"
+    bad.write_text(good.read_text().replace("source: a}", "source: zzz}"))
+    with pytest.raises(ValueError):
+        projects.fetch(None, district, path=bad)
+
+
+def test_listen_links_match_by_call_and_licensee(tmp_path):
+    from pipeline.sources import broadcast
+    f = tmp_path / "l.yaml"
+    f.write_text("verified_on: 2026-11-24\ngroups:\n  - label: Net\n    url: https://example.org/listen\n    note: n\n"
+                 "    licensee_contains: ['communications board']\n    bands: [FM]\n    calls: [KAAA, KZZZ]\n")
+    st = [{"call": "WAAA", "band": "FM", "licensee": "State Communications Board"},
+          {"call": "WAAA-TV", "band": "TV", "licensee": "State Communications Board"},
+          {"call": "KAAA", "band": "AM", "licensee": "Someone"}, {"call": "WBBB", "band": "FM", "licensee": "Other"}]
+    summary, unknown = broadcast.listen_links(st, f)
+    assert [bool(s.get("listen")) for s in st] == [True, False, True, False]
+    assert summary["linked"] == 2 and unknown == ["KZZZ"]

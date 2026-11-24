@@ -1,0 +1,141 @@
+{
+ "generated_at": "2026-11-24T16:39:32+00:00",
+ "sources": [
+  {
+   "id": "mndot-blatnik-2026-10-30",
+   "publisher": "Minnesota Department of Transportation",
+   "title": "Pavement marking, traffic signal work coming as part of Blatnik project",
+   "url": "https://www.dot.state.mn.us/news/2026/10/30-d1-blatnik.html",
+   "year": "2026, October 30",
+   "kind": "Press release",
+   "query": null,
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "Minnesota Department of Transportation. (2026, October 30). Pavement marking, traffic signal work coming as part of Blatnik project [Press release]. Retrieved November 24, 2026, from https://www.dot.state.mn.us/news/2026/10/30-d1-blatnik.html"
+  },
+  {
+   "id": "wisdot-blatnik-faq",
+   "publisher": "Wisconsin Department of Transportation",
+   "title": "Blatnik Bridge frequently asked questions and fact sheet",
+   "url": "https://www.wisconsindot.gov/Documents/projects/by-region/nw/blatnikbridge/faqs.pdf",
+   "year": "2024",
+   "kind": "Fact sheet",
+   "query": null,
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "Wisconsin Department of Transportation. (2024). Blatnik Bridge frequently asked questions and fact sheet [Fact sheet]. Retrieved November 24, 2026, from https://www.wisconsindot.gov/Documents/projects/by-region/nw/blatnikbridge/faqs.pdf"
+  },
+  {
+   "id": "wisdot-blatnik-page",
+   "publisher": "Wisconsin Department of Transportation",
+   "title": "I-535 and US 53 (Blatnik Bridge), Douglas and St. Louis counties",
+   "url": "https://wisconsindot.gov/Pages/projects/by-region/nw/blatnikbridge/default.aspx",
+   "year": "n.d.",
+   "kind": "Project page",
+   "query": null,
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "Wisconsin Department of Transportation. (n.d.). I-535 and US 53 (Blatnik Bridge), Douglas and St. Louis counties [Project page]. Retrieved November 24, 2026, from https://wisconsindot.gov/Pages/projects/by-region/nw/blatnikbridge/default.aspx"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "projects",
+ "data": {
+  "projects": [
+   {
+    "id": "blatnik-bridge",
+    "title": "Blatnik Bridge replacement",
+    "place": "Superior, Wisconsin, to Duluth, Minnesota",
+    "county": "Douglas",
+    "summary": "The John A. Blatnik Bridge carries Interstate 535 over St. Louis Bay between Superior and Duluth. The Minnesota and Wisconsin transportation departments own it jointly and are replacing it on the same alignment. Minnesota leads the project.",
+    "facts": [
+     {
+      "label": "Estimated cost",
+      "value": "$1.8 billion",
+      "note": "Including inflation; estimate published in 2024.",
+      "source": "wisdot-blatnik-faq"
+     },
+     {
+      "label": "Federal grant",
+      "value": "$1.058 billion",
+      "note": "Awarded in early 2024 under the federal infrastructure law.",
+      "source": "wisdot-blatnik-faq"
+     },
+     {
+      "label": "Each state's share",
+      "value": "Up to $400 million",
+      "note": "Minnesota and Wisconsin split the rest equally.",
+      "source": "wisdot-blatnik-faq"
+     },
+     {
+      "label": "Vehicles a day",
+      "value": "About 33,000",
+      "note": null,
+      "source": "wisdot-blatnik-faq"
+     },
+     {
+      "label": "Full closure",
+      "value": "No earlier than March 1, 2027",
+      "note": null,
+      "source": "mndot-blatnik-2026-10-30"
+     },
+     {
+      "label": "Length of closure",
+      "value": "Four to five years",
+      "note": null,
+      "source": "wisdot-blatnik-page"
+     },
+     {
+      "label": "New bridge opens",
+      "value": "By October 31, 2031",
+      "note": "Overall completion in 2032.",
+      "source": "mndot-blatnik-2026-10-30"
+     }
+    ],
+    "timeline": [
+     {
+      "date": "December 1961",
+      "text": "The bridge opened to traffic.",
+      "source": "wisdot-blatnik-faq"
+     },
+     {
+      "date": "Early 2024",
+      "text": "The two states received the federal grant.",
+      "source": "wisdot-blatnik-faq"
+     },
+     {
+      "date": "Fall 2026",
+      "text": "Lane changes, traffic signal work, and new pavement markings are planned on Belknap Street (U.S. 2) in Superior ahead of the closure. The contractor is Ames-Kraemer Joint Venture II.",
+      "source": "mndot-blatnik-2026-10-30"
+     },
+     {
+      "date": "Before the closure",
+      "text": "Wisconsin is improving Winter Street and Susquehanna Avenue in Superior as alternate routes. Its part of the project also replaces the I-535 and Highway 35 interchange and rebuilds a segment of U.S. 53.",
+      "source": "wisdot-blatnik-page"
+     },
+     {
+      "date": "March 1, 2027, at the earliest",
+      "text": "Full closure, so crews can remove the existing bridge.",
+      "source": "mndot-blatnik-2026-10-30"
+     },
+     {
+      "date": "October 31, 2031",
+      "text": "Date by which the new bridge is scheduled to open.",
+      "source": "mndot-blatnik-2026-10-30"
+     }
+    ],
+    "sources": [
+     "mndot-blatnik-2026-10-30",
+     "wisdot-blatnik-faq",
+     "wisdot-blatnik-page"
+    ]
+   }
+  ],
+  "verified_on": "2026-11-24",
+  "review_by": "2027-03-15",
+  "note": "Dates and costs are the agencies' published plans as of the date read, and can change."
+ }
+}
