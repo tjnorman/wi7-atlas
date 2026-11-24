@@ -36,7 +36,8 @@ The Social Security Administration publishes, for each congressional district, t
 - The dollars are for one month. The atlas does not multiply by twelve, because benefit amounts and the number of people change during the year.
 - These are payments to people. USAspending's district totals, shown above them, leave out most payments to individuals, so the two do not overlap and should not be added without care.
 - **Social Security taxes paid are not published by congressional district.** An estimate from district wages would overstate the tax (wages above the taxable maximum and jobs outside Social Security are in the wage total), so the atlas does not show one.
-- Checks: the table headings on the SSA page must match the columns the atlas reads, and the state's districts must add up to the state row.
+- SSA's website refuses automated requests from the build. When that happens the atlas uses the state's tables as copied from the public page into `data/curated/ssa.yaml`, with the date they were copied and a date by which they must be reviewed. This is the only dataset in the atlas that is not downloaded by the build.
+- Checks: the districts must add up to the state row for both programs, whether the tables were downloaded or copied. When the page can be downloaded, its table headings must also match the columns the atlas reads.
 
 ## Federal income tax
 

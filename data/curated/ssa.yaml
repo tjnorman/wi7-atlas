@@ -1,0 +1,34 @@
+# Social Security Administration, Congressional Statistics: Wisconsin.
+# SSA's website refuses automated requests from the build (HTTP 403), so these tables are
+# copied from the public page and checked by the build: the districts must add up to the
+# state row. Update each spring when SSA publishes the new December tables.
+year: 2025
+released: April 2026
+district_lines_congress: 119
+verified_on: 2026-11-23
+review_by: 2027-05-15
+url: https://www.ssa.gov/policy/docs/factsheets/cong_stats/2025/wi.html
+# Columns: beneficiaries; retired workers; disabled workers; widow(er)s and parents; spouses; children;
+# total monthly benefits, all (thousands of dollars); retired workers; widow(er)s and parents; aged 65 or older
+oasdi:
+  Wisconsin: [1398745, 1114607, 136029, 59032, 21677, 67400, 2776804, 2354491, 117011, 1143974]
+  "1": [171001, 132594, 18621, 8064, 2813, 8909, 345532, 286965, 16299, 137588]
+  "2": [148469, 122068, 12490, 5452, 1999, 6460, 314933, 274783, 11359, 125127]
+  "3": [184554, 146206, 18615, 7899, 2804, 9030, 344473, 289652, 14776, 149747]
+  "4": [120559, 84586, 18472, 5173, 1950, 10378, 217145, 171780, 9248, 89320]
+  "5": [184331, 153449, 13295, 7565, 2913, 7109, 405398, 353894, 16717, 158257]
+  "6": [190278, 153657, 17668, 8049, 2763, 8141, 380663, 324483, 16207, 157019]
+  "7": [215526, 174074, 20019, 8838, 3387, 9208, 407365, 346473, 16610, 176529]
+  "8": [184027, 147973, 16849, 7992, 3048, 8165, 361295, 306460, 15795, 150387]
+# Columns: recipients; aged; blind; disabled; under 18; 18 to 64; 65 or older;
+# total monthly payments, all (thousands of dollars); aged; blind; disabled; recipients also receiving OASDI
+ssi:
+  Wisconsin: [107505, 6952, 807, 99746, 18645, 65823, 23037, 80995, 3382, 585, 77028, 36192]
+  "1": [14898, 945, 92, 13861, 2825, 9087, 2986, 11164, 473, 62, 10629, 4924]
+  "2": [9030, 671, 50, 8309, 1573, 5563, 1894, 6971, 383, 39, 6549, 2939]
+  "3": [10956, 649, 78, 10229, 1449, 7257, 2250, 7717, 267, 56, 7394, 4529]
+  "4": [35771, 2220, 291, 33260, 7425, 20042, 8304, 28095, 1153, 200, 26742, 10243]
+  "5": [6677, 537, 59, 6081, 984, 4338, 1355, 4962, 283, 48, 4631, 2225]
+  "6": [9673, 581, 77, 9015, 1658, 6157, 1858, 7297, 269, 62, 6967, 3302]
+  "7": [10406, 712, 79, 9615, 1074, 6939, 2393, 7269, 270, 56, 6943, 4426]
+  "8": [10094, 637, 81, 9376, 1657, 6440, 1997, 7521, 285, 63, 7173, 3604]

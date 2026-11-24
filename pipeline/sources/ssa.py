@@ -17,7 +17,9 @@ import re
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 
-from ..config import District
+import yaml
+
+from ..config import ROOT, District
 from ..http import Fetcher, FetchError
 from ..provenance import Source
 
@@ -96,6 +98,11 @@ def rows_by_label(table: dict, cols: list[str]) -> dict[str, dict[str, float]]:
     return out
 
 
+def curated(d: District) -> dict | None:
+    path = ROOT / "data" / "curated" / "ssa.yaml"
+    return yaml.safe_load(path.read_text(encoding="utf-8")) if path.exists() else None
+
+
 def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]]:
     now = datetime.now(timezone.utc)
     html = year = None
@@ -108,28 +115,40 @@ def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]
         except FetchError as exc:
             errors.append(f"{y}: {str(exc)[:160]}")
             continue
-    if year is None:
-        raise FetchError("No SSA Congressional Statistics page could be read. " + " | ".join(errors))
-    parser = Tables()
-    parser.feed(html)
-    oasdi_t = pick(parser.tables, OASDI_HEADINGS, len(OASDI_COLS))
-    if oasdi_t is None:
-        heads = [" ".join(" ".join(r) for r in t["head"])[:160] for t in parser.tables]
-        raise ValueError(f"SSA page for {year} has no table with the expected Social Security headings. Found: {heads}")
-    oasdi = rows_by_label(oasdi_t, OASDI_COLS)
     key = str(d.district_number)
+    copied = None
+    if year is None:
+        # SSA's site refuses automated requests. Fall back to the tables copied from the public page.
+        copied = curated(d)
+        if copied is None:
+            raise FetchError("No SSA Congressional Statistics page could be read. " + " | ".join(errors))
+        year = int(copied["year"])
+        oasdi = {str(k): dict(zip(OASDI_COLS, map(float, v))) for k, v in copied["oasdi"].items()}
+        ssi = {str(k): dict(zip(SSI_COLS, map(float, v))) for k, v in (copied.get("ssi") or {}).items()}
+        released_text = copied.get("released")
+        named_congress = copied.get("district_lines_congress")
+    else:
+        parser = Tables()
+        parser.feed(html)
+        oasdi_t = pick(parser.tables, OASDI_HEADINGS, len(OASDI_COLS))
+        if oasdi_t is None:
+            heads = [" ".join(" ".join(r) for r in t["head"])[:160] for t in parser.tables]
+            raise ValueError(f"SSA page for {year} has no table with the expected Social Security headings. Found: {heads}")
+        oasdi = rows_by_label(oasdi_t, OASDI_COLS)
+        ssi_t = pick(parser.tables, SSI_HEADINGS, len(SSI_COLS))
+        ssi = rows_by_label(ssi_t, SSI_COLS) if ssi_t else {}
+        lines_note = re.search(r"district definitions for the (\d+)(?:th|st|nd|rd) Congress", html)
+        released_text = None
+        try:
+            index_text = fetcher.text(INDEX, retries=1)
+            m = re.search(rf"Congressional Statistics, {year}\s*\(released ([A-Za-z]+ \d{{4}})\)", re.sub(r"<[^>]+>", " ", index_text))
+            released_text = m.group(1) if m else None
+            lines_note = lines_note or re.search(r"district definitions for the (\d+)(?:th|st|nd|rd) Congress", index_text)
+        except FetchError:
+            pass
+        named_congress = int(lines_note.group(1)) if lines_note else None
     if key not in oasdi or d.state_name not in oasdi:
         raise ValueError(f"SSA table is missing district {key} or the {d.state_name} row; rows: {list(oasdi)[:14]}")
-    ssi_t = pick(parser.tables, SSI_HEADINGS, len(SSI_COLS))
-    ssi = rows_by_label(ssi_t, SSI_COLS) if ssi_t else {}
-
-    lines_note = re.search(r"district definitions for the (\d+)(?:th|st|nd|rd) Congress", html)
-    try:
-        index_text = fetcher.text(INDEX, retries=1)
-        released = re.search(rf"Congressional Statistics, {year}\s*\(released ([A-Za-z]+ \d{{4}})\)", re.sub(r"<[^>]+>", " ", index_text))
-        lines_note = lines_note or re.search(r"district definitions for the (\d+)(?:th|st|nd|rd) Congress", index_text)
-    except FetchError:
-        released = None
 
     def shape(o: dict, s: dict | None) -> dict:
         out = {
@@ -155,8 +174,17 @@ def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]
         "detail": f"Beneficiaries: {len(district_rows)} districts sum to {total_people:,.0f}; state row {st['beneficiaries']:,.0f}. "
                   f"Monthly benefits: ${total_money * 1000:,.0f} against ${st['monthly_benefits_thousands'] * 1000:,.0f} (tolerance 1%).",
     }]
-    if lines_note:
-        named = int(lines_note.group(1))
+    if ssi and d.state_name in ssi:
+        ssi_people = sum(v["recipients"] for k, v in ssi.items() if k.isdigit())
+        ssi_ok = close(ssi_people, ssi[d.state_name]["recipients"])
+        checks.append({"id": "ssa-ssi-sum", "title": f"{d.state_name}'s districts add up to the state total for SSI",
+                       "status": "pass" if ssi_ok else "fail", "sources": ["ssa-cong-stats"],
+                       "values": {"districts": ssi_people, "state_row": ssi[d.state_name]["recipients"]},
+                       "detail": f"SSI recipients: districts sum to {ssi_people:,.0f}; state row {ssi[d.state_name]['recipients']:,.0f}."})
+        if not ssi_ok:
+            ssi = {}
+    if named_congress:
+        named = int(named_congress)
         same = d.expectations.get("lines_unchanged_since_congress")
         good = named >= d.congress or (same is not None and named >= int(same))
         checks.append({"id": "ssa-district-lines", "title": "SSA tables use the current district lines",
@@ -167,7 +195,11 @@ def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]
     if not ok:
         raise ValueError(checks[0]["detail"])
     payload = {
-        "year": year, "as_of": f"December {year}", "released": released.group(1) if released else None,
+        "year": year, "as_of": f"December {year}", "released": released_text,
+        "retrieval": ({"method": "copied from the public page", "verified_on": str(copied.get("verified_on")),
+                       "review_by": str(copied.get("review_by")),
+                       "why": "SSA's website refuses automated requests, so the build cannot download the page."}
+                      if copied else {"method": "downloaded by the build"}),
         "district": shape(oasdi[key], ssi.get(key)), "state": shape(st, ssi.get(d.state_name)),
         "note": ("Counts are people receiving a benefit in December, and dollars are the total paid for that one month. "
                  "The atlas does not multiply by twelve, because benefits change during the year."),
@@ -178,10 +210,13 @@ def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]
         publisher="Social Security Administration, Office of Retirement and Disability Policy",
         title=f"Congressional statistics, December {year}: {d.state_name}",
         url=PAGE.format(y=year, st=d.state_abbr.lower()),
-        year=(released.group(1).split()[-1] if released else "n.d."),
+        year=(released_text.split()[-1] if released_text else "n.d."),
         vintage=f"December {year}",
         query=PAGE.format(y=year, st=d.state_abbr.lower()),
-        notes=("Beneficiaries in current-payment status and total monthly benefits, from SSA's Master Beneficiary Record "
+        accessed=(str(copied["verified_on"]) if copied else datetime.now(timezone.utc).date().isoformat()),
+        notes=(("Copied from the public page because SSA's website refuses automated requests; the build checks that the "
+                "districts add up to the state row. " if copied else "")
+               + "Beneficiaries in current-payment status and total monthly benefits, from SSA's Master Beneficiary Record "
                "and Supplemental Security Record, placed in districts with Postal Service geographic data."),
     )
     return payload, [src], checks

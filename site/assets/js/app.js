@@ -624,7 +624,7 @@ function socialSecurity() {
   const stat = (label, value) => `<div><b>${value}</b><span>${label}</span></div>`;
   $("#ssa-stats").innerHTML = stat("Retired workers", F.int(d.retired_workers)) + stat("Disabled workers", F.int(d.disabled_workers)) + stat("Aged 65 or older", F.int(d.age_65_or_older)) + stat("Average monthly benefit", F.usd(d.average_monthly_benefit))
     + (d.ssi_recipients != null ? stat("Supplemental Security Income recipients", F.int(d.ssi_recipients)) + stat("SSI paid that month", F.usd(d.ssi_monthly_payments, { compact: true })) : "");
-  $("#ssa-source").innerHTML = sourceLine(["ssa-cong-stats"], `${F.esc(s.note || "")} ${F.esc(s.not_published || "")}${pop ? " The share of residents uses the Census population estimate shown at the top of this page, which is for a different date." : ""}`);
+  $("#ssa-source").innerHTML = sourceLine(["ssa-cong-stats"], `${F.esc(s.note || "")} ${F.esc(s.not_published || "")}${s.retrieval?.verified_on ? ` Figures were copied from the SSA page on ${F.longDate(s.retrieval.verified_on)}, because SSA's website refuses automated requests; the build checks that the state's districts add up to the state total.` : ""}${pop ? " The share of residents uses the Census population estimate shown at the top of this page, which is for a different date." : ""}`);
 }
 
 // ---------------------------------------------------------------- federal income tax

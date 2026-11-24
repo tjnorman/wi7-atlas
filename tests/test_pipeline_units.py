@@ -768,3 +768,14 @@ def test_social_security_by_district(district, monkeypatch):
     short = [r for r in SSA_ROWS if r[0] != "8"]
     with pytest.raises(ValueError, match="districts sum"):
         ssa.fetch(_ssa_fetcher(_ssa_page(rows=short)), district)
+
+
+def test_social_security_uses_recorded_tables_when_refused(district):
+    from pipeline.http import FetchError
+    from pipeline.sources import ssa
+
+    payload, sources, checks = ssa.fetch(FakeFetcher([(r"ssa\.gov", FetchError("HTTP 403"))]), district)
+    assert payload["retrieval"]["method"] == "copied from the public page" and payload["year"] == 2025
+    assert payload["district"]["beneficiaries"] == 215526 and payload["district"]["ssi_recipients"] == 10406
+    assert all(c["status"] == "pass" for c in checks) and {c["id"] for c in checks} >= {"ssa-state-sum", "ssa-ssi-sum"}
+    assert "refuses automated requests" in sources[0].notes
