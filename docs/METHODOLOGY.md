@@ -29,6 +29,15 @@ County populations since 2020 come from the Census Bureau's **Population Estimat
 
 Award obligations come from **USAspending.gov**, filtered by place of performance in the district under current lines. Obligations are commitments to spend and agencies revise them. Payments reported only at the county or state level, such as many benefits paid to individuals, are not included in district totals. County totals describe whole counties.
 
+## Social Security
+
+The Social Security Administration publishes, for each congressional district, the number of people receiving Social Security (OASDI) and Supplemental Security Income in December and the total paid that month. The atlas reports those figures as published.
+
+- The dollars are for one month. The atlas does not multiply by twelve, because benefit amounts and the number of people change during the year.
+- These are payments to people. USAspending's district totals, shown above them, leave out most payments to individuals, so the two do not overlap and should not be added without care.
+- **Social Security taxes paid are not published by congressional district.** An estimate from district wages would overstate the tax (wages above the taxable maximum and jobs outside Social Security are in the wage total), so the atlas does not show one.
+- Checks: the table headings on the SSA page must match the columns the atlas reads, and the state's districts must add up to the state row.
+
 ## Federal income tax
 
 The IRS Statistics of Income Division publishes totals from individual income tax returns (Form 1040) by congressional district. The atlas reports the district's number of returns, adjusted gross income, and total tax liability for the most recent tax year, with the same figures per return for the state and the United States (the sum of the 50 states and the District of Columbia).

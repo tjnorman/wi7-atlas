@@ -232,6 +232,19 @@ def stations_block(b: dict | None, m: dict | None) -> str:
     return out
 
 
+def ssa_text(s: dict | None) -> str:
+    d = (s or {}).get("district") or {}
+    if not d.get("beneficiaries"):
+        return ""
+    ssi = (f" Another {d['ssi_recipients']:,.0f} people received Supplemental Security Income "
+           f"({money(d['ssi_monthly_payments'])} that month).") if d.get("ssi_recipients") is not None else ""
+    return (f"### Social Security\n\nIn {s['as_of']}, **{d['beneficiaries']:,.0f}** people in the district received Social Security, "
+            f"and the program paid them **{money(d['monthly_benefits'])}** that month: {d['retired_workers']:,.0f} retired workers, "
+            f"{d['disabled_workers']:,.0f} disabled workers, and their families and survivors.{ssi}\n\n"
+            f"<sub>Source: Social Security Administration, Congressional Statistics, {s['as_of']}. {s.get('note', '')} "
+            f"These payments go to people directly and are not part of the award totals above. {s.get('not_published', '')}</sub>\n\n")
+
+
 def taxes_text(irs: dict | None, state_name: str = "State") -> str:
     d = (irs or {}).get("district") or {}
     if not d.get("total_tax_liability"):
@@ -448,7 +461,7 @@ def render(d: District) -> str:
         "federal_text": fed_text,
         "colleges_block": colleges_block(_data(_load(d, "colleges"))),
         "stations_block": stations_block(_data(_load(d, "broadcast")), _data(_load(d, "municipalities"))),
-        "taxes_text": taxes_text(_data(_load(d, "irs")), d.state_name),
+        "taxes_text": ssa_text(_data(_load(d, "ssa"))) + taxes_text(_data(_load(d, "irs")), d.state_name),
         "agencies_table": agencies,
         "representation_text": representation_text(leg, summary),
         "notes_block": notes_block(notes),

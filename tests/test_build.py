@@ -22,10 +22,10 @@ def boom(*a, **k):
 
 def test_partial_failure_and_stale_data(district, tmp_path, monkeypatch):
     from pipeline import build
-    from pipeline.sources import acs, broadcast, cameras, colleges, elections, fec, geography, irs, laus, legislators, municipalities, pep, qcew, usaspending, votes
+    from pipeline.sources import acs, broadcast, cameras, colleges, elections, fec, geography, irs, laus, legislators, municipalities, pep, qcew, ssa, usaspending, votes
 
     monkeypatch.setattr(build, "DATA_ROOT", tmp_path)
-    for mod in (acs, broadcast, cameras, colleges, municipalities, elections, fec, irs, laus, legislators, pep, qcew, usaspending, votes):
+    for mod in (acs, broadcast, cameras, colleges, municipalities, elections, fec, irs, laus, legislators, pep, qcew, ssa, usaspending, votes):
         monkeypatch.setattr(mod, "fetch", boom)
     monkeypatch.setattr(geography, "fetch", fake_geo)
 

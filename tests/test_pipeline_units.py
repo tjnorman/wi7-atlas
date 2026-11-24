@@ -708,3 +708,63 @@ def test_colleges_curated_closure_is_applied(district, tmp_path, monkeypatch):
     assert nu["active"] is False and nu["status_note"] == "Closed in 2025." and nu["status_source"] == "nu-closure"
     assert payload["institutions"][-1] is nu and payload["active_count"] == 1
     assert [s.id for s in sources] == ["nces-ipeds-hd", "nu-closure"]
+
+
+# ---------------------------------------------------------------- Social Security (SSA)
+SSA_ROWS = [  # December 2024, Wisconsin, as published by SSA
+    ("Wisconsin", "1,365,446|1,077,180|138,357|60,124|21,575|68,210|2,598,970|2,184,088|114,674|1,105,512"),
+    ("1", "167,651|128,557|19,008|8,161|2,754|9,171|324,836|267,164|15,923|133,027"),
+    ("2", "143,679|117,196|12,515|5,519|1,963|6,486|291,755|252,765|11,046|120,376"),
+    ("3", "180,034|141,307|18,762|8,030|2,791|9,144|322,307|268,841|14,421|144,803"),
+    ("4", "119,400|82,666|19,105|5,277|1,954|10,398|206,751|161,643|9,117|87,279"),
+    ("5", "179,038|147,570|13,569|7,775|2,878|7,246|376,801|325,990|16,534|152,458"),
+    ("6", "186,121|148,996|17,910|8,191|2,793|8,231|357,464|302,382|15,857|152,187"),
+    ("7", "210,554|168,462|20,389|9,023|3,314|9,366|381,674|321,848|16,240|170,685"),
+    ("8", "178,969|142,426|17,099|8,148|3,128|8,168|337,383|283,454|15,536|144,697"),
+]
+
+
+def _ssa_page(rows=SSA_ROWS, heading="Total monthly benefits (thousands of dollars)"):
+    body = "".join(f"<tr><th>{label}</th>" + "".join(f"<td>{c}</td>" for c in cells.split("|")) + "</tr>" for label, cells in rows)
+    return ("<html><body><p>NOTE: Data in this report are as of December 2024, including district definitions for the 119th Congress.</p>"
+            "<table><caption>Number of OASDI beneficiaries in current-payment status</caption><thead><tr><th>Congressional district</th>"
+            f"<th>Number of beneficiaries</th><th>{heading}</th><th>Number of beneficiaries aged 65 or older</th></tr>"
+            "<tr><th>Total</th><th>Retired workers</th><th>Disabled workers</th></tr></thead><tbody>" + body + "</tbody></table></body></html>")
+
+
+def _ssa_fetcher(page):
+    from pipeline.http import FetchError
+
+    def route(url, _):
+        if url.endswith("/2025/wi.html"):
+            return page
+        if url.endswith("cong_stats/"):
+            return "<h1>Congressional Statistics, 2025</h1> (released April 2026)"
+        return FetchError("404")
+
+    return FakeFetcher([(r"ssa\.gov", route)])
+
+
+def test_social_security_by_district(district, monkeypatch):
+    import datetime as dt
+
+    from pipeline.sources import ssa
+
+    class Now(dt.datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return dt.datetime(2026, 11, 23, tzinfo=tz)
+
+    monkeypatch.setattr(ssa, "datetime", Now)
+    payload, sources, checks = ssa.fetch(_ssa_fetcher(_ssa_page()), district)
+    d = payload["district"]
+    assert d["beneficiaries"] == 210554 and d["monthly_benefits"] == 381_674_000 and d["retired_workers"] == 168462
+    assert round(d["average_monthly_benefit"]) == 1813 and payload["state"]["beneficiaries"] == 1365446
+    assert {c["id"]: c["status"] for c in checks} == {"ssa-state-sum": "pass", "ssa-district-lines": "pass"}
+    assert payload["released"] == "April 2026" and sources[0].year == "2026"
+
+    with pytest.raises(ValueError, match="expected Social Security headings"):
+        ssa.fetch(_ssa_fetcher(_ssa_page(heading="Something else")), district)
+    short = [r for r in SSA_ROWS if r[0] != "8"]
+    with pytest.raises(ValueError, match="districts sum"):
+        ssa.fetch(_ssa_fetcher(_ssa_page(rows=short)), district)

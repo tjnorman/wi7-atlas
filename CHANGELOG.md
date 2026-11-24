@@ -5,6 +5,7 @@ All notable changes to the WI-7 Atlas. Corrections to data or wording are listed
 ## 1.1.0 — 2026-11-23
 
 ### Added
+- Social Security and Supplemental Security Income in the district (SSA Congressional Statistics): people receiving benefits and the amount paid in December.
 - Radio and television stations transmitting from inside the district (FCC licensing records), and the district's 607 cities, villages, and towns with each one's status relative to the district line (Census relationship file).
 - Colleges and universities with their main address in the district, with links, from the NCES IPEDS directory file.
 - Ten years of attendance for the seat (2017 forward): roll calls voted and missed by year and by member, a comparison with the whole House, roll calls taken during the vacancy, and a list of every missed vote with links to the Clerk's record.

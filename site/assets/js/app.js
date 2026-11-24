@@ -10,7 +10,7 @@ const BASE = params.get("data") || "data/";
 const $ = (s, r = document) => r.querySelector(s);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "cameras", "colleges", "municipalities", "broadcast", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
+const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "ssa", "cameras", "colleges", "municipalities", "broadcast", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
 const state = { data: {}, counties: [], byFips: new Map(), topo: null, step: "outline" };
 
 async function load() {
@@ -613,6 +613,20 @@ function liveNow() {
   }
 }
 
+// ---------------------------------------------------------------- Social Security
+function socialSecurity() {
+  const s = state.data.ssa, d = s?.district, box = $("#ssa");
+  if (!box || !d?.beneficiaries) return;
+  box.hidden = false;
+  const pop = (state.data.summary?.headline || []).find((h) => h.id === "population")?.value;
+  $("#ssa-title").textContent = `Social Security, ${s.as_of}`;
+  $("#ssa-lede").innerHTML = `In ${s.as_of}, <strong>${F.int(d.beneficiaries)}</strong> people in the district received Social Security, and the program paid them <strong>${F.usd(d.monthly_benefits)}</strong> that month.${pop ? ` That is about ${F.pct(100 * d.beneficiaries / pop, 0)} of the district's residents.` : ""} These payments go to people directly and are not part of the award totals above.`;
+  const stat = (label, value) => `<div><b>${value}</b><span>${label}</span></div>`;
+  $("#ssa-stats").innerHTML = stat("Retired workers", F.int(d.retired_workers)) + stat("Disabled workers", F.int(d.disabled_workers)) + stat("Aged 65 or older", F.int(d.age_65_or_older)) + stat("Average monthly benefit", F.usd(d.average_monthly_benefit))
+    + (d.ssi_recipients != null ? stat("Supplemental Security Income recipients", F.int(d.ssi_recipients)) + stat("SSI paid that month", F.usd(d.ssi_monthly_payments, { compact: true })) : "");
+  $("#ssa-source").innerHTML = sourceLine(["ssa-cong-stats"], `${F.esc(s.note || "")} ${F.esc(s.not_published || "")}${pop ? " The share of residents uses the Census population estimate shown at the top of this page, which is for a different date." : ""}`);
+}
+
 // ---------------------------------------------------------------- federal income tax
 function taxes() {
   const t = state.data.irs, box = $("#taxes");
@@ -659,6 +673,7 @@ function dollars() {
   $("#programs-title").textContent = `Top programs, FY${u.last_complete_fy}`;
   rank("#agencies", u.top_agencies);
   rank("#programs", u.top_programs);
+  socialSecurity();
   taxes();
 }
 
