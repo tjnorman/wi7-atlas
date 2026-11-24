@@ -1,0 +1,133 @@
+{
+ "generated_at": "2026-11-24T06:40:54+00:00",
+ "sources": [
+  {
+   "id": "nces-ipeds-hd",
+   "publisher": "National Center for Education Statistics",
+   "title": "Integrated Postsecondary Education Data System (IPEDS): Institutional Characteristics directory file, HD2024",
+   "url": "https://nces.ed.gov/ipeds/use-the-data",
+   "year": "2025",
+   "kind": "Data set",
+   "query": "https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip",
+   "vintage": "HD2024",
+   "accessed": "2026-11-24",
+   "notes": "The directory of institutions that take part in federal student aid programs. An institution appears once, at its main address; branch campuses that do not report separately are not listed.",
+   "apa": "National Center for Education Statistics. (2025). Integrated Postsecondary Education Data System (IPEDS): Institutional Characteristics directory file, HD2024 [Data set]. Retrieved November 24, 2026, from https://nces.ed.gov/ipeds/use-the-data"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "colleges",
+ "data": {
+  "directory_year": 2024,
+  "count": 7,
+  "active_count": 7,
+  "institutions": [
+   {
+    "unitid": "260372",
+    "name": "Lac Courte Oreilles Ojibwe University",
+    "city": "Hayward",
+    "county_fips": "113",
+    "county": "Sawyer",
+    "lat": 45.94225,
+    "lon": -91.365,
+    "website": "https://www.lco.edu/",
+    "control": "Public",
+    "level": "Four or more years",
+    "size": "Under 1,000",
+    "active": true,
+    "closed": null
+   },
+   {
+    "unitid": "239442",
+    "name": "Nicolet Area Technical College",
+    "city": "Rhinelander",
+    "county_fips": "085",
+    "county": "Oneida",
+    "lat": 45.60954,
+    "lon": -89.42506,
+    "website": "https://www.nicoletcollege.edu/",
+    "control": "Public",
+    "level": "At least 2 but less than 4 years",
+    "size": "1,000 - 4,999",
+    "active": true,
+    "closed": null
+   },
+   {
+    "unitid": "239460",
+    "name": "Northcentral Technical College",
+    "city": "Wausau",
+    "county_fips": "073",
+    "county": "Marathon",
+    "lat": 44.98646,
+    "lon": -89.64637,
+    "website": "https://www.ntc.edu/",
+    "control": "Public",
+    "level": "At least 2 but less than 4 years",
+    "size": "5,000 - 9,999",
+    "active": true,
+    "closed": null
+   },
+   {
+    "unitid": "239512",
+    "name": "Northland College",
+    "city": "Ashland",
+    "county_fips": "003",
+    "county": "Ashland",
+    "lat": 46.57909,
+    "lon": -90.87476,
+    "website": "https://www.northland.edu/",
+    "control": "Private not-for-profit",
+    "level": "Four or more years",
+    "size": "Under 1,000",
+    "active": true,
+    "closed": null
+   },
+   {
+    "unitid": "240198",
+    "name": "Northwood Technical College",
+    "city": "Rice Lake",
+    "county_fips": "005",
+    "county": "Barron",
+    "lat": 45.48131,
+    "lon": -91.74702,
+    "website": "https://www.northwoodtech.edu/",
+    "control": "Public",
+    "level": "At least 2 but less than 4 years",
+    "size": "1,000 - 4,999",
+    "active": true,
+    "closed": null
+   },
+   {
+    "unitid": "239877",
+    "name": "State College of Beauty Culture",
+    "city": "Wausau",
+    "county_fips": "073",
+    "county": "Marathon",
+    "lat": 44.93691,
+    "lon": -89.61806,
+    "website": "https://www.statecollegeofbeauty.com/",
+    "control": "Private for-profit",
+    "level": "Less than 2 years (below associate)",
+    "size": "Under 1,000",
+    "active": true,
+    "closed": null
+   },
+   {
+    "unitid": "240426",
+    "name": "University of Wisconsin-Superior",
+    "city": "Superior",
+    "county_fips": "031",
+    "county": "Douglas",
+    "lat": 46.71763,
+    "lon": -92.09101,
+    "website": "https://www.uwsuper.edu/",
+    "control": "Public",
+    "level": "Four or more years",
+    "size": "1,000 - 4,999",
+    "active": true,
+    "closed": null
+   }
+  ],
+  "coverage_note": "IPEDS lists each institution once, at its main address. Branch campuses and outreach centers inside the district that report under a parent institution are not listed."
+ }
+}

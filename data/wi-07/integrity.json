@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-24T05:53:55+00:00",
+ "generated_at": "2026-11-24T06:40:54+00:00",
  "summary": {
-  "total": 21,
-  "pass": 21,
+  "total": 23,
+  "pass": 23,
   "ok": true
  },
  "checks": [
@@ -74,6 +74,30 @@
     "medsl-house",
     "fec-results"
    ]
+  },
+  {
+   "id": "ipeds-labels",
+   "title": "College directory variables match the IPEDS dictionary",
+   "status": "pass",
+   "sources": [
+    "nces-ipeds-hd"
+   ],
+   "values": {},
+   "detail": "13 of 13 variables confirmed against the 2024 dictionary."
+  },
+  {
+   "id": "ipeds-district",
+   "title": "IPEDS district codes agree with the district outline",
+   "status": "pass",
+   "sources": [
+    "nces-ipeds-hd",
+    "census-cb"
+   ],
+   "values": {
+    "listed": 7,
+    "disagree": 0
+   },
+   "detail": "All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does."
   },
   {
    "id": "county-list",

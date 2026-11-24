@@ -8,9 +8,10 @@
   "publisher": "Thomas J. Norman",
   "site_url": "https://tjnorman.github.io/wi7-atlas/",
   "repo": "tjnorman/wi7-atlas",
+  "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-24T05:53:55+00:00",
+ "built_at": "2026-11-24T06:40:54+00:00",
  "headline": [
   {
    "id": "population",
@@ -1431,6 +1432,19 @@
    "apa": "MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns"
   },
   {
+   "id": "nces-ipeds-hd",
+   "publisher": "National Center for Education Statistics",
+   "title": "Integrated Postsecondary Education Data System (IPEDS): Institutional Characteristics directory file, HD2024",
+   "url": "https://nces.ed.gov/ipeds/use-the-data",
+   "year": "2025",
+   "kind": "Data set",
+   "query": "https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip",
+   "vintage": "HD2024",
+   "accessed": "2026-11-24",
+   "notes": "The directory of institutions that take part in federal student aid programs. An institution appears once, at its main address; branch campuses that do not report separately are not listed.",
+   "apa": "National Center for Education Statistics. (2025). Integrated Postsecondary Education Data System (IPEDS): Institutional Characteristics directory file, HD2024 [Data set]. Retrieved November 24, 2026, from https://nces.ed.gov/ipeds/use-the-data"
+  },
+  {
    "id": "clerk-members",
    "publisher": "Office of the Clerk, U.S. House of Representatives",
    "title": "Member data (XML)",
@@ -1627,23 +1641,24 @@
   }
  ],
  "integrity": {
-  "total": 21,
-  "pass": 21,
+  "total": 23,
+  "pass": 23,
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-24T05:22:04+00:00",
-  "legislators": "2026-11-24T05:22:10+00:00",
-  "acs": "2026-11-24T05:22:19+00:00",
-  "pep": "2026-11-24T05:23:10+00:00",
-  "laus": "2026-11-24T05:23:11+00:00",
-  "qcew": "2026-11-24T05:23:12+00:00",
-  "usaspending": "2026-11-24T05:23:21+00:00",
-  "elections": "2026-11-24T05:23:27+00:00",
-  "fec": "2026-11-24T05:23:30+00:00",
-  "votes": "2026-11-24T05:23:31+00:00",
-  "irs": "2026-11-24T05:23:23+00:00",
-  "cameras": "2026-11-24T05:53:55+00:00"
+  "geography": "2026-11-24T06:06:22+00:00",
+  "legislators": "2026-11-24T06:06:29+00:00",
+  "acs": "2026-11-24T06:06:39+00:00",
+  "pep": "2026-11-24T06:07:53+00:00",
+  "laus": "2026-11-24T06:07:54+00:00",
+  "qcew": "2026-11-24T06:07:56+00:00",
+  "usaspending": "2026-11-24T06:08:06+00:00",
+  "elections": "2026-11-24T06:08:10+00:00",
+  "fec": "2026-11-24T06:08:13+00:00",
+  "votes": "2026-11-24T06:08:15+00:00",
+  "irs": "2026-11-24T06:08:08+00:00",
+  "cameras": "2026-11-24T06:40:47+00:00",
+  "colleges": "2026-11-24T06:40:48+00:00"
  },
  "status": {
   "geography": "ok",
@@ -1657,6 +1672,7 @@
   "fec": "ok",
   "votes": "ok",
   "irs": "ok",
-  "cameras": "ok"
+  "cameras": "ok",
+  "colleges": "ok"
  }
 }
