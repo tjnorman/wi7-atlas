@@ -544,11 +544,25 @@ function liveNow() {
       : ac.length ? `<table><thead><tr><th>Flight</th><th>Type</th><th class="num">Altitude</th><th class="num">Speed</th></tr></thead><tbody>${ac.slice().sort((x, y) => (y.altitude_ft || 0) - (x.altitude_ft || 0)).slice(0, 14).map((a) => `<tr><td>${F.esc(a.callsign || "—")}</td><td>${F.esc(a.type || "—")}</td><td class="num">${alt(a)}</td><td class="num">${a.speed_kt != null ? a.speed_kt + " kt" : "—"}</td></tr>`).join("")}</tbody></table>${ac.length > 14 ? `<p class="fine">Showing the 14 highest of ${ac.length}.</p>` : ""}`
       : `<p class="sub">No aircraft were heard over the district at the last snapshot.</p>`;
     const stamp = when ? `${when.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" })} (${mins} minute${mins === 1 ? "" : "s"} ago)` : "";
-    $("#now-lede").innerHTML = `${cams.length ? `${cams.length} public road cameras show current conditions. ` : ""}${snap?.ok ? `At the last snapshot, <strong>${ac.length}</strong> aircraft ${ac.length === 1 ? "was" : "were"} over the district.` : ""}`;
-    $("#now-source").innerHTML = `${snap?.ok ? `Aircraft: a snapshot taken ${stamp} from <a href="${F.esc(snap.source_url)}" target="_blank" rel="noopener">${F.esc(snap.source)}</a> (${F.esc(snap.licence)}), refreshed about twice an hour, not real time. ${stale ? "<strong>This snapshot is more than 90 minutes old.</strong> " : ""}Positions come from volunteer receivers, which are sparse over the Northwoods, so some aircraft are not shown. ` : ""}${sourceLine(["open-eagle-eye"], "Camera images load from, and belong to, the agency that runs each camera. The registry does not list every public camera.")}`;
+    $("#now-lede").innerHTML = `${cams.length ? `${cams.length} public road cameras show current conditions. ` : ""}${snap?.ok ? `${snap.live ? "Right now" : "At the last snapshot"}, <strong>${ac.length}</strong> aircraft ${ac.length === 1 ? "was" : "were"} over the district.` : ""}`;
+    $("#now-source").innerHTML = `${snap?.ok ? `Aircraft: ${snap.live ? "positions as of" : "a snapshot taken"} ${stamp} from <a href="${F.esc(snap.source_url)}" target="_blank" rel="noopener">${F.esc(snap.source)}</a> (${F.esc(snap.licence)}), ${snap.live ? "updated every 10 seconds" : "refreshed about twice an hour, not real time"}. ${stale ? "<strong>This snapshot is more than 90 minutes old.</strong> " : ""}Positions come from volunteer receivers, which are sparse over the Northwoods, so some aircraft are not shown. ` : ""}${sourceLine(["open-eagle-eye"], "Camera images load from, and belong to, the agency that runs each camera. The registry does not list every public camera.")}`;
   };
   drawPlanes(null);
-  if (repo) {
+  const proxy = state.data.summary?.district?.live_proxy;
+  const fromProxy = (j) => ({
+    ok: !!j.ok, live: true, generated_at: j.generated_at, source: j.source, source_url: j.source_url, licence: j.licence,
+    aircraft: (j.ac || []).filter((a) => typeof a.lat === "number" && typeof a.lon === "number" && a.hex && d3.geoContains(district, [a.lon, a.lat])).map((a) => ({
+      hex: String(a.hex).toLowerCase(), callsign: (a.flight || "").trim() || null, lat: a.lat, lon: a.lon,
+      altitude_ft: typeof a.alt_baro === "number" ? Math.round(a.alt_baro) : null, on_ground: a.alt_baro === "ground",
+      speed_kt: typeof a.gs === "number" ? Math.round(a.gs) : null, track: Math.round(a.track ?? a.true_heading ?? 0), type: a.t || null })),
+  });
+  if (proxy) {
+    let failures = 0, timer = null;
+    const snapshotUrl = repo ? `https://raw.githubusercontent.com/${repo}/live/aircraft.json` : null;
+    const tick = () => fetch(`${proxy.replace(/\/$/, "")}/aircraft`).then((r) => r.json()).then((j) => { if (!j.ok) throw new Error("no source"); failures = 0; drawPlanes(fromProxy(j)); })
+      .catch(() => { failures += 1; if (failures === 3 && snapshotUrl) fetch(snapshotUrl).then((r) => (r.ok ? r.json() : null)).then(drawPlanes).catch(() => {}); });
+    onVisible(box, () => { tick(); timer = setInterval(() => { if (!document.hidden) tick(); }, 10000); }, 0.05);
+  } else if (repo) {
     const pull = () => fetch(`https://raw.githubusercontent.com/${repo}/live/aircraft.json?t=${Math.floor(Date.now() / 300000)}`).then((r) => (r.ok ? r.json() : null)).then(drawPlanes).catch(() => {});
     onVisible(box, () => { pull(); setInterval(() => { if (!document.hidden) pull(); }, 300000); }, 0.05);
   }

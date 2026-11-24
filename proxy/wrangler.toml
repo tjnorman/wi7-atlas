@@ -1,0 +1,11 @@
+# WI-7 Atlas real-time aircraft proxy. See worker.js.
+name = "wi7-atlas-live"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://tjnorman.github.io"
+# Centre and radius (nautical miles) of a circle covering the district. From tools/live_snapshot.py.
+LAT = "45.4344"
+LON = "-90.4727"
+NM = "143"

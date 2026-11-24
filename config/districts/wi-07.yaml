@@ -27,6 +27,9 @@ comparable_acs1_years_from: 2022
 publisher: Thomas J. Norman
 repo: tjnorman/wi7-atlas
 site_url: https://tjnorman.github.io/wi7-atlas/
+# Address of the optional real-time aircraft proxy (proxy/worker.js). Empty: the site uses the
+# twice-hourly snapshot on the live branch.
+live_proxy: ""
 companion_sites:
   - name: widistrict7.com
     url: https://widistrict7.com/

@@ -130,7 +130,7 @@ def build(d: District, data: dict, integrity: dict, notes: list[dict], manifest:
     member = (leg or {}).get("current")
     return {
         "district": {"id": d.id, "name": d.name, "short_name": d.short_name, "tagline": d.tagline,
-                     "state": d.state_name, "publisher": d.publisher, "site_url": d.site_url, "repo": d.repo,
+                     "state": d.state_name, "publisher": d.publisher, "site_url": d.site_url, "repo": d.repo, "live_proxy": d.raw.get("live_proxy") or None,
                      "congress": d.congress},
         "built_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "headline": headline,
