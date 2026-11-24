@@ -75,7 +75,10 @@ def run(d: District, only: list[str] | None = None) -> dict:
         m = data.get("municipalities")
         if not m:
             raise RuntimeError("Municipality list unavailable")
-        return {x["name"].upper() for x in m["data"]["municipalities"] if x["status"] != "outside"}
+        # Cities and villages mostly inside the district. Town names repeat across the state
+        # (Berlin, Jackson, Cleveland), so a town name alone cannot place a station here.
+        return {x["name"].upper() for x in m["data"]["municipalities"]
+                if x["type"] in ("city", "village") and x["land_share_in_district"] >= 0.5}
 
     steps: dict[str, Callable[[], tuple]] = {
         "geography": lambda: geography.fetch(f, d, out / "geo"),

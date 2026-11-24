@@ -35,8 +35,9 @@ QUERIES = [  # (tool, extra parameters, band)
 ]
 # FCC service codes kept, and the plain words used for them.
 KINDS = {"AM": "AM radio", "FM": "FM radio", "FL": "Low-power FM radio",
-         "DTV": "Full-power television", "DCA": "Class A television", "LPD": "Low-power television"}
-CALL = re.compile(r"^[KW][A-Z]{2,3}(-(FM|TV|LP|LD|CD|DT|CA))?$")
+         "DTV": "Full-power television", "DCA": "Class A television", "LPD": "Low-power television or translator"}
+CALL = re.compile(r"^([KW][A-Z]{2,3}(-(FM|TV|LP|LD|CD|DT|CA))?|[KW]\d{2}[A-Z]{2,3}(-D)?)$")
+DELETED = re.compile(r"^D[KW][A-Z0-9-]+$")  # the FCC prefixes a deleted station's call sign with D
 
 
 def parse_row(line: str) -> dict | None:
@@ -62,7 +63,8 @@ def near(shape: DistrictShape, lon: float, lat: float, deg: float = 0.6) -> bool
 
 def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path, county_names: dict[str, str],
           communities: set[str]) -> tuple[dict, list[Source], list[dict]]:
-    """communities: upper-case names of cities and villages in the district (for the community-of-licence list)."""
+    """communities: upper-case names of cities and villages mostly inside the district (for the
+    community-of-licence list). Towns are left out because their names repeat across the state."""
     shape = DistrictShape(shape_path)
     inside: dict[str, dict] = {}
     licensed_here: dict[str, dict] = {}
@@ -80,6 +82,8 @@ def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path, county_names:
                 continue
             shaped += 1
             if r["status"] != "LIC" or r["service"] not in KINDS or r["state"] != d.state_abbr:
+                continue
+            if DELETED.match(r["call"]):
                 continue
             if not CALL.match(r["call"]):
                 odd_calls.append(r["call"])
@@ -105,10 +109,10 @@ def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path, county_names:
     by_band = {b: sum(1 for s in stations if s["band"] == b) for b in ("AM", "FM", "TV")}
     checks = [{
         "id": "fcc-layout", "title": "FCC station records have the expected layout",
-        "status": "pass" if not odd_calls else "warn", "sources": ["fcc-queries"],
+        "status": "pass" if not set(odd_calls) else "warn", "sources": ["fcc-queries"],
         "values": {"rows": lines, "readable": shaped},
         "detail": f"{shaped:,} of {lines:,} rows had hemisphere letters and plausible coordinates in the expected positions."
-                  + (f" Skipped {len(odd_calls)} licensed records without a standard call sign: {', '.join(odd_calls[:6])}." if odd_calls else ""),
+                  + (f" Skipped {len(set(odd_calls))} licensed stations without a recognized call sign: {', '.join(sorted(set(odd_calls))[:6])}." if odd_calls else ""),
     }]
     payload = {
         "count": len(stations), "by_band": by_band, "stations": stations,

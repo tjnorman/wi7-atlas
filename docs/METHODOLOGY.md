@@ -62,7 +62,7 @@ The list comes from the National Center for Education Statistics' IPEDS director
 
 Stations come from the Federal Communications Commission's AM, FM, and TV query tools. A station is listed when it holds a licence (not only a construction permit) and its transmitter coordinates fall inside the district outline. Full-power and low-power FM, AM, and full-power, Class A, and low-power television are included; translators and boosters are not.
 
-- **Licensed here is not the same as received here.** Stations in Duluth, Eau Claire, Green Bay, and the Twin Cities reach parts of the district from transmitters outside it. Reception depends on power, antenna height, and terrain, and the atlas does not model it. A separate short list shows stations licensed to a community in the district whose transmitter stands outside it.
+- **Licensed here is not the same as received here.** Stations in Duluth, Eau Claire, Green Bay, and the Twin Cities reach parts of the district from transmitters outside it. Reception depends on power, antenna height, and terrain, and the atlas does not model it. A separate short list shows stations licensed to a city or village in the district whose transmitter stands outside it (towns are left out of that match because town names repeat across Wisconsin).
 - The FCC output has no column names. Each row must show hemisphere letters and plausible coordinates in the expected positions, or the build stops.
 - FCC records change continuously; the list carries its retrieval date.
 
