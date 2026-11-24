@@ -1,0 +1,7123 @@
+{
+ "generated_at": "2026-11-24T16:56:32+00:00",
+ "sources": [
+  {
+   "id": "wisdot-six-year",
+   "publisher": "Wisconsin Department of Transportation",
+   "title": "Construction Projects (6 Year), highway improvement program map service",
+   "url": "https://data-wisdot.opendata.arcgis.com/",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://dotmaps.wi.gov/arcgis/rest/services/agohub/HIGHWAY_PROGRAM_2_4_6_YEAR/MapServer/1/query?where=CONGRESSIONAL_DISTRICT_NUMBERS LIKE '%7%'",
+   "vintage": "Refreshed 2026-11-21",
+   "accessed": "2026-11-24",
+   "notes": "District tags and cost ranges are WisDOT's. Project counts are by WisDOT project ID.",
+   "apa": "Wisconsin Department of Transportation. (2026). Construction Projects (6 Year), highway improvement program map service [Data set]. Retrieved November 24, 2026, from https://data-wisdot.opendata.arcgis.com/"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "roads",
+ "data": {
+  "as_of": "2026-11-21",
+  "total": {
+   "projects": 423,
+   "cost_low": 1557050000,
+   "cost_high": 1931049577
+  },
+  "unpriced": 0,
+  "by_year": [
+   {
+    "year": "2026",
+    "projects": 1,
+    "cost_low": 7000000,
+    "cost_high": 7999999
+   },
+   {
+    "year": "2027",
+    "projects": 89,
+    "cost_low": 219300000,
+    "cost_high": 283249911
+   },
+   {
+    "year": "2028",
+    "projects": 84,
+    "cost_low": 283250000,
+    "cost_high": 354749916
+   },
+   {
+    "year": "2029",
+    "projects": 83,
+    "cost_low": 278700000,
+    "cost_high": 353099917
+   },
+   {
+    "year": "2030",
+    "projects": 65,
+    "cost_low": 256600000,
+    "cost_high": 318249935
+   },
+   {
+    "year": "2031 - 2032",
+    "projects": 101,
+    "cost_low": 512200000,
+    "cost_high": 613699899
+   }
+  ],
+  "by_county": [
+   {
+    "county": "Ashland",
+    "projects": 17,
+    "cost_low": 44250000,
+    "cost_high": 56749983
+   },
+   {
+    "county": "Barron",
+    "projects": 21,
+    "cost_low": 83850000,
+    "cost_high": 99349979
+   },
+   {
+    "county": "Bayfield",
+    "projects": 12,
+    "cost_low": 38250000,
+    "cost_high": 48749988
+   },
+   {
+    "county": "Burnett",
+    "projects": 9,
+    "cost_low": 49000000,
+    "cost_high": 58999991
+   },
+   {
+    "county": "Chippewa",
+    "projects": 33,
+    "cost_low": 140700000,
+    "cost_high": 174249967
+   },
+   {
+    "county": "Clark",
+    "projects": 11,
+    "cost_low": 47250000,
+    "cost_high": 55249989
+   },
+   {
+    "county": "Douglas",
+    "projects": 14,
+    "cost_low": 79750000,
+    "cost_high": 95499986
+   },
+   {
+    "county": "Dunn",
+    "projects": 4,
+    "cost_low": 17250000,
+    "cost_high": 20499996
+   },
+   {
+    "county": "Eau Claire",
+    "projects": 4,
+    "cost_low": 10500000,
+    "cost_high": 12249996
+   },
+   {
+    "county": "Florence",
+    "projects": 3,
+    "cost_low": 10000000,
+    "cost_high": 12999997
+   },
+   {
+    "county": "Forest",
+    "projects": 11,
+    "cost_low": 39000000,
+    "cost_high": 48499989
+   },
+   {
+    "county": "Iron",
+    "projects": 6,
+    "cost_low": 11000000,
+    "cost_high": 15499994
+   },
+   {
+    "county": "Jackson",
+    "projects": 4,
+    "cost_low": 57000000,
+    "cost_high": 64999996
+   },
+   {
+    "county": "Juneau",
+    "projects": 2,
+    "cost_low": 9000000,
+    "cost_high": 10999998
+   },
+   {
+    "county": "Langlade",
+    "projects": 18,
+    "cost_low": 41000000,
+    "cost_high": 57499982
+   },
+   {
+    "county": "Lincoln",
+    "projects": 30,
+    "cost_low": 118200000,
+    "cost_high": 145999970
+   },
+   {
+    "county": "Marathon",
+    "projects": 62,
+    "cost_low": 218350000,
+    "cost_high": 273199938
+   },
+   {
+    "county": "Monroe",
+    "projects": 5,
+    "cost_low": 11500000,
+    "cost_high": 15749995
+   },
+   {
+    "county": "North Central Region Wide",
+    "projects": 2,
+    "cost_low": 2000000,
+    "cost_high": 3999998
+   },
+   {
+    "county": "Northwest Region Wide",
+    "projects": 3,
+    "cost_low": 2250000,
+    "cost_high": 2999997
+   },
+   {
+    "county": "Oneida",
+    "projects": 15,
+    "cost_low": 40250000,
+    "cost_high": 53749985
+   },
+   {
+    "county": "Pierce",
+    "projects": 3,
+    "cost_low": 9100000,
+    "cost_high": 11249997
+   },
+   {
+    "county": "Polk",
+    "projects": 20,
+    "cost_low": 84350000,
+    "cost_high": 102249980
+   },
+   {
+    "county": "Portage",
+    "projects": 2,
+    "cost_low": 8000000,
+    "cost_high": 9999998
+   },
+   {
+    "county": "Price",
+    "projects": 10,
+    "cost_low": 29000000,
+    "cost_high": 35999990
+   },
+   {
+    "county": "Rusk",
+    "projects": 8,
+    "cost_low": 31750000,
+    "cost_high": 37499992
+   },
+   {
+    "county": "Sawyer",
+    "projects": 9,
+    "cost_low": 35600000,
+    "cost_high": 42249991
+   },
+   {
+    "county": "St. Croix",
+    "projects": 23,
+    "cost_low": 77500000,
+    "cost_high": 98249977
+   },
+   {
+    "county": "Taylor",
+    "projects": 15,
+    "cost_low": 45850000,
+    "cost_high": 56999985
+   },
+   {
+    "county": "Trempealeau",
+    "projects": 1,
+    "cost_low": 250000,
+    "cost_high": 499999
+   },
+   {
+    "county": "Vilas",
+    "projects": 11,
+    "cost_low": 34600000,
+    "cost_high": 43999989
+   },
+   {
+    "county": "Washburn",
+    "projects": 14,
+    "cost_low": 71250000,
+    "cost_high": 87749986
+   },
+   {
+    "county": "Wood",
+    "projects": 21,
+    "cost_low": 59450000,
+    "cost_high": 76499979
+   }
+  ],
+  "shared": 41,
+  "projects": [
+   {
+    "id": "90300772",
+    "year": "2026",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 017",
+    "title": "Merrill - Rhinelander",
+    "limits": "Sth 64 To Big Hay Meadow Creek",
+    "miles": 8.19,
+    "work": "Const/pvrpla",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89950018",
+    "year": "2027",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "LOC STR",
+    "title": "C Ashland, 3Rd Street West",
+    "limits": "Sth 112 To Sth 13",
+    "miles": 1.36,
+    "work": "Construction/resurface",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89950020",
+    "year": "2027",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "LOC STR",
+    "title": "C Ashland, Beaser Avenue",
+    "limits": "Maple Lane To Ush 2",
+    "miles": 1.49,
+    "work": "Construction/resurface",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800082",
+    "year": "2027",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "US 002",
+    "title": "Ashland - Saxon",
+    "limits": "36Th Ave To Government Rd",
+    "miles": 6.84,
+    "work": "Construction/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100178",
+    "year": "2027",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "WIS 013",
+    "title": "Park Falls - Mellen",
+    "limits": "Weeping Willow Ln To E Mack St",
+    "miles": 0.28,
+    "work": "Construction/pvrpla",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100182",
+    "year": "2027",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "WIS 013",
+    "title": "Park Falls - Mellen",
+    "limits": "Price Co Ln To Morse Rd",
+    "miles": 17.39,
+    "work": "Construction/resurface",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "83330071",
+    "year": "2027",
+    "counties": [
+     "Barron"
+    ],
+    "route": "LOC STR",
+    "title": "T Sumner, 16Th Avenue",
+    "limits": "Moose Ear Creek Bridge B-03-0224",
+    "miles": 0.05,
+    "work": "Construction/brrpl",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "83470570",
+    "year": "2027",
+    "counties": [
+     "Barron"
+    ],
+    "route": "LOC STR",
+    "title": "T Clinton, 15Th Avenue",
+    "limits": "Pond Creek Bridge B-03-0223",
+    "miles": 0.0,
+    "work": "Construction/brrpl",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950572",
+    "year": "2027",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 053",
+    "title": "New Auburn - Rice Lake",
+    "limits": "Cth W Bridge B-03-0039 & B-03-0040",
+    "miles": 0.12,
+    "work": "Construction/brrhb/deck replacement",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11960470",
+    "year": "2027",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 053",
+    "title": "New Auburn - Rice Lake",
+    "limits": "Chippewa County Line To Ush 8 (Sb)",
+    "miles": 16.37,
+    "work": "Constr/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "87430070",
+    "year": "2027",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "County B",
+    "title": "Cth Ff - Cth A",
+    "limits": "Cth Ff To Hoover Line Road",
+    "miles": 2.9,
+    "work": "Construction/pvrpla",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15600078",
+    "year": "2027",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "US 063",
+    "title": "Drummond - Ush 2",
+    "limits": "20 Mile Creek Bridge B-04-0129",
+    "miles": 0.22,
+    "work": "Construction/new bridge",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81600076",
+    "year": "2027",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "WIS 013",
+    "title": "C Washburn, Bayfield Street",
+    "limits": "Washington Ave To Superior Ave",
+    "miles": 0.96,
+    "work": "Construction/pavement replacement",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "83680070",
+    "year": "2027",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "County X",
+    "title": "Webster - Hertel",
+    "limits": "Sth 35 To Gaslyn Road",
+    "miles": 4.69,
+    "work": "Construction/pvrpla",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89200370",
+    "year": "2027",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "County H",
+    "title": "Stanley - Brownsville",
+    "limits": "Little Otter Creek Bridge B-09-0315",
+    "miles": 0.06,
+    "work": "Construction/brrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89160072",
+    "year": "2027",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "County S",
+    "title": "Huron - Gilman",
+    "limits": "Yellow River Bridge B-09-0326",
+    "miles": 0.06,
+    "work": "Construction/brrpl",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89130377",
+    "year": "2027",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "County Y",
+    "title": "Jim Falls - Sth 178",
+    "limits": "Chippewa River 15 Bridge B-09-0123",
+    "miles": 0.16,
+    "work": "Construction/brrhb",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89070074",
+    "year": "2027",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "LOC STR",
+    "title": "T Bloomer, 83Rd St",
+    "limits": "Duncan Creek Bridge B-09-0320",
+    "miles": 0.03,
+    "work": "Construction/brrpl",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89200071",
+    "year": "2027",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "LOC STR",
+    "title": "T Delmar, 290Th St",
+    "limits": "Lotz Creek Bridge B-09-0325",
+    "miles": 0.03,
+    "work": "Construction/brrpl",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11900283",
+    "year": "2027",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Cth M (Main St) Bridge B-09-0092",
+    "miles": 0.06,
+    "work": "Construction/brrhb/concrete overlay",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "82000071",
+    "year": "2027",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 027",
+    "title": "Cadott - Cornell",
+    "limits": "Sth 29 To Johnson Road",
+    "miles": 15.4,
+    "work": "Construction/resurface",
+    "cost_low": 11000000,
+    "cost_high": 11999999,
+    "cost_text": "$11,000,000 - $11,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10500276",
+    "year": "2027",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 029",
+    "title": "Nw Region, Sth 29 Brdg Deck Sealing",
+    "limits": "Bridge Deck Sealing (Var)",
+    "miles": 0.0,
+    "work": "Construction/bridge deck sealing",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "78560370",
+    "year": "2027",
+    "counties": [
+     "Clark"
+    ],
+    "route": "County W",
+    "title": "Sth 73 - Ush 10",
+    "limits": "Sth 73 To Ush 10",
+    "miles": 6.0,
+    "work": "Construction/pvrpla",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "78370072",
+    "year": "2027",
+    "counties": [
+     "Clark"
+    ],
+    "route": "LOC STR",
+    "title": "T Colby, Hiline Avenue",
+    "limits": "Br Dill Creek Bridge B-10-0270",
+    "miles": 0.03,
+    "work": "Construction/brrpl",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88810071",
+    "year": "2027",
+    "counties": [
+     "Clark"
+    ],
+    "route": "LOC STR",
+    "title": "T Hoard, Bridge Road",
+    "limits": "Popple River Bridge B-10-0260",
+    "miles": 0.07,
+    "work": "Construction/brrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88830071",
+    "year": "2027",
+    "counties": [
+     "Clark"
+    ],
+    "route": "LOC STR",
+    "title": "T Withee, Willow Road",
+    "limits": "S Fk Eau Claire River Br B-10-0269",
+    "miles": 0.03,
+    "work": "Construction/brrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15200273",
+    "year": "2027",
+    "counties": [
+     "Clark"
+    ],
+    "route": "US 010",
+    "title": "Fairchild - Neillsville",
+    "limits": "Bachelors Ave To Sth 73 S",
+    "miles": 7.64,
+    "work": "Construction/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "70400073",
+    "year": "2027",
+    "counties": [
+     "Clark"
+    ],
+    "route": "WIS 098",
+    "title": "Greenwood - Spencer",
+    "limits": "Bear Creek Bridge B-10-0252",
+    "miles": 0.05,
+    "work": "Construction/brrpl",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "83940073",
+    "year": "2027",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "LOC STR",
+    "title": "T Summit, Patzau Foxboro Road",
+    "limits": "Balsam Creek Bridge B-16-0151",
+    "miles": 0.03,
+    "work": "Construction/bridge replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800081",
+    "year": "2027",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "US 002",
+    "title": "Wentworth - Brule",
+    "limits": "Branch Of The Middle River Culvert",
+    "miles": 0.07,
+    "work": "Construction/culvert replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800172",
+    "year": "2027",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "US 002",
+    "title": "Superior - Wentworth",
+    "limits": "Ush 53 S To Cth D",
+    "miles": 5.1,
+    "work": "Construction/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800574",
+    "year": "2027",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "US 002",
+    "title": "Wentworth - Brule",
+    "limits": "Bayfield Rd To Cth D",
+    "miles": 0.03,
+    "work": "Construction/culvert replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11960060",
+    "year": "2027",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "US 053",
+    "title": "Minong - Solon Springs",
+    "limits": "Cth Y To Cth M (Sb)",
+    "miles": 3.91,
+    "work": "Construction/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "91101073",
+    "year": "2027",
+    "counties": [
+     "Forest"
+    ],
+    "route": "WIS 139",
+    "title": "Cavour - Brule River",
+    "limits": "Ush 8 To Florence County Line",
+    "miles": 10.6,
+    "work": "Const/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "70800174",
+    "year": "2027",
+    "counties": [
+     "Jackson"
+    ],
+    "route": "US 012",
+    "title": "Eau Claire - Fairchild",
+    "limits": "Schoolhouse Creek B-27-0187",
+    "miles": 0.05,
+    "work": "Construction/bridge replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98450670",
+    "year": "2027",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "LOC STR",
+    "title": "T Rolling, Koszarek Road",
+    "limits": "Spring Brook Bridge, B-34-0067",
+    "miles": 0.06,
+    "work": "Const/replacement",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90151271",
+    "year": "2027",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 064",
+    "title": "Merrill - Antigo",
+    "limits": "Zima Road To Ush 45",
+    "miles": 3.05,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "91401281",
+    "year": "2027",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 064",
+    "title": "Antigo - Langlade",
+    "limits": "Wolf River Bridge B-34-0061",
+    "miles": 0.17,
+    "work": "Const/replacement",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15901473",
+    "year": "2027",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 008",
+    "title": "Prentice - Bradley",
+    "limits": "Cth L To Klade Road",
+    "miles": 1.96,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15901475",
+    "year": "2027",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 008",
+    "title": "Prentice - Bradley",
+    "limits": "Cth L Intersection",
+    "miles": 0.33,
+    "work": "Const/reconstruct",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15901476",
+    "year": "2027",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 008",
+    "title": "Prentice - Bradley",
+    "limits": "Cth A Intersection",
+    "miles": 0.28,
+    "work": "Const/reconstruct",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90300773",
+    "year": "2027",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 017",
+    "title": "Merrill - Rhinelander",
+    "limits": "Stillwell Road To Oneida Co Line",
+    "miles": 8.01,
+    "work": "Cons/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90001073",
+    "year": "2027",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 064",
+    "title": "C Merrill, W Main Street",
+    "limits": "Wisconsin River Bridge B-35-0160",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66660371",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "County M",
+    "title": "Cth C - Fenwood",
+    "limits": "Big Eau Pleine River, B-37-0171",
+    "miles": 0.16,
+    "work": "Const/rehab/deck replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66520170",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "County P",
+    "title": "Cth F - Cth E",
+    "limits": "Big Eau Pleine Rvr Bridge B-37-0481",
+    "miles": 0.14,
+    "work": "Const/replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66650570",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "County S",
+    "title": "Sth 29 - Cth A",
+    "limits": "Br Big Rib River Bridge, B-37-0500",
+    "miles": 0.06,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66670170",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "County T",
+    "title": "Wood Co Line - Sth 97",
+    "limits": "Mcgivern Creek Bridge, B-37-0496",
+    "miles": 0.03,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66710170",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "LOC STR",
+    "title": "T Frankfort, Huckleberry Road",
+    "limits": "Randall Creek Bridge, B-37-0498",
+    "miles": 0.03,
+    "work": "Const/replacement",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66720170",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "LOC STR",
+    "title": "T Wien, Chesak Road",
+    "limits": "Scotch Creek Bridge, B-37-0499",
+    "miles": 0.04,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991373",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "LOC STR",
+    "title": "V Weston, Ross Avenue",
+    "limits": "Metro Drive To Alderson Street",
+    "miles": 0.43,
+    "work": "Const/reconstruct",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991383",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "LOC STR",
+    "title": "V Weston, Ross Avenue",
+    "limits": "Metro Drive To Alderson Street",
+    "miles": 0.0,
+    "work": "Const/reconstruct/local utility",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94920070",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "LOC STR",
+    "title": "T Texas, River Hills Road",
+    "limits": "Big Cain Creek Bridge, B-37-0503",
+    "miles": 0.04,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94920071",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "LOC STR",
+    "title": "T Texas, County Line Road",
+    "limits": "Big Cain Creek Bridge, B-37-0504",
+    "miles": 0.04,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66510972",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "OFF SYS",
+    "title": "Stevens Point - Wausau",
+    "limits": "Cth N/Rib Mountain Dr Interchange",
+    "miles": 0.09,
+    "work": "Const/hsip",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10530785",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 029",
+    "title": "Abbotsford - Wausau",
+    "limits": "Cth E South To Sth 97, Wb",
+    "miles": 2.48,
+    "work": "Const/pavement replacement",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66100071",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 034",
+    "title": "Rudolph - Knowlton",
+    "limits": "Oak Hill Road To Cth Db",
+    "miles": 9.05,
+    "work": "Constr/resurface",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "62700075",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 049",
+    "title": "Northland - Sth 29",
+    "limits": "Little Wolf River Bridge B-37-0428",
+    "miles": 0.0,
+    "work": "Const/deck overlay",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "62700086",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 049",
+    "title": "Northland - Sth 29",
+    "limits": "Cth C To Sth 29",
+    "miles": 8.27,
+    "work": "Const/resurfacing",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "63700073",
+    "year": "2027",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 153",
+    "title": "Stratford - Elderon",
+    "limits": "Wisconsin River Bridge To Old 51 Rd",
+    "miles": 0.52,
+    "work": "Const/resurface",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "70050071",
+    "year": "2027",
+    "counties": [
+     "Monroe"
+    ],
+    "route": "LOC STR",
+    "title": "T Lagrange, Ellsworth Road",
+    "limits": "Br Mill Creek Bridge, B-41-0338",
+    "miles": 0.03,
+    "work": "Const/bridge replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98770072",
+    "year": "2027",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "County P",
+    "title": "Rhinelander - Ush 8",
+    "limits": "Eisenhower Parkway To Faust Lake Rd",
+    "miles": 0.55,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15901474",
+    "year": "2027",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "US 008",
+    "title": "Bradley - Rhinelander",
+    "limits": "Gatewood Heights Rd To N Rifle Rd",
+    "miles": 10.89,
+    "work": "Const/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11701672",
+    "year": "2027",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "US 051",
+    "title": "Tomahawk - Minocqua",
+    "limits": "Cth K/Swamp Lake Rd Intersection",
+    "miles": 0.2,
+    "work": "Const/hsip/reconstruct",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "78870070",
+    "year": "2027",
+    "counties": [
+     "Pierce"
+    ],
+    "route": "County M",
+    "title": "T Clifton, Cth M",
+    "limits": "Cth F To River Falls",
+    "miles": 3.32,
+    "work": "Construction/safety hrrr",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "83980071",
+    "year": "2027",
+    "counties": [
+     "Polk"
+    ],
+    "route": "LOC STR",
+    "title": "T Apple River, 153Rd Avenue",
+    "limits": "Apple River Bridge B-48-0068",
+    "miles": 0.03,
+    "work": "Construction/brrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80100180",
+    "year": "2027",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 035",
+    "title": "Luck - Siren",
+    "limits": "Sth 48 E To Polk Street",
+    "miles": 6.87,
+    "work": "Construction/resurface",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88200070",
+    "year": "2027",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 048",
+    "title": "Frederic - Mckinley",
+    "limits": "Sth 35 To Bass Lake Lane",
+    "miles": 11.17,
+    "work": "Construction/cir/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11660566",
+    "year": "2027",
+    "counties": [
+     "Portage"
+    ],
+    "route": "I-039",
+    "title": "Stevens Point - Wausau",
+    "limits": "Ush 10 To Sth 34, Sb",
+    "miles": 8.99,
+    "work": "Const/prev maintenance",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "62700076",
+    "year": "2027",
+    "counties": [
+     "Portage"
+    ],
+    "route": "WIS 049",
+    "title": "Northland - Sth 29",
+    "limits": "Sth 66 To Cth C",
+    "miles": 5.95,
+    "work": "Const/resurfacing",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "98920772",
+    "year": "2027",
+    "counties": [
+     "Price"
+    ],
+    "route": "County A",
+    "title": "V Prentice, Cth A South",
+    "limits": "Sth 13 To Ush 8",
+    "miles": 2.33,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98920471",
+    "year": "2027",
+    "counties": [
+     "Price"
+    ],
+    "route": "LOC STR",
+    "title": "T Prentice, Old 8 West",
+    "limits": "Hay Creek Bridge, B-50-0100",
+    "miles": 0.02,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81800081",
+    "year": "2027",
+    "counties": [
+     "Rusk"
+    ],
+    "route": "WIS 027",
+    "title": "Cornell - Ladysmith",
+    "limits": "Chippewa/Rusk Co Ln To Ush 8",
+    "miles": 11.88,
+    "work": "Construction/resurface",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "87730072",
+    "year": "2027",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "County E",
+    "title": "Sth 70 - Cth B",
+    "limits": "Norwis Road To Cth B",
+    "miles": 3.25,
+    "work": "Construction/reconstruction",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85900071",
+    "year": "2027",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "WIS 040",
+    "title": "Bruce - Radisson",
+    "limits": "1.0 Mi To 0.08 Mi S Of Elm Creek Rd",
+    "miles": 0.86,
+    "work": "Construction/safety",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89390878",
+    "year": "2027",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "County E",
+    "title": "T St Joseph, Cth E",
+    "limits": "Cth I & E Intersection",
+    "miles": 0.01,
+    "work": "Construction/safety",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10001882",
+    "year": "2027",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region, Wingwall Repairs",
+    "limits": "Var Hwys, Multiple Structures",
+    "miles": 0.53,
+    "work": "Construction/brrhb",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "88870372",
+    "year": "2027",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "County A",
+    "title": "Lublin - Stetsonville",
+    "limits": "N Butternut St To N Jefferson St",
+    "miles": 0.61,
+    "work": "Construction/reconstruction",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "95450374",
+    "year": "2027",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "County C",
+    "title": "Cth M - Rib Lake",
+    "limits": "Big Rib River Bridge B-60-0165",
+    "miles": 0.07,
+    "work": "Construction/brrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89000575",
+    "year": "2027",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "County D",
+    "title": "Jump River - Cth N",
+    "limits": "Levitt Creek Bridge B-60-0166",
+    "miles": 0.07,
+    "work": "Construction/brrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100181",
+    "year": "2027",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 013",
+    "title": "Medford - Prentice",
+    "limits": "Cth M E To Sth 102",
+    "miles": 5.75,
+    "work": "Construction/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "95090270",
+    "year": "2027",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "County N",
+    "title": "Sayner - Cth K",
+    "limits": "Sth 155 To Cth K",
+    "miles": 5.85,
+    "work": "Const/hsip",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11702270",
+    "year": "2027",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "US 051",
+    "title": "Minocqua - Manitowish",
+    "limits": "Manitowish River Bridge, B-63-0027",
+    "miles": 0.15,
+    "work": "Const/bridge replacement",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90700374",
+    "year": "2027",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "WIS 070",
+    "title": "Fifield - Woodruff",
+    "limits": "Price County Line To Cth F",
+    "miles": 10.56,
+    "work": "Const/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15600073",
+    "year": "2027",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "US 063",
+    "title": "Spooner - Hayward",
+    "limits": "Namekagon River Bridge B-65-0061",
+    "miles": 0.05,
+    "work": "Construction/brrpl",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80500070",
+    "year": "2027",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "WIS 070",
+    "title": "Siren - Spooner",
+    "limits": "West Co Ln To 1350 Ft W Of 1St St",
+    "miles": 6.33,
+    "work": "Construction/cir/resurfacing",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69670077",
+    "year": "2027",
+    "counties": [
+     "Wood"
+    ],
+    "route": "LOC STR",
+    "title": "T Port Edwards, County Line Road",
+    "limits": "Cranberry Creek Bridge, B-71-0211",
+    "miles": 0.02,
+    "work": "Const/replacement",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69670078",
+    "year": "2027",
+    "counties": [
+     "Wood"
+    ],
+    "route": "LOC STR",
+    "title": "T Port Edwards, 1St Street East",
+    "limits": "Br Cranberry Creek, B-71-0212",
+    "miles": 0.03,
+    "work": "Const/replacement",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69950771",
+    "year": "2027",
+    "counties": [
+     "Wood"
+    ],
+    "route": "LOC STR",
+    "title": "C Marshfield, West 5Th Street",
+    "limits": "S Oak Avenue To S Chestnut Avenue",
+    "miles": 0.3,
+    "work": "Const/reconstruct",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69951173",
+    "year": "2027",
+    "counties": [
+     "Wood"
+    ],
+    "route": "LOC STR",
+    "title": "C Marshfield, South Vine Avenue",
+    "limits": "East 14Th Street To East 4Th Street",
+    "miles": 0.49,
+    "work": "Const/reconstruct",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "63400062",
+    "year": "2027",
+    "counties": [
+     "Wood"
+    ],
+    "route": "VAR HWY",
+    "title": "Wisconsin Rapids - Marshfield",
+    "limits": "Wis 13 & 80 Bridges B-71-62,79",
+    "miles": 0.16,
+    "work": "Constr/pm appr 11.3.16",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "83100070",
+    "year": "2028",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "LOC STR",
+    "title": "T White River, Ensinger Rd",
+    "limits": "Brunsweiler River Bridge B-02-0076",
+    "miles": 0.01,
+    "work": "Construction/brrpl",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89950028",
+    "year": "2028",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "LOC STR",
+    "title": "C Ashland, 11Th Ave E",
+    "limits": "Pufall Dr To Ush 2",
+    "miles": 0.49,
+    "work": "Construction/resurface",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11890172",
+    "year": "2028",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "US 002",
+    "title": "Ashland - Saxon",
+    "limits": "Beartrap Creek Bridge B-02-0014",
+    "miles": 0.1,
+    "work": "Construction/brrhb",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88350070",
+    "year": "2028",
+    "counties": [
+     "Barron"
+    ],
+    "route": "County F",
+    "title": "Prairie Farm - Ush 8",
+    "limits": "Dorrity Creek Bridge B-03-0220",
+    "miles": 0.0,
+    "work": "Construction/brrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950663",
+    "year": "2028",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 053",
+    "title": "New Auburn - Spooner",
+    "limits": "Brdg Paint B-03-0037,0038,0047,0057",
+    "miles": 0.34,
+    "work": "Construction/bridge paints",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "87400073",
+    "year": "2028",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "County C",
+    "title": "Washburn - Cornucopia",
+    "limits": "8Th Avenue To Mckinley Rd",
+    "miles": 2.37,
+    "work": "Construction/pvrpla",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "83490071",
+    "year": "2028",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "County F",
+    "title": "Mason - Moquah",
+    "limits": "Sth 118 To Ush 2",
+    "miles": 3.5,
+    "work": "Construction/pvrpla",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85100075",
+    "year": "2028",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "WIS 013",
+    "title": "Cornucopia - Port Wing",
+    "limits": "Old 13 Road To Bark Point Road",
+    "miles": 7.5,
+    "work": "Construction/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85100172",
+    "year": "2028",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "WIS 013",
+    "title": "Port Wing - Superior",
+    "limits": "Cth A To Douglas/Bayfield Co Ln",
+    "miles": 8.02,
+    "work": "Construction/pavement replacement",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80100074",
+    "year": "2028",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "WIS 035",
+    "title": "Siren - Danbury",
+    "limits": "Cth K S To Yellow Rvr Br B-07-0019",
+    "miles": 5.16,
+    "work": "Construction/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85600174",
+    "year": "2028",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "WIS 077",
+    "title": "St Croix River - Danbury",
+    "limits": "Mn/Wi State Ln To Sth 35 S",
+    "miles": 3.97,
+    "work": "Construction/pavement replacement",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89100378",
+    "year": "2028",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "County D",
+    "title": "Boyd - Estella",
+    "limits": "Cth O To Cth S North",
+    "miles": 4.99,
+    "work": "Construction/pvrpla",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "78620372",
+    "year": "2028",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "County K",
+    "title": "Sth 29 - Cth O",
+    "limits": "Yellow River Bridge B-09-0318",
+    "miles": 0.0,
+    "work": "Construction/brrpl",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "89200674",
+    "year": "2028",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "County O",
+    "title": "Sth 27 - Cth D",
+    "limits": "Yellow River Bridge B-09-0382",
+    "miles": 0.0,
+    "work": "Construction/brrhb",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11900474",
+    "year": "2028",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Rheingan Creek Bridge B-09-0069",
+    "miles": 0.02,
+    "work": "Constr/brrhb/wingwall replacement",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10500083",
+    "year": "2028",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 029",
+    "title": "Chippewa Falls - Thorp",
+    "limits": "Cth X Bridge B-09-0022",
+    "miles": 0.02,
+    "work": "Const/brrhb/deck replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "85800072",
+    "year": "2028",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 040",
+    "title": "Bloomer - Bruce",
+    "limits": "Sth 64 E To Chippewa/Rusk Co Ln",
+    "miles": 15.04,
+    "work": "Construction/rsrf20",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "86200076",
+    "year": "2028",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 040",
+    "title": "Elk Mound - Bloomer",
+    "limits": "Cth B E Jct To Ush 53",
+    "miles": 9.63,
+    "work": "Construction/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "86000874",
+    "year": "2028",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 178",
+    "title": "Chippewa Falls - Cornell",
+    "limits": "O'Neil Creek Bridge B-09-0390",
+    "miles": 0.17,
+    "work": "Construction/bridge replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "78370071",
+    "year": "2028",
+    "counties": [
+     "Clark"
+    ],
+    "route": "LOC STR",
+    "title": "T Colby, Sandhill Avenue",
+    "limits": "Popple River Bridge B-10-0264",
+    "miles": 0.0,
+    "work": "Construction/bridge replacement",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "70300072",
+    "year": "2028",
+    "counties": [
+     "Clark"
+    ],
+    "route": "US 010",
+    "title": "Neillsville - Marshfield",
+    "limits": "Sth 73 To East County Line",
+    "miles": 16.32,
+    "work": "Construction/resurface",
+    "cost_low": 14000000,
+    "cost_high": 14999999,
+    "cost_text": "$14,000,000 - $14,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "75200080",
+    "year": "2028",
+    "counties": [
+     "Clark"
+    ],
+    "route": "WIS 095",
+    "title": "Merrillan - Neillsville",
+    "limits": "Cth K To Sth 73 S",
+    "miles": 14.38,
+    "work": "Construction/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89980062",
+    "year": "2028",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "LOC STR",
+    "title": "C Superior, Marina Drive",
+    "limits": "Marina Dr N To Barkers Island",
+    "miles": 0.14,
+    "work": "Constrution/reconstruction",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11900377",
+    "year": "2028",
+    "counties": [
+     "Eau Claire"
+    ],
+    "route": "US 053",
+    "title": "Nw Region, Ush 53 Brdg Deck Sealing",
+    "limits": "Bridge Deck Sealing (Var)",
+    "miles": 0.0,
+    "work": "Construction/bridge deck sealing",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "93241273",
+    "year": "2028",
+    "counties": [
+     "Florence"
+    ],
+    "route": "County N",
+    "title": "Cth U - County Line",
+    "limits": "Menominee River Bridge, B-19-0003",
+    "miles": 0.0,
+    "work": "Const/rehab/deck replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "99130070",
+    "year": "2028",
+    "counties": [
+     "Florence"
+    ],
+    "route": "LOC STR",
+    "title": "T Florence, Pentoga Road",
+    "limits": "Brule River Bridge, P-19-0013",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98090070",
+    "year": "2028",
+    "counties": [
+     "Forest"
+    ],
+    "route": "LOC STR",
+    "title": "T Argonne, Cardinal Lane",
+    "limits": "N Br Peshtigo River, B-21-0038",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98090071",
+    "year": "2028",
+    "counties": [
+     "Forest"
+    ],
+    "route": "LOC STR",
+    "title": "T Argonne, Cardinal Lane",
+    "limits": "N Br Peshtigo River, B-21-0039",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15901970",
+    "year": "2028",
+    "counties": [
+     "Forest"
+    ],
+    "route": "US 008",
+    "title": "Laona - Goodman",
+    "limits": "S Jct Sth 32 To Peshtigo Rvr Bridge",
+    "miles": 7.43,
+    "work": "Const/resurface",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15901971",
+    "year": "2028",
+    "counties": [
+     "Forest"
+    ],
+    "route": "US 008",
+    "title": "Laona - Goodman",
+    "limits": "Peshtigo Brdge To Marinette Co Line",
+    "miles": 10.74,
+    "work": "Const/resurface",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "93060070",
+    "year": "2028",
+    "counties": [
+     "Forest"
+    ],
+    "route": "WIS 052",
+    "title": "Lily - Laona",
+    "limits": "Langlade County Line To Sth 32",
+    "miles": 11.35,
+    "work": "Const/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "93510070",
+    "year": "2028",
+    "counties": [
+     "Iron"
+    ],
+    "route": "County FF",
+    "title": "Ashland Co Line - Ush 51",
+    "limits": "Turtle River Bridge, B-26-0003",
+    "miles": 0.0,
+    "work": "Const/rehab/deck overlay",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "93030373",
+    "year": "2028",
+    "counties": [
+     "Iron"
+    ],
+    "route": "WIS 122",
+    "title": "T Saxon, Hoyt Road",
+    "limits": "South Jct Cth B To West Mill Street",
+    "miles": 0.31,
+    "work": "Const/pavement replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "76600072",
+    "year": "2028",
+    "counties": [
+     "Juneau"
+    ],
+    "route": "WIS 080",
+    "title": "New Lisbon - Necedah",
+    "limits": "Lemonweir River To Sth 58",
+    "miles": 7.97,
+    "work": "Const/b-29-66 & -105/cold20",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "98350373",
+    "year": "2028",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "LOC STR",
+    "title": "C Antigo, Western Avenue",
+    "limits": "Cth Y To 5Th Avenue",
+    "miles": 0.97,
+    "work": "Const/recondition",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98490070",
+    "year": "2028",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "LOC STR",
+    "title": "T Wolf River, Town Line Road",
+    "limits": "Evergreen River Bridge, P-34-0903",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94260070",
+    "year": "2028",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "County T",
+    "title": "Sth 86 - Oneida County Line",
+    "limits": "Big Somo River Bridge, P-35-0044",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98590070",
+    "year": "2028",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "LOC STR",
+    "title": "T Russell, 1St Avenue",
+    "limits": "Big Hay Meadow Creek, P-35-0074",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11762162",
+    "year": "2028",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 051",
+    "title": "Merrill - Tomahawk",
+    "limits": "Cth J To Cth S",
+    "miles": 1.64,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11762172",
+    "year": "2028",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 051",
+    "title": "Merrill - Tomahawk",
+    "limits": "Cth K To Cth H",
+    "miles": 7.27,
+    "work": "Const/resurface",
+    "cost_low": 14000000,
+    "cost_high": 14999999,
+    "cost_text": "$14,000,000 - $14,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11762173",
+    "year": "2028",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 051",
+    "title": "Merrill - Tomahawk",
+    "limits": "Cth H To Little Pine Creek",
+    "miles": 3.73,
+    "work": "Const/pvrpla",
+    "cost_low": 15000000,
+    "cost_high": 16999999,
+    "cost_text": "$15,000,000 - $16,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90001271",
+    "year": "2028",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 064",
+    "title": "Medford - Merrill",
+    "limits": "Glen Drive To Sth 107 North",
+    "miles": 2.07,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69990081",
+    "year": "2028",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 51",
+    "title": "C Wausau, Badger Avenue",
+    "limits": "Cth U To West Campus Drive",
+    "miles": 0.3,
+    "work": "Const/pvrpla",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94790075",
+    "year": "2028",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "County A",
+    "title": "Sth 13 - Sth 97",
+    "limits": "W Br Eau Pleine River, B-37-0501",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66590271",
+    "year": "2028",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "County X",
+    "title": "Sth 29 - Sth 52",
+    "limits": "Sternberg Ave To Eau Claire Ave",
+    "miles": 0.33,
+    "work": "Const/reconstruct",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66720171",
+    "year": "2028",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "LOC STR",
+    "title": "T Wien, Aspen Drive",
+    "limits": "Scotch Creek Bridge, P-37-0951",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991374",
+    "year": "2028",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "LOC STR",
+    "title": "V Weston, Ross Avenue",
+    "limits": "River Bend Road To Pauls Avenue",
+    "miles": 1.06,
+    "work": "Const/reconstruct",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10530778",
+    "year": "2028",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 029",
+    "title": "Abbotsford - Wausau",
+    "limits": "B-37-115,121,122,123,124,125,131",
+    "miles": 0.0,
+    "work": "Const/rehab/concrete deck overlays",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "63700063",
+    "year": "2028",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 153",
+    "title": "Stratford - Mosinee",
+    "limits": "Stainless Avenue To Sth 107",
+    "miles": 11.87,
+    "work": "Const/mill and overlay",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66000074",
+    "year": "2028",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 153",
+    "title": "Mosinee - Elderon",
+    "limits": "N Cth J To Crooked Lake Road",
+    "miles": 5.89,
+    "work": "Const/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94490070",
+    "year": "2028",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "County C",
+    "title": "Rhinelander - Ush 45",
+    "limits": "N Br Pelican River Bridge, B430005",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94510070",
+    "year": "2028",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "County D",
+    "title": "Cth O - Cth H",
+    "limits": "Sugar Camp Creek Bridge, B-43-0065",
+    "miles": 0.11,
+    "work": "Const/replacement",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94540070",
+    "year": "2028",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "County H",
+    "title": "Lake Tomahawk - Sth 70",
+    "limits": "Cth D To Sth 70",
+    "miles": 5.23,
+    "work": "Const/misc/hsip",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98770073",
+    "year": "2028",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "County P",
+    "title": "Rhinelander - Ush 8",
+    "limits": "Faust Lake Road To Ush 8",
+    "miles": 3.63,
+    "work": "Const/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "98770070",
+    "year": "2028",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "LOC STR",
+    "title": "C Rhinelander, Coolidge Avenue",
+    "limits": "Lincoln Street To Timber Drive",
+    "miles": 0.78,
+    "work": "Const/reconstruct",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "99971671",
+    "year": "2028",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "LOC STR",
+    "title": "C Rhinelander, Kemp Street",
+    "limits": "Wisconsin River Bridge, B-43-0003",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11701973",
+    "year": "2028",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "US 051",
+    "title": "Tomahawk - Minocqua",
+    "limits": "Oneida Street To Manitou Park Drive",
+    "miles": 4.79,
+    "work": "Const/pavement replacement",
+    "cost_low": 12000000,
+    "cost_high": 12999999,
+    "cost_text": "$12,000,000 - $12,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92610670",
+    "year": "2028",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "WIS 032",
+    "title": "Crandon - Three Lakes",
+    "limits": "Forest County Line To Ush 45",
+    "miles": 8.8,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "76200074",
+    "year": "2028",
+    "counties": [
+     "Pierce"
+    ],
+    "route": "WIS 128",
+    "title": "Elmwood - Sth 64",
+    "limits": "Sth 72 To Sth 29",
+    "miles": 7.14,
+    "work": "Construction/pavement replacement",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "88510070",
+    "year": "2028",
+    "counties": [
+     "Polk"
+    ],
+    "route": "County I",
+    "title": "Sth 48 - Clam Falls",
+    "limits": "Clam River Bridge B-48-0069",
+    "miles": 0.0,
+    "work": "Construction/brrpl",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88550070",
+    "year": "2028",
+    "counties": [
+     "Polk"
+    ],
+    "route": "County T",
+    "title": "Turtle Lake - Mckinley",
+    "limits": "Ush 8 To Silver Lake Road",
+    "miles": 2.85,
+    "work": "Construction/recondition",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "84010070",
+    "year": "2028",
+    "counties": [
+     "Polk"
+    ],
+    "route": "LOC STR",
+    "title": "T Black Brook, 50Th Avenue",
+    "limits": "Bull Brook Bridge B-48-0067",
+    "miles": 0.0,
+    "work": "Construction/brrpl",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "84120072",
+    "year": "2028",
+    "counties": [
+     "Polk"
+    ],
+    "route": "LOC STR",
+    "title": "T Lincoln, 75Th Street",
+    "limits": "Beaver Brook Bridge B-48-0066",
+    "miles": 0.0,
+    "work": "Construction/brrpl",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94770070",
+    "year": "2028",
+    "counties": [
+     "Price"
+    ],
+    "route": "County D",
+    "title": "Sth 86 - Ush 8",
+    "limits": "N Fork Spirit River, B-50-0101",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "87980074",
+    "year": "2028",
+    "counties": [
+     "Rusk"
+    ],
+    "route": "County D",
+    "title": "Cth E - Sth 27",
+    "limits": "Chippewa River Bridge B-54-0018",
+    "miles": 0.0,
+    "work": "Construction/brrhb",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "84260070",
+    "year": "2028",
+    "counties": [
+     "Rusk"
+    ],
+    "route": "LOC STR",
+    "title": "T Dewey, Josie Creek Rd",
+    "limits": "Josie Creek Bridge B-54-0143",
+    "miles": 0.0,
+    "work": "Construction/brrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "84570071",
+    "year": "2028",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "LOC STR",
+    "title": "T Round Lake, Moose Lake Rd",
+    "limits": "Cth A To Federal Forest Rd 320",
+    "miles": 2.62,
+    "work": "Construction/pvrpla",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81400077",
+    "year": "2028",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "WIS 027",
+    "title": "Ojibwa - Hayward",
+    "limits": "125' W Of Sth 40 S To Boylan Rd",
+    "miles": 18.18,
+    "work": "Construction/pavement replacement",
+    "cost_low": 13000000,
+    "cost_high": 13999999,
+    "cost_text": "$13,000,000 - $13,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81700070",
+    "year": "2028",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "WIS 070",
+    "title": "Ojibwa - Oxbo",
+    "limits": "Sth 27 S To Cth W",
+    "miles": 5.39,
+    "work": "Construction/ pavement replacement",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89410573",
+    "year": "2028",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "County K",
+    "title": "New Richmond - Jewett",
+    "limits": "140Th Street To Prairie Road",
+    "miles": 1.37,
+    "work": "Construction/rcnd",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10200770",
+    "year": "2028",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "I-094",
+    "title": "Hudson - Menomonie",
+    "limits": "Cth T To Cth Bb (Eb & Wb)",
+    "miles": 5.66,
+    "work": "Construction/resurface",
+    "cost_low": 11000000,
+    "cost_high": 11999999,
+    "cost_text": "$11,000,000 - $11,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89400025",
+    "year": "2028",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "LOC STR",
+    "title": "C New Richmond, E 1St St",
+    "limits": "S Knowles Ave To Greaton Rd",
+    "miles": 0.6,
+    "work": "Construction/recst",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89440174",
+    "year": "2028",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "LOC STR",
+    "title": "T Hudson, Trout Brook/Rustic Rd",
+    "limits": "Willow River Bridge B-55-0292",
+    "miles": 0.0,
+    "work": "Construction/brrpl",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89990091",
+    "year": "2028",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "LOC STR",
+    "title": "V North Hudson, Monroe St N",
+    "limits": "Lemon Street N To Helen Street N",
+    "miles": 0.2,
+    "work": "Construction/recst",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "86500072",
+    "year": "2028",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "WIS 128",
+    "title": "Glenwood City - Sth 64",
+    "limits": "Culverts C-55-0037 & Concrete Pipe",
+    "miles": 0.03,
+    "work": "Construction/culvert replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "86500073",
+    "year": "2028",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "WIS 128",
+    "title": "Elmwood - Sth 64",
+    "limits": "Sth 170 To Sth 64",
+    "miles": 6.14,
+    "work": "Construction/cir/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "82200072",
+    "year": "2028",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 064",
+    "title": "Gilman - Medford",
+    "limits": "Sth 73 To Coyote Drive",
+    "miles": 8.44,
+    "work": "Construction/pavement replacement",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90000076",
+    "year": "2028",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 064",
+    "title": "Medford - Merrill",
+    "limits": "Sth 13 To Lincoln County Line",
+    "miles": 14.35,
+    "work": "Construction/resurface",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "95140070",
+    "year": "2028",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "County W",
+    "title": "Ush 51 - Cth K",
+    "limits": "Rest Lake Spillway, B-63-0011",
+    "miles": 0.0,
+    "work": "Const/replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69951174",
+    "year": "2028",
+    "counties": [
+     "Wood"
+    ],
+    "route": "LOC STR",
+    "title": "C Marshfield, South Vine Avenue",
+    "limits": "East 4Th Street To East 2Nd Street",
+    "miles": 0.14,
+    "work": "Const/reconstruct",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69951272",
+    "year": "2028",
+    "counties": [
+     "Wood"
+    ],
+    "route": "LOC STR",
+    "title": "C Marshfield, East 4Th Street",
+    "limits": "S Maple Avenue To S Peach Avenue",
+    "miles": 0.37,
+    "work": "Const/reconstruct",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69500474",
+    "year": "2028",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 054",
+    "title": "Dexterville - Wisconsin Rapids",
+    "limits": "Sth 80 To Cth G",
+    "miles": 9.87,
+    "work": "Const/resurface",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "66200071",
+    "year": "2028",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 186",
+    "title": "Sth 73 - Auburndale",
+    "limits": "Oak Street To Ush 10",
+    "miles": 11.4,
+    "work": "Const/resurface",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "66200072",
+    "year": "2028",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 186",
+    "title": "Sth 73 - Auburndale",
+    "limits": "Sth 73 To 5Th Street",
+    "miles": 2.04,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "89950030",
+    "year": "2029",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "LOC STR",
+    "title": "C Ashland, 11Th St W",
+    "limits": "Beaser Ave To Ellis Ave",
+    "miles": 0.84,
+    "work": "Construction/resurface",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800080",
+    "year": "2029",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "US 002",
+    "title": "Ashland - Saxon",
+    "limits": "Branch Of The Denomie Creek Culvert",
+    "miles": 0.01,
+    "work": "Construction/culvert replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89970051",
+    "year": "2029",
+    "counties": [
+     "Barron"
+    ],
+    "route": "LOC STR",
+    "title": "C Rice Lake, Main Street",
+    "limits": "Sawyer Street Intersection",
+    "miles": 0.03,
+    "work": "Construction/safety",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15800072",
+    "year": "2029",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 008",
+    "title": "Cameron - Ladysmith",
+    "limits": "Cth Ss S To 480' East Of Cth Ss N",
+    "miles": 0.8,
+    "work": "Construction/pvrpla",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15800073",
+    "year": "2029",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 008",
+    "title": "Cameron - Ladysmith",
+    "limits": "Cth Ss S To 480' East Of Cth Ss N",
+    "miles": 0.8,
+    "work": "Construction/local utilities",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88240072",
+    "year": "2029",
+    "counties": [
+     "Barron"
+    ],
+    "route": "WIS 025",
+    "title": "Barron - Sth 48",
+    "limits": "Ush 8 E To Sth 48",
+    "miles": 7.49,
+    "work": "Construction/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85700071",
+    "year": "2029",
+    "counties": [
+     "Barron"
+    ],
+    "route": "WIS 048",
+    "title": "Rice Lake - Birchwood",
+    "limits": "Red Cedar River B-03-0232",
+    "miles": 0.08,
+    "work": "Construction/bridge replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80400072",
+    "year": "2029",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "WIS 070",
+    "title": "St. Croix River - Siren",
+    "limits": "Mn/Wi State Ln To Sth 35 S",
+    "miles": 19.58,
+    "work": "Construction/culverts",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "78620373",
+    "year": "2029",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "County K",
+    "title": "Cth X - Cth S",
+    "limits": "Cth X To 100Th Avenue",
+    "miles": 4.31,
+    "work": "Construction/safety",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "89190070",
+    "year": "2029",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "LOC STR",
+    "title": "V Cadott, Various Streets",
+    "limits": "Tower Dr Terminus To Sth 27",
+    "miles": 0.61,
+    "work": "Construction/pvrpla",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11900375",
+    "year": "2029",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Sth 64 Bridge B-09-0068",
+    "miles": 0.0,
+    "work": "Construction/brrhb/deck replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11900676",
+    "year": "2029",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Cth Q Bridge B-09-0091",
+    "miles": 0.0,
+    "work": "Construction/brpvtv",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81900074",
+    "year": "2029",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 064",
+    "title": "Bloomer - Cornell",
+    "limits": "Chippewa River Bridge B-09-0087",
+    "miles": 0.0,
+    "work": "Construction/bridge brpvtv",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "86100872",
+    "year": "2029",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 124",
+    "title": "Chippewa Falls - Bloomer",
+    "limits": "Cth S To Sth 64",
+    "miles": 10.61,
+    "work": "Construction/resurface",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "86000072",
+    "year": "2029",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 178",
+    "title": "Chippewa Falls - Cornell",
+    "limits": "Sth 29 To Cth S",
+    "miles": 3.64,
+    "work": "Construction/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "78570571",
+    "year": "2029",
+    "counties": [
+     "Clark"
+    ],
+    "route": "County J",
+    "title": "Scl - Sth 95",
+    "limits": "Cth K To Sth 95",
+    "miles": 3.4,
+    "work": "Construction/recst",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800060",
+    "year": "2029",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "US 002",
+    "title": "Superior - Wentworth",
+    "limits": "53Rd Ave E To Cth C",
+    "miles": 6.52,
+    "work": "Construction/resurface",
+    "cost_low": 20000000,
+    "cost_high": 24999999,
+    "cost_text": "$20,000,000 - $24,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81500073",
+    "year": "2029",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "WIS 027",
+    "title": "Hayward - Brule",
+    "limits": "Cth B To Ush 2",
+    "miles": 3.03,
+    "work": "Construction/pavement replacement",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80100077",
+    "year": "2029",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "WIS 035",
+    "title": "Dairyland - Superior",
+    "limits": "Cth B S To 69Th St",
+    "miles": 8.54,
+    "work": "Construction/cir",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "75400074",
+    "year": "2029",
+    "counties": [
+     "Dunn"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region Stand Alone Curb Ramps",
+    "limits": "Sth 13,25,40,64,65",
+    "miles": 10.54,
+    "work": "Per wisdot ada trans plan 306 ramps",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "10200679",
+    "year": "2029",
+    "counties": [
+     "Eau Claire"
+    ],
+    "route": "I-094",
+    "title": "Nw Region, Ih94 Bridge Deck Sealing",
+    "limits": "Bridge Deck Sealing (Var)",
+    "miles": 0.0,
+    "work": "Construction/bridge deck sealing",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "86100074",
+    "year": "2029",
+    "counties": [
+     "Eau Claire"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region, Various Highways",
+    "limits": "Thin Polymer Deck Overlays",
+    "miles": 0.04,
+    "work": "Construction/brpvtv",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "91200972",
+    "year": "2029",
+    "counties": [
+     "Florence"
+    ],
+    "route": "US 002",
+    "title": "Brule River - Iron Mountain",
+    "limits": "Cth Nn To Michigan State Line",
+    "miles": 9.05,
+    "work": "Const/resurface",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15901873",
+    "year": "2029",
+    "counties": [
+     "Forest"
+    ],
+    "route": "US 008",
+    "title": "Monico - Laona",
+    "limits": "Rat River Culvert Replacement C2150",
+    "miles": 0.16,
+    "work": "Const/new bridge",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92600072",
+    "year": "2029",
+    "counties": [
+     "Forest"
+    ],
+    "route": "WIS 032",
+    "title": "Crandon - Three Lakes",
+    "limits": "Railroad Avenue To Oneida Co Line",
+    "miles": 11.27,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "91651372",
+    "year": "2029",
+    "counties": [
+     "Forest"
+    ],
+    "route": "WIS 055",
+    "title": "Argonne - Nelma",
+    "limits": "Sth 32 To Scott Lake Road",
+    "miles": 7.5,
+    "work": "Const/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "93110071",
+    "year": "2029",
+    "counties": [
+     "Iron"
+    ],
+    "route": "WIS 169",
+    "title": "Mellen - Ush 2",
+    "limits": "Ashland County Line To Ush 2",
+    "miles": 6.99,
+    "work": "Const/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16200571",
+    "year": "2029",
+    "counties": [
+     "Juneau"
+    ],
+    "route": "WIS 080",
+    "title": "New Lisbon - Necedah",
+    "limits": "Sth 58 To Wcl Rr",
+    "miles": 3.23,
+    "work": "Construction/ rsrf25",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16021173",
+    "year": "2029",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "US 045",
+    "title": "C Antigo, Superior Street",
+    "limits": "Spring Brook Bridge To Rusch Road",
+    "miles": 2.47,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "96501673",
+    "year": "2029",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 047",
+    "title": "Neopit - Antigo",
+    "limits": "Menominee County Line To Ush 45",
+    "miles": 8.67,
+    "work": "Const/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "91751061",
+    "year": "2029",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 052",
+    "title": "Antigo - Lily",
+    "limits": "Kent Road To Forest Count Line",
+    "miles": 10.61,
+    "work": "Const/mill and overlay",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "91551361",
+    "year": "2029",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 055",
+    "title": "Pickerel - Argonne",
+    "limits": "Cth T To Forest County Line",
+    "miles": 5.74,
+    "work": "Const/mill and overlay",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90001075",
+    "year": "2029",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 064",
+    "title": "C Merrill, Main Street",
+    "limits": "Sth 107 North To Memorial Drive",
+    "miles": 1.89,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "93050771",
+    "year": "2029",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 107",
+    "title": "Merrill - Tomahawk",
+    "limits": "Taylor Street To Wilderness Drive",
+    "miles": 8.23,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69990280",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "C Wausau, Grand Avenue",
+    "limits": "Lakeview Drive To Kent Street",
+    "miles": 0.26,
+    "work": "Const/pavement replacement",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69990282",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "C Wausau, Grand Avenue",
+    "limits": "Lakeview Drive To Kent Street",
+    "miles": 0.26,
+    "work": "Local utility/pvrpla",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991772",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "Sth 52 - Ush 51",
+    "limits": "Stewart Avenue To Merrill Avenue",
+    "miles": 1.94,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991883",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "C Schofield, Grand Avenue",
+    "limits": "Eau Claire Rvr Brdge To Lakeview Dr",
+    "miles": 1.01,
+    "work": "Const/pavement replacement",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991886",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "C Schofield, Grand Avenue",
+    "limits": "Eau Claire Rvr Brdge To Lakeview Dr",
+    "miles": 1.01,
+    "work": "Utility/pavement replacement",
+    "cost_low": 0,
+    "cost_high": 99999,
+    "cost_text": "$0 - $99,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94730070",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "County W",
+    "title": "Wausau - Lincoln County Line",
+    "limits": "County Road Ww To Riverview Avenue",
+    "miles": 6.55,
+    "work": "Const/pavement replacement",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94730071",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "County W",
+    "title": "Wausau - Lincoln County Line",
+    "limits": "Evergreen Road To County Road Ww",
+    "miles": 2.15,
+    "work": "Const/pavement replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10530266",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 029",
+    "title": "Wausau - Wittenberg",
+    "limits": "Cth Q To Hilly Acres Road, Eb",
+    "miles": 7.15,
+    "work": "Design/prev maintenance",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10530468",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 029",
+    "title": "Wausau - Wittenberg",
+    "limits": "Structures B-37-337, 338, 339",
+    "miles": 0.0,
+    "work": "Const/bridge preventive/polymer",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10530779",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 029",
+    "title": "Wausau - Wittenberg",
+    "limits": "Wisconsin River Bridge To Cth Q",
+    "miles": 9.88,
+    "work": "Const/resurface",
+    "cost_low": 17000000,
+    "cost_high": 19999999,
+    "cost_text": "$17,000,000 - $19,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69990071",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 052",
+    "title": "C Wausau, East Wausau Avenue",
+    "limits": "N 6Th Street To N 18Th Street",
+    "miles": 1.01,
+    "work": "Const/pvrpla",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69990072",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 052",
+    "title": "C Wausau, East Wausau Avenue",
+    "limits": "N 6Th Street To N 18Th Street",
+    "miles": 1.01,
+    "work": "Const/local utilities/pvrpla",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991972",
+    "year": "2029",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS B05",
+    "title": "Wausau Area Various Streets",
+    "limits": "Bus 51 North Curb Ramp Improvements",
+    "miles": 1.1,
+    "work": "Per wisdot ada trans plan 233 ramps",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "71880273",
+    "year": "2029",
+    "counties": [
+     "Monroe"
+    ],
+    "route": "US 012",
+    "title": "Black River Falls - Tomah",
+    "limits": "Jackson County Line To Cth O",
+    "miles": 8.51,
+    "work": "Const/mill & overlay/rsrf",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "71880472",
+    "year": "2029",
+    "counties": [
+     "Monroe"
+    ],
+    "route": "US 012",
+    "title": "Black River Falls - Tomah",
+    "limits": "Cth O To 0.25 Mi N Of Ih 94 Ramp",
+    "miles": 2.49,
+    "work": "Construct/ pvrpla",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10094767",
+    "year": "2029",
+    "counties": [
+     "North Central Region Wide"
+    ],
+    "route": "VAR HWY",
+    "title": "Regionwide Bridge Maintenance",
+    "limits": "B-34-3,B-37-236,B-63-13,C-50-6",
+    "miles": 0.01,
+    "work": "Const/rehab/wingwalls",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "94640073",
+    "year": "2029",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "County W",
+    "title": "Rhinelander - Sth 17",
+    "limits": "Short Road To Sth 17",
+    "miles": 0.8,
+    "work": "Const/pavement replacement",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88500071",
+    "year": "2029",
+    "counties": [
+     "Polk"
+    ],
+    "route": "County E",
+    "title": "Lewis - Indian Creek",
+    "limits": "Sth 35 To Cth I",
+    "miles": 7.23,
+    "work": "Construction/recondition",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15700079",
+    "year": "2029",
+    "counties": [
+     "Polk"
+    ],
+    "route": "US 008",
+    "title": "St Croix Falls - Turtle Lake",
+    "limits": "Mn/Wi State Line To Glacier Road",
+    "miles": 2.19,
+    "work": "Construction/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15700080",
+    "year": "2029",
+    "counties": [
+     "Polk"
+    ],
+    "route": "US 008",
+    "title": "St Croix Falls - Turtle Lake",
+    "limits": "Mn/Wi State Line To Glacier Road",
+    "miles": 2.19,
+    "work": "Constr/sfty/intersection imprvmnt",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15700083",
+    "year": "2029",
+    "counties": [
+     "Polk"
+    ],
+    "route": "US 008",
+    "title": "St Croix Falls - Turtle Lake",
+    "limits": "Balsam Branch Creek B-48-0030",
+    "miles": 0.01,
+    "work": "Construction/bridge rehab",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15700175",
+    "year": "2029",
+    "counties": [
+     "Polk"
+    ],
+    "route": "US 008",
+    "title": "St Croix Falls - Turtle Lake",
+    "limits": "Apple River Bridge B-48-0012",
+    "miles": 0.0,
+    "work": "Construction/concrete overlay",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80600073",
+    "year": "2029",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 035",
+    "title": "Somerset - St Croix Falls",
+    "limits": "Cth I To Sth 243",
+    "miles": 7.75,
+    "work": "Construction/cir",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80300071",
+    "year": "2029",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 046",
+    "title": "Amery - Milltown",
+    "limits": "York Park Entrance To Ush 8",
+    "miles": 5.03,
+    "work": "Construction/pavement replacement",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88400270",
+    "year": "2029",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 087",
+    "title": "St Croix Falls - Grantsburg",
+    "limits": "Ush 8 To 270Th Ave",
+    "miles": 14.68,
+    "work": "Const/culvert replacement c-48-0025",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15811371",
+    "year": "2029",
+    "counties": [
+     "Price"
+    ],
+    "route": "US 008",
+    "title": "Hawkins - Prentice",
+    "limits": "Rusk Co Line To Jump River Bridge",
+    "miles": 10.84,
+    "work": "Const/resurface",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90700772",
+    "year": "2029",
+    "counties": [
+     "Price"
+    ],
+    "route": "WIS 070",
+    "title": "Fifield - Woodruff",
+    "limits": "Sth 13 To Cedar Rapids Road",
+    "miles": 9.16,
+    "work": "Const/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90700782",
+    "year": "2029",
+    "counties": [
+     "Price"
+    ],
+    "route": "WIS 070",
+    "title": "Fifield - Woodruff",
+    "limits": "Cedar Rapids To Oneida County Line",
+    "miles": 9.97,
+    "work": "Const/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "87710071",
+    "year": "2029",
+    "counties": [
+     "Rusk"
+    ],
+    "route": "County M",
+    "title": "Ush 8 - Ncl",
+    "limits": "S Fork Rd To Skinner Creek Rd",
+    "miles": 4.26,
+    "work": "Construction/pvrpla",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85900273",
+    "year": "2029",
+    "counties": [
+     "Rusk"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region, Thin Polymer Deck Ovrlys",
+    "limits": "Various Highways, North Half",
+    "miles": 0.0,
+    "work": "Construction/brpvtv",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "82100073",
+    "year": "2029",
+    "counties": [
+     "Rusk"
+    ],
+    "route": "WIS 073",
+    "title": "Thorp - Ingram",
+    "limits": "Taylor/Rusk Co Ln To Ush 8",
+    "miles": 9.43,
+    "work": "Construction/resurface",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "82100172",
+    "year": "2029",
+    "counties": [
+     "Rusk"
+    ],
+    "route": "WIS 073",
+    "title": "Thorp - Ingram",
+    "limits": "Crazy Horse Creek Bridge B-54-0New",
+    "miles": 0.0,
+    "work": "Construction/brrrpl",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81400079",
+    "year": "2029",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "WIS 027",
+    "title": "Ojibwa - Stone Lake",
+    "limits": "Sth 70 E To Sth 40",
+    "miles": 5.5,
+    "work": "Construction/pavement replacement",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10200261",
+    "year": "2029",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "I-094",
+    "title": "Hudson - Baldwin",
+    "limits": "Sth 35 North Jct To Ush 12(Eb & Wb)",
+    "miles": 4.33,
+    "work": "Construction/concrete repair",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15500278",
+    "year": "2029",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "US 063",
+    "title": "Baldwin - Clear Lake",
+    "limits": "Ush 12 W To Polk County Line",
+    "miles": 21.0,
+    "work": "Construction/resurface",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15500279",
+    "year": "2029",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "US 063",
+    "title": "Baldwin - Clear Lake",
+    "limits": "Rush River Bridge B-55-0291",
+    "miles": 0.01,
+    "work": "Construction/brrpl",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "72100473",
+    "year": "2029",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "US 063",
+    "title": "Ellsworth - Baldwin",
+    "limits": "600' N Of 55Th Ave To Ush 12 E",
+    "miles": 1.77,
+    "work": "Construction/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "72100474",
+    "year": "2029",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "US 063",
+    "title": "Ellsworth - Baldwin",
+    "limits": "600' N Of 55Th Ave To Ush 12 E",
+    "miles": 1.77,
+    "work": "Construction/local utilities",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15400074",
+    "year": "2029",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "WIS 065",
+    "title": "River Falls - New Richmond",
+    "limits": "Br Kinnickinnic Riv Bridge B550062",
+    "miles": 0.04,
+    "work": "Construction/concrete overlay",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15400075",
+    "year": "2029",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "WIS 065",
+    "title": "River Falls - New Richmond",
+    "limits": "Sth 35 Bridge B-55-0139",
+    "miles": 0.0,
+    "work": "Construction/brrhb",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "95450373",
+    "year": "2029",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "County C",
+    "title": "Gad - Ncl",
+    "limits": "Cth M To Trout Ave West",
+    "miles": 2.97,
+    "work": "Construction/pvrpla",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "82100071",
+    "year": "2029",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 073",
+    "title": "Thorp - Ingram",
+    "limits": "Park St To Sth 64 E",
+    "miles": 11.47,
+    "work": "Construction/resurface",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "82100876",
+    "year": "2029",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 073",
+    "title": "Thorp - Ingram",
+    "limits": "Fisher River Culvert C-60-0New",
+    "miles": 0.01,
+    "work": "Construction/culvert replacement",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10210180",
+    "year": "2029",
+    "counties": [
+     "Trempealeau"
+    ],
+    "route": "I-094",
+    "title": "Baldwin - Osseo",
+    "limits": "B-55-259, B-61-216,218,215,217",
+    "miles": 0.12,
+    "work": "Constr/brpvtv/thin polymer overlay",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "91950871",
+    "year": "2029",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "WIS 017",
+    "title": "Eagle River - Michigan State Line",
+    "limits": "St Louis Road - Michigan State Line",
+    "miles": 9.65,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "91950872",
+    "year": "2029",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "WIS 017",
+    "title": "Eagle River - Michigan State Line",
+    "limits": "Ush 45 To Saint Louis Road",
+    "miles": 9.73,
+    "work": "Const/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90801476",
+    "year": "2029",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "WIS 070",
+    "title": "Woodruff - Eagle River",
+    "limits": "Sth 155 To Cth O",
+    "miles": 3.39,
+    "work": "Const/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81300073",
+    "year": "2029",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "WIS 070",
+    "title": "Spooner - Stone Lake",
+    "limits": "Cth B W To Sth 27 N",
+    "miles": 5.71,
+    "work": "Construction/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85600070",
+    "year": "2029",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "WIS 077",
+    "title": "Danbury - Minong",
+    "limits": "Burn/Wash Co Ln To Cth I",
+    "miles": 12.04,
+    "work": "Construction/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100184",
+    "year": "2030",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "WIS 013",
+    "title": "Park Falls - Mellen",
+    "limits": "4Th St To Iowa St",
+    "miles": 0.49,
+    "work": "Construction/pvrpla",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100188",
+    "year": "2030",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "WIS 013",
+    "title": "Park Falls - Mellen",
+    "limits": "4Th St To Iowa St",
+    "miles": 0.49,
+    "work": "Construction/local utilities",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950080",
+    "year": "2030",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 053",
+    "title": "Rice Lake - Spooner",
+    "limits": "Sth 48 Bridges B030048 & B030049",
+    "miles": 0.02,
+    "work": "Construction/brrhb",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950081",
+    "year": "2030",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 053",
+    "title": "Rice Lake - Spooner",
+    "limits": "Cth Ss (Sb) Bridge B-03-0056",
+    "miles": 0.0,
+    "work": "Construction/concrete overlay",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88200071",
+    "year": "2030",
+    "counties": [
+     "Barron"
+    ],
+    "route": "WIS 048",
+    "title": "Frederic - Rice Lake",
+    "limits": "E Bass Lake Ln To Ush 63",
+    "miles": 11.76,
+    "work": "Construction/pavement replacement",
+    "cost_low": 13000000,
+    "cost_high": 13999999,
+    "cost_text": "$13,000,000 - $13,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80100076",
+    "year": "2030",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "WIS 035",
+    "title": "Danbury - Dairyland",
+    "limits": "Yellow River To Burn/Doug Co Ln",
+    "miles": 13.74,
+    "work": "Construction/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88450071",
+    "year": "2030",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "WIS 048",
+    "title": "Grantsburg - Frederic",
+    "limits": "Sth 70 To Sth 87",
+    "miles": 4.55,
+    "work": "Construction/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80400070",
+    "year": "2030",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "WIS 070",
+    "title": "Grantsburg - Siren",
+    "limits": "S Johnson St To Sth 35 S",
+    "miles": 14.47,
+    "work": "Construction/pavement replacement",
+    "cost_low": 15000000,
+    "cost_high": 16999999,
+    "cost_text": "$15,000,000 - $16,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80400071",
+    "year": "2030",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "WIS 070",
+    "title": "St. Croix River - Grantsburg",
+    "limits": "Mn/Wi State Ln To 350' E Johnson St",
+    "miles": 5.37,
+    "work": "Construction/pavement replacement",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88400072",
+    "year": "2030",
+    "counties": [
+     "Burnett"
+    ],
+    "route": "WIS 087",
+    "title": "St Croix Falls - Grantsburg",
+    "limits": "270Th Ave To Sth 48",
+    "miles": 7.59,
+    "work": "Construction/resurface",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11900376",
+    "year": "2030",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Cth Q Bridge B-09-0060",
+    "miles": 0.01,
+    "work": "Construction/brrhb",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "76100172",
+    "year": "2030",
+    "counties": [
+     "Dunn"
+    ],
+    "route": "WIS 029",
+    "title": "Spring Valley - Menomonie",
+    "limits": "Sth 128 To River Road",
+    "miles": 13.91,
+    "work": "Construction/resurface",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "15901972",
+    "year": "2030",
+    "counties": [
+     "Forest"
+    ],
+    "route": "US 008",
+    "title": "Laona - Goodman",
+    "limits": "Scattered Rice Creek, C-21-0902",
+    "miles": 0.04,
+    "work": "Const/culvert",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11751973",
+    "year": "2030",
+    "counties": [
+     "Iron"
+    ],
+    "route": "US 051",
+    "title": "Manitowish - Hurley",
+    "limits": "South End Road To Cth C",
+    "miles": 9.03,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92501472",
+    "year": "2030",
+    "counties": [
+     "Iron"
+    ],
+    "route": "WIS 077",
+    "title": "Mellen - Hurley",
+    "limits": "Odanah Road To Montreal Rvr Bridge",
+    "miles": 1.94,
+    "work": "Const/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10260070",
+    "year": "2030",
+    "counties": [
+     "Jackson"
+    ],
+    "route": "I-094",
+    "title": "Black River Falls - Tomah",
+    "limits": "Cth O To Cth Ew (West Bound)",
+    "miles": 9.03,
+    "work": "Construction/pavement replacement",
+    "cost_low": 35000000,
+    "cost_high": 39999999,
+    "cost_text": "$35,000,000 - $39,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "16021170",
+    "year": "2030",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "US 045",
+    "title": "Wittenberg - Antigo",
+    "limits": "Shawano County Line To Cth G",
+    "miles": 5.68,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": [
+     8
+    ]
+   },
+   {
+    "id": "91550572",
+    "year": "2030",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 055",
+    "title": "Langlade - Pickerel",
+    "limits": "Hollister Road To Sth 52 (Eb)",
+    "miles": 5.61,
+    "work": "Const/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "91550573",
+    "year": "2030",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 055",
+    "title": "Langlade - Pickerel",
+    "limits": "Cth A To Cth T",
+    "miles": 4.41,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "91550671",
+    "year": "2030",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 055",
+    "title": "Shawano - Pickerel",
+    "limits": "Menominee Co Line To Hollister Road",
+    "miles": 12.51,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90150260",
+    "year": "2030",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 064",
+    "title": "Antigo - Langlade",
+    "limits": "Langlade Co Bridges B-34-8, 52, 58",
+    "miles": 0.0,
+    "work": "Const/brpvtv",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11762261",
+    "year": "2030",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 051",
+    "title": "Wausau - Tomahawk",
+    "limits": "Various Us 51 Structures",
+    "miles": 0.0,
+    "work": "Const/concrete overlays/paint",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11762262",
+    "year": "2030",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 051",
+    "title": "Wausau - Merrill",
+    "limits": "B-35-0025, 27, 29, 32, 37",
+    "miles": 0.0,
+    "work": "Const/concrete overlays",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90001272",
+    "year": "2030",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 064",
+    "title": "Medford - Merrill",
+    "limits": "Taylor County Line To Glen Drive",
+    "miles": 16.32,
+    "work": "Const/pvrpla",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90001570",
+    "year": "2030",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 064",
+    "title": "Merrill - Antigo",
+    "limits": "Us 51 Sb Ramp To Sth 17",
+    "miles": 0.32,
+    "work": "Const/pavement replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92150172",
+    "year": "2030",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 086",
+    "title": "C Tomahawk, East Somo Avenue",
+    "limits": "Charlotte Street To Ush 51",
+    "miles": 1.85,
+    "work": "Const/pavement replacement",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92150174",
+    "year": "2030",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 086",
+    "title": "C Tomahawk, Somo Avenue",
+    "limits": "Wisconsin Ave To Charlotte Street",
+    "miles": 0.88,
+    "work": "Const/pvrpla",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92150182",
+    "year": "2030",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 086",
+    "title": "C Tomahawk, East Somo Avenue",
+    "limits": "Charlotte Street To Ush 51",
+    "miles": 0.0,
+    "work": "Local utility",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991085",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "Rothschild - Schofield",
+    "limits": "Everest Drive To Schofield Avenue",
+    "miles": 0.92,
+    "work": "Const/pavement replacement",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991086",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "Rothschild - Schofield",
+    "limits": "Sth 29 Eb Ramp To Sth 29 Wb Ramp",
+    "miles": 0.21,
+    "work": "Const/pavement replacement",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991087",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "Rothschild - Schofield",
+    "limits": "E Grand Ave To Eau Claire Rvr Brdge",
+    "miles": 0.58,
+    "work": "Const/pavement replacement",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991280",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "Rothschild - Schofield",
+    "limits": "Everest Drive To Schofield Avenue",
+    "miles": 1.25,
+    "work": "Const/local utility/rothschild",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991288",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "Rothschild - Schofield",
+    "limits": "E Grand Ave To Eau Claire Rvr Brdge",
+    "miles": 0.58,
+    "work": "Const/local utilities/schofield",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991289",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "Rothschild - Schofield",
+    "limits": "Everest Drive To Schofield Avenue",
+    "miles": 1.25,
+    "work": "Const/local utilities/weston",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10097061",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "VAR HWY",
+    "title": "Regionwide Bridge Maintenance",
+    "limits": "Locations On Stn Per Annual Plan",
+    "miles": 0.0,
+    "work": "Const/various structures/polymer",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": [
+     6,
+     8
+    ]
+   },
+   {
+    "id": "16200376",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 013",
+    "title": "C Marshfield, Veterans Parkway",
+    "limits": "W Mcmillan Street To Mann Street",
+    "miles": 1.33,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10530283",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 029",
+    "title": "Abbotsford - Wausau",
+    "limits": "Cth H To Purple Martin Lane, Eb",
+    "miles": 4.44,
+    "work": "Const/pavement replacement",
+    "cost_low": 11000000,
+    "cost_high": 11999999,
+    "cost_text": "$11,000,000 - $11,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90100362",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 052",
+    "title": "Wausau - Aniwa",
+    "limits": "Little Elm Road To Ush 45",
+    "miles": 14.07,
+    "work": "Design/full pse/resurface",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": [
+     8
+    ]
+   },
+   {
+    "id": "66000073",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 153",
+    "title": "Mosinee - Elderon",
+    "limits": "East View Drive To Andrys Lane",
+    "miles": 2.72,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66000075",
+    "year": "2030",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 153",
+    "title": "Mosinee - Elderon",
+    "limits": "Crooked Lake Rd To Shawano Co Line",
+    "miles": 6.97,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90700373",
+    "year": "2030",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "WIS 070",
+    "title": "Fifield - Woodruff",
+    "limits": "Cth F To Morgan Road",
+    "miles": 6.93,
+    "work": "Const/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90700375",
+    "year": "2030",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "WIS 070",
+    "title": "Fifield - Woodruff",
+    "limits": "Tomahawk River Bridge, B-43-0073",
+    "miles": 0.01,
+    "work": "Const/brnew",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100773",
+    "year": "2030",
+    "counties": [
+     "Price"
+    ],
+    "route": "WIS 013",
+    "title": "Medford - Prentice",
+    "limits": "S Fork Jump River Bridge B-50-0026",
+    "miles": 0.0,
+    "work": "Const/brrhb",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90700760",
+    "year": "2030",
+    "counties": [
+     "Price"
+    ],
+    "route": "WIS 070",
+    "title": "Oxbo - Fifield",
+    "limits": "Sawyer County Line To Sth 13",
+    "miles": 13.33,
+    "work": "Const/mill and overlay",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85900072",
+    "year": "2030",
+    "counties": [
+     "Rusk"
+    ],
+    "route": "WIS 040",
+    "title": "Bruce - Radisson",
+    "limits": "Ush 8 W To County Line Rd",
+    "miles": 12.24,
+    "work": "Construction/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89410771",
+    "year": "2030",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "County G",
+    "title": "Sth 65 - Ush 63",
+    "limits": "Cth G And Cth T Intersection",
+    "miles": 0.0,
+    "work": "Construction/safety",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89990096",
+    "year": "2030",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "LOC STR",
+    "title": "C Hudson, Carmichael Road",
+    "limits": "Hanley Road Intersection",
+    "miles": 0.01,
+    "work": "Construction/safety",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10210181",
+    "year": "2030",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "VAR HWY",
+    "title": "Hudson - Eau Claire",
+    "limits": "Ih 94 & Ush 53 Thin Polymer Overlay",
+    "miles": 0.0,
+    "work": "Constr/brpvtv/thin polymer overlay",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "80800077",
+    "year": "2030",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "WIS 035",
+    "title": "Hudson - Somerset",
+    "limits": "Cth V South Intersection",
+    "miles": 0.05,
+    "work": "Construction/safety",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81100180",
+    "year": "2030",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "WIS 064",
+    "title": "New Richmond - Connorsville",
+    "limits": "Cth T And Sth 64 Intersection",
+    "miles": 0.01,
+    "work": "Construction/safety",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15400076",
+    "year": "2030",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "WIS 065",
+    "title": "River Falls - New Richmond",
+    "limits": "Sth 35 To Ih 94",
+    "miles": 7.59,
+    "work": "Construction/resurface",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16011477",
+    "year": "2030",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "US 045",
+    "title": "Eagle River - Land O Lakes",
+    "limits": "Wisconsin River Bridge B-63-0014",
+    "miles": 0.0,
+    "work": "Const/brrhb",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950070",
+    "year": "2030",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "US 053",
+    "title": "Rice Lake - Solon Springs",
+    "limits": "B-65-0026,28,31,38",
+    "miles": 0.0,
+    "work": "Construction/brrhb",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950085",
+    "year": "2030",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "US 053",
+    "title": "Rice Lake - Minong",
+    "limits": "B-03-0195, 0196, B-65-0056, 58, 59",
+    "miles": 0.0,
+    "work": "Construction/brpvtv",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15500484",
+    "year": "2030",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "US 063",
+    "title": "Cumberland - Spooner",
+    "limits": "Yellow River Bridge B-65-0014",
+    "miles": 0.0,
+    "work": "Construction/brrhb",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15600081",
+    "year": "2030",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "US 063",
+    "title": "Spooner - Hayward",
+    "limits": "Namekagon Bridge To Cth M",
+    "miles": 6.77,
+    "work": "Construction/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80500072",
+    "year": "2030",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "WIS 070",
+    "title": "Siren - Stone Lake",
+    "limits": "1350 Ft W Of 1St St To Ush 53",
+    "miles": 2.31,
+    "work": "Construction/pvrpla",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80500073",
+    "year": "2030",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "WIS 070",
+    "title": "Siren - Stone Lake",
+    "limits": "1350 Ft W Of 1St St To Ush 53",
+    "miles": 2.31,
+    "work": "Const/sanitary sewer and water main",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85500072",
+    "year": "2030",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "WIS 077",
+    "title": "Minong - Hayward",
+    "limits": "Cth M To Sth 27 N",
+    "miles": 5.46,
+    "work": "Construction/pavement replacement",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "63500575",
+    "year": "2030",
+    "counties": [
+     "Wood"
+    ],
+    "route": "US 010",
+    "title": "Marshfield - Stevens Point",
+    "limits": "Ush 10/Sth 186/Cth P Intersection",
+    "miles": 0.25,
+    "work": "Const/misc",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "63500576",
+    "year": "2030",
+    "counties": [
+     "Wood"
+    ],
+    "route": "US 010",
+    "title": "Marshfield - Stevens Point",
+    "limits": "Ush 10/Cth K Intersection",
+    "miles": 0.01,
+    "work": "Const/misc",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "70300672",
+    "year": "2030",
+    "counties": [
+     "Wood"
+    ],
+    "route": "US 010",
+    "title": "Neillsville - Marshfield",
+    "limits": "Clark County Line To Sth 80",
+    "miles": 6.72,
+    "work": "Const/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16200361",
+    "year": "2030",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 013",
+    "title": "C Marshfield, Veterans Parkway",
+    "limits": "Chestnut Street To Mcmillan Street",
+    "miles": 1.73,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15200078",
+    "year": "2030",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 073",
+    "title": "Pittsville - Neillsville",
+    "limits": "Sth 80 To Clark County Line",
+    "miles": 6.79,
+    "work": "Const/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16200472",
+    "year": "2030",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 080",
+    "title": "Babcock - Pittsville",
+    "limits": "Br Yellow River Structure C-71-0049",
+    "miles": 0.0,
+    "work": "Const/culvert",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800083",
+    "year": "2031 - 2032",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "US 002",
+    "title": "Ashland - Saxon",
+    "limits": "B-02-0005 & B-02-0006 & B-02-0New",
+    "miles": 0.0,
+    "work": "To be determined",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800174",
+    "year": "2031 - 2032",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "US 002",
+    "title": "C Ashland, Ush 2",
+    "limits": "Stuntz Ave To 36Th Ave E",
+    "miles": 2.37,
+    "work": "Construction/resurface",
+    "cost_low": 14000000,
+    "cost_high": 14999999,
+    "cost_text": "$14,000,000 - $14,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800175",
+    "year": "2031 - 2032",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "US 002",
+    "title": "C Ashland, Ush 2",
+    "limits": "Stuntz Ave To 36Th Ave E",
+    "miles": 0.0,
+    "work": "Constr/sanitary sewer & water main",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85200073",
+    "year": "2031 - 2032",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "WIS 077",
+    "title": "Clam Lake - Sth 13",
+    "limits": "Dead Horse Slough",
+    "miles": 0.05,
+    "work": "To be determined",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85200075",
+    "year": "2031 - 2032",
+    "counties": [
+     "Ashland"
+    ],
+    "route": "WIS 077",
+    "title": "Hayward - Sth 13",
+    "limits": "Hollywood Rd To Sth 13 S",
+    "miles": 23.67,
+    "work": "To be determined",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15800071",
+    "year": "2031 - 2032",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 008",
+    "title": "Cameron - Ladysmith",
+    "limits": "480'E Of Cth Ss N To Cedar Swamp Rd",
+    "miles": 14.72,
+    "work": "Construction/resurface",
+    "cost_low": 12000000,
+    "cost_high": 12999999,
+    "cost_text": "$12,000,000 - $12,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950083",
+    "year": "2031 - 2032",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 053",
+    "title": "New Auburn - Rice Lake",
+    "limits": "B-03-0023, B-03-0027, B-03-0031",
+    "miles": 0.0,
+    "work": "Construction/brrhb",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950084",
+    "year": "2031 - 2032",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 053",
+    "title": "New Auburn - Spooner",
+    "limits": "B-03-0028, 29, 41, 47, 54, 55",
+    "miles": 0.55,
+    "work": "Construction/brrhb",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950086",
+    "year": "2031 - 2032",
+    "counties": [
+     "Barron"
+    ],
+    "route": "US 053",
+    "title": "Rice Lake - Minong",
+    "limits": "Red Cedar River Bridge B-03-0043",
+    "miles": 0.04,
+    "work": "To be determined",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80900074",
+    "year": "2031 - 2032",
+    "counties": [
+     "Barron"
+    ],
+    "route": "WIS 025",
+    "title": "Ridgeland - Barron",
+    "limits": "Dunn County Line To Ush 8 West",
+    "miles": 13.8,
+    "work": "To be determined",
+    "cost_low": 7000000,
+    "cost_high": 7999999,
+    "cost_text": "$7,000,000 - $7,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85700072",
+    "year": "2031 - 2032",
+    "counties": [
+     "Barron"
+    ],
+    "route": "WIS 048",
+    "title": "Rice Lake - Birchwood",
+    "limits": "North St To Park Ave",
+    "miles": 17.04,
+    "work": "Construction/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85700074",
+    "year": "2031 - 2032",
+    "counties": [
+     "Barron"
+    ],
+    "route": "WIS 048",
+    "title": "Rice Lake - Birchwood",
+    "limits": "Bundy St - North St",
+    "miles": 0.38,
+    "work": "To be determined",
+    "cost_low": 0,
+    "cost_high": 99999,
+    "cost_text": "$0 - $99,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15600172",
+    "year": "2031 - 2032",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "US 063",
+    "title": "Hayward - Drummond",
+    "limits": "Cth M To Cth N",
+    "miles": 9.02,
+    "work": "Construction/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15600173",
+    "year": "2031 - 2032",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "US 063",
+    "title": "Drummond - Ush 2",
+    "limits": "Eighteen Mile Creek C-04-0016",
+    "miles": 0.01,
+    "work": "To be determined",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81600082",
+    "year": "2031 - 2032",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "WIS 013",
+    "title": "Ashland - Bayfield",
+    "limits": "Ush 2 W To Thompson Rd",
+    "miles": 5.96,
+    "work": "Construction/resurface",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81600172",
+    "year": "2031 - 2032",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "WIS 013",
+    "title": "Ashland - Bayfield",
+    "limits": "Pikes Creek B-04-0New",
+    "miles": 0.05,
+    "work": "To be determined",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81500074",
+    "year": "2031 - 2032",
+    "counties": [
+     "Bayfield"
+    ],
+    "route": "WIS 027",
+    "title": "Hayward - Brule",
+    "limits": "Eau Claire River B-04-0014",
+    "miles": 0.06,
+    "work": "To be determined",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11900479",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Cth B Bridge B-09-0059",
+    "miles": 0.05,
+    "work": "Construction/bridge rehabilitation",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11900481",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Cth Q Bridge B-09-0063",
+    "miles": 0.05,
+    "work": "Construction/bridge rehabilitation",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11910576",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Cth B To Sth 64",
+    "miles": 10.98,
+    "work": "Constr/pvrpla",
+    "cost_low": 60000000,
+    "cost_high": 69999999,
+    "cost_text": "$60,000,000 - $69,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11920672",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "US 053",
+    "title": "Chippewa Falls - New Auburn",
+    "limits": "Sth 40 Bridge B-09-0078",
+    "miles": 0.05,
+    "work": "Construction/bridge rehabilitation",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10220181",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region, Guardrail Replacement",
+    "limits": "Sth 29, Ush 53, Ih94",
+    "miles": 0.0,
+    "work": "To be determined",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "81800073",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 027",
+    "title": "Cornell - Ladysmith",
+    "limits": "Johnson Road To 350Ft E Of S 8Th St",
+    "miles": 1.0,
+    "work": "To be determined",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "81900076",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 064",
+    "title": "Bloomer - Cornell",
+    "limits": "150 Ft W Of Park Rd To 2Nd St",
+    "miles": 0.11,
+    "work": "To be determined",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "86000075",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 178",
+    "title": "Chippewa Falls - Cornell",
+    "limits": "Cth S To 970 Ft N Of 145Th Ave",
+    "miles": 9.23,
+    "work": "Design - full ps&e/cold20",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "86000076",
+    "year": "2031 - 2032",
+    "counties": [
+     "Chippewa"
+    ],
+    "route": "WIS 178",
+    "title": "Chippewa Falls - Cornell",
+    "limits": "970 Ft N Of 145Th Ave To Cth R",
+    "miles": 7.23,
+    "work": "To be determined",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "70500075",
+    "year": "2031 - 2032",
+    "counties": [
+     "Clark"
+    ],
+    "route": "WIS 073",
+    "title": "Neillsville - Thorp",
+    "limits": "W 19Th Street To Rock Creek",
+    "miles": 13.86,
+    "work": "Design - full ps&e/rsrf25",
+    "cost_low": 11000000,
+    "cost_high": 11999999,
+    "cost_text": "$11,000,000 - $11,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11800084",
+    "year": "2031 - 2032",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "US 002",
+    "title": "Wentworth - Brule",
+    "limits": "Cth D To Clevedon Rd",
+    "miles": 9.27,
+    "work": "Construction/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950082",
+    "year": "2031 - 2032",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "US 053",
+    "title": "Solon Springs - Superior",
+    "limits": "B-16-0012, 0033, 0034, 0048, 0080",
+    "miles": 0.0,
+    "work": "Construction/brrhb",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85100078",
+    "year": "2031 - 2032",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "WIS 013",
+    "title": "Port Wing - Superior",
+    "limits": "Bayfield County Line To Cth H",
+    "miles": 5.86,
+    "work": "Construction/end of life",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85100175",
+    "year": "2031 - 2032",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "WIS 013",
+    "title": "Port Wing - Superior",
+    "limits": "Bardon Creek B-16-0New",
+    "miles": 0.03,
+    "work": "To be determined",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80100073",
+    "year": "2031 - 2032",
+    "counties": [
+     "Douglas"
+    ],
+    "route": "WIS 035",
+    "title": "C Superior, Tower Avenue",
+    "limits": "64Th Street To Belknap Street",
+    "miles": 4.05,
+    "work": "Constr/resurface/concrete repair",
+    "cost_low": 14000000,
+    "cost_high": 14999999,
+    "cost_text": "$14,000,000 - $14,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "89490079",
+    "year": "2031 - 2032",
+    "counties": [
+     "Dunn"
+    ],
+    "route": "US 012",
+    "title": "Baldwin - Menomonie",
+    "limits": "Sth 128 To Ih 94",
+    "miles": 13.98,
+    "work": "Construction/psrs40",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "15700082",
+    "year": "2031 - 2032",
+    "counties": [
+     "Dunn"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region, Mma Overlays",
+    "limits": "Mma Overlays",
+    "miles": 0.0,
+    "work": "Construction/brpvtv",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "70800079",
+    "year": "2031 - 2032",
+    "counties": [
+     "Eau Claire"
+    ],
+    "route": "US 012",
+    "title": "Eau Claire - Fairchild",
+    "limits": "Cth M S To Ush 10 W",
+    "miles": 9.35,
+    "work": "Construction/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "91551371",
+    "year": "2031 - 2032",
+    "counties": [
+     "Forest"
+    ],
+    "route": "WIS 055",
+    "title": "Pickerel - Argonne",
+    "limits": "Langlade County Line To Ush 8",
+    "miles": 9.22,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "93030670",
+    "year": "2031 - 2032",
+    "counties": [
+     "Iron"
+    ],
+    "route": "WIS 122",
+    "title": "Upson - Montreal River",
+    "limits": "Montreal River Crossing B-26-0671",
+    "miles": 0.0,
+    "work": "Const/brrhb",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10230680",
+    "year": "2031 - 2032",
+    "counties": [
+     "Jackson"
+    ],
+    "route": "I-094",
+    "title": "Black River Falls - Tomah",
+    "limits": "Cth O To Cth Ew (Eastbound)",
+    "miles": 9.03,
+    "work": "Construction/resurface",
+    "cost_low": 13000000,
+    "cost_high": 13999999,
+    "cost_text": "$13,000,000 - $13,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "75400075",
+    "year": "2031 - 2032",
+    "counties": [
+     "Jackson"
+    ],
+    "route": "US 012",
+    "title": "Fairchild - Black River Falls",
+    "limits": "Park Dr To Ih 94",
+    "miles": 9.89,
+    "work": "Construction/cold20",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "16021171",
+    "year": "2031 - 2032",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "US 045",
+    "title": "Wittenberg - Antigo",
+    "limits": "Cth G To Cth Y",
+    "miles": 1.6,
+    "work": "Const/pvrpla",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16021172",
+    "year": "2031 - 2032",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "US 045",
+    "title": "C Antigo, South Superior Street",
+    "limits": "Cth Y To Spring Brook Bridge",
+    "miles": 0.54,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16021270",
+    "year": "2031 - 2032",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "US 045",
+    "title": "C Antigo, Curb Ramp Improvements",
+    "limits": "9Th Avenue To Sth 64",
+    "miles": 1.96,
+    "work": "Per wisdot ada trans plan 100 ramps",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90151262",
+    "year": "2031 - 2032",
+    "counties": [
+     "Langlade"
+    ],
+    "route": "WIS 064",
+    "title": "Merrill - Antigo",
+    "limits": "Lincoln County Line To Zima Road",
+    "miles": 11.53,
+    "work": "To be determined",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11760260",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 051",
+    "title": "Tomahawk - Minocqua",
+    "limits": "Cth S To Ush 8, Nb",
+    "miles": 9.52,
+    "work": "Const/prev maintenance",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11760280",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "US 051",
+    "title": "Tomahawk - Minocqua",
+    "limits": "Cth S To Ush 8, Sb",
+    "miles": 9.06,
+    "work": "Const/resurface",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90300760",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 017",
+    "title": "Merrill - Rhinelander",
+    "limits": "Big Hay Meadow Cr To Stillwell Rd",
+    "miles": 15.87,
+    "work": "To be determined",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90001074",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 064",
+    "title": "C Merrill, Various Streets",
+    "limits": "Sth 64 Curb Ramp Improvements",
+    "miles": 4.74,
+    "work": "Per wisdot ada trans plan 363 ramps",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90001461",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 064",
+    "title": "Merrill - Antigo",
+    "limits": "Sth 17 To Langlade County Line",
+    "miles": 12.37,
+    "work": "Const/psrs",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92150175",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 086",
+    "title": "C Tomahawk, Tomahawk Avenue",
+    "limits": "Wisc River Bridge To Wisconsin Ave",
+    "miles": 1.13,
+    "work": "Const/pavement replacement",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92150185",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 086",
+    "title": "C Tomahawk, Tomahawk Avenue",
+    "limits": "Wisc River Bridge To Wisconsin Ave",
+    "miles": 0.0,
+    "work": "Local utility",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "93050071",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 107",
+    "title": "C Merrill, Grand Avenue",
+    "limits": "Sth 64 To West Taylor Street",
+    "miles": 1.4,
+    "work": "Const/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "93050081",
+    "year": "2031 - 2032",
+    "counties": [
+     "Lincoln"
+    ],
+    "route": "WIS 107",
+    "title": "C Merrill, Grand Avenue",
+    "limits": "Sth 64 To West Taylor Street",
+    "miles": 1.4,
+    "work": "Local utility/resurface",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69990279",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "C Wausau, Grand Avenue",
+    "limits": "Kent Street To East Thomas Street",
+    "miles": 1.21,
+    "work": "Const/pvrpla",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69990289",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "C Wausau, Grand Avenue",
+    "limits": "Kent Street To East Thomas Street",
+    "miles": 0.0,
+    "work": "Const/pvrpla/local utility",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991081",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "BUS 051",
+    "title": "V Rothschild, Grand Avenue",
+    "limits": "Ush 51 To Everest Drive",
+    "miles": 2.38,
+    "work": "Const/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11700075",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "US 051",
+    "title": "Wausau - Merrill",
+    "limits": "Decatur Drive To Lincoln Co Line",
+    "miles": 8.72,
+    "work": "To be determined",
+    "cost_low": 20000000,
+    "cost_high": 24999999,
+    "cost_text": "$20,000,000 - $24,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991970",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "VAR HWY",
+    "title": "Wausau Area Various Streets",
+    "limits": "Bus 51 South Curb Ramp Improvements",
+    "miles": 2.32,
+    "work": "Per wisdot ada trans plan 175 ramps",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10530277",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 029",
+    "title": "Abbotsford - Wausau",
+    "limits": "Clark County Line To Cth E, Eb",
+    "miles": 11.54,
+    "work": "Const/resurface",
+    "cost_low": 11000000,
+    "cost_high": 11999999,
+    "cost_text": "$11,000,000 - $11,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69991971",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 052",
+    "title": "Wausau Area Various Streets",
+    "limits": "Sth 52 Curb Ramp Improvements",
+    "miles": 1.46,
+    "work": "Per wisdot ada trans plan 167 ramps",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90100371",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 052",
+    "title": "Wausau - Aniwa",
+    "limits": "18Th Street To Little Elm Road",
+    "miles": 8.53,
+    "work": "Const/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "70400572",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 098",
+    "title": "V Spencer, Clark Street",
+    "limits": "Clark County Line To Sth 13",
+    "miles": 1.02,
+    "work": "Const/resurface",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "70400582",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 098",
+    "title": "V Spencer, Clark Street",
+    "limits": "Clark County Line To Sth 13",
+    "miles": 0.0,
+    "work": "Local utility",
+    "cost_low": 0,
+    "cost_high": 99999,
+    "cost_text": "$0 - $99,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "95200070",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 107",
+    "title": "Marathon City - Merrill",
+    "limits": "13Th Lane To Sth 64",
+    "miles": 14.39,
+    "work": "Const/resurface",
+    "cost_low": 11000000,
+    "cost_high": 11999999,
+    "cost_text": "$11,000,000 - $11,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "66000071",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS 153",
+    "title": "Mosinee - Elderon",
+    "limits": "Old 51 To East View Drive",
+    "miles": 1.34,
+    "work": "To be determined",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "69990281",
+    "year": "2031 - 2032",
+    "counties": [
+     "Marathon"
+    ],
+    "route": "WIS B05",
+    "title": "C Wausau, North 3Rd Avenue",
+    "limits": "W Union St To W Bridge Street, Sb",
+    "miles": 1.71,
+    "work": "Const/pavement replacement",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10160182",
+    "year": "2031 - 2032",
+    "counties": [
+     "Monroe"
+    ],
+    "route": "I-090",
+    "title": "Black River Falls - Mauston",
+    "limits": "B-29-48,49; B-41-68,69",
+    "miles": 2.04,
+    "work": "To be determined",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "79980079",
+    "year": "2031 - 2032",
+    "counties": [
+     "Monroe"
+    ],
+    "route": "WIS 016",
+    "title": "Southwest Region, Ada Curb Ramps",
+    "limits": "City Of Tomah Various Locations",
+    "miles": 3.65,
+    "work": "Per wisdot ada trans plan 155 ramps",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "10094768",
+    "year": "2031 - 2032",
+    "counties": [
+     "North Central Region Wide"
+    ],
+    "route": "VAR HWY",
+    "title": "Regionwide Bridge Maintenance",
+    "limits": "B35-57,124,B68-12,B69-12,C-37-70",
+    "miles": 0.05,
+    "work": "Const/rehab/wingwalls",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": [
+     6,
+     8
+    ]
+   },
+   {
+    "id": "11900378",
+    "year": "2031 - 2032",
+    "counties": [
+     "Northwest Region Wide"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region, Ush 53 Brdg Deck Sealing",
+    "limits": "Bridge Deck Sealing (Var)",
+    "miles": 0.03,
+    "work": "To be determined",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80800074",
+    "year": "2031 - 2032",
+    "counties": [
+     "Northwest Region Wide"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region, Thin Polymer Deck Ovrlys",
+    "limits": "Thin Polymer Deck Overlays (South)",
+    "miles": 0.0,
+    "work": "Construction/brpvtv",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "85100077",
+    "year": "2031 - 2032",
+    "counties": [
+     "Northwest Region Wide"
+    ],
+    "route": "VAR HWY",
+    "title": "Nw Region, Thin Polymer Deck Ovrlys",
+    "limits": "Thin Polymer Deck Overlays (North)",
+    "miles": 0.0,
+    "work": "Construction/brpvtv",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11701673",
+    "year": "2031 - 2032",
+    "counties": [
+     "Oneida"
+    ],
+    "route": "US 051",
+    "title": "Tomahawk - Minocqua",
+    "limits": "Jackson Heights Rd To S Blue Lk Rd",
+    "miles": 4.12,
+    "work": "Const/resurface",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "72000072",
+    "year": "2031 - 2032",
+    "counties": [
+     "Pierce"
+    ],
+    "route": "WIS 035",
+    "title": "River Falls - Hudson",
+    "limits": "Sth 65 S To N Quarry Road",
+    "miles": 1.88,
+    "work": "To be determined",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": [
+     3
+    ]
+   },
+   {
+    "id": "15700370",
+    "year": "2031 - 2032",
+    "counties": [
+     "Polk"
+    ],
+    "route": "US 008",
+    "title": "St Croix Falls - Turtle Lake",
+    "limits": "B-48-0071 & B-48-0072",
+    "miles": 0.05,
+    "work": "To be determined",
+    "cost_low": 30000000,
+    "cost_high": 34999999,
+    "cost_text": "$30,000,000 - $34,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80600074",
+    "year": "2031 - 2032",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 035",
+    "title": "Somerset - St Croix Falls",
+    "limits": "Sth 243 To Ush 8 W",
+    "miles": 7.66,
+    "work": "Construction/resurface",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "80600084",
+    "year": "2031 - 2032",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 035",
+    "title": "Somerset - St Croix Falls",
+    "limits": "Sth 243 To Ush 8 W",
+    "miles": 7.66,
+    "work": "Constr/water main",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88200072",
+    "year": "2031 - 2032",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 048",
+    "title": "Frederic - Mckinley",
+    "limits": "Straight River C-48-0005",
+    "miles": 0.03,
+    "work": "To be determined",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "88650076",
+    "year": "2031 - 2032",
+    "counties": [
+     "Polk"
+    ],
+    "route": "WIS 065",
+    "title": "New Richmond - Wanderoos",
+    "limits": "Soo Line Trail B-48-0010",
+    "miles": 0.06,
+    "work": "Construction/brpvtv",
+    "cost_low": 250000,
+    "cost_high": 499999,
+    "cost_text": "$250,000 - $499,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90700773",
+    "year": "2031 - 2032",
+    "counties": [
+     "Price"
+    ],
+    "route": "WIS 070",
+    "title": "Oxbo - Fifield",
+    "limits": "Six Mile And Betsy Cr Structures",
+    "miles": 0.12,
+    "work": "Const/pvrpla",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92401071",
+    "year": "2031 - 2032",
+    "counties": [
+     "Price"
+    ],
+    "route": "WIS 182",
+    "title": "Park Falls - Springstead",
+    "limits": "Saunders Avenue To Iron Co Line",
+    "miles": 14.66,
+    "work": "Const/pvrpla",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85700073",
+    "year": "2031 - 2032",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "WIS 048",
+    "title": "Birchwood - Exeland",
+    "limits": "Weirgor Creek B-57-0052",
+    "miles": 0.01,
+    "work": "To be determined",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85200072",
+    "year": "2031 - 2032",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "WIS 077",
+    "title": "Hayward - Clam Lake",
+    "limits": "Namekagon River B-57-0061",
+    "miles": 0.02,
+    "work": "To be determined",
+    "cost_low": 750000,
+    "cost_high": 999999,
+    "cost_text": "$750,000 - $999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "85200176",
+    "year": "2031 - 2032",
+    "counties": [
+     "Sawyer"
+    ],
+    "route": "WIS 077",
+    "title": "Hayward - Clam Lake",
+    "limits": "Cth Oo To Hollywood Rd",
+    "miles": 10.86,
+    "work": "Construction/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "10200072",
+    "year": "2031 - 2032",
+    "counties": [
+     "St. Croix"
+    ],
+    "route": "I-094",
+    "title": "Hudson - Baldwin",
+    "limits": "Ush 12 To Sth 65 (Eb & Wb)",
+    "miles": 5.95,
+    "work": "Construction/resurface",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100084",
+    "year": "2031 - 2032",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 013",
+    "title": "Medford - Prentice",
+    "limits": "1700' N Of Ann'S Way To Cth M E",
+    "miles": 4.64,
+    "work": "Construction/resurface",
+    "cost_low": 3000000,
+    "cost_high": 3999999,
+    "cost_text": "$3,000,000 - $3,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100185",
+    "year": "2031 - 2032",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 013",
+    "title": "Medford - Prentice",
+    "limits": "Trib To Black River B-60-0New",
+    "miles": 0.01,
+    "work": "Construction/brrpl",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16100186",
+    "year": "2031 - 2032",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 013",
+    "title": "Medford - Prentice",
+    "limits": "Silver Crk B600017/Atv Trl B600016",
+    "miles": 0.05,
+    "work": "Construction/brrhb",
+    "cost_low": 1000000,
+    "cost_high": 1999999,
+    "cost_text": "$1,000,000 - $1,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90000077",
+    "year": "2031 - 2032",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 064",
+    "title": "Medford - Merrill",
+    "limits": "Drainage C-60-1098",
+    "miles": 0.22,
+    "work": "To be determined",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "82100074",
+    "year": "2031 - 2032",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 073",
+    "title": "Thorp - Ingram",
+    "limits": "Shoulder Creek C-60-0New",
+    "miles": 0.15,
+    "work": "To be determined",
+    "cost_low": 500000,
+    "cost_high": 749999,
+    "cost_text": "$500,000 - $749,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "82100075",
+    "year": "2031 - 2032",
+    "counties": [
+     "Taylor"
+    ],
+    "route": "WIS 073",
+    "title": "Thorp - Ingram",
+    "limits": "Cth M To Rusk County Line",
+    "miles": 10.59,
+    "work": "Design full ps&e/end of life",
+    "cost_low": 4000000,
+    "cost_high": 4999999,
+    "cost_text": "$4,000,000 - $4,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16011476",
+    "year": "2031 - 2032",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "US 045",
+    "title": "C Eagle River, 32Nd Div Memorial",
+    "limits": "Wall Street To Birchwood Drive",
+    "miles": 4.45,
+    "work": "Const/resurface",
+    "cost_low": 5000000,
+    "cost_high": 5999999,
+    "cost_text": "$5,000,000 - $5,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "92310872",
+    "year": "2031 - 2032",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "WIS 047",
+    "title": "Woodruff - Manitowish",
+    "limits": "Oneida Co Line To Cemetery Road",
+    "miles": 13.04,
+    "work": "Const/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "90801570",
+    "year": "2031 - 2032",
+    "counties": [
+     "Vilas"
+    ],
+    "route": "WIS 070",
+    "title": "Woodruff - Eagle River",
+    "limits": "Sth 17/Sth 70 Intersection",
+    "miles": 0.1,
+    "work": "To be determined",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11950172",
+    "year": "2031 - 2032",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "US 053",
+    "title": "Spooner - Minong",
+    "limits": "Whalen Lake Rd To Bus 53 (Nb)",
+    "miles": 11.01,
+    "work": "Construction/resurface",
+    "cost_low": 10000000,
+    "cost_high": 10999999,
+    "cost_text": "$10,000,000 - $10,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "11960172",
+    "year": "2031 - 2032",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "US 053",
+    "title": "Minong - Solon Springs",
+    "limits": "Bus 53 (Minong) To Cth T (Nb)",
+    "miles": 6.74,
+    "work": "Construction/pavement replacement",
+    "cost_low": 20000000,
+    "cost_high": 24999999,
+    "cost_text": "$20,000,000 - $24,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "15600082",
+    "year": "2031 - 2032",
+    "counties": [
+     "Washburn"
+    ],
+    "route": "US 063",
+    "title": "Spooner - Hayward",
+    "limits": "Cth M South To Vermont Ave",
+    "miles": 12.67,
+    "work": "Construction/resurface",
+    "cost_low": 9000000,
+    "cost_high": 9999999,
+    "cost_text": "$9,000,000 - $9,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "63800669",
+    "year": "2031 - 2032",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 013",
+    "title": "C Marshfield, Veterans Parkway",
+    "limits": "S Galvin Avenue To Chestnut Avenue",
+    "miles": 2.63,
+    "work": "Const/psrs",
+    "cost_low": 2000000,
+    "cost_high": 2999999,
+    "cost_text": "$2,000,000 - $2,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "75100071",
+    "year": "2031 - 2032",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 054",
+    "title": "City Point - Dexterville",
+    "limits": "Jackson County Line To Sth 80",
+    "miles": 11.83,
+    "work": "Const/resurface",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "16200279",
+    "year": "2031 - 2032",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 080",
+    "title": "Pittsville - Marshfield",
+    "limits": "Cth A To Ush 10 West",
+    "miles": 12.41,
+    "work": "Const/resurface",
+    "cost_low": 8000000,
+    "cost_high": 8999999,
+    "cost_text": "$8,000,000 - $8,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "63800677",
+    "year": "2031 - 2032",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 097",
+    "title": "C Marshfield, N Central Avenue",
+    "limits": "Arnold Street To Harrison Street",
+    "miles": 0.5,
+    "work": "Const/pvrpla",
+    "cost_low": 6000000,
+    "cost_high": 6999999,
+    "cost_text": "$6,000,000 - $6,999,999",
+    "shared_with_districts": []
+   },
+   {
+    "id": "63800687",
+    "year": "2031 - 2032",
+    "counties": [
+     "Wood"
+    ],
+    "route": "WIS 097",
+    "title": "C Marshfield, N Central Avenue",
+    "limits": "Arnold Street To Harrison Street",
+    "miles": 0.0,
+    "work": "Local utility",
+    "cost_low": 100000,
+    "cost_high": 249999,
+    "cost_text": "$100,000 - $249,999",
+    "shared_with_districts": []
+   }
+  ],
+  "note": "WisDOT gives each project's construction cost as a range, so totals are a low and a high sum. A project that crosses a district line is counted in full here. The program is a plan and changes."
+ }
+}

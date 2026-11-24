@@ -1,124 +1,43 @@
 {
- "generated_at": "2026-11-24T16:51:13+00:00",
+ "generated_at": "2026-11-24T16:56:32+00:00",
  "summary": {
-  "total": 29,
-  "pass": 29,
+  "total": 31,
+  "pass": 30,
+  "warn": 1,
   "ok": true
  },
  "checks": [
   {
-   "id": "station-links",
-   "title": "Listening links point at stations in the FCC records",
+   "id": "acs-labels",
+   "title": "Every Census variable means what the atlas says it means",
    "status": "pass",
+   "detail": "210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found).",
    "sources": [
-    "fcc-queries"
-   ],
-   "values": {
-    "linked": 10
-   },
-   "detail": "10 stations carry a link to their broadcaster's listening page, checked on 2026-11-24."
+    "acs1",
+    "acs5"
+   ]
   },
   {
-   "id": "fcc-layout",
-   "title": "FCC station records have the expected layout",
+   "id": "irs-labels",
+   "title": "IRS variables match their published descriptions",
    "status": "pass",
+   "detail": "6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range.",
    "sources": [
-    "fcc-queries"
+    "irs-soi-cd"
    ],
-   "values": {
-    "rows": 720,
-    "readable": 720
-   },
-   "detail": "720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions."
+   "values": {}
   },
   {
-   "id": "municipalities-cover",
-   "title": "Every county in the district has municipalities in the district",
+   "id": "irs-classes-sum",
+   "title": "IRS income classes add up to the district total",
    "status": "pass",
-   "sources": [
-    "census-cousub-rel",
-    "census-rel"
-   ],
-   "values": {
-    "counties": 26,
-    "in_district": 607
-   },
-   "detail": "607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties."
-  },
-  {
-   "id": "ipeds-district",
-   "title": "IPEDS district codes agree with the district outline",
-   "status": "pass",
-   "sources": [
-    "nces-ipeds-hd",
-    "census-cb"
-   ],
-   "values": {
-    "listed": 7,
-    "disagree": 0
-   },
-   "detail": "All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does."
-  },
-  {
-   "id": "ipeds-labels",
-   "title": "College directory variables match the IPEDS dictionary",
-   "status": "pass",
-   "sources": [
-    "nces-ipeds-hd"
-   ],
-   "values": {},
-   "detail": "13 of 13 variables confirmed against the 2024 dictionary."
-  },
-  {
-   "id": "ssa-district-lines",
-   "title": "SSA tables use the current district lines",
-   "status": "pass",
-   "sources": [
-    "ssa-cong-stats"
-   ],
-   "values": {
-    "ssa_congress": 119,
-    "atlas_congress": 119
-   },
-   "detail": "SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th."
-  },
-  {
-   "id": "ssa-ssi-sum",
-   "title": "Wisconsin's districts add up to the state total for SSI",
-   "status": "pass",
-   "sources": [
-    "ssa-cong-stats"
-   ],
-   "values": {
-    "districts": 107505.0,
-    "state_row": 107505.0
-   },
-   "detail": "SSI recipients: districts sum to 107,505; state row 107,505."
-  },
-  {
-   "id": "ssa-state-sum",
-   "title": "Wisconsin's districts add up to the state total in the SSA tables",
-   "status": "pass",
-   "sources": [
-    "ssa-cong-stats"
-   ],
-   "values": {
-    "districts": 1398745.0,
-    "state_row": 1398745.0
-   },
-   "detail": "Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%)."
-  },
-  {
-   "id": "irs-district-lines",
-   "title": "IRS file uses the current district lines",
-   "status": "pass",
-   "detail": "The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress.",
+   "detail": "Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells).",
    "sources": [
     "irs-soi-cd"
    ],
    "values": {
-    "irs_congress": 118,
-    "atlas_congress": 119
+    "published": 3612071000.0,
+    "summed": 3612071000.0
    }
   },
   {
@@ -135,37 +54,129 @@
    }
   },
   {
-   "id": "irs-classes-sum",
-   "title": "IRS income classes add up to the district total",
+   "id": "irs-district-lines",
+   "title": "IRS file uses the current district lines",
    "status": "pass",
-   "detail": "Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells).",
+   "detail": "The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress.",
    "sources": [
     "irs-soi-cd"
    ],
    "values": {
-    "published": 3612071000.0,
-    "summed": 3612071000.0
+    "irs_congress": 118,
+    "atlas_congress": 119
    }
   },
   {
-   "id": "irs-labels",
-   "title": "IRS variables match their published descriptions",
+   "id": "ssa-state-sum",
+   "title": "Wisconsin's districts add up to the state total in the SSA tables",
    "status": "pass",
-   "detail": "6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range.",
    "sources": [
-    "irs-soi-cd"
+    "ssa-cong-stats"
    ],
-   "values": {}
+   "values": {
+    "districts": 1398745.0,
+    "state_row": 1398745.0
+   },
+   "detail": "Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%)."
   },
   {
-   "id": "acs-labels",
-   "title": "Every Census variable means what the atlas says it means",
+   "id": "ssa-ssi-sum",
+   "title": "Wisconsin's districts add up to the state total for SSI",
    "status": "pass",
-   "detail": "210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found).",
    "sources": [
-    "acs1",
-    "acs5"
+    "ssa-cong-stats"
+   ],
+   "values": {
+    "districts": 107505.0,
+    "state_row": 107505.0
+   },
+   "detail": "SSI recipients: districts sum to 107,505; state row 107,505."
+  },
+  {
+   "id": "ssa-district-lines",
+   "title": "SSA tables use the current district lines",
+   "status": "pass",
+   "sources": [
+    "ssa-cong-stats"
+   ],
+   "values": {
+    "ssa_congress": 119,
+    "atlas_congress": 119
+   },
+   "detail": "SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th."
+  },
+  {
+   "id": "election-sources-agree",
+   "title": "Two election compilations agree on the same race",
+   "status": "pass",
+   "detail": "2018 general election: MIT Election Lab has Sean P. Duffy with 194,061 votes; the FEC compilation has Sean P. Duffy with 194,061 votes (tolerance 0.2%).",
+   "sources": [
+    "medsl-house",
+    "fec-results"
    ]
+  },
+  {
+   "id": "ipeds-labels",
+   "title": "College directory variables match the IPEDS dictionary",
+   "status": "pass",
+   "sources": [
+    "nces-ipeds-hd"
+   ],
+   "values": {},
+   "detail": "13 of 13 variables confirmed against the 2024 dictionary."
+  },
+  {
+   "id": "ipeds-district",
+   "title": "IPEDS district codes agree with the district outline",
+   "status": "pass",
+   "sources": [
+    "nces-ipeds-hd",
+    "census-cb"
+   ],
+   "values": {
+    "listed": 7,
+    "disagree": 0
+   },
+   "detail": "All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does."
+  },
+  {
+   "id": "municipalities-cover",
+   "title": "Every county in the district has municipalities in the district",
+   "status": "pass",
+   "sources": [
+    "census-cousub-rel",
+    "census-rel"
+   ],
+   "values": {
+    "counties": 26,
+    "in_district": 607
+   },
+   "detail": "607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties."
+  },
+  {
+   "id": "fcc-layout",
+   "title": "FCC station records have the expected layout",
+   "status": "pass",
+   "sources": [
+    "fcc-queries"
+   ],
+   "values": {
+    "rows": 720,
+    "readable": 720
+   },
+   "detail": "720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions."
+  },
+  {
+   "id": "station-links",
+   "title": "Listening links point at stations in the FCC records",
+   "status": "pass",
+   "sources": [
+    "fcc-queries"
+   ],
+   "values": {
+    "linked": 10
+   },
+   "detail": "10 stations carry a link to their broadcaster's listening page, checked on 2026-11-24."
   },
   {
    "id": "projects-sourced",
@@ -180,6 +191,20 @@
     "projects": 1
    },
    "detail": "13 facts across 1 project(s), each tied to a listed page. Read on 2026-11-24; due for re-reading by 2027-03-15."
+  },
+  {
+   "id": "wisdot-program",
+   "title": "WisDOT projects tagged to the district fall in its counties",
+   "status": "warn",
+   "sources": [
+    "wisdot-six-year"
+   ],
+   "values": {
+    "rows": 423,
+    "projects": 423,
+    "unpriced": 0
+   },
+   "detail": "423 projects from 423 rows carry WisDOT's tag for district 7; 0 have no readable cost range. Counties outside the district's list: Dunn, Eau Claire, North Central Region Wide, Northwest Region Wide, Pierce, Portage, Trempealeau."
   },
   {
    "id": "county-list",

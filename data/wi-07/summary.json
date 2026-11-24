@@ -11,7 +11,7 @@
   "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-24T16:51:13+00:00",
+ "built_at": "2026-11-24T16:56:32+00:00",
  "headline": [
   {
    "id": "population",
@@ -1718,6 +1718,19 @@
    "apa": "Wisconsin Department of Transportation. (2024). Blatnik Bridge frequently asked questions and fact sheet [Fact sheet]. Retrieved November 24, 2026, from https://www.wisconsindot.gov/Documents/projects/by-region/nw/blatnikbridge/faqs.pdf"
   },
   {
+   "id": "wisdot-six-year",
+   "publisher": "Wisconsin Department of Transportation",
+   "title": "Construction Projects (6 Year), highway improvement program map service",
+   "url": "https://data-wisdot.opendata.arcgis.com/",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://dotmaps.wi.gov/arcgis/rest/services/agohub/HIGHWAY_PROGRAM_2_4_6_YEAR/MapServer/1/query?where=CONGRESSIONAL_DISTRICT_NUMBERS LIKE '%7%'",
+   "vintage": "Refreshed 2026-11-21",
+   "accessed": "2026-11-24",
+   "notes": "District tags and cost ranges are WisDOT's. Project counts are by WisDOT project ID.",
+   "apa": "Wisconsin Department of Transportation. (2026). Construction Projects (6 Year), highway improvement program map service [Data set]. Retrieved November 24, 2026, from https://data-wisdot.opendata.arcgis.com/"
+  },
+  {
    "id": "wisdot-blatnik-page",
    "publisher": "Wisconsin Department of Transportation",
    "title": "I-535 and US 53 (Blatnik Bridge), Douglas and St. Louis counties",
@@ -1732,28 +1745,30 @@
   }
  ],
  "integrity": {
-  "total": 29,
-  "pass": 29,
+  "total": 31,
+  "pass": 30,
+  "warn": 1,
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-24T16:40:49+00:00",
-  "legislators": "2026-11-24T16:40:54+00:00",
-  "acs": "2026-11-24T16:41:03+00:00",
-  "pep": "2026-11-24T16:42:13+00:00",
-  "laus": "2026-11-24T16:42:14+00:00",
-  "qcew": "2026-11-24T16:42:16+00:00",
-  "usaspending": "2026-11-24T16:42:26+00:00",
-  "elections": "2026-11-24T16:42:42+00:00",
-  "fec": "2026-11-24T16:42:45+00:00",
-  "votes": "2026-11-24T16:42:47+00:00",
-  "irs": "2026-11-24T16:42:39+00:00",
-  "cameras": "2026-11-24T16:44:45+00:00",
-  "colleges": "2026-11-24T16:44:46+00:00",
-  "municipalities": "2026-11-24T16:44:48+00:00",
-  "broadcast": "2026-11-24T16:44:49+00:00",
-  "ssa": "2026-11-24T16:42:42+00:00",
-  "projects": "2026-11-24T16:51:13+00:00"
+  "geography": "2026-11-24T16:52:23+00:00",
+  "legislators": "2026-11-24T16:52:30+00:00",
+  "acs": "2026-11-24T16:52:39+00:00",
+  "pep": "2026-11-24T16:53:49+00:00",
+  "laus": "2026-11-24T16:53:49+00:00",
+  "qcew": "2026-11-24T16:53:52+00:00",
+  "usaspending": "2026-11-24T16:54:03+00:00",
+  "elections": "2026-11-24T16:54:08+00:00",
+  "fec": "2026-11-24T16:54:11+00:00",
+  "votes": "2026-11-24T16:54:13+00:00",
+  "irs": "2026-11-24T16:54:05+00:00",
+  "cameras": "2026-11-24T16:56:21+00:00",
+  "colleges": "2026-11-24T16:56:22+00:00",
+  "municipalities": "2026-11-24T16:56:27+00:00",
+  "broadcast": "2026-11-24T16:56:27+00:00",
+  "ssa": "2026-11-24T16:54:07+00:00",
+  "projects": "2026-11-24T16:56:31+00:00",
+  "roads": "2026-11-24T16:56:31+00:00"
  },
  "status": {
   "geography": "ok",
@@ -1772,6 +1787,7 @@
   "municipalities": "ok",
   "broadcast": "ok",
   "ssa": "ok",
-  "projects": "ok"
+  "projects": "ok",
+  "roads": "ok"
  }
 }
