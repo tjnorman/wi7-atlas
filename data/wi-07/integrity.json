@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T04:52:36+00:00",
+ "generated_at": "2026-11-24T05:00:51+00:00",
  "summary": {
   "total": 21,
   "pass": 21,
@@ -20,7 +20,7 @@
    "id": "irs-labels",
    "title": "IRS variables match their published descriptions",
    "status": "pass",
-   "detail": "7 of 7 variables confirmed against the tax year 2023 documentation guide.",
+   "detail": "6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range.",
    "sources": [
     "irs-soi-cd"
    ],

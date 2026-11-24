@@ -266,7 +266,7 @@ Three rules keep the atlas honest:
 | | Check | What was compared |
 |---|---|---|
 | ✅ Pass | Every Census variable means what the atlas says it means | 210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found). |
-| ✅ Pass | IRS variables match their published descriptions | 7 of 7 variables confirmed against the tax year 2023 documentation guide. |
+| ✅ Pass | IRS variables match their published descriptions | 6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range. |
 | ✅ Pass | IRS income classes add up to the district total | Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells). |
 | ✅ Pass | Wisconsin's districts add up to the state total in the IRS file | Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row). |
 | ✅ Pass | IRS file uses the current district lines | The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress. |
@@ -294,7 +294,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T04:47:25+00:00",
+  "generated_at": "2026-11-24T04:56:26+00:00",
   "sources": [
     {
       "id": "acs1",
