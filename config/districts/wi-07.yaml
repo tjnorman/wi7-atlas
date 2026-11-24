@@ -63,3 +63,5 @@ trends:
   usaspending_start_fy: 2018
   fec_cycles: [2020, 2022, 2024, 2026]
   house_results_from: 1976
+  # Roll calls are read from this year forward (ten years of the seat's attendance).
+  votes_start_year: 2017

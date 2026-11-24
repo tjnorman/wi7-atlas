@@ -73,90 +73,141 @@ def side(v: str) -> str | None:
     return "yes" if v in YES else "no" if v in NO else None
 
 
+def congress_of(year: int) -> int:
+    return (year - 1789) // 2 + 1
+
+
+def read_year(fetcher: Fetcher, y: int) -> tuple[list[dict], list[tuple[int, int]], list[str]]:
+    """Every roll call the Clerk has published for one calendar year."""
+    parsed, gaps, diagnostics = [], [], []
+    n, misses = 1, 0
+    while misses < 3:
+        try:
+            parsed.append(parse_vote(fetcher.fetch(EVS.format(y=y, n=n), retries=2)))
+            misses = 0
+        except (FetchError, ET.ParseError, ValueError) as exc:
+            misses += 1
+            gaps.append((y, n))
+            diagnostics.append(f"{y}/{n}: {str(exc)[:200]}")
+        n += 1
+    # trailing misses are simply the end of the year's votes
+    return parsed, [g for g in gaps if g[1] < n - 3], diagnostics
+
+
+class Tally:
+    """Counts for one group of roll calls: a Congress, a year, or one member's time in the seat."""
+
+    def __init__(self):
+        self.house_roll_calls = 0   # yes-or-no roll calls taken by the House
+        self.vacant = 0             # of those, taken while the seat was empty
+        self.cast = self.missed = 0
+        self.with_party = self.party_comparable = 0
+        self.winning = self.winning_comparable = 0
+        self.house_missed = self.house_slots = 0   # every member, on the roll calls the seat was eligible for
+
+    def stats(self) -> dict:
+        held = self.cast + self.missed
+        share = lambda a, b: 100 * a / b if b else None
+        return {
+            "house_yes_no_roll_calls": self.house_roll_calls, "while_seat_vacant": self.vacant,
+            "yes_no_votes_while_held": held, "votes_cast": self.cast, "missed": self.missed,
+            "missed_pct": share(self.missed, held), "house_missed_pct": share(self.house_missed, self.house_slots),
+            "with_party_majority_pct": share(self.with_party, self.party_comparable),
+            "on_winning_side_pct": share(self.winning, self.winning_comparable),
+        }
+
+
 def fetch(fetcher: Fetcher, d: District, terms: list[dict]) -> tuple[dict, list[Source], list[dict]]:
     """terms: the seat's terms from the legislators source (bioguide, start, end, party)."""
     congress = d.congress
-    first_year = 1789 + 2 * (congress - 1)
-    years = [first_year, first_year + 1]
     today = date.today()
+    first_year = 1789 + 2 * (congress - 1)
+    current_years = [first_year, first_year + 1]
+    start_year = min(int(d.trends.get("votes_start_year", first_year)), first_year)
+    years = [y for y in range(start_year, first_year + 2) if y <= today.year]
     parsed: list[dict] = []
-    gaps = []
+    gaps: list[tuple[int, int]] = []
     diagnostics: list[str] = []
     for y in years:
-        if y > today.year:
-            continue
-        n, misses = 1, 0
-        while misses < 3:
-            try:
-                parsed.append(parse_vote(fetcher.fetch(EVS.format(y=y, n=n), retries=2)))
-                misses = 0
-            except FetchError as exc:
-                misses += 1
-                gaps.append((y, n))
-                diagnostics.append(f"{y}/{n}: {str(exc)[:200]}")
-            except (ET.ParseError, ValueError) as exc:
-                misses += 1
-                gaps.append((y, n))
-                diagnostics.append(f"{y}/{n}: {str(exc)[:200]}")
-            n += 1
-        # trailing misses are simply the end of the year's votes
-        gaps = [g for g in gaps if not (g[0] == y and g[1] >= n - 3)]
+        p, g, diag = read_year(fetcher, y)
+        parsed += p
+        gaps += g
+        diagnostics += diag
+    if not parsed:
+        raise FetchError("No roll calls could be read. First responses: " + " | ".join(diagnostics[:3]))
 
     def holder(on: str) -> dict | None:
         return next((t for t in terms if t["start"] <= on <= t["end"]), None)
 
-    rows, missed, cast, with_party, party_comparable, winning, winning_comparable = [], 0, 0, 0, 0, 0, 0
-    house_missed, house_slots = 0, 0
+    now, by_year, by_member = Tally(), {}, {}
+    holders_by_year: dict[int, list[str]] = {}
+    member_span: dict[str, dict] = {}
+    rows, missed_rows = [], []
     for v in parsed:
-        h = holder(v["date"])
         sides = {side(x["vote"]) for x in v["votes"].values()}
         if not ({"yes", "no"} & sides):
             continue  # quorum calls and the election of the Speaker are not yes-or-no votes
-        house_slots += len(v["votes"])
-        house_missed += sum(1 for x in v["votes"].values() if x["vote"] == "Not Voting")
-        if not h:
-            continue
-        mv = v["votes"].get(h["bioguide"], {}).get("vote")
+        year = int(v["date"][:4])
+        h = holder(v["date"])
+        groups = [by_year.setdefault(year, Tally())]
+        if year in current_years:
+            groups.append(now)
+        for t in groups:
+            t.house_roll_calls += 1
+        mv = v["votes"].get(h["bioguide"], {}).get("vote") if h else None
         if mv is None:
+            for t in groups:
+                t.vacant += 1
             continue
+        groups.append(by_member.setdefault(h["bioguide"], Tally()))
+        span = member_span.setdefault(h["bioguide"], {"name": h["name"], "party": h.get("party"), "first_vote": v["date"], "last_vote": v["date"]})
+        span["first_vote"], span["last_vote"] = min(span["first_vote"], v["date"]), max(span["last_vote"], v["date"])
+        if h["name"] not in holders_by_year.setdefault(year, []):
+            holders_by_year[year].append(h["name"])
+        not_voting = sum(1 for x in v["votes"].values() if x["vote"] == "Not Voting")
         rec = {k: v[k] for k in ("roll", "date", "legis", "question", "result", "desc", "session")}
         rec["member_vote"] = mv
         rec["member"] = h["name"]
         rec["clerk_url"] = f"https://clerk.house.gov/Votes/{v['date'][:4]}{v['roll']}"
-        rec["bill_url"] = bill_url(v["legis"], congress)
-        rows.append(rec)
-        if mv == "Not Voting":
-            missed += 1
-            continue
-        cast += 1
+        rec["bill_url"] = bill_url(v["legis"], v["congress"] or congress_of(year))
+        if year in current_years:
+            rows.append(rec)
         ms = side(mv)
         party_tally = v["by_party"].get(v["votes"][h["bioguide"]]["party"], {})
         py = sum(c for k, c in party_tally.items() if k in YES)
         pn = sum(c for k, c in party_tally.items() if k in NO)
-        if ms and py != pn:
-            party_comparable += 1
-            with_party += int(ms == ("yes" if py > pn else "no"))
         res = v["result"].lower()
         win = "yes" if any(w in res for w in ("passed", "agreed to", "adopted")) else \
               "no" if any(w in res for w in ("failed", "defeated", "rejected", "not agreed")) else None
-        if ms and win:
-            winning_comparable += 1
-            winning += int(ms == win)
-    total = cast + missed
-    if not parsed:
-        raise FetchError("No roll calls could be read. First responses: " + " | ".join(diagnostics[:3]))
+        for t in groups:
+            t.house_slots += len(v["votes"])
+            t.house_missed += not_voting
+            if mv == "Not Voting":
+                t.missed += 1
+                continue
+            t.cast += 1
+            if ms and py != pn:
+                t.party_comparable += 1
+                t.with_party += int(ms == ("yes" if py > pn else "no"))
+            if ms and win:
+                t.winning_comparable += 1
+                t.winning += int(ms == win)
+        if mv == "Not Voting":
+            missed_rows.append({k: rec[k] for k in ("date", "roll", "legis", "question", "desc", "result", "member", "clerk_url", "bill_url")})
+
     payload = {
         "congress": congress,
-        "years": years,
-        "roll_calls_parsed": len(parsed),
-        "yes_no_votes_while_held": total,
-        "votes_cast": cast,
-        "missed": missed,
-        "missed_pct": 100 * missed / total if total else None,
-        "house_missed_pct": 100 * house_missed / house_slots if house_slots else None,
-        "with_party_majority_pct": 100 * with_party / party_comparable if party_comparable else None,
-        "on_winning_side_pct": 100 * winning / winning_comparable if winning_comparable else None,
+        "years": current_years,
+        "roll_calls_parsed": sum(1 for v in parsed if int(v["date"][:4]) in current_years),
+        **{k: v for k, v in now.stats().items() if k not in ("house_yes_no_roll_calls", "while_seat_vacant")},
         "recent": sorted(rows, key=lambda r: (r["date"], r["roll"]), reverse=True)[:25],
+        "period": {"from_year": years[0], "to_year": years[-1], "roll_calls_parsed": len(parsed),
+                   "through": max(v["date"] for v in parsed)},
+        "by_year": [{"year": y, "congress": congress_of(y), "members": holders_by_year.get(y, []), **by_year[y].stats()}
+                    for y in sorted(by_year)],
+        "by_member": sorted(({"bioguide": b, **member_span[b], **t.stats()} for b, t in by_member.items()),
+                            key=lambda m: m["first_vote"]),
+        "missed_votes": sorted(missed_rows, key=lambda r: (r["date"], r["roll"]), reverse=True),
         "gaps": gaps,
         "diagnostics": diagnostics[:12],
         "definitions": {
@@ -165,12 +216,16 @@ def fetch(fetcher: Fetcher, d: District, terms: list[dict]) -> tuple[dict, list[
             "with_party_majority_pct": ("Share of the member's yes-or-no votes that matched the position "
                                         "taken by most members of the member's own party. Ties are left out."),
             "on_winning_side_pct": "Share of the member's yes-or-no votes that matched the outcome.",
+            "while_seat_vacant": "Yes-or-no roll calls taken while nobody held the seat. They are not counted as missed.",
+            "not_voting": ("The Clerk records Not Voting for any absence, whatever the reason. The record does not say why "
+                           "a vote was missed, and it does not show votes later explained in the Congressional Record."),
         },
     }
+    span = f"{ordinal(congress_of(years[0]))} to {ordinal(congress)} Congresses" if years[0] < first_year else f"{ordinal(congress)} Congress"
     src = Source(
         id="clerk-votes",
         publisher="Office of the Clerk, U.S. House of Representatives",
-        title=f"Roll call votes, {ordinal(congress)} Congress",
+        title=f"Roll call votes, {span} ({years[0]} to {years[-1]})" if years[0] < first_year else f"Roll call votes, {span}",
         url="https://clerk.house.gov/Votes",
         year=str(today.year),
         query=EVS.format(y=years[0], n=1).replace("001", "NNN"),

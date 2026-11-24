@@ -505,3 +505,57 @@ def test_live_snapshot_filters_to_the_district_and_falls_back(tmp_path):
     assert snap["aircraft"][0] == {"hex": "a1b2c3", "callsign": "DAL123", "lat": 45.5, "lon": -90.5, "altitude_ft": 35000,
                                    "on_ground": False, "speed_kt": 450, "track": 271, "type": "B739", "category": None}
     assert live.snapshot(shape, lambda url: (_ for _ in ()).throw(RuntimeError("x")))["ok"] is False
+
+
+def _roll(year, n, day, seat_votes):
+    """A small roll call; seat_votes maps bioguide -> vote for whoever held the seat."""
+    members = "".join(f'<recorded-vote><legislator name-id="{b}" party="R" state="WI">x</legislator><vote>{v}</vote></recorded-vote>'
+                      for b, v in seat_votes.items())
+    return (f'<rollcall-vote><vote-metadata><congress>{(year - 1789) // 2 + 1}</congress><session>1st</session>'
+            f'<rollcall-num>{n}</rollcall-num><legis-num>H R {n}</legis-num><vote-question>On Passage</vote-question>'
+            f'<vote-type>YEA-AND-NAY</vote-type><vote-result>Passed</vote-result><action-date>{day}-{year}</action-date>'
+            f'<vote-desc>Bill {n}</vote-desc></vote-metadata><vote-data>{members}'
+            '<recorded-vote><legislator name-id="A000001" party="R" state="OH">A</legislator><vote>Yea</vote></recorded-vote>'
+            '<recorded-vote><legislator name-id="B000001" party="D" state="CA">B</legislator><vote>Nay</vote></recorded-vote>'
+            '</vote-data></rollcall-vote>').encode()
+
+
+def test_ten_year_attendance_follows_the_seat(district, monkeypatch):
+    from pipeline.http import FetchError
+    from pipeline.sources import votes
+
+    calls = {
+        "2019/roll001": _roll(2019, 1, "10-Jan", {"D000614": "Yea"}),
+        "2019/roll002": _roll(2019, 2, "11-Jan", {"D000614": "Not Voting"}),
+        "2020/roll001": _roll(2020, 1, "10-Jan", {}),                       # seat vacant
+        "2020/roll002": _roll(2020, 2, "20-May", {"T000165": "Nay"}),
+        "2025/roll001": _roll(2025, 1, "15-Jan", {"T000165": "Not Voting"}),
+    }
+
+    def route(url, _):
+        key = next((k for k in calls if url.endswith(k + ".xml")), None)
+        return calls[key] if key else FetchError("404")
+
+    import datetime as dt
+
+    class D(dt.date):
+        @classmethod
+        def today(cls):
+            return dt.date(2025, 6, 1)
+
+    monkeypatch.setattr(votes, "date", D)
+    terms = [{"bioguide": "D000614", "name": "Sean P. Duffy", "start": "2019-01-03", "end": "2019-09-23", "party": "Republican"},
+             {"bioguide": "T000165", "name": "Thomas P. Tiffany", "start": "2020-05-19", "end": "2027-01-03", "party": "Republican"}]
+    p, sources, _ = votes.fetch(FakeFetcher([(r"clerk\.house\.gov", route)]), district, terms)
+    assert p["period"] == {"from_year": 2017, "to_year": 2025, "roll_calls_parsed": 5, "through": "2025-01-15"}
+    years = {y["year"]: y for y in p["by_year"]}
+    assert years[2019]["members"] == ["Sean P. Duffy"] and years[2019]["missed"] == 1 and years[2019]["missed_pct"] == 50.0
+    assert years[2020]["while_seat_vacant"] == 1 and years[2020]["yes_no_votes_while_held"] == 1 and years[2020]["missed"] == 0
+    members = {m["name"]: m for m in p["by_member"]}
+    assert members["Thomas P. Tiffany"]["missed"] == 1 and members["Thomas P. Tiffany"]["yes_no_votes_while_held"] == 2
+    assert members["Sean P. Duffy"]["last_vote"] == "2019-01-11"
+    assert [(m["date"], m["member"]) for m in p["missed_votes"]] == [("2025-01-15", "Thomas P. Tiffany"), ("2019-01-11", "Sean P. Duffy")]
+    assert p["missed_votes"][1]["bill_url"].startswith("https://www.congress.gov/bill/116th-congress/")
+    # The headline figures still describe the current Congress only.
+    assert p["yes_no_votes_while_held"] == 1 and p["missed"] == 1 and p["roll_calls_parsed"] == 1
+    assert "2017 to 2025" in sources[0].title

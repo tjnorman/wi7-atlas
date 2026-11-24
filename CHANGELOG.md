@@ -5,6 +5,7 @@ All notable changes to the WI-7 Atlas. Corrections to data or wording are listed
 ## 1.1.0 — 2026-11-23
 
 ### Added
+- Ten years of attendance for the seat (2017 forward): roll calls voted and missed by year and by member, a comparison with the whole House, roll calls taken during the vacancy, and a list of every missed vote with links to the Clerk's record.
 - "Right now": public road cameras inside the district and a twice-hourly snapshot of aircraft overhead, adapted from the Global Intelligence Atlas with its author's permission.
 - `NOTICE.md`: records permission to adapt code from Normansrule/global-intelligence-atlas under this repository's MIT license.
 - Federal individual income tax by district, from IRS Statistics of Income congressional district data: returns, adjusted gross income, total tax liability, and per-return comparisons with the state and the United States. Variables are confirmed against the IRS documentation guide before use. The site and README state what the figure leaves out.

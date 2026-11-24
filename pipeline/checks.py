@@ -169,7 +169,9 @@ def run(d: District, data: dict[str, dict | None], notes: list[dict], extra: lis
     if votes:
         g = votes.get("gaps") or []
         out.append(check("roll-calls", t, "pass" if not g else "warn",
-                         f"{votes.get('roll_calls_parsed', 0)} roll calls read for the {votes.get('congress')}th Congress"
+                         (f"{votes['period']['roll_calls_parsed']:,} roll calls read, {votes['period']['from_year']} to "
+                          f"{votes['period']['to_year']}" if votes.get("period") else
+                          f"{votes.get('roll_calls_parsed', 0)} roll calls read for the {votes.get('congress')}th Congress")
                          + (f"; could not read {len(g)}: {g[:5]}" if g else "; none missing."),
                          ["clerk-votes"]))
     else:

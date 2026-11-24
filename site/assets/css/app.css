@@ -384,3 +384,8 @@ td.num, th.num { text-align: right; }
 .cam-list button.on span, .cam-list button:hover span { color: #fff; }
 @media (max-width: 900px) { .now-grid { grid-template-columns: 1fr; } }
 #now-map svg { overflow: hidden; display: block; }
+
+/* ---------- attendance ---------- */
+#attendance { margin-top: 34px; }
+#attendance .table-wrap { margin-top: 18px; }
+.missed-scroll { max-height: 520px; overflow-y: auto; }

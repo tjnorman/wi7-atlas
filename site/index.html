@@ -224,6 +224,16 @@
         <h3 id="votes-title">How the seat has voted</h3>
         <div class="rings" id="vote-rings"></div>
         <details class="recent"><summary>The 25 most recent votes</summary><div class="table-wrap"><table id="recent-votes"></table></div></details>
+        <div id="attendance" hidden>
+          <h3 id="att-title">Attendance, year by year</h3>
+          <p class="sub" id="att-lede"></p>
+          <div id="att-chart" class="chart"></div>
+          <div class="table-wrap"><table id="att-years"></table></div>
+          <div class="table-wrap"><table id="att-members"></table></div>
+          <details class="recent"><summary id="missed-summary">Every missed vote</summary>
+            <p class="fine" id="missed-note"></p>
+            <div class="table-wrap missed-scroll"><table id="missed-votes"></table></div></details>
+        </div>
         <p class="fine" id="votes-source"></p>
       </div>
       <div class="panel reveal"><h3>Every general election for the seat</h3><div id="elections-chart" class="chart"></div><p class="fine" id="elections-source"></p></div>

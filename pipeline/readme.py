@@ -271,7 +271,26 @@ def votes_block(votes: dict | None) -> str:
         f"| Voted on the winning side | **{pct(votes.get('on_winning_side_pct'))}** | {d.get('on_winning_side_pct', '')} |",
         "\nSource: Office of the Clerk, U.S. House of Representatives, roll call votes. The website lists the 25 most recent votes with links.\n",
         "</details>",
-    ])
+    ]) + attendance_block(votes)
+
+
+def attendance_block(votes: dict) -> str:
+    years = [y for y in votes.get("by_year") or [] if y.get("house_yes_no_roll_calls")]
+    if len(years) < 2:
+        return ""
+    p = votes["period"]
+    held = sum(y["yes_no_votes_while_held"] for y in years)
+    missed = sum(y["missed"] for y in years)
+    vacant = sum(y["while_seat_vacant"] for y in years)
+    rows = "\n".join(
+        f"| {y['year']} | {', '.join(y['members']) or 'Vacant'} | {y['yes_no_votes_while_held']:,} | {y['missed']:,} | "
+        f"{pct(y['missed_pct'])} | {pct(y['house_missed_pct'])} | {y['while_seat_vacant'] or '—'} |" for y in years)
+    return (f"\n\n<details open><summary><b>Attendance, {p['from_year']} to {p['to_year']}</b> "
+            f"({missed:,} missed of {held:,} roll calls, {pct(100 * missed / held if held else None)})</summary>\n\n"
+            f"| Year | Held by | Roll calls while held | Missed | Missed | Whole House | While vacant |\n|---|---|---:|---:|---:|---:|---:|\n{rows}\n\n"
+            f"{votes['definitions'].get('not_voting', '')} "
+            + (f"{vacant:,} roll calls were taken while the seat was vacant and are not counted as missed. " if vacant else "")
+            + f"The website lists every missed vote with a link to the official record.\n\n</details>")
 
 
 def fec_block(fec: dict | None) -> str:

@@ -684,6 +684,41 @@ function votes() {
       <td>${r.bill_url ? `<a href="${r.bill_url}">${F.esc(r.legis)}</a>` : F.esc(r.legis || "")}<div class="fine" style="margin:2px 0 0">${F.esc(r.desc || "")}</div></td>
       <td>${F.esc(r.question)}</td><td>${F.esc(r.result)}</td><td><span class="vote-chip">${F.esc(r.member_vote)}</span></td></tr>`).join("") + "</tbody>";
   $("#votes-source").innerHTML = sourceLine(["clerk-votes"], `${F.int(v.yes_no_votes_while_held)} yes-or-no roll calls while the member held the seat.`);
+  attendance(v);
+}
+
+function attendance(v) {
+  const years = (v.by_year || []).filter((y) => y.house_yes_no_roll_calls);
+  if (years.length < 2) return;
+  $("#attendance").hidden = false;
+  const p = v.period, tot = (k) => d3.sum(years, (y) => y[k] || 0);
+  const held = tot("yes_no_votes_while_held"), missed = tot("missed"), vacant = tot("while_seat_vacant");
+  $("#att-title").textContent = `Attendance, ${p.from_year} to ${p.to_year}`;
+  $("#att-lede").innerHTML = `From ${p.from_year} through ${F.longDate(p.through)}, the House took ${F.int(tot("house_yes_no_roll_calls"))} yes-or-no roll calls. Whoever held this seat was eligible for ${F.int(held)} of them, voted on <strong>${F.int(held - missed)}</strong>, and missed <strong>${F.int(missed)}</strong> (${F.pct(100 * missed / held)}).${vacant ? ` Another ${F.int(vacant)} were taken while the seat was vacant and are not counted as missed.` : ""}`;
+  const W = 1080, H = 300, m = { t: 26, r: 10, b: 34, l: 48 };
+  const svg = svgEl("#att-chart", W, H, "Share of roll calls missed by the seat each year, compared with the whole House");
+  const x = d3.scaleBand().domain(years.map((y) => y.year)).range([m.l, W - m.r]).padding(0.3);
+  const y = d3.scaleLinear().domain([0, Math.max(5, d3.max(years, (r) => Math.max(r.missed_pct || 0, r.house_missed_pct || 0)))]).nice().range([H - m.b, m.t]);
+  svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(4)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickSize(0).tickPadding(10));
+  svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickSize(0).tickPadding(8).tickFormat((d) => `${d}%`));
+  const bars = svg.append("g").selectAll("rect").data(years.filter((r) => r.missed_pct != null)).join("rect").attr("fill", css("--accent")).attr("rx", 4)
+    .attr("x", (r) => x(r.year)).attr("width", x.bandwidth()).attr("y", H - m.b).attr("height", 0)
+    .on("mousemove", (ev, r) => tip(`<b>${r.year} · ${F.esc(r.members.join(", ") || "vacant")}</b>Missed ${F.int(r.missed)} of ${F.int(r.yes_no_votes_while_held)} (${F.pct(r.missed_pct)})<br>Whole House: ${F.pct(r.house_missed_pct)}`, ev)).on("mouseleave", () => tip(null));
+  onVisible(svg.node(), () => bars.transition().duration(REDUCED ? 0 : 900).delay((d, i) => i * 50).attr("y", (r) => y(r.missed_pct)).attr("height", (r) => Math.max(0, y(0) - y(r.missed_pct))));
+  svg.append("g").selectAll("line").data(years.filter((r) => r.house_missed_pct != null)).join("line").attr("stroke", css("--ink")).attr("stroke-width", 2.5)
+    .attr("x1", (r) => x(r.year) - 5).attr("x2", (r) => x(r.year) + x.bandwidth() + 5).attr("y1", (r) => y(r.house_missed_pct)).attr("y2", (r) => y(r.house_missed_pct));
+  const lg = svg.append("g").attr("transform", `translate(${m.l},10)`);
+  lg.append("rect").attr("y", -9).attr("width", 11).attr("height", 11).attr("rx", 2).attr("fill", css("--accent"));
+  lg.append("text").attr("x", 16).attr("class", "muted").text("The seat: share of roll calls missed");
+  lg.append("line").attr("x1", 270).attr("x2", 290).attr("y1", -4).attr("y2", -4).attr("stroke", css("--ink")).attr("stroke-width", 2.5);
+  lg.append("text").attr("x", 296).attr("class", "muted").text("Every House member, same roll calls");
+  $("#att-years").innerHTML = `<thead><tr><th>Year</th><th>Held by</th><th class="num">Roll calls while held</th><th class="num">Voted</th><th class="num">Missed</th><th class="num">Missed</th><th class="num">Whole House</th><th class="num">While vacant</th></tr></thead><tbody>${years.map((r) => `<tr><td>${r.year}</td><td>${F.esc(r.members.join(", ") || "Vacant")}</td><td class="num">${F.int(r.yes_no_votes_while_held)}</td><td class="num">${F.int(r.votes_cast)}</td><td class="num">${F.int(r.missed)}</td><td class="num">${F.pct(r.missed_pct)}</td><td class="num">${F.pct(r.house_missed_pct)}</td><td class="num">${r.while_seat_vacant ? F.int(r.while_seat_vacant) : "—"}</td></tr>`).join("")}</tbody>`;
+  $("#att-members").innerHTML = `<thead><tr><th>Member</th><th>Votes in this period</th><th class="num">Roll calls while held</th><th class="num">Missed</th><th class="num">Missed</th><th class="num">Whole House, same roll calls</th></tr></thead><tbody>${(v.by_member || []).map((r) => `<tr><td>${F.esc(r.name)}</td><td>${F.longDate(r.first_vote)} to ${F.longDate(r.last_vote)}</td><td class="num">${F.int(r.yes_no_votes_while_held)}</td><td class="num">${F.int(r.missed)}</td><td class="num">${F.pct(r.missed_pct)}</td><td class="num">${F.pct(r.house_missed_pct)}</td></tr>`).join("")}</tbody>`;
+  const mv = v.missed_votes || [];
+  $("#missed-summary").textContent = `Every missed vote, ${p.from_year} to ${p.to_year} (${F.int(mv.length)})`;
+  $("#missed-note").textContent = v.definitions.not_voting || "";
+  $("#missed-votes").innerHTML = `<thead><tr><th>Date</th><th>Roll call</th><th>Measure</th><th>Question</th><th>Result</th><th>Member</th></tr></thead><tbody>${mv.map((r) => `<tr><td>${F.longDate(r.date)}</td><td><a href="${r.clerk_url}">${r.roll}</a></td><td>${r.bill_url ? `<a href="${r.bill_url}">${F.esc(r.legis)}</a>` : F.esc(r.legis || "")}<div class="fine" style="margin:2px 0 0">${F.esc(r.desc || "")}</div></td><td>${F.esc(r.question)}</td><td>${F.esc(r.result)}</td><td>${F.esc(r.member)}</td></tr>`).join("")}</tbody>`;
 }
 
 function elections() {

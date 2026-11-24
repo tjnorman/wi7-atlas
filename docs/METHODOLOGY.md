@@ -56,6 +56,7 @@ This section is a window, not a dataset. Nothing in it feeds the figures elsewhe
   - *Votes missed*: share of yes-or-no roll calls recorded as Not Voting.
   - *With own party's majority*: share of the member's yes-or-no votes matching the position taken by most members of the member's party (ties excluded).
   - *On the winning side*: share of the member's yes-or-no votes matching the outcome.
+- **Attendance over ten years** reads every roll call from 2017 forward and counts, for each year and each member, the yes-or-no roll calls taken while that member held the seat and how many are recorded as Not Voting. Roll calls taken while the seat was vacant are shown separately and are not counted as missed. The comparison figure is the share of Not Voting records for every House member on the same roll calls. The Clerk's record does not give a reason for an absence, so the atlas does not either.
 - **Election results** come from the MIT Election Data and Science Lab's U.S. House dataset, compiled from official state results. General elections only. The most recent election appears after official certification; until then, a dated note labeled *unofficial* describes the status with sources.
 - **Campaign finance** comes from the Federal Election Commission's candidate totals for each two-year cycle, through each committee's latest report.
 
