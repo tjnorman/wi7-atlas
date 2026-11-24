@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment2.outputs.page_url || steps.deployment3.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,5 +44,22 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+      # GitHub sometimes cannot find the artifact it just stored. Give it a moment, then try again.
+      - name: Let the artifact settle
+        run: sleep 20
       - id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait before a second attempt
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+      - id: deployment2
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait before a third attempt
+        if: steps.deployment2.outcome == 'failure'
+        run: sleep 120
+      - id: deployment3
+        if: steps.deployment2.outcome == 'failure'
         uses: actions/deploy-pages@v4
