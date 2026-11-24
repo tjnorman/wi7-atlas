@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-24T04:15:57+00:00",
+ "generated_at": "2026-11-24T04:52:36+00:00",
  "summary": {
-  "total": 17,
-  "pass": 17,
+  "total": 21,
+  "pass": 21,
   "ok": true
  },
  "checks": [
@@ -15,6 +15,55 @@
     "acs1",
     "acs5"
    ]
+  },
+  {
+   "id": "irs-labels",
+   "title": "IRS variables match their published descriptions",
+   "status": "pass",
+   "detail": "7 of 7 variables confirmed against the tax year 2023 documentation guide.",
+   "sources": [
+    "irs-soi-cd"
+   ],
+   "values": {}
+  },
+  {
+   "id": "irs-classes-sum",
+   "title": "IRS income classes add up to the district total",
+   "status": "pass",
+   "detail": "Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells).",
+   "sources": [
+    "irs-soi-cd"
+   ],
+   "values": {
+    "published": 3612071000.0,
+    "summed": 3612071000.0
+   }
+  },
+  {
+   "id": "irs-state-sum",
+   "title": "Wisconsin's districts add up to the state total in the IRS file",
+   "status": "pass",
+   "detail": "Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row).",
+   "sources": [
+    "irs-soi-cd"
+   ],
+   "values": {
+    "state_row": 2944320.0,
+    "district_sum": 2944320.0
+   }
+  },
+  {
+   "id": "irs-district-lines",
+   "title": "IRS file uses the current district lines",
+   "status": "pass",
+   "detail": "The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress.",
+   "sources": [
+    "irs-soi-cd"
+   ],
+   "values": {
+    "irs_congress": 118,
+    "atlas_congress": 119
+   }
   },
   {
    "id": "election-sources-agree",

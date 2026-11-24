@@ -10,7 +10,7 @@
   "repo": "tjnorman/wi7-atlas",
   "congress": 119
  },
- "built_at": "2026-11-24T04:15:57+00:00",
+ "built_at": "2026-11-24T04:52:36+00:00",
  "headline": [
   {
    "id": "population",
@@ -91,6 +91,15 @@
    "display": "$5.74 billion",
    "source": "usaspending",
    "note": "Obligations by place of performance",
+   "moe": null
+  },
+  {
+   "id": "income_tax",
+   "label": "Federal individual income tax, 2023",
+   "value": 3612071000.0,
+   "display": "$3.61 billion",
+   "source": "irs-soi-cd",
+   "note": "Total tax liability on individual returns; not all federal taxes",
    "moe": null
   }
  ],
@@ -1396,6 +1405,19 @@
    "apa": "Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
   },
   {
+   "id": "irs-soi-cd",
+   "publisher": "Internal Revenue Service, Statistics of Income Division",
+   "title": "Individual income tax returns: Congressional district data, tax year 2023",
+   "url": "https://www.irs.gov/statistics/soi-tax-stats-data-by-congressional-district-2023",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://www.irs.gov/pub/irs-soi/23incd.csv",
+   "vintage": "Tax year 2023",
+   "accessed": "2026-11-24",
+   "notes": "Totals from individual income tax returns (Form 1040) filed during the following calendar year. The IRS assigns returns to districts by the ZIP code on the return. Amounts are published in thousands of dollars. This is not all federal tax: employer payroll taxes, corporate, excise, and estate taxes are not published by congressional district.",
+   "apa": "Internal Revenue Service, Statistics of Income Division. (2026). Individual income tax returns: Congressional district data, tax year 2023 [Data set]. Retrieved November 24, 2026, from https://www.irs.gov/statistics/soi-tax-stats-data-by-congressional-district-2023"
+  },
+  {
    "id": "medsl-house",
    "publisher": "MIT Election Data and Science Lab",
    "title": "U.S. House 1976-2018 (constituency returns)",
@@ -1592,21 +1614,22 @@
   }
  ],
  "integrity": {
-  "total": 17,
-  "pass": 17,
+  "total": 21,
+  "pass": 21,
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-24T04:10:14+00:00",
-  "legislators": "2026-11-24T04:10:21+00:00",
-  "acs": "2026-11-24T04:10:31+00:00",
-  "pep": "2026-11-24T04:11:37+00:00",
-  "laus": "2026-11-24T04:11:38+00:00",
-  "qcew": "2026-11-24T04:11:40+00:00",
-  "usaspending": "2026-11-24T04:11:52+00:00",
-  "elections": "2026-11-24T04:11:59+00:00",
-  "fec": "2026-11-24T04:12:02+00:00",
-  "votes": "2026-11-24T04:12:04+00:00"
+  "geography": "2026-11-24T04:45:55+00:00",
+  "legislators": "2026-11-24T04:46:01+00:00",
+  "acs": "2026-11-24T04:46:16+00:00",
+  "pep": "2026-11-24T04:47:25+00:00",
+  "laus": "2026-11-24T04:47:25+00:00",
+  "qcew": "2026-11-24T04:47:27+00:00",
+  "usaspending": "2026-11-24T04:47:40+00:00",
+  "elections": "2026-11-24T04:47:44+00:00",
+  "fec": "2026-11-24T04:47:47+00:00",
+  "votes": "2026-11-24T04:47:48+00:00",
+  "irs": "2026-11-24T04:47:42+00:00"
  },
  "status": {
   "geography": "ok",
@@ -1618,6 +1641,7 @@
   "usaspending": "ok",
   "elections": "ok",
   "fec": "ok",
-  "votes": "ok"
+  "votes": "ok",
+  "irs": "ok"
  }
 }

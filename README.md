@@ -19,8 +19,8 @@
 [![Tests](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml)
 [![Data refresh](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml)
 [![Deploy to Pages](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml)
-[![Cross-checks](https://img.shields.io/badge/cross--checks-17_of_17_passing-2e7d32)](#-how-every-number-is-checked)
-[![Sources](https://img.shields.io/badge/primary_sources-7-0071e3)](#-sources)
+[![Cross-checks](https://img.shields.io/badge/cross--checks-21_of_21_passing-2e7d32)](#-how-every-number-is-checked)
+[![Sources](https://img.shields.io/badge/primary_sources-8-0071e3)](#-sources)
 [![Data as of](https://img.shields.io/badge/data_as_of-2026--11--23-555)](data/wi-07/manifest.json)
 ![Nonpartisan](https://img.shields.io/badge/nonpartisan-follows_the_seat-555)
 [![License: MIT](https://img.shields.io/badge/code-MIT-1f4e9c)](LICENSE)
@@ -67,7 +67,7 @@ Each figure carries its publisher, the exact query, the data vintage, and the da
 <td width="33%" valign="top">
 
 ### 🔁 Refreshed and re-checked
-A scheduled GitHub Action rebuilds the data each week, runs 17 cross-checks between independent sources, and redraws every chart in this README.
+A scheduled GitHub Action rebuilds the data each week, runs 21 cross-checks between independent sources, and redraws every chart in this README.
 
 </td>
 </tr>
@@ -133,6 +133,18 @@ In fiscal year 2026, federal agencies obligated **$5.74 billion** in contracts, 
 | Department of the Interior | $64.5 million |
 
 </details>
+
+### What residents pay in federal income tax
+
+On 368,470 individual returns for tax year 2023, people living in the district reported a total federal tax liability of **$3.61 billion**, or 12.2% of their adjusted gross income.
+
+| Per return, tax year 2023 | Adjusted gross income | Federal income tax | Tax as a share of income |
+|---|---:|---:|---:|
+| The district | $80,296 | $9,803 | 12.2% |
+| Wisconsin | $86,605 | $11,238 | 13.0% |
+| United States | $95,156 | $14,127 | 14.8% |
+
+<sub>Source: IRS Statistics of Income, congressional district data. Individual income tax returns only. Employer payroll taxes, corporate income tax, excise taxes, and estate taxes are not published by congressional district, so this is not the district's total federal tax, and it is not a balance against the awards above.</sub>
 
 ## 🗳 Representation and elections
 
@@ -249,11 +261,15 @@ Three rules keep the atlas honest:
 2. **A label check before any Census number is used.** Every Census variable's official label is compared with what the atlas says it means. If a table is renumbered, that measure is dropped and the check fails in public.
 3. **Nothing unofficial without a label and a review date.** Hand-written notes (like a race called by news organizations before certification) carry sources, a verification date, and a review-by date; an overdue note turns the check yellow.
 
-**Latest build: 17 of 17 checks passing**.
+**Latest build: 21 of 21 checks passing**.
 
 | | Check | What was compared |
 |---|---|---|
 | ✅ Pass | Every Census variable means what the atlas says it means | 210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found). |
+| ✅ Pass | IRS variables match their published descriptions | 7 of 7 variables confirmed against the tax year 2023 documentation guide. |
+| ✅ Pass | IRS income classes add up to the district total | Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells). |
+| ✅ Pass | Wisconsin's districts add up to the state total in the IRS file | Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row). |
+| ✅ Pass | IRS file uses the current district lines | The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress. |
 | ✅ Pass | Two election compilations agree on the same race | 2018 general election: MIT Election Lab has Sean P. Duffy with 194,061 votes; the FEC compilation has Sean P. Duffy with 194,061 votes (tolerance 0.2%). |
 | ✅ Pass | The district's counties match the recorded list (26 counties: 21 whole, 5 split) | Census relationship file: 26 counties with land in the district, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. Recorded: 26 counties, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. |
 | ✅ Pass | 2020 Census population agrees three ways (district total, sum of county parts, recorded figure) | District total 736,715; sum of county parts 736,715; recorded 736,715. |
@@ -278,7 +294,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T04:11:37+00:00",
+  "generated_at": "2026-11-24T04:47:25+00:00",
   "sources": [
     {
       "id": "acs1",
@@ -361,6 +377,7 @@ tests/                 pytest unit tests and Playwright site checks
 - Brennan Center for Justice. (2026, August 3). Wisconsin election certification processes and guardrails.
 - Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/
 - Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/
+- Internal Revenue Service, Statistics of Income Division. (2026). Individual income tax returns: Congressional district data, tax year 2023 [Data set]. Retrieved November 24, 2026, from https://www.irs.gov/statistics/soi-tax-stats-data-by-congressional-district-2023
 - MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns
 - Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml
 - Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes
