@@ -10,7 +10,7 @@
   "repo": "tjnorman/wi7-atlas",
   "congress": 119
  },
- "built_at": "2026-11-24T05:16:32+00:00",
+ "built_at": "2026-11-24T05:53:55+00:00",
  "headline": [
   {
    "id": "population",
@@ -1446,15 +1446,15 @@
   {
    "id": "clerk-votes",
    "publisher": "Office of the Clerk, U.S. House of Representatives",
-   "title": "Roll call votes, 119th Congress",
+   "title": "Roll call votes, 115th to 119th Congresses (2017 to 2026)",
    "url": "https://clerk.house.gov/Votes",
    "year": "2026",
    "kind": "Data set",
-   "query": "https://clerk.house.gov/evs/2025/rollNNN.xml",
+   "query": "https://clerk.house.gov/evs/2017/rollNNN.xml",
    "vintage": null,
    "accessed": "2026-11-24",
    "notes": null,
-   "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes"
+   "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 115th to 119th Congresses (2017 to 2026) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes"
   },
   {
    "id": "open-eagle-eye",
@@ -1632,18 +1632,18 @@
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-24T05:11:00+00:00",
-  "legislators": "2026-11-24T05:11:05+00:00",
-  "acs": "2026-11-24T05:11:13+00:00",
-  "pep": "2026-11-24T05:12:13+00:00",
-  "laus": "2026-11-24T05:12:14+00:00",
-  "qcew": "2026-11-24T05:12:16+00:00",
-  "usaspending": "2026-11-24T05:12:27+00:00",
-  "elections": "2026-11-24T05:12:31+00:00",
-  "fec": "2026-11-24T05:12:33+00:00",
-  "votes": "2026-11-24T05:12:35+00:00",
-  "irs": "2026-11-24T05:12:29+00:00",
-  "cameras": "2026-11-24T05:16:31+00:00"
+  "geography": "2026-11-24T05:22:04+00:00",
+  "legislators": "2026-11-24T05:22:10+00:00",
+  "acs": "2026-11-24T05:22:19+00:00",
+  "pep": "2026-11-24T05:23:10+00:00",
+  "laus": "2026-11-24T05:23:11+00:00",
+  "qcew": "2026-11-24T05:23:12+00:00",
+  "usaspending": "2026-11-24T05:23:21+00:00",
+  "elections": "2026-11-24T05:23:27+00:00",
+  "fec": "2026-11-24T05:23:30+00:00",
+  "votes": "2026-11-24T05:23:31+00:00",
+  "irs": "2026-11-24T05:23:23+00:00",
+  "cameras": "2026-11-24T05:53:55+00:00"
  },
  "status": {
   "geography": "ok",

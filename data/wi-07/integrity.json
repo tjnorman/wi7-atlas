@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T05:16:32+00:00",
+ "generated_at": "2026-11-24T05:53:55+00:00",
  "summary": {
   "total": 21,
   "pass": 21,
@@ -196,7 +196,7 @@
    "id": "roll-calls",
    "title": "No House roll call is missing from the vote record",
    "status": "pass",
-   "detail": "689 roll calls read for the 119th Congress; none missing.",
+   "detail": "5,092 roll calls read, 2017 to 2026; none missing.",
    "sources": [
     "clerk-votes"
    ],

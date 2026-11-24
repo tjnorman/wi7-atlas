@@ -178,6 +178,25 @@ Source: Office of the Clerk, U.S. House of Representatives, roll call votes. The
 
 </details>
 
+<details open><summary><b>Attendance, 2017 to 2026</b> (239 missed of 4,785 roll calls, 5.0%)</summary>
+
+| Year | Held by | Roll calls while held | Missed | Missed | Whole House | While vacant |
+|---|---|---:|---:|---:|---:|---:|
+| 2017 | Sean P. Duffy | 708 | 28 | 4.0% | 3.3% | — |
+| 2018 | Sean P. Duffy | 498 | 16 | 3.2% | 5.7% | — |
+| 2019 | Sean P. Duffy | 538 | 37 | 6.9% | 3.1% | 161 |
+| 2020 | Thomas P. Tiffany | 144 | 10 | 6.9% | 5.6% | 108 |
+| 2021 | Thomas P. Tiffany | 447 | 35 | 7.8% | 1.9% | — |
+| 2022 | Thomas P. Tiffany | 548 | 8 | 1.5% | 2.0% | — |
+| 2023 | Thomas P. Tiffany | 700 | 10 | 1.4% | 2.9% | — |
+| 2024 | Thomas P. Tiffany | 516 | 18 | 3.5% | 5.1% | — |
+| 2025 | Thomas P. Tiffany | 360 | 18 | 5.0% | 3.3% | — |
+| 2026 | Thomas P. Tiffany | 326 | 59 | 18.1% | 3.2% | — |
+
+The Clerk records Not Voting for any absence, whatever the reason. The record does not say why a vote was missed, and it does not show votes later explained in the Congressional Record. 269 roll calls were taken while the seat was vacant and are not counted as missed. The website lists every missed vote with a link to the official record.
+
+</details>
+
 <details><summary><b>Campaign money, 2026 cycle</b> (Federal Election Commission)</summary>
 
 | Candidate | Party | Raised | Spent | Cash on hand | Through |
@@ -280,7 +299,7 @@ Three rules keep the atlas honest:
 | ✅ Pass | Two independent records name the same sitting member | congress-legislators: Thomas P. Tiffany (T000165); Clerk of the House: Thomas P. Tiffany (T000165). |
 | ✅ Pass | The most recent election winner in the results file is the member who took office after it | FEC certified results: Tom Tiffany won in 2022. congress-legislators: term starting 2023-01-03 held by Thomas P. Tiffany. |
 | ✅ Pass | Two USAspending endpoints report the same district total for the last full fiscal year | FY2026: spending over time $5,736,701,212; spending by geography $5,736,701,212 (tolerance 1%). |
-| ✅ Pass | No House roll call is missing from the vote record | 689 roll calls read for the 119th Congress; none missing. |
+| ✅ Pass | No House roll call is missing from the vote record | 5,092 roll calls read, 2017 to 2026; none missing. |
 | ✅ Pass | Every county has unemployment data through the same latest month | County data through 2026-09. All counties current. National data run through 2026-10; the atlas compares counties, Wisconsin, and the nation in the same month. |
 | ✅ Pass | The sitting member's campaign appears in FEC records for the election they won | 3 candidates with financial activity in the 2022 cycle; found Tiffany. |
 | ✅ Pass | Curated note reviewed on schedule: 2026 general election | Status unofficial; verified 2026-11-20; review by 2026-12-02. |
@@ -294,7 +313,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T05:12:13+00:00",
+  "generated_at": "2026-11-24T05:23:10+00:00",
   "sources": [
     {
       "id": "acs1",
@@ -380,7 +399,7 @@ tests/                 pytest unit tests and Playwright site checks
 - Internal Revenue Service, Statistics of Income Division. (2026). Individual income tax returns: Congressional district data, tax year 2023 [Data set]. Retrieved November 24, 2026, from https://www.irs.gov/statistics/soi-tax-stats-data-by-congressional-district-2023
 - MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns
 - Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml
-- Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes
+- Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 115th to 119th Congresses (2017 to 2026) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes
 - Open Eagle Eye (stuchapin909). (2026). Public camera registry [Data set]. Retrieved November 24, 2026, from https://github.com/stuchapin909/Open-Eagle-Eye
 - The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 24, 2026, from https://github.com/unitedstates/congress-legislators
 - U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/lau/
