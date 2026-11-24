@@ -1,0 +1,37 @@
+# Aircraft over the district, refreshed on a schedule and published on the `live` branch.
+# GitHub often delays schedules shorter than about 30 minutes, so this runs twice an hour.
+name: Live snapshot
+
+on:
+  schedule:
+    - cron: "11,41 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live
+  cancel-in-progress: true
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests PyYAML
+      - name: Take the snapshot
+        run: python tools/live_snapshot.py --district wi-07 --out _live
+      - name: Publish on the live branch (one commit, replaced each time)
+        run: |
+          cd _live
+          git init -q -b live
+          git config user.name "wi7-atlas-bot"
+          git config user.email "wi7-atlas-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "live snapshot $(date -u +%FT%TZ)"
+          git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" live

@@ -15,9 +15,9 @@ from . import checks as checks_mod
 from .config import DATA_ROOT, ROOT, District
 from .http import Fetcher
 from .provenance import dataset
-from .sources import acs, elections, fec, geography, irs, laus, legislators, pep, qcew, usaspending, votes
+from .sources import acs, cameras, elections, fec, geography, irs, laus, legislators, pep, qcew, usaspending, votes
 
-ORDER = ["geography", "legislators", "acs", "pep", "laus", "qcew", "usaspending", "irs", "elections", "fec", "votes"]
+ORDER = ["geography", "legislators", "acs", "pep", "laus", "qcew", "usaspending", "irs", "elections", "fec", "votes", "cameras"]
 
 
 def data_dir(d: District) -> pathlib.Path:
@@ -63,6 +63,10 @@ def run(d: District, only: list[str] | None = None) -> dict:
             raise RuntimeError("County list unavailable: geography has never succeeded")
         return [c["county_fips"] for c in g["data"]["counties"]]
 
+    def county_names() -> dict[str, str]:
+        g = data.get("geography")
+        return {c["county_fips"]: c["short_name"] for c in g["data"]["counties"]} if g else {}
+
     steps: dict[str, Callable[[], tuple]] = {
         "geography": lambda: geography.fetch(f, d, out / "geo"),
         "legislators": lambda: legislators.fetch(f, d),
@@ -72,6 +76,7 @@ def run(d: District, only: list[str] | None = None) -> dict:
         "qcew": lambda: qcew.fetch(f, d, counties_fips()),
         "usaspending": lambda: usaspending.fetch(f, d, counties_fips()),
         "irs": lambda: irs.fetch(f, d),
+        "cameras": lambda: cameras.fetch(f, d, out / "geo" / "district.simple.geojson.json", county_names()),
         "elections": lambda: elections.fetch(f, d),
         "fec": lambda: fec.fetch(f, d),
         "votes": lambda: votes.fetch(f, d, (data.get("legislators") or {}).get("data", {}).get("terms", [])),

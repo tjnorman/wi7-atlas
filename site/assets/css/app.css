@@ -357,3 +357,30 @@ td.num, th.num { text-align: right; }
 .mini-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 18px 24px; margin: 18px 0 22px; }
 .mini-stats b { display: block; font-size: 24px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .mini-stats span { color: var(--ink-2); font-size: 13px; }
+
+/* ---------- right now: cameras and aircraft ---------- */
+.now-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 30px; align-items: start; }
+.now-part { fill: var(--panel); stroke: var(--line-2); stroke-width: 0.8; pointer-events: none; }
+.now-outline { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linejoin: round; }
+.plane { fill: var(--ink); stroke: var(--panel); stroke-width: 0.6; cursor: default; }
+.cam { fill: var(--accent); stroke: var(--panel); stroke-width: 2.5; cursor: pointer; transition: r .2s var(--ease); }
+.cam:hover, .cam:focus, .cam.on { r: 10; outline: none; }
+.cam.on { fill: var(--grow); }
+.now-key { color: var(--ink-2); font-size: 13px; margin-top: 8px; }
+.now-key span { display: inline-block; width: 11px; height: 11px; margin: 0 6px 0 14px; vertical-align: -1px; }
+.now-key span:first-child { margin-left: 0; }
+.k-plane { background: var(--ink); clip-path: polygon(50% 0, 62% 38%, 100% 62%, 62% 60%, 58% 90%, 42% 90%, 38% 60%, 0 62%, 38% 38%); }
+.k-cam { background: var(--accent); border-radius: 50%; }
+#now-side h3 { margin-top: 0; }
+#now-side h3 + .sub { margin-top: 4px; }
+#air-title { margin-top: 26px !important; }
+#cam-view { margin: 12px 0; }
+#cam-view img { width: 100%; border-radius: 12px; background: var(--bg-2); display: block; min-height: 40px; }
+#cam-view figcaption { font-size: 13px; color: var(--ink-2); margin-top: 8px; overflow-wrap: anywhere; }
+.cam-list { display: grid; gap: 6px; margin-top: 10px; }
+.cam-list button { display: flex; justify-content: space-between; gap: 12px; text-align: left; font: inherit; font-size: 14px; color: var(--ink); background: var(--bg-2); border: 0; border-radius: 10px; padding: 9px 12px; cursor: pointer; }
+.cam-list button span { color: var(--muted); white-space: nowrap; }
+.cam-list button.on, .cam-list button:hover { background: var(--accent); color: #fff; }
+.cam-list button.on span, .cam-list button:hover span { color: #fff; }
+@media (max-width: 900px) { .now-grid { grid-template-columns: 1fr; } }
+#now-map svg { overflow: hidden; display: block; }

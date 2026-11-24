@@ -31,6 +31,7 @@
         <a href="#people">People</a>
         <a href="#work">Work</a>
         <a href="#dollars">Federal dollars</a>
+        <a href="#now">Right now</a>
         <a href="#seat">The seat</a>
         <a href="#counties">Counties</a>
         <a href="#trust">How we know</a>
@@ -181,6 +182,30 @@
         <div class="table-wrap"><table id="taxes-table"></table></div>
         <p class="fine" id="taxes-source"></p>
       </div>
+    </section>
+
+    <!-- RIGHT NOW -->
+    <section class="chapter" id="now" aria-labelledby="now-title" hidden>
+      <header class="chapter-head">
+        <p class="eyebrow">Right now</p>
+        <h2 id="now-title">The district, live.</h2>
+        <p class="lede" id="now-lede"></p>
+      </header>
+      <div class="panel reveal now-grid">
+        <div>
+          <div id="now-map" class="chart map"></div>
+          <p class="now-key"><span class="k-plane"></span>Aircraft overhead <span class="k-cam"></span>Public road camera</p>
+        </div>
+        <aside id="now-side" aria-live="polite">
+          <h3 id="cam-title">Road cameras</h3>
+          <p class="sub" id="cam-sub">Choose a camera on the map or from the list.</p>
+          <figure id="cam-view" hidden><img id="cam-img" alt="" referrerpolicy="no-referrer" /><figcaption id="cam-cap"></figcaption></figure>
+          <div id="cam-list" class="cam-list"></div>
+          <h3 id="air-title">Aircraft overhead</h3>
+          <div id="air-list" class="table-wrap"></div>
+        </aside>
+      </div>
+      <p class="fine" id="now-source"></p>
     </section>
 
     <!-- THE SEAT -->

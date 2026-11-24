@@ -445,3 +445,63 @@ def test_irs_needs_units_stated(district):
 
     with pytest.raises(ValueError, match="thousands"):
         irs.fetch(_irs_fetcher(text="No units here."), district)
+
+
+# ---------------------------------------------------------------- cameras and live aircraft
+SQUARE = {"district": {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {}, "geometry": {
+    "type": "Polygon", "coordinates": [[[-91, 45], [-90, 45], [-90, 46], [-91, 46], [-91, 45]]]}}]},
+    "parts": {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"county_fips": "073"}, "geometry": {
+        "type": "Polygon", "coordinates": [[[-91, 45], [-90, 45], [-90, 46], [-91, 46], [-91, 45]]]}}]}}
+
+
+def _square(tmp_path):
+    p = tmp_path / "shape.json"
+    p.write_text(json.dumps(SQUARE))
+    return p
+
+
+def test_cameras_keep_only_usable_ones_inside_the_district(district, tmp_path):
+    from conftest import FakeFetcher
+    from pipeline.sources import cameras
+
+    cam = lambda id_, lat, lng, url="https://511wi.gov/map/Cctv/1", **kw: {
+        "id": id_, "name": id_, "url": url, "category": "highway", "verified": True, "auth": False,
+        "coordinates": {"lat": lat, "lng": lng}, **kw}
+    registry = [cam("in", 45.5, -90.5), cam("outside", 44.0, -90.5), cam("http", 45.5, -90.5, url="http://x.gov/a.jpg"),
+                cam("secret", 45.5, -90.5, url="https://x.gov/a.jpg?token=abc"), cam("login", 45.5, -90.5, auth={"required": True}),
+                cam("ip", 45.5, -90.5, url="https://10.0.0.1/a.jpg"), cam("unverified", 45.5, -90.5, verified=False)]
+    payload, sources, _ = cameras.fetch(FakeFetcher([("Open-Eagle-Eye", registry)]), district, _square(tmp_path), {"073": "Marathon"})
+    assert [c["id"] for c in payload["cameras"]] == ["in"]
+    assert payload["cameras"][0]["county"] == "Marathon" and "Wisconsin Department of Transportation" in payload["cameras"][0]["operator"]
+    assert sum(payload["rejected_inside_district"].values()) == 5 and sources[0].id == "open-eagle-eye"
+
+
+def test_live_snapshot_filters_to_the_district_and_falls_back(tmp_path):
+    import importlib.util
+
+    import pathlib
+
+    spec = importlib.util.spec_from_file_location(
+        "live_snapshot", pathlib.Path(__file__).resolve().parent.parent / "tools" / "live_snapshot.py")
+    live = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(live)
+    from pipeline.geo import DistrictShape
+
+    shape = DistrictShape(_square(tmp_path))
+    lat, lon, nm = live.circle(shape.bbox)
+    assert (lat, lon) == (45.5, -90.5) and 30 < nm < 60
+    calls = []
+
+    def get(url):
+        calls.append(url)
+        if "adsb.lol" in url:
+            raise RuntimeError("down")
+        return {"ac": [{"hex": "A1B2C3", "flight": "DAL123 ", "lat": 45.5, "lon": -90.5, "alt_baro": 35000, "gs": 450.4, "track": 271.2, "t": "B739"},
+                       {"hex": "ffffff", "lat": 44.0, "lon": -90.5, "alt_baro": "ground"}, {"hex": "nopos"}]}
+
+    snap = live.snapshot(shape, get)
+    assert snap["ok"] and snap["source"] == "adsb.fi" and snap["errors"] == ["adsb.lol: RuntimeError"]
+    assert snap["heard_in_circle"] == 2 and snap["count"] == 1
+    assert snap["aircraft"][0] == {"hex": "a1b2c3", "callsign": "DAL123", "lat": 45.5, "lon": -90.5, "altitude_ft": 35000,
+                                   "on_ground": False, "speed_kt": 450, "track": 271, "type": "B739", "category": None}
+    assert live.snapshot(shape, lambda url: (_ for _ in ()).throw(RuntimeError("x")))["ok"] is False

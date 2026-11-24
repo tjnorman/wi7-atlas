@@ -40,6 +40,15 @@ The IRS Statistics of Income Division publishes totals from individual income ta
 - A value can carry the right label and still be wrong. Any amount larger than half of the district's adjusted gross income is withheld and reported. The earned income credit column in the tax year 2023 file showed $23.0 billion for this district on 38,770 returns, which is not believable, so the atlas does not publish that column.
 - Checks: the income classes must add up to the published district total; the state's districts are compared with the state row; and the Congress named in the IRS documentation is compared with the atlas's district lines.
 
+## Right now: cameras and aircraft
+
+This section is a window, not a dataset. Nothing in it feeds the figures elsewhere in the atlas.
+
+- **Road cameras.** Locations come from Open Eagle Eye, a volunteer-maintained public registry (MIT licence). The build keeps a camera only if it is inside the district outline, is marked verified, needs no sign-in, uses HTTPS, and its address carries no credentials. The atlas stores the name, position, and address. Images load from the agency that runs the camera and belong to that agency. The registry lists only some of the public cameras in the district.
+- **Aircraft.** A scheduled job asks a community flight tracker (adsb.lol first, then adsb.fi, then airplanes.live) for aircraft near the district, keeps those inside the outline, and publishes the result on the repository's `live` branch about twice an hour. The page shows the time of the snapshot and says so when it is old. Positions come from volunteer receivers, which are sparse over the Northwoods, so the count is a floor, not a census.
+- Both use the simplified district outline, so something exactly on the line can fall on either side.
+- Code for this section is adapted from the Global Intelligence Atlas with its author's permission (`NOTICE.md`).
+
 ## The seat
 
 - **Members** come from the public-domain [congress-legislators](https://github.com/unitedstates/congress-legislators) dataset and are cross-checked with the Clerk of the House's member data.

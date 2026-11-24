@@ -10,7 +10,7 @@ const BASE = params.get("data") || "data/";
 const $ = (s, r = document) => r.querySelector(s);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
+const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "cameras", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
 const state = { data: {}, counties: [], byFips: new Map(), topo: null, step: "outline" };
 
 async function load() {
@@ -488,6 +488,72 @@ function payChart() {
   $("#pay-source").innerHTML = sourceLine(["bls-qcew"], `${q.year} annual averages, whole counties, all ownerships. Lighter bars are split counties.`);
 }
 
+// ---------------------------------------------------------------- right now: cameras and aircraft
+// Camera and aircraft handling is adapted from cameras.js and flights.js in
+// Normansrule/global-intelligence-atlas, reused with the author's permission (see NOTICE.md).
+const PLANE = "M0,-9 L2,-3 L9,2 L9,4 L2,2 L1.4,7 L4,9 L4,10 L0,9 L-4,10 L-4,9 L-1.4,7 L-2,2 L-9,4 L-9,2 L-2,-3 Z";
+function liveNow() {
+  const topo = state.topo, cams = state.data.cameras?.cameras || [], repo = state.data.summary?.district?.repo;
+  const box = $("#now");
+  if (!box || !topo || (!cams.length && !repo)) return;
+  box.hidden = false;
+  const W = 820, H = 700;
+  const district = topojson.feature(topo, topo.objects.district);
+  const proj = projection(W, H, district, 16);
+  const path = d3.geoPath(proj);
+  const svg = svgEl("#now-map", W, H, "Map of the district with public road cameras and aircraft overhead");
+  if (topo.objects.counties) svg.append("g").selectAll("path").data(topojson.feature(topo, topo.objects.counties).features).join("path").attr("class", "ctx").attr("d", path);
+  svg.append("g").selectAll("path").data(topojson.feature(topo, topo.objects.parts).features).join("path").attr("class", "part now-part").attr("d", path);
+  svg.append("path").attr("class", "now-outline").attr("d", path(district));
+  const gPlanes = svg.append("g"), gCams = svg.append("g");
+
+  const show = (c) => {
+    $("#cam-view").hidden = false;
+    const img = $("#cam-img");
+    img.alt = `Current view from the camera at ${c.name}`;
+    img.onerror = () => { $("#cam-cap").innerHTML = `${F.esc(c.name)}: the agency's image did not load. <a href="${F.esc(c.image_url)}" target="_blank" rel="noopener">Open it at the source</a>.`; img.hidden = true; img.removeAttribute("src"); };
+    img.hidden = false;
+    img.src = `${c.image_url}${c.image_url.includes("?") ? "&" : "?"}t=${Math.floor(Date.now() / 60000)}`;
+    $("#cam-cap").innerHTML = `<b>${F.esc(c.name)}</b> · ${F.esc(c.county || "")} County<br>Image: ${F.esc(c.operator)}. <a href="${F.esc(c.image_url)}" target="_blank" rel="noopener">Open at the source</a>`;
+    gCams.selectAll("circle").classed("on", (d) => d.id === c.id);
+    document.querySelectorAll("#cam-list button").forEach((b) => b.classList.toggle("on", b.dataset.id === c.id));
+  };
+  gCams.selectAll("circle").data(cams).join("circle").attr("class", "cam").attr("r", 7)
+    .attr("cx", (c) => proj([c.lon, c.lat])[0]).attr("cy", (c) => proj([c.lon, c.lat])[1])
+    .attr("tabindex", 0).attr("role", "button").attr("aria-label", (c) => `Camera: ${c.name}, ${c.county} County`)
+    .on("mousemove", (ev, c) => tip(`<b>${F.esc(c.name)}</b>${F.esc(c.county || "")} County`, ev)).on("mouseleave", () => tip(null))
+    .on("click", (ev, c) => show(c)).on("keydown", (ev, c) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); show(c); } });
+  $("#cam-title").textContent = `Road cameras (${cams.length})`;
+  $("#cam-list").innerHTML = cams.length ? cams.map((c) => `<button type="button" data-id="${F.esc(c.id)}">${F.esc(c.name)}<span>${F.esc(c.county || "")}</span></button>`).join("") : `<p class="sub">No public cameras are listed inside the district in the latest build.</p>`;
+  document.querySelectorAll("#cam-list button").forEach((b) => (b.onclick = () => show(cams.find((c) => c.id === b.dataset.id))));
+  if (!cams.length) $("#cam-sub").textContent = "";
+
+  const alt = (a) => (a.on_ground ? "on the ground" : a.altitude_ft != null ? `${F.int(a.altitude_ft)} ft` : "altitude not reported");
+  const drawPlanes = (snap) => {
+    const ac = snap?.ok ? snap.aircraft : [];
+    gPlanes.selectAll("path").data(ac, (a) => a.hex).join("path").attr("class", "plane").attr("d", PLANE)
+      .attr("transform", (a) => { const p = proj([a.lon, a.lat]); return `translate(${p[0]},${p[1]}) rotate(${a.track || 0}) scale(1.25)`; })
+      .on("mousemove", (ev, a) => tip(`<b>${F.esc(a.callsign || "No callsign")}</b>${a.type ? F.esc(a.type) + " · " : ""}${alt(a)}${a.speed_kt != null ? ` · ${a.speed_kt} kt` : ""}`, ev))
+      .on("mouseleave", () => tip(null));
+    const when = snap?.generated_at ? new Date(snap.generated_at) : null;
+    const mins = when ? Math.max(0, Math.round((Date.now() - when) / 60000)) : null;
+    const stale = mins != null && mins > 90;
+    $("#air-title").textContent = snap?.ok ? `Aircraft overhead (${ac.length})` : "Aircraft overhead";
+    $("#air-list").innerHTML = !snap ? `<p class="sub">The aircraft snapshot is not available yet.</p>`
+      : !snap.ok ? `<p class="sub">No flight source answered at the last attempt.</p>`
+      : ac.length ? `<table><thead><tr><th>Flight</th><th>Type</th><th class="num">Altitude</th><th class="num">Speed</th></tr></thead><tbody>${ac.slice().sort((x, y) => (y.altitude_ft || 0) - (x.altitude_ft || 0)).slice(0, 14).map((a) => `<tr><td>${F.esc(a.callsign || "—")}</td><td>${F.esc(a.type || "—")}</td><td class="num">${alt(a)}</td><td class="num">${a.speed_kt != null ? a.speed_kt + " kt" : "—"}</td></tr>`).join("")}</tbody></table>${ac.length > 14 ? `<p class="fine">Showing the 14 highest of ${ac.length}.</p>` : ""}`
+      : `<p class="sub">No aircraft were heard over the district at the last snapshot.</p>`;
+    const stamp = when ? `${when.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" })} (${mins} minute${mins === 1 ? "" : "s"} ago)` : "";
+    $("#now-lede").innerHTML = `${cams.length ? `${cams.length} public road cameras show current conditions. ` : ""}${snap?.ok ? `At the last snapshot, <strong>${ac.length}</strong> aircraft ${ac.length === 1 ? "was" : "were"} over the district.` : ""}`;
+    $("#now-source").innerHTML = `${snap?.ok ? `Aircraft: a snapshot taken ${stamp} from <a href="${F.esc(snap.source_url)}" target="_blank" rel="noopener">${F.esc(snap.source)}</a> (${F.esc(snap.licence)}), refreshed about twice an hour, not real time. ${stale ? "<strong>This snapshot is more than 90 minutes old.</strong> " : ""}Positions come from volunteer receivers, which are sparse over the Northwoods, so some aircraft are not shown. ` : ""}${sourceLine(["open-eagle-eye"], "Camera images load from, and belong to, the agency that runs each camera. The registry does not list every public camera.")}`;
+  };
+  drawPlanes(null);
+  if (repo) {
+    const pull = () => fetch(`https://raw.githubusercontent.com/${repo}/live/aircraft.json?t=${Math.floor(Date.now() / 300000)}`).then((r) => (r.ok ? r.json() : null)).then(drawPlanes).catch(() => {});
+    onVisible(box, () => { pull(); setInterval(() => { if (!document.hidden) pull(); }, 300000); }, 0.05);
+  }
+}
+
 // ---------------------------------------------------------------- federal income tax
 function taxes() {
   const t = state.data.irs, box = $("#taxes");
@@ -498,7 +564,7 @@ function taxes() {
   $("#taxes-lede").innerHTML = `On ${F.int(d.returns)} individual returns for tax year ${t.tax_year}, people living in the district reported a total federal tax liability of <strong>${F.usd(d.total_tax_liability)}</strong>, or ${F.pct(d.tax_share_of_agi_pct)} of their adjusted gross income.`;
   const stat = (label, value) => `<div><b>${value}</b><span>${label}</span></div>`;
   $("#taxes-stats").innerHTML = stat("Returns filed", F.int(d.returns)) + stat("Adjusted gross income", F.usd(d.agi, { compact: true })) + stat("Tax per return", F.usd(d.tax_per_return)) + (d.refunds != null ? stat("Refunded after filing", F.usd(d.refunds, { compact: true })) : "");
-  const rows = [["The district", d], [state.data.summary?.district?.state_name || "State", t.state], ["United States", t.us]].filter((r) => r[1]);
+  const rows = [["The district", d], [state.data.summary?.district?.state || "State", t.state], ["United States", t.us]].filter((r) => r[1]);
   $("#taxes-table").innerHTML = `<thead><tr><th>Per return</th><th class="num">Adjusted gross income</th><th class="num">Federal income tax</th><th class="num">Tax as a share of income</th></tr></thead><tbody>${rows.map(([n, r]) => `<tr><td>${F.esc(n)}</td><td class="num">${F.usd(r.agi_per_return)}</td><td class="num">${F.usd(r.tax_per_return)}</td><td class="num">${F.pct(r.tax_share_of_agi_pct)}</td></tr>`).join("")}</tbody>`;
   $("#taxes-source").innerHTML = sourceLine(["irs-soi-cd"], `Individual income tax returns only. Payroll taxes paid by employers, corporate income tax, excise taxes, and estate taxes are not published by congressional district, so this is not the district's total federal tax. Tax year ${t.tax_year} and the award fiscal years above cover different periods and different things, so the two are not a balance sheet.`);
 }
@@ -821,6 +887,7 @@ async function film() {
   people();
   work();
   dollars();
+  liveNow();
   seat();
   counties();
   trust();
