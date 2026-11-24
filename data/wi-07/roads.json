@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T16:56:32+00:00",
+ "generated_at": "2026-11-24T17:03:26+00:00",
  "sources": [
   {
    "id": "wisdot-six-year",
@@ -264,6 +264,8 @@
    }
   ],
   "shared": 41,
+  "region_wide": 5,
+  "neighboring_county": 14,
   "projects": [
    {
     "id": "90300772",
@@ -1293,7 +1295,8 @@
     "cost_text": "$100,000 - $249,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "83980071",
@@ -1359,7 +1362,8 @@
     "cost_text": "$4,000,000 - $4,999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "62700076",
@@ -1377,7 +1381,8 @@
     "cost_text": "$4,000,000 - $4,999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "98920772",
@@ -2109,7 +2114,8 @@
     "cost_text": "$500,000 - $749,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "93241273",
@@ -2673,7 +2679,8 @@
     "cost_text": "$7,000,000 - $7,999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "88510070",
@@ -3405,7 +3412,8 @@
     "cost_text": "$3,000,000 - $3,999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "10200679",
@@ -3423,7 +3431,8 @@
     "cost_text": "$750,000 - $999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "86100074",
@@ -3441,7 +3450,8 @@
     "cost_text": "$250,000 - $499,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "91200972",
@@ -3891,7 +3901,8 @@
     "cost_low": 1000000,
     "cost_high": 1999999,
     "cost_text": "$1,000,000 - $1,999,999",
-    "shared_with_districts": []
+    "shared_with_districts": [],
+    "scope": "region-wide"
    },
    {
     "id": "94640073",
@@ -4341,7 +4352,8 @@
     "cost_text": "$250,000 - $499,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "91950871",
@@ -4615,7 +4627,8 @@
     "cost_text": "$8,000,000 - $8,999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "15901972",
@@ -6008,7 +6021,8 @@
     "cost_text": "$6,000,000 - $6,999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "15700082",
@@ -6026,7 +6040,8 @@
     "cost_text": "$250,000 - $499,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "70800079",
@@ -6044,7 +6059,8 @@
     "cost_text": "$9,000,000 - $9,999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "91551371",
@@ -6583,7 +6599,8 @@
     "shared_with_districts": [
      6,
      8
-    ]
+    ],
+    "scope": "region-wide"
    },
    {
     "id": "11900378",
@@ -6599,7 +6616,8 @@
     "cost_low": 750000,
     "cost_high": 999999,
     "cost_text": "$750,000 - $999,999",
-    "shared_with_districts": []
+    "shared_with_districts": [],
+    "scope": "region-wide"
    },
    {
     "id": "80800074",
@@ -6617,7 +6635,8 @@
     "cost_text": "$750,000 - $999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "region-wide"
    },
    {
     "id": "85100077",
@@ -6633,7 +6652,8 @@
     "cost_low": 750000,
     "cost_high": 999999,
     "cost_text": "$750,000 - $999,999",
-    "shared_with_districts": []
+    "shared_with_districts": [],
+    "scope": "region-wide"
    },
    {
     "id": "11701673",
@@ -6667,7 +6687,8 @@
     "cost_text": "$2,000,000 - $2,999,999",
     "shared_with_districts": [
      3
-    ]
+    ],
+    "scope": "neighboring county"
    },
    {
     "id": "15700370",

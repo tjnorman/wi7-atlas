@@ -19,7 +19,7 @@
 [![Tests](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml)
 [![Data refresh](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml)
 [![Deploy to Pages](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml)
-[![Cross-checks](https://img.shields.io/badge/cross--checks-30_of_31_passing-b26a00)](#-how-every-number-is-checked)
+[![Cross-checks](https://img.shields.io/badge/cross--checks-31_of_31_passing-2e7d32)](#-how-every-number-is-checked)
 [![Sources](https://img.shields.io/badge/primary_sources-15-0071e3)](#-sources)
 [![Data as of](https://img.shields.io/badge/data_as_of-2026--11--24-555)](data/wi-07/manifest.json)
 ![Nonpartisan](https://img.shields.io/badge/nonpartisan-follows_the_seat-555)
@@ -481,7 +481,7 @@ Three rules keep the atlas honest:
 2. **A label check before any Census number is used.** Every Census variable's official label is compared with what the atlas says it means. If a table is renumbered, that measure is dropped and the check fails in public.
 3. **Nothing unofficial without a label and a review date.** Hand-written notes (like a race called by news organizations before certification) carry sources, a verification date, and a review-by date; an overdue note turns the check yellow.
 
-**Latest build: 30 of 31 checks passing**, 1 for review.
+**Latest build: 31 of 31 checks passing**.
 
 | | Check | What was compared |
 |---|---|---|
@@ -500,7 +500,7 @@ Three rules keep the atlas honest:
 | ✅ Pass | FCC station records have the expected layout | 720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. |
 | ✅ Pass | Listening links point at stations in the FCC records | 10 stations carry a link to their broadcaster's listening page, checked on 2026-11-24. |
 | ✅ Pass | Every project fact names an official source | 13 facts across 1 project(s), each tied to a listed page. Read on 2026-11-24; due for re-reading by 2027-03-15. |
-| ⚠️ Review | WisDOT projects tagged to the district fall in its counties | 423 projects from 423 rows carry WisDOT's tag for district 7; 0 have no readable cost range. Counties outside the district's list: Dunn, Eau Claire, North Central Region Wide, Northwest Region Wide, Pierce, Portage, Trempealeau. |
+| ✅ Pass | WisDOT projects tagged to the district are in its counties, shared, or region-wide | 423 projects from 423 rows carry WisDOT's tag for district 7; 0 have no readable cost range. 5 are region-wide and 14 are in a neighboring county. Every project listed under a neighboring county is shared with another district. |
 | ✅ Pass | The district's counties match the recorded list (26 counties: 21 whole, 5 split) | Census relationship file: 26 counties with land in the district, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. Recorded: 26 counties, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. |
 | ✅ Pass | 2020 Census population agrees three ways (district total, sum of county parts, recorded figure) | District total 736,715; sum of county parts 736,715; recorded 736,715. |
 | ✅ Pass | For whole counties, two Census files report the same 2020 population | 21 of 21 whole counties match between the 119th District Summary File and the 2020 redistricting file. |
@@ -524,7 +524,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T16:53:49+00:00",
+  "generated_at": "2026-11-24T17:00:31+00:00",
   "sources": [
     {
       "id": "acs1",

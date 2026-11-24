@@ -1,9 +1,8 @@
 {
- "generated_at": "2026-11-24T16:56:32+00:00",
+ "generated_at": "2026-11-24T17:03:26+00:00",
  "summary": {
   "total": 31,
-  "pass": 30,
-  "warn": 1,
+  "pass": 31,
   "ok": true
  },
  "checks": [
@@ -194,8 +193,8 @@
   },
   {
    "id": "wisdot-program",
-   "title": "WisDOT projects tagged to the district fall in its counties",
-   "status": "warn",
+   "title": "WisDOT projects tagged to the district are in its counties, shared, or region-wide",
+   "status": "pass",
    "sources": [
     "wisdot-six-year"
    ],
@@ -204,7 +203,7 @@
     "projects": 423,
     "unpriced": 0
    },
-   "detail": "423 projects from 423 rows carry WisDOT's tag for district 7; 0 have no readable cost range. Counties outside the district's list: Dunn, Eau Claire, North Central Region Wide, Northwest Region Wide, Pierce, Portage, Trempealeau."
+   "detail": "423 projects from 423 rows carry WisDOT's tag for district 7; 0 have no readable cost range. 5 are region-wide and 14 are in a neighboring county. Every project listed under a neighboring county is shared with another district."
   },
   {
    "id": "county-list",
