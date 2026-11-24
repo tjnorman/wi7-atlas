@@ -99,15 +99,17 @@ def rows_by_label(table: dict, cols: list[str]) -> dict[str, dict[str, float]]:
 def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]]:
     now = datetime.now(timezone.utc)
     html = year = None
+    errors: list[str] = []
     for y in range(now.year, now.year - 4, -1):
         try:
             html = fetcher.text(PAGE.format(y=y, st=d.state_abbr.lower()), retries=1)
             year = y
             break
-        except FetchError:
+        except FetchError as exc:
+            errors.append(f"{y}: {str(exc)[:160]}")
             continue
     if year is None:
-        raise FetchError("No SSA Congressional Statistics page found for the last four years")
+        raise FetchError("No SSA Congressional Statistics page could be read. " + " | ".join(errors))
     parser = Tables()
     parser.feed(html)
     oasdi_t = pick(parser.tables, OASDI_HEADINGS, len(OASDI_COLS))
