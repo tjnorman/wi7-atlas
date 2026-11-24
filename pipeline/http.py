@@ -68,12 +68,15 @@ class Fetcher:
         retries: int = 4,
         timeout: int = 90,
         ok_statuses: tuple[int, ...] = (200,),
+        permanent: bool = False,
     ) -> bytes:
+        """permanent: the record at this address never changes, so a saved copy is used even when
+        the build is told to fetch everything fresh."""
         req = requests.Request(method, url, params=params, json=json_body, headers=headers)
         prepared = self.session.prepare_request(req)
         full_url = prepared.url or url
         cache_path = self._key(method, full_url, json_body)
-        if self.use_cache and cache_path.exists():
+        if (self.use_cache or permanent) and cache_path.exists():
             content = cache_path.read_bytes()
             self._record(full_url, 200, content, from_cache=True)
             return content

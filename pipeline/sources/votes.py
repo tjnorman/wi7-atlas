@@ -77,13 +77,14 @@ def congress_of(year: int) -> int:
     return (year - 1789) // 2 + 1
 
 
-def read_year(fetcher: Fetcher, y: int) -> tuple[list[dict], list[tuple[int, int]], list[str]]:
+def read_year(fetcher: Fetcher, y: int, closed: bool = False) -> tuple[list[dict], list[tuple[int, int]], list[str]]:
     """Every roll call the Clerk has published for one calendar year."""
     parsed, gaps, diagnostics = [], [], []
     n, misses = 1, 0
     while misses < 3:
         try:
-            parsed.append(parse_vote(fetcher.fetch(EVS.format(y=y, n=n), retries=2)))
+            # A finished year's roll calls do not change, so a saved copy is as good as a new download.
+            parsed.append(parse_vote(fetcher.fetch(EVS.format(y=y, n=n), retries=2, permanent=closed)))
             misses = 0
         except (FetchError, ET.ParseError, ValueError) as exc:
             misses += 1
@@ -129,7 +130,7 @@ def fetch(fetcher: Fetcher, d: District, terms: list[dict]) -> tuple[dict, list[
     gaps: list[tuple[int, int]] = []
     diagnostics: list[str] = []
     for y in years:
-        p, g, diag = read_year(fetcher, y)
+        p, g, diag = read_year(fetcher, y, closed=y < today.year)
         parsed += p
         gaps += g
         diagnostics += diag
