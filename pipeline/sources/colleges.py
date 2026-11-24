@@ -21,7 +21,9 @@ import re
 import zipfile
 from datetime import datetime, timezone
 
-from ..config import District
+import yaml
+
+from ..config import ROOT, District
 from ..geo import DistrictShape
 from ..http import Fetcher, FetchError
 from ..provenance import Source
@@ -101,6 +103,15 @@ def website(addr: str) -> str | None:
     return f"https://{addr}"
 
 
+def curated_status() -> dict[str, dict]:
+    """Sourced status changes newer than the directory (data/curated/colleges.yaml), by institution name."""
+    path = ROOT / "data" / "curated" / "colleges.yaml"
+    if not path.exists():
+        return {}
+    raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return {s["name"]: s for s in raw.get("status", [])}
+
+
 def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path) -> tuple[dict, list[Source], list[dict]]:
     now = datetime.now(timezone.utc)
     raw = year = None
@@ -150,6 +161,17 @@ def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path) -> tuple[dict
             "size": label("INSTSIZE", r.get("INSTSIZE")),
             "active": active, "closed": closed if closed and closed not in ("-2", "-1") else None,
         })
+    extra_sources = []
+    for name, st in curated_status().items():
+        for c in rows:
+            if c["name"] == name:
+                c["active"] = bool(st.get("active", c["active"]))
+                c["status_note"] = " ".join(str(st.get("note", "")).split())
+                c["status_source"] = st["source"]["id"]
+                c["status_verified_on"] = str(st.get("verified_on", ""))
+                extra_sources.append(Source(id=st["source"]["id"], publisher=st["source"]["label"].split(",")[0],
+                                            title=st["source"]["label"], url=st["source"]["url"], year="2025",
+                                            apa_override=" ".join(st["source"]["apa"].split())))
     rows.sort(key=lambda c: (not c["active"], c["name"]))
     checks = [
         {"id": "ipeds-labels", "title": "College directory variables match the IPEDS dictionary",
@@ -180,4 +202,4 @@ def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path) -> tuple[dict
         notes=("The directory of institutions that take part in federal student aid programs. An institution appears "
                "once, at its main address; branch campuses that do not report separately are not listed."),
     )
-    return payload, [src], checks
+    return payload, [src, *extra_sources], checks
