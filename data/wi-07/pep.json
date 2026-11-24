@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T19:38:19+00:00",
+ "generated_at": "2026-11-24T04:11:38+00:00",
  "sources": [
   {
    "id": "pep",
@@ -10,9 +10,9 @@
    "kind": "Data set",
    "query": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv",
    "vintage": "Vintage 2025",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2026). County population totals and components of change: April 1, 2020 to July 1, 2025 (Vintage 2025) [Data set]. Retrieved November 23, 2026, from https://www.census.gov/programs-surveys/popest/data/tables.html"
+   "apa": "U.S. Census Bureau. (2026). County population totals and components of change: April 1, 2020 to July 1, 2025 (Vintage 2025) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/programs-surveys/popest/data/tables.html"
   }
  ],
  "district": "wi-07",

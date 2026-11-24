@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T19:37:13+00:00",
+ "generated_at": "2026-11-24T04:10:31+00:00",
  "sources": [
   {
    "id": "congress-legislators",
@@ -10,9 +10,9 @@
    "kind": "Data set",
    "query": "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/legislators-current.yaml",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Public-domain data maintained by volunteers and cross-checked against the Clerk of the House.",
-   "apa": "The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 23, 2026, from https://github.com/unitedstates/congress-legislators"
+   "apa": "The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 24, 2026, from https://github.com/unitedstates/congress-legislators"
   },
   {
    "id": "clerk-members",
@@ -23,9 +23,9 @@
    "kind": "Data set",
    "query": null,
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 23, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml"
+   "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml"
   }
  ],
  "district": "wi-07",

@@ -278,7 +278,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-23T19:38:18+00:00",
+  "generated_at": "2026-11-24T04:11:37+00:00",
   "sources": [
     {
       "id": "acs1",
@@ -289,8 +289,8 @@ Every data file wraps its numbers with the sources used to make them:
       "kind": "Data set",
       "query": "https://api.census.gov/data/2025/acs/acs1?get=...&for=congressional district:07&in=state:55",
       "vintage": "ACS 2025 1-year",
-      "accessed": "2026-11-23",
-      "apa": "U.S. Census Bureau. (2026). American Community Survey 1-year estimates, 2025: Detailed tables [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2025/acs/acs1"
+      "accessed": "2026-11-24",
+      "apa": "U.S. Census Bureau. (2026). American Community Survey 1-year estimates, 2025: Detailed tables [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2025/acs/acs1"
     }
   ],
   "data": {
@@ -359,25 +359,25 @@ tests/                 pytest unit tests and Playwright site checks
 ## 📚 Sources
 
 - Brennan Center for Justice. (2026, August 3). Wisconsin election certification processes and guardrails.
-- Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 23, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/
-- Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 23, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/
-- MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 23, 2026, from https://github.com/MEDSL/constituency-returns
-- Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 23, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml
-- Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 23, 2026, from https://clerk.house.gov/Votes
-- The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 23, 2026, from https://github.com/unitedstates/congress-legislators
-- U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 23, 2026, from https://www.bls.gov/lau/
-- U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 23, 2026, from https://www.bls.gov/cew/
-- U.S. Census Bureau. (2021). 2020 Census redistricting data (Public Law 94-171) [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2020/dec/pl
-- U.S. Census Bureau. (2024). 119th Congressional District to 2020 county relationship file (Wisconsin) [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html
+- Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/
+- Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/
+- MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns
+- Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml
+- Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes
+- The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 24, 2026, from https://github.com/unitedstates/congress-legislators
+- U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/lau/
+- U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/cew/
+- U.S. Census Bureau. (2021). 2020 Census redistricting data (Public Law 94-171) [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2020/dec/pl
+- U.S. Census Bureau. (2024). 119th Congressional District to 2020 county relationship file (Wisconsin) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html
+- U.S. Census Bureau. (2024). 2024 Gazetteer files: 119th congressional districts [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html
 - U.S. Census Bureau. (2025). 119th Congress block equivalency files.
-- U.S. Census Bureau. (2025). 2020 Census 119th Congressional District Summary File [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2020/dec/cd119
-- U.S. Census Bureau. (2025). 2025 cartographic boundary files, 1:500,000: 119th congressional districts, county within 119th congressional district, counties, and states [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-- U.S. Census Bureau. (2025). American Community Survey 5-year estimates, 2020-2024: Detailed tables [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2024/acs/acs5
-- U.S. Census Bureau. (2026). American Community Survey 1-year estimates, 2025: Detailed tables [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2025/acs/acs1
-- U.S. Census Bureau. (2026). County population totals and components of change: April 1, 2020 to July 1, 2025 (Vintage 2025) [Data set]. Retrieved November 23, 2026, from https://www.census.gov/programs-surveys/popest/data/tables.html
-- U.S. Census Bureau. (2026). Gazetteer files: 119th congressional districts [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html
+- U.S. Census Bureau. (2025). 2020 Census 119th Congressional District Summary File [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2020/dec/cd119
+- U.S. Census Bureau. (2025). 2025 cartographic boundary files, 1:500,000: 119th congressional districts, county within 119th congressional district, counties, and states [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+- U.S. Census Bureau. (2025). American Community Survey 5-year estimates, 2020-2024: Detailed tables [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2024/acs/acs5
+- U.S. Census Bureau. (2026). American Community Survey 1-year estimates, 2025: Detailed tables [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2025/acs/acs1
+- U.S. Census Bureau. (2026). County population totals and components of change: April 1, 2020 to July 1, 2025 (Vintage 2025) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/programs-surveys/popest/data/tables.html
 - U.S. Const. amend. XX, § 1.
-- U.S. Department of the Treasury, Bureau of the Fiscal Service. (2026). USAspending.gov award obligations by place of performance [Data set]. Retrieved November 23, 2026, from https://www.usaspending.gov/search
+- U.S. Department of the Treasury, Bureau of the Fiscal Service. (2026). USAspending.gov award obligations by place of performance [Data set]. Retrieved November 24, 2026, from https://www.usaspending.gov/search
 - Wis. Stat. § 7.70 (2025). State canvass.
 - Wisconsin Public Radio. (2026, November 4). Republican Michael Alfonso wins northern Wisconsin district.
 - Wisconsin Public Radio. (2026, November). Wisconsin congressional election results, November 2026.

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T19:38:21+00:00",
+ "generated_at": "2026-11-24T04:11:40+00:00",
  "sources": [
   {
    "id": "bls-laus",
@@ -10,9 +10,9 @@
    "kind": "Data set",
    "query": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (series LAUCN550030000000003, LAUCN550050000000003, LAUCN550070000000003, ...)",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "The most recent month is preliminary and is revised the following month.",
-   "apa": "U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 23, 2026, from https://www.bls.gov/lau/"
+   "apa": "U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/lau/"
   }
  ],
  "district": "wi-07",

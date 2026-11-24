@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T19:38:37+00:00",
+ "generated_at": "2026-11-24T04:12:02+00:00",
  "sources": [
   {
    "id": "medsl-house",
@@ -10,9 +10,9 @@
    "kind": "Data set",
    "query": "https://raw.githubusercontent.com/MEDSL/constituency-returns/HEAD/1976-2018-house.csv",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Compiled from official state results. General elections only; special elections excluded.",
-   "apa": "MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 23, 2026, from https://github.com/MEDSL/constituency-returns"
+   "apa": "MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns"
   },
   {
    "id": "fec-results",
@@ -23,9 +23,9 @@
    "kind": "Data set",
    "query": "https://www.fec.gov/resources/cms-content/documents/federalelectionsYYYY.xlsx",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Official, certified results as reported by state election offices.",
-   "apa": "Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 23, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
+   "apa": "Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
   }
  ],
  "district": "wi-07",

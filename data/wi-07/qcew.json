@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T19:38:33+00:00",
+ "generated_at": "2026-11-24T04:11:52+00:00",
  "sources": [
   {
    "id": "bls-qcew",
@@ -10,9 +10,9 @@
    "kind": "Data set",
    "query": "https://data.bls.gov/cew/data/api/2025/a/area/55XXX.csv",
    "vintage": "2025 annual averages",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Covers jobs insured under unemployment insurance; counts jobs by where people work, not where they live.",
-   "apa": "U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 23, 2026, from https://www.bls.gov/cew/"
+   "apa": "U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/cew/"
   }
  ],
  "district": "wi-07",

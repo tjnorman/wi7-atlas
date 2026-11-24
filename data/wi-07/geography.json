@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T19:37:05+00:00",
+ "generated_at": "2026-11-24T04:10:21+00:00",
  "sources": [
   {
    "id": "census-cb",
@@ -10,9 +10,9 @@
    "kind": "Data set",
    "query": "https://www2.census.gov/geo/tiger/GENZ2025/shp/cb_2025_us_county_within_cd119_500k.zip",
    "vintage": "GENZ2025",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2025). 2025 cartographic boundary files, 1:500,000: 119th congressional districts, county within 119th congressional district, counties, and states [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+   "apa": "U.S. Census Bureau. (2025). 2025 cartographic boundary files, 1:500,000: 119th congressional districts, county within 119th congressional district, counties, and states [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
   },
   {
    "id": "census-rel",
@@ -23,9 +23,9 @@
    "kind": "Data set",
    "query": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_county20_st55.txt",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2024). 119th Congressional District to 2020 county relationship file (Wisconsin) [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html"
+   "apa": "U.S. Census Bureau. (2024). 119th Congressional District to 2020 county relationship file (Wisconsin) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html"
   },
   {
    "id": "census-cd119",
@@ -36,22 +36,22 @@
    "kind": "Data set",
    "query": "https://api.census.gov/data/2020/dec/cd119?get=NAME,P1_001N&for=county%20(or%20part):*&in=state:55%20congressional%20district:07",
    "vintage": "2020 Census",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2025). 2020 Census 119th Congressional District Summary File [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2020/dec/cd119"
+   "apa": "U.S. Census Bureau. (2025). 2020 Census 119th Congressional District Summary File [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2020/dec/cd119"
   },
   {
    "id": "census-gaz",
    "publisher": "U.S. Census Bureau",
-   "title": "Gazetteer files: 119th congressional districts",
+   "title": "2024 Gazetteer files: 119th congressional districts",
    "url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html",
-   "year": "2026",
+   "year": "2024",
    "kind": "Data set",
    "query": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_119CDs_national.zip",
-   "vintage": null,
-   "accessed": "2026-11-23",
+   "vintage": "2024_Gazetteer",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2026). Gazetteer files: 119th congressional districts [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html"
+   "apa": "U.S. Census Bureau. (2024). 2024 Gazetteer files: 119th congressional districts [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html"
   },
   {
    "id": "census-pl",
@@ -62,9 +62,9 @@
    "kind": "Data set",
    "query": null,
    "vintage": "2020 Census",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2021). 2020 Census redistricting data (Public Law 94-171) [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2020/dec/pl"
+   "apa": "U.S. Census Bureau. (2021). 2020 Census redistricting data (Public Law 94-171) [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2020/dec/pl"
   }
  ],
  "district": "wi-07",

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T19:38:18+00:00",
+ "generated_at": "2026-11-24T04:11:37+00:00",
  "sources": [
   {
    "id": "acs1",
@@ -10,9 +10,9 @@
    "kind": "Data set",
    "query": "https://api.census.gov/data/2025/acs/acs1?get=...&for=congressional district:07&in=state:55",
    "vintage": "ACS 2025 1-year",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "District, Wisconsin, and United States figures; margins of error at 90% confidence.",
-   "apa": "U.S. Census Bureau. (2026). American Community Survey 1-year estimates, 2025: Detailed tables [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2025/acs/acs1"
+   "apa": "U.S. Census Bureau. (2026). American Community Survey 1-year estimates, 2025: Detailed tables [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2025/acs/acs1"
   },
   {
    "id": "acs5",
@@ -23,9 +23,9 @@
    "kind": "Data set",
    "query": "https://api.census.gov/data/2024/acs/acs5?get=...&for=county:*&in=state:55",
    "vintage": "ACS 2020-2024 5-year",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "County figures (5-year estimates are the most reliable for small counties).",
-   "apa": "U.S. Census Bureau. (2025). American Community Survey 5-year estimates, 2020-2024: Detailed tables [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2024/acs/acs5"
+   "apa": "U.S. Census Bureau. (2025). American Community Survey 5-year estimates, 2020-2024: Detailed tables [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2024/acs/acs5"
   }
  ],
  "district": "wi-07",

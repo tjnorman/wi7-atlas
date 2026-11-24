@@ -10,7 +10,7 @@
   "repo": "tjnorman/wi7-atlas",
   "congress": 119
  },
- "built_at": "2026-11-23T19:42:32+00:00",
+ "built_at": "2026-11-24T04:15:57+00:00",
  "headline": [
   {
    "id": "population",
@@ -1378,9 +1378,9 @@
    "kind": "Data set",
    "query": "https://api.open.fec.gov/v1/candidates/totals/?election_year=...&office=H&state=WI&district=07",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Totals cover each candidate's principal campaign committee for the two-year cycle, through its latest report.",
-   "apa": "Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 23, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/"
+   "apa": "Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/"
   },
   {
    "id": "fec-results",
@@ -1391,9 +1391,9 @@
    "kind": "Data set",
    "query": "https://www.fec.gov/resources/cms-content/documents/federalelectionsYYYY.xlsx",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Official, certified results as reported by state election offices.",
-   "apa": "Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 23, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
+   "apa": "Federal Election Commission. (2023). Federal Elections: Election results for the U.S. Senate and the U.S. House of Representatives (2018, 2020, 2022) [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
   },
   {
    "id": "medsl-house",
@@ -1404,9 +1404,9 @@
    "kind": "Data set",
    "query": "https://raw.githubusercontent.com/MEDSL/constituency-returns/HEAD/1976-2018-house.csv",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Compiled from official state results. General elections only; special elections excluded.",
-   "apa": "MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 23, 2026, from https://github.com/MEDSL/constituency-returns"
+   "apa": "MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns"
   },
   {
    "id": "clerk-members",
@@ -1417,9 +1417,9 @@
    "kind": "Data set",
    "query": null,
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 23, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml"
+   "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml"
   },
   {
    "id": "clerk-votes",
@@ -1430,9 +1430,9 @@
    "kind": "Data set",
    "query": "https://clerk.house.gov/evs/2025/rollNNN.xml",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 23, 2026, from https://clerk.house.gov/Votes"
+   "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes"
   },
   {
    "id": "congress-legislators",
@@ -1443,9 +1443,9 @@
    "kind": "Data set",
    "query": "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/legislators-current.yaml",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Public-domain data maintained by volunteers and cross-checked against the Clerk of the House.",
-   "apa": "The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 23, 2026, from https://github.com/unitedstates/congress-legislators"
+   "apa": "The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 24, 2026, from https://github.com/unitedstates/congress-legislators"
   },
   {
    "id": "bls-laus",
@@ -1456,9 +1456,9 @@
    "kind": "Data set",
    "query": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (series LAUCN550030000000003, LAUCN550050000000003, LAUCN550070000000003, ...)",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "The most recent month is preliminary and is revised the following month.",
-   "apa": "U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 23, 2026, from https://www.bls.gov/lau/"
+   "apa": "U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/lau/"
   },
   {
    "id": "bls-qcew",
@@ -1469,9 +1469,9 @@
    "kind": "Data set",
    "query": "https://data.bls.gov/cew/data/api/2025/a/area/55XXX.csv",
    "vintage": "2025 annual averages",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Covers jobs insured under unemployment insurance; counts jobs by where people work, not where they live.",
-   "apa": "U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 23, 2026, from https://www.bls.gov/cew/"
+   "apa": "U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/cew/"
   },
   {
    "id": "census-rel",
@@ -1482,9 +1482,9 @@
    "kind": "Data set",
    "query": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_county20_st55.txt",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2024). 119th Congressional District to 2020 county relationship file (Wisconsin) [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html"
+   "apa": "U.S. Census Bureau. (2024). 119th Congressional District to 2020 county relationship file (Wisconsin) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html"
   },
   {
    "id": "census-cd119",
@@ -1495,9 +1495,9 @@
    "kind": "Data set",
    "query": "https://api.census.gov/data/2020/dec/cd119?get=NAME,P1_001N&for=county%20(or%20part):*&in=state:55%20congressional%20district:07",
    "vintage": "2020 Census",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2025). 2020 Census 119th Congressional District Summary File [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2020/dec/cd119"
+   "apa": "U.S. Census Bureau. (2025). 2020 Census 119th Congressional District Summary File [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2020/dec/cd119"
   },
   {
    "id": "census-pl",
@@ -1508,9 +1508,22 @@
    "kind": "Data set",
    "query": null,
    "vintage": "2020 Census",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2021). 2020 Census redistricting data (Public Law 94-171) [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2020/dec/pl"
+   "apa": "U.S. Census Bureau. (2021). 2020 Census redistricting data (Public Law 94-171) [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2020/dec/pl"
+  },
+  {
+   "id": "census-gaz",
+   "publisher": "U.S. Census Bureau",
+   "title": "2024 Gazetteer files: 119th congressional districts",
+   "url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html",
+   "year": "2024",
+   "kind": "Data set",
+   "query": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_119CDs_national.zip",
+   "vintage": "2024_Gazetteer",
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "U.S. Census Bureau. (2024). 2024 Gazetteer files: 119th congressional districts [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html"
   },
   {
    "id": "census-cb",
@@ -1521,9 +1534,9 @@
    "kind": "Data set",
    "query": "https://www2.census.gov/geo/tiger/GENZ2025/shp/cb_2025_us_county_within_cd119_500k.zip",
    "vintage": "GENZ2025",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2025). 2025 cartographic boundary files, 1:500,000: 119th congressional districts, county within 119th congressional district, counties, and states [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+   "apa": "U.S. Census Bureau. (2025). 2025 cartographic boundary files, 1:500,000: 119th congressional districts, county within 119th congressional district, counties, and states [Data set]. Retrieved November 24, 2026, from https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
   },
   {
    "id": "acs1",
@@ -1534,9 +1547,9 @@
    "kind": "Data set",
    "query": "https://api.census.gov/data/2025/acs/acs1?get=...&for=congressional district:07&in=state:55",
    "vintage": "ACS 2025 1-year",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "District, Wisconsin, and United States figures; margins of error at 90% confidence.",
-   "apa": "U.S. Census Bureau. (2026). American Community Survey 1-year estimates, 2025: Detailed tables [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2025/acs/acs1"
+   "apa": "U.S. Census Bureau. (2026). American Community Survey 1-year estimates, 2025: Detailed tables [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2025/acs/acs1"
   },
   {
    "id": "acs5",
@@ -1547,9 +1560,9 @@
    "kind": "Data set",
    "query": "https://api.census.gov/data/2024/acs/acs5?get=...&for=county:*&in=state:55",
    "vintage": "ACS 2020-2024 5-year",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "County figures (5-year estimates are the most reliable for small counties).",
-   "apa": "U.S. Census Bureau. (2025). American Community Survey 5-year estimates, 2020-2024: Detailed tables [Data set]. Retrieved November 23, 2026, from https://api.census.gov/data/2024/acs/acs5"
+   "apa": "U.S. Census Bureau. (2025). American Community Survey 5-year estimates, 2020-2024: Detailed tables [Data set]. Retrieved November 24, 2026, from https://api.census.gov/data/2024/acs/acs5"
   },
   {
    "id": "pep",
@@ -1560,22 +1573,9 @@
    "kind": "Data set",
    "query": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv",
    "vintage": "Vintage 2025",
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": null,
-   "apa": "U.S. Census Bureau. (2026). County population totals and components of change: April 1, 2020 to July 1, 2025 (Vintage 2025) [Data set]. Retrieved November 23, 2026, from https://www.census.gov/programs-surveys/popest/data/tables.html"
-  },
-  {
-   "id": "census-gaz",
-   "publisher": "U.S. Census Bureau",
-   "title": "Gazetteer files: 119th congressional districts",
-   "url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html",
-   "year": "2026",
-   "kind": "Data set",
-   "query": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_119CDs_national.zip",
-   "vintage": null,
-   "accessed": "2026-11-23",
-   "notes": null,
-   "apa": "U.S. Census Bureau. (2026). Gazetteer files: 119th congressional districts [Data set]. Retrieved November 23, 2026, from https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html"
+   "apa": "U.S. Census Bureau. (2026). County population totals and components of change: April 1, 2020 to July 1, 2025 (Vintage 2025) [Data set]. Retrieved November 24, 2026, from https://www.census.gov/programs-surveys/popest/data/tables.html"
   },
   {
    "id": "usaspending",
@@ -1586,9 +1586,9 @@
    "kind": "Data set",
    "query": "https://api.usaspending.gov/api/v2/search/spending_over_time/ (place of performance WI-07, current district lines)",
    "vintage": null,
-   "accessed": "2026-11-23",
+   "accessed": "2026-11-24",
    "notes": "Obligations are commitments to spend, reported by agencies and revised over time. Awards are placed by where the work happens. Some payments to individuals are reported only at county or state level and are not included in district totals.",
-   "apa": "U.S. Department of the Treasury, Bureau of the Fiscal Service. (2026). USAspending.gov award obligations by place of performance [Data set]. Retrieved November 23, 2026, from https://www.usaspending.gov/search"
+   "apa": "U.S. Department of the Treasury, Bureau of the Fiscal Service. (2026). USAspending.gov award obligations by place of performance [Data set]. Retrieved November 24, 2026, from https://www.usaspending.gov/search"
   }
  ],
  "integrity": {
@@ -1597,16 +1597,16 @@
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-23T19:36:59+00:00",
-  "legislators": "2026-11-23T19:37:05+00:00",
-  "acs": "2026-11-23T19:37:13+00:00",
-  "pep": "2026-11-23T19:38:18+00:00",
-  "laus": "2026-11-23T19:38:19+00:00",
-  "qcew": "2026-11-23T19:38:21+00:00",
-  "usaspending": "2026-11-23T19:38:33+00:00",
-  "elections": "2026-11-23T19:38:35+00:00",
-  "fec": "2026-11-23T19:38:37+00:00",
-  "votes": "2026-11-23T19:38:39+00:00"
+  "geography": "2026-11-24T04:10:14+00:00",
+  "legislators": "2026-11-24T04:10:21+00:00",
+  "acs": "2026-11-24T04:10:31+00:00",
+  "pep": "2026-11-24T04:11:37+00:00",
+  "laus": "2026-11-24T04:11:38+00:00",
+  "qcew": "2026-11-24T04:11:40+00:00",
+  "usaspending": "2026-11-24T04:11:52+00:00",
+  "elections": "2026-11-24T04:11:59+00:00",
+  "fec": "2026-11-24T04:12:02+00:00",
+  "votes": "2026-11-24T04:12:04+00:00"
  },
  "status": {
   "geography": "ok",

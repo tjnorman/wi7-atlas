@@ -2,7 +2,7 @@
  "sources": {
   "geography": {
    "status": "ok",
-   "updated": "2026-11-23T19:36:59+00:00",
+   "updated": "2026-11-24T04:10:14+00:00",
    "error": null,
    "sources": [
     "census-cb",
@@ -14,7 +14,7 @@
   },
   "legislators": {
    "status": "ok",
-   "updated": "2026-11-23T19:37:05+00:00",
+   "updated": "2026-11-24T04:10:21+00:00",
    "error": null,
    "sources": [
     "congress-legislators",
@@ -23,7 +23,7 @@
   },
   "acs": {
    "status": "ok",
-   "updated": "2026-11-23T19:37:13+00:00",
+   "updated": "2026-11-24T04:10:31+00:00",
    "error": null,
    "sources": [
     "acs1",
@@ -32,7 +32,7 @@
   },
   "pep": {
    "status": "ok",
-   "updated": "2026-11-23T19:38:18+00:00",
+   "updated": "2026-11-24T04:11:37+00:00",
    "error": null,
    "sources": [
     "pep"
@@ -40,7 +40,7 @@
   },
   "laus": {
    "status": "ok",
-   "updated": "2026-11-23T19:38:19+00:00",
+   "updated": "2026-11-24T04:11:38+00:00",
    "error": null,
    "sources": [
     "bls-laus"
@@ -48,7 +48,7 @@
   },
   "qcew": {
    "status": "ok",
-   "updated": "2026-11-23T19:38:21+00:00",
+   "updated": "2026-11-24T04:11:40+00:00",
    "error": null,
    "sources": [
     "bls-qcew"
@@ -56,7 +56,7 @@
   },
   "usaspending": {
    "status": "ok",
-   "updated": "2026-11-23T19:38:33+00:00",
+   "updated": "2026-11-24T04:11:52+00:00",
    "error": null,
    "sources": [
     "usaspending"
@@ -64,7 +64,7 @@
   },
   "elections": {
    "status": "ok",
-   "updated": "2026-11-23T19:38:35+00:00",
+   "updated": "2026-11-24T04:11:59+00:00",
    "error": null,
    "sources": [
     "medsl-house",
@@ -73,7 +73,7 @@
   },
   "fec": {
    "status": "ok",
-   "updated": "2026-11-23T19:38:37+00:00",
+   "updated": "2026-11-24T04:12:02+00:00",
    "error": null,
    "sources": [
     "fec"
@@ -81,7 +81,7 @@
   },
   "votes": {
    "status": "ok",
-   "updated": "2026-11-23T19:38:39+00:00",
+   "updated": "2026-11-24T04:12:04+00:00",
    "error": null,
    "sources": [
     "clerk-votes"
@@ -90,7 +90,7 @@
  },
  "district": "wi-07",
  "name": "Wisconsin's 7th Congressional District",
- "built_at": "2026-11-23T19:42:32+00:00",
+ "built_at": "2026-11-24T04:15:57+00:00",
  "requests": 903,
  "requests_from_cache": 0
 }
