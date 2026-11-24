@@ -5,6 +5,7 @@ All notable changes to the WI-7 Atlas. Corrections to data or wording are listed
 ## 1.1.0 — 2026-11-23
 
 ### Added
+- Colleges and universities with their main address in the district, with links, from the NCES IPEDS directory file.
 - Ten years of attendance for the seat (2017 forward): roll calls voted and missed by year and by member, a comparison with the whole House, roll calls taken during the vacancy, and a list of every missed vote with links to the Clerk's record.
 - "Right now": public road cameras inside the district and a twice-hourly snapshot of aircraft overhead, adapted from the Global Intelligence Atlas with its author's permission.
 - `NOTICE.md`: records permission to adapt code from Normansrule/global-intelligence-atlas under this repository's MIT license.

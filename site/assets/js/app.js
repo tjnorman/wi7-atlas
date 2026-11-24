@@ -10,7 +10,7 @@ const BASE = params.get("data") || "data/";
 const $ = (s, r = document) => r.querySelector(s);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "cameras", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
+const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "cameras", "colleges", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
 const state = { data: {}, counties: [], byFips: new Map(), topo: null, step: "outline" };
 
 async function load() {
@@ -488,6 +488,23 @@ function payChart() {
   $("#pay-source").innerHTML = sourceLine(["bls-qcew"], `${q.year} annual averages, whole counties, all ownerships. Lighter bars are split counties.`);
 }
 
+// ---------------------------------------------------------------- colleges and universities
+function collegesSection() {
+  const c = state.data.colleges, box = $("#colleges");
+  const list = (c?.institutions || []).filter((i) => i.active);
+  if (!box || !list.length) return;
+  box.hidden = false;
+  const four = list.filter((i) => /four/i.test(i.level || "")).length;
+  $("#colleges-lede").innerHTML = `<strong>${list.length}</strong> colleges, universities, and career schools have their main address in the district${four ? `, ${four} of them offering four-year degrees` : ""}.`;
+  const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
+  $("#college-grid").innerHTML = list.map((i) => `<article class="college reveal">
+      <h3>${i.website ? `<a href="${F.esc(i.website)}" target="_blank" rel="noopener">${F.esc(i.name)}</a>` : F.esc(i.name)}</h3>
+      <p class="where">${F.esc([i.city, i.county ? `${i.county} County` : ""].filter(Boolean).join(" · "))}</p>
+      <p class="tags">${[i.control, i.level, i.size && !/not/i.test(i.size) ? `${i.size} students` : ""].filter(Boolean).map((t) => `<span>${F.esc(t)}</span>`).join("")}</p>
+      ${i.website ? `<p class="site"><a href="${F.esc(i.website)}" target="_blank" rel="noopener">${F.esc(host(i.website))}</a></p>` : ""}</article>`).join("");
+  $("#colleges-source").innerHTML = sourceLine(["nces-ipeds-hd"], `Directory year ${c.directory_year}. ${F.esc(c.coverage_note || "")}`);
+}
+
 // ---------------------------------------------------------------- right now: cameras and aircraft
 // Camera and aircraft handling is adapted from cameras.js and flights.js in
 // Normansrule/global-intelligence-atlas, reused with the author's permission (see NOTICE.md).
@@ -936,6 +953,7 @@ async function film() {
   people();
   work();
   dollars();
+  collegesSection();
   liveNow();
   seat();
   counties();

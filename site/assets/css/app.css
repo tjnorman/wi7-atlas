@@ -389,3 +389,15 @@ td.num, th.num { text-align: right; }
 #attendance { margin-top: 34px; }
 #attendance .table-wrap { margin-top: 18px; }
 .missed-scroll { max-height: 520px; overflow-y: auto; }
+
+/* ---------- colleges ---------- */
+.college-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.college { background: var(--panel); border-radius: var(--radius); padding: 24px 24px 20px; box-shadow: var(--shadow); }
+.college h3 { margin: 0 0 6px; font-size: 19px; letter-spacing: -0.01em; }
+.college h3 a { color: inherit; text-decoration: none; }
+.college h3 a:hover { color: var(--accent); }
+.college .where { color: var(--ink-2); font-size: 14px; margin: 0 0 12px; }
+.college .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.college .tags span { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 980px; background: var(--bg-2); color: var(--ink-2); }
+.college .site { margin: 0; font-size: 14px; overflow-wrap: anywhere; }
+#colleges-source { margin-top: 18px; }

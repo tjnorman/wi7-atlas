@@ -40,6 +40,14 @@ The IRS Statistics of Income Division publishes totals from individual income ta
 - A value can carry the right label and still be wrong. Any amount larger than half of the district's adjusted gross income is withheld and reported. The earned income credit column in the tax year 2023 file showed $23.0 billion for this district on 38,770 returns, which is not believable, so the atlas does not publish that column.
 - Checks: the income classes must add up to the published district total; the state's districts are compared with the state row; and the Congress named in the IRS documentation is compared with the atlas's district lines.
 
+## Colleges and universities
+
+The list comes from the National Center for Education Statistics' IPEDS directory file (HD), which covers every institution that takes part in federal student aid. An institution is listed when its coordinates fall inside the district outline and IPEDS marks it active.
+
+- IPEDS lists an institution once, at its main address. A branch campus or outreach center inside the district that reports under a parent elsewhere is not listed, and an institution whose main address is outside the district is not listed even if it has a campus inside.
+- Variable names are confirmed against the IPEDS dictionary, and the words for control, level, and size come from the dictionary's own code lists.
+- Check: IPEDS also records a congressional district code for each institution. The build compares that code with the outline and reports any institution where they differ.
+
 ## Right now: cameras and aircraft
 
 This section is a window, not a dataset. Nothing in it feeds the figures elsewhere in the atlas.

@@ -559,3 +559,92 @@ def test_ten_year_attendance_follows_the_seat(district, monkeypatch):
     # The headline figures still describe the current Congress only.
     assert p["yes_no_votes_while_held"] == 1 and p["missed"] == 1 and p["roll_calls_parsed"] == 1
     assert "2017 to 2025" in sources[0].title
+
+
+# ---------------------------------------------------------------- colleges (IPEDS)
+def _ipeds_zip(csv_text):
+    import io
+    import zipfile
+
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as z:
+        z.writestr(zipfile.ZipInfo("hd2025.csv", date_time=(2026, 9, 1, 0, 0, 0)), csv_text)
+    return buf.getvalue()
+
+
+def _ipeds_dict(titles, codes):
+    import io
+    import zipfile
+
+    import openpyxl
+
+    wb = openpyxl.Workbook()
+    v = wb.active
+    v.title = "Varlist"
+    v.append(["varNumber", "varName", "DataType", "FieldWidth", "format", "imputationvar", "varTitle"])
+    for name, title in titles.items():
+        v.append([1, name, "A", 1, "", "", title])
+    f = wb.create_sheet("Frequencies")
+    f.append(["varnumber", "varname", "codevalue", "valuelabel", "frequency", "percent"])
+    for name, code, lab in codes:
+        f.append([1, name, code, lab, 1, 1])
+    x = io.BytesIO()
+    wb.save(x)
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as z:
+        z.writestr("hd2025.xlsx", x.getvalue())
+    return buf.getvalue()
+
+
+IPEDS_TITLES = {"INSTNM": "Institution (entity) name", "CITY": "City location of institution", "STABBR": "State abbreviation",
+                "WEBADDR": "Institution's internet website address", "LONGITUD": "Longitude location of institution",
+                "LATITUDE": "Latitude location of institution", "CNGDSTCD": "Congressional district code",
+                "CONTROL": "Control of institution", "ICLEVEL": "Level of institution", "INSTSIZE": "Institution size category",
+                "CYACTIVE": "Institution is active in current year", "COUNTYNM": "County name", "CLOSEDAT": "Date institution closed"}
+IPEDS_CODES = [("CONTROL", 1, "Public"), ("ICLEVEL", 1, "Four or more years"), ("ICLEVEL", 2, "At least 2 but less than 4 years"),
+               ("INSTSIZE", 2, "1,000 - 4,999")]
+IPEDS_CSV = ("UNITID,INSTNM,CITY,STABBR,WEBADDR,LONGITUD,LATITUDE,CNGDSTCD,CONTROL,ICLEVEL,INSTSIZE,CYACTIVE,COUNTYNM,CLOSEDAT\n"
+             "1,Northwoods University,Wausau,WI,www.example.edu/,-90.5,45.5,5507,1,1,2,1,Marathon County,-2\n"
+             "2,Elsewhere College,Madison,WI,elsewhere.edu,-89.4,43.07,5502,1,2,2,1,Dane County,-2\n"
+             "3,Minnesota Tech,Duluth,MN,mn.edu,-90.5,45.5,2708,1,2,2,1,St. Louis County,-2\n"
+             "4,Edge School,Edge,WI,,-90.4,45.4,5503,1,2,2,1,Marathon County,-2\n")
+
+
+def _ipeds_fetcher(titles=IPEDS_TITLES):
+    from pipeline.http import FetchError
+
+    def route(url, _):
+        if "HD2025_Dict" in url:
+            return _ipeds_dict(titles, IPEDS_CODES)
+        if "HD2025.zip" in url:
+            return _ipeds_zip(IPEDS_CSV)
+        return FetchError("404")
+
+    return FakeFetcher([(r"nces\.ed\.gov", route)])
+
+
+def test_colleges_inside_the_district(district, tmp_path, monkeypatch):
+    import datetime as dt
+
+    from pipeline.sources import colleges
+
+    class Now(dt.datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return dt.datetime(2026, 11, 23, tzinfo=tz)
+
+    monkeypatch.setattr(colleges, "datetime", Now)
+    payload, sources, checks = colleges.fetch(_ipeds_fetcher(), district, _square(tmp_path))
+    names = [c["name"] for c in payload["institutions"]]
+    assert names == ["Edge School", "Northwoods University"] and payload["directory_year"] == 2025
+    nu = payload["institutions"][1]
+    assert nu["website"] == "https://www.example.edu/" and nu["control"] == "Public" and nu["level"] == "Four or more years"
+    assert nu["county"] == "Marathon" and nu["size"] == "1,000 - 4,999" and nu["closed"] is None
+    assert payload["institutions"][0]["website"] is None
+    status = {c["id"]: c["status"] for c in checks}
+    assert status == {"ipeds-labels": "pass", "ipeds-district": "warn"}  # Edge School carries another district's code
+    assert sources[0].year == "2026" and "HD2025" in sources[0].title
+
+    renamed = dict(IPEDS_TITLES, LATITUDE="Something else")
+    with pytest.raises(ValueError, match="LATITUDE"):
+        colleges.fetch(_ipeds_fetcher(renamed), district, _square(tmp_path))

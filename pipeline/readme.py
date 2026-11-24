@@ -195,6 +195,19 @@ def work_text(acs: dict | None, summary: dict) -> str:
     return " ".join(out)
 
 
+def colleges_block(col: dict | None) -> str:
+    rows = [i for i in (col or {}).get("institutions", []) if i.get("active")]
+    if not rows:
+        return ""
+    table = "\n".join(
+        f"| {'[' + i['name'] + '](' + i['website'] + ')' if i.get('website') else i['name']} | {i.get('city') or ''} | "
+        f"{i.get('county') or ''} | {i.get('control') or ''} | {i.get('level') or ''} |" for i in rows)
+    return (f"## 🎓 Colleges and universities\n\n{len(rows)} colleges, universities, and career schools have their main "
+            f"address in the district.\n\n| Institution | City | County | Control | Level |\n|---|---|---|---|---|\n{table}\n\n"
+            f"<sub>Source: National Center for Education Statistics, IPEDS directory file HD{col['directory_year']}. "
+            f"{col.get('coverage_note', '')}</sub>\n")
+
+
 def taxes_text(irs: dict | None, state_name: str = "State") -> str:
     d = (irs or {}).get("district") or {}
     if not d.get("total_tax_liability"):
@@ -409,6 +422,7 @@ def render(d: District) -> str:
         "people_text": people_text(acs),
         "work_text": work_text(acs, summary),
         "federal_text": fed_text,
+        "colleges_block": colleges_block(_data(_load(d, "colleges"))),
         "taxes_text": taxes_text(_data(_load(d, "irs")), d.state_name),
         "agencies_table": agencies,
         "representation_text": representation_text(leg, summary),
