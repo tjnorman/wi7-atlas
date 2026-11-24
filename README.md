@@ -468,7 +468,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T07:27:51+00:00",
+  "generated_at": "2026-11-24T07:38:04+00:00",
   "sources": [
     {
       "id": "acs1",
