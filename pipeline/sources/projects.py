@@ -29,7 +29,7 @@ def fetch(fetcher, d: District, path=PATH, today: date | None = None) -> tuple[d
         for s in p.get("sources", []):
             sources[s["id"]] = Source(id=s["id"], publisher=s["publisher"], title=s["title"], url=s["url"],
                                       year=str(s["year"]), kind=s.get("kind", "Web page"))
-        projects.append({k: p.get(k) for k in ("id", "title", "place", "county", "summary", "facts", "timeline")}
+        projects.append({k: p.get(k) for k in ("id", "title", "place", "county", "summary", "links", "facts", "timeline")}
                         | {"sources": sorted(ids)})
     if missing:
         raise ValueError("Project facts without a listed source: " + "; ".join(missing))

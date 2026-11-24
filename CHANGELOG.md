@@ -5,6 +5,7 @@ All notable changes to the WI-7 Atlas. Corrections to data or wording are listed
 ## 1.2.0 — 2026-11-24
 
 ### Added
+- Planned highway construction: every project in WisDOT's six-year program that the department tags to the district, with route, limits, and construction cost range, and low and high cost sums by year and county.
 - Bridge update: the Blatnik Bridge replacement between Superior and Duluth, with cost, federal grant, closure, and reopening dates, each read from the Minnesota or Wisconsin transportation department's own page (`data/curated/projects.yaml`). The build fails if a fact has no listed source and warns when the pages are due for re-reading.
 - Listening links for radio stations, starting with Wisconsin Public Radio. A link is added only after the broadcaster's own page has been read (`data/curated/station_links.yaml`).
 

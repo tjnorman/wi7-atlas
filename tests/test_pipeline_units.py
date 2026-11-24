@@ -810,3 +810,25 @@ def test_listen_links_match_by_call_and_licensee(tmp_path):
     summary, unknown = broadcast.listen_links(st, f)
     assert [bool(s.get("listen")) for s in st] == [True, False, True, False]
     assert summary["linked"] == 2 and unknown == ["KZZZ"]
+
+
+def test_roads_groups_projects_and_sums_ranges(district):
+    from pipeline.sources import roads
+    fields = [{"name": n} for n in roads.FIELDS]
+    feats = [
+        {"attributes": {"PROJECT_ID": "1", "CONSTRUCTION_YEAR": "2027", "COUNTY": "DOUGLAS   ", "ROUTE": "US 002", "TITLE": "A - B", "LIMITS": "X TO Y", "MILES": 2.5, "WORK_CONCEPT": "RESURFACE", "CONGRESSIONAL_DISTRICT_NUMBERS": "7", "CONSTRUCTION_COST_RANGE_WD": "$1,000,000 - $1,999,999", "LAST_REFRESH_DATE": 1795253488000}},
+        {"attributes": {"PROJECT_ID": "1", "CONSTRUCTION_YEAR": "2027", "COUNTY": "BAYFIELD", "ROUTE": "US 002", "TITLE": "A - B", "LIMITS": "X TO Y", "MILES": 2.5, "WORK_CONCEPT": "RESURFACE", "CONGRESSIONAL_DISTRICT_NUMBERS": "7", "CONSTRUCTION_COST_RANGE_WD": "$1,000,000 - $1,999,999", "LAST_REFRESH_DATE": 1795253488000}},
+        {"attributes": {"PROJECT_ID": "2", "CONSTRUCTION_YEAR": "2028", "COUNTY": "WOOD", "ROUTE": "STH 013", "TITLE": "C", "LIMITS": "", "MILES": None, "WORK_CONCEPT": "BRIDGE", "CONGRESSIONAL_DISTRICT_NUMBERS": "3,7", "CONSTRUCTION_COST_RANGE_WD": "$0 - $99,999", "LAST_REFRESH_DATE": None}},
+        {"attributes": {"PROJECT_ID": "3", "CONSTRUCTION_YEAR": "2028", "COUNTY": "DANE", "ROUTE": "X", "TITLE": "D", "LIMITS": "", "MILES": 1, "WORK_CONCEPT": "", "CONGRESSIONAL_DISTRICT_NUMBERS": "2", "CONSTRUCTION_COST_RANGE_WD": None, "LAST_REFRESH_DATE": None}},
+    ]
+    f = FakeFetcher([(r"MapServer/1/query", {"features": feats}), (r"MapServer/1\?", {"name": "Construction Projects (6 Year) ", "fields": fields})])
+    names = {"55031": "Douglas", "55007": "Bayfield", "55141": "Wood"}
+    payload, sources, checks = roads.fetch(f, district, names)
+    assert payload["total"] == {"projects": 2, "cost_low": 1_000_000, "cost_high": 2_099_998}
+    assert payload["projects"][0]["counties"] == ["Douglas", "Bayfield"] and payload["projects"][1]["shared_with_districts"] == [3]
+    assert checks[0]["status"] == "pass" and sources[0].id == "wisdot-six-year"
+    assert roads.cost_range("about $5") is None
+    import pytest
+    bad = FakeFetcher([(r"MapServer/1\?", {"name": "Something else", "fields": fields})])
+    with pytest.raises(ValueError):
+        roads.fetch(bad, district, names)

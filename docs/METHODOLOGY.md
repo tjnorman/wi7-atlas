@@ -106,3 +106,7 @@ Major projects are not in any data file, so they are recorded by hand in `data/c
 ## Listening links
 
 A radio station gets a "Listen online" link only after its broadcaster's own page has been read and found to offer a stream (`data/curated/station_links.yaml`). A missing link means the station has not been checked, not that it has no stream. The `station-links` check confirms that every call sign in the link file is in the FCC records.
+
+## Planned highway construction
+
+Projects come from the Wisconsin Department of Transportation's public map service, layer "Construction Projects (6 Year)". A project is listed when WisDOT's own congressional-district tag includes the district; a project that crosses the line is counted in full and marked. WisDOT publishes construction cost as a range, so the atlas reports a low sum and a high sum and never a single total. Rows that share a project ID are one project. The `wisdot-program` check confirms the layer's name and fields before use and warns if a tagged project sits in a county outside the district's list. The program is a plan, revised as revenue and legislation change.

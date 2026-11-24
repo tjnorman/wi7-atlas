@@ -12,6 +12,9 @@ projects:
       The John A. Blatnik Bridge carries Interstate 535 over St. Louis Bay between Superior and
       Duluth. The Minnesota and Wisconsin transportation departments own it jointly and are
       replacing it on the same alignment. Minnesota leads the project.
+    links:
+      - {label: "Minnesota DOT project page (lead agency)", url: "https://www.dot.state.mn.us/d1/projects/blatnik-bridge/"}
+      - {label: "Wisconsin DOT project page", url: "https://wisconsindot.gov/Pages/projects/by-region/nw/blatnikbridge/default.aspx"}
     facts:
       - {label: Estimated cost, value: "$1.8 billion", note: "Including inflation; estimate published in 2024.", source: wisdot-blatnik-faq}
       - {label: Federal grant, value: "$1.058 billion", note: "Awarded in early 2024 under the federal infrastructure law.", source: wisdot-blatnik-faq}

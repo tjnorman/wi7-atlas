@@ -19,7 +19,7 @@
 [![Tests](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml)
 [![Data refresh](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml)
 [![Deploy to Pages](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml)
-[![Cross-checks](https://img.shields.io/badge/cross--checks-30_of_30_passing-2e7d32)](#-how-every-number-is-checked)
+[![Cross-checks](https://img.shields.io/badge/cross--checks-29_of_29_passing-2e7d32)](#-how-every-number-is-checked)
 [![Sources](https://img.shields.io/badge/primary_sources-15-0071e3)](#-sources)
 [![Data as of](https://img.shields.io/badge/data_as_of-2026--11--24-555)](data/wi-07/manifest.json)
 ![Nonpartisan](https://img.shields.io/badge/nonpartisan-follows_the_seat-555)
@@ -67,7 +67,7 @@ Each figure carries its publisher, the exact query, the data vintage, and the da
 <td width="33%" valign="top">
 
 ### 🔁 Refreshed and re-checked
-A scheduled GitHub Action rebuilds the data each week, runs 30 cross-checks between independent sources, and redraws every chart in this README.
+A scheduled GitHub Action rebuilds the data each week, runs 29 cross-checks between independent sources, and redraws every chart in this README.
 
 </td>
 </tr>
@@ -307,6 +307,8 @@ The district takes in all or part of **607 municipalities**: 51 cities, 90 villa
 
 The John A. Blatnik Bridge carries Interstate 535 over St. Louis Bay between Superior and Duluth. The Minnesota and Wisconsin transportation departments own it jointly and are replacing it on the same alignment. Minnesota leads the project.
 
+Follow the project: [Minnesota DOT project page (lead agency)](https://www.dot.state.mn.us/d1/projects/blatnik-bridge/) · [Wisconsin DOT project page](https://wisconsindot.gov/Pages/projects/by-region/nw/blatnikbridge/default.aspx)
+
 | | | |
 |---|---|---|
 | Estimated cost | **$1.8 billion** | Including inflation; estimate published in 2024. |
@@ -462,24 +464,23 @@ Three rules keep the atlas honest:
 2. **A label check before any Census number is used.** Every Census variable's official label is compared with what the atlas says it means. If a table is renumbered, that measure is dropped and the check fails in public.
 3. **Nothing unofficial without a label and a review date.** Hand-written notes (like a race called by news organizations before certification) carry sources, a verification date, and a review-by date; an overdue note turns the check yellow.
 
-**Latest build: 30 of 30 checks passing**.
+**Latest build: 29 of 29 checks passing**.
 
 | | Check | What was compared |
 |---|---|---|
-| ✅ Pass | Every Census variable means what the atlas says it means | 210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found). |
-| ✅ Pass | IRS variables match their published descriptions | 6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range. |
-| ✅ Pass | IRS income classes add up to the district total | Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells). |
-| ✅ Pass | Wisconsin's districts add up to the state total in the IRS file | Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row). |
-| ✅ Pass | IRS file uses the current district lines | The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress. |
-| ✅ Pass | Wisconsin's districts add up to the state total in the SSA tables | Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%). |
-| ✅ Pass | Wisconsin's districts add up to the state total for SSI | SSI recipients: districts sum to 107,505; state row 107,505. |
-| ✅ Pass | SSA tables use the current district lines | SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th. |
-| ✅ Pass | Two election compilations agree on the same race | 2018 general election: MIT Election Lab has Sean P. Duffy with 194,061 votes; the FEC compilation has Sean P. Duffy with 194,061 votes (tolerance 0.2%). |
-| ✅ Pass | College directory variables match the IPEDS dictionary | 13 of 13 variables confirmed against the 2024 dictionary. |
-| ✅ Pass | IPEDS district codes agree with the district outline | All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does. |
-| ✅ Pass | Every county in the district has municipalities in the district | 607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties. |
-| ✅ Pass | FCC station records have the expected layout | 720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. |
 | ✅ Pass | Listening links point at stations in the FCC records | 10 stations carry a link to their broadcaster's listening page, checked on 2026-11-24. |
+| ✅ Pass | FCC station records have the expected layout | 720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. |
+| ✅ Pass | Every county in the district has municipalities in the district | 607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties. |
+| ✅ Pass | IPEDS district codes agree with the district outline | All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does. |
+| ✅ Pass | College directory variables match the IPEDS dictionary | 13 of 13 variables confirmed against the 2024 dictionary. |
+| ✅ Pass | SSA tables use the current district lines | SSA states that its 2025 tables use district definitions for the 119th Congress; this atlas uses the 119th. |
+| ✅ Pass | Wisconsin's districts add up to the state total for SSI | SSI recipients: districts sum to 107,505; state row 107,505. |
+| ✅ Pass | Wisconsin's districts add up to the state total in the SSA tables | Beneficiaries: 8 districts sum to 1,398,745; state row 1,398,745. Monthly benefits: $2,776,804,000 against $2,776,804,000 (tolerance 1%). |
+| ✅ Pass | IRS file uses the current district lines | The tax year 2023 documentation names the 118th Congress; this atlas uses the 119th. Wisconsin's lines have not changed since the 118th Congress. |
+| ✅ Pass | Wisconsin's districts add up to the state total in the IRS file | Returns: state row 2,944,320; sum of 8 districts 2,944,320 (tolerance 2%; returns the IRS could not place in a district are counted only in the state row). |
+| ✅ Pass | IRS income classes add up to the district total | Total tax liability: published total $3,612,071,000; sum of income classes $3,612,071,000 (tolerance 1%; the IRS rounds and suppresses small cells). |
+| ✅ Pass | IRS variables match their published descriptions | 6 of 6 variables confirmed against the tax year 2023 documentation guide and within plausible range. |
+| ✅ Pass | Every Census variable means what the atlas says it means | 210 of 210 variable labels matched the Census Bureau's official definitions for ACS 2025 1-year and ACS 2024 5-year. Education rows were chosen by label (found). |
 | ✅ Pass | Every project fact names an official source | 13 facts across 1 project(s), each tied to a listed page. Read on 2026-11-24; due for re-reading by 2027-03-15. |
 | ✅ Pass | The district's counties match the recorded list (26 counties: 21 whole, 5 split) | Census relationship file: 26 counties with land in the district, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. Recorded: 26 counties, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. |
 | ✅ Pass | 2020 Census population agrees three ways (district total, sum of county parts, recorded figure) | District total 736,715; sum of county parts 736,715; recorded 736,715. |

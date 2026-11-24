@@ -11,7 +11,7 @@
   "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-24T16:44:53+00:00",
+ "built_at": "2026-11-24T16:51:13+00:00",
  "headline": [
   {
    "id": "population",
@@ -1732,8 +1732,8 @@
   }
  ],
  "integrity": {
-  "total": 30,
-  "pass": 30,
+  "total": 29,
+  "pass": 29,
   "ok": true
  },
  "freshness": {
@@ -1753,7 +1753,7 @@
   "municipalities": "2026-11-24T16:44:48+00:00",
   "broadcast": "2026-11-24T16:44:49+00:00",
   "ssa": "2026-11-24T16:42:42+00:00",
-  "projects": "2026-11-24T16:44:53+00:00"
+  "projects": "2026-11-24T16:51:13+00:00"
  },
  "status": {
   "geography": "ok",

@@ -138,7 +138,7 @@
   },
   "projects": {
    "status": "ok",
-   "updated": "2026-11-24T16:44:53+00:00",
+   "updated": "2026-11-24T16:51:13+00:00",
    "error": null,
    "sources": [
     "mndot-blatnik-2026-10-30",
@@ -149,7 +149,7 @@
  },
  "district": "wi-07",
  "name": "Wisconsin's 7th Congressional District",
- "built_at": "2026-11-24T16:44:53+00:00",
- "requests": 5340,
- "requests_from_cache": 4792
+ "built_at": "2026-11-24T16:51:13+00:00",
+ "requests": 0,
+ "requests_from_cache": 0
 }

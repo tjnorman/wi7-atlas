@@ -10,7 +10,7 @@ const BASE = params.get("data") || "data/";
 const $ = (s, r = document) => r.querySelector(s);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "ssa", "cameras", "colleges", "municipalities", "broadcast", "projects", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
+const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "ssa", "cameras", "colleges", "municipalities", "broadcast", "projects", "roads", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
 const state = { data: {}, counties: [], byFips: new Map(), topo: null, step: "outline" };
 
 async function load() {
@@ -535,6 +535,25 @@ function stationsSection() {
   $("#stations-source").innerHTML = sourceLine(["fcc-queries"], `${F.esc(b.rule || "")} Records as of ${F.longDate(b.as_of)}.${li?.linked ? ` Listening links (${li.linked} stations so far) go to the broadcaster's own page and were checked on ${F.longDate(li.verified_on)}; a station without a link has not been checked yet, which says nothing about whether it streams. ${F.esc((li.groups || []).map((g) => g.note).join(" "))}` : ""}`);
 }
 
+// ---------------------------------------------------------------- planned highway construction
+function roadsSection() {
+  const r = state.data.roads, box = $("#roads");
+  if (!box || !r?.projects?.length) return;
+  box.hidden = false;
+  const money = (v) => F.usd(v, { compact: true });
+  const span = (t) => `${money(t.cost_low)} to ${money(t.cost_high)}`;
+  $("#roads-lede").innerHTML = `The Wisconsin Department of Transportation's six-year program lists <strong>${F.int(r.total.projects)}</strong> projects that touch the district, with construction costs adding up to between <strong>${money(r.total.cost_low)}</strong> and <strong>${money(r.total.cost_high)}</strong>.`;
+  $("#roads-years").innerHTML = r.by_year.map((y) => `<div><b>${F.int(y.projects)}</b><span>${F.esc(y.year)}: ${span(y)}</span></div>`).join("");
+  const sel = $("#roads-county");
+  sel.innerHTML = `<option value="">All counties (${r.total.projects})</option>` + r.by_county.map((c) => `<option value="${F.esc(c.county)}">${F.esc(c.county)} (${c.projects})</option>`).join("");
+  const head = `<thead><tr><th>Year</th><th>County</th><th>Route</th><th>Project</th><th>Work</th><th>Miles</th><th>Construction cost</th></tr></thead>`;
+  const row = (p) => `<tr><td>${F.esc(p.year)}</td><td>${F.esc(p.counties.join(", "))}</td><td>${F.esc(p.route)}</td><td><b>${F.esc(p.title)}</b><br><span class="fine">${F.esc(p.limits)}${p.shared_with_districts.length ? ` · also in district ${p.shared_with_districts.join(", ")}` : ""}</span></td><td>${F.esc(p.work)}</td><td>${p.miles ? F.one(p.miles) : "—"}</td><td>${F.esc(p.cost_text || "Not given")}</td></tr>`;
+  const show = () => { const c = sel.value; $("#roads-table").innerHTML = head + `<tbody>${r.projects.filter((p) => !c || p.counties.includes(c)).map(row).join("")}</tbody>`; };
+  sel.onchange = show;
+  show();
+  $("#roads-source").innerHTML = sourceLine(["wisdot-six-year"], `${F.esc(r.note)} ${r.shared} of these projects also touch another district.${r.unpriced ? ` ${r.unpriced} have no cost range and are left out of the sums.` : ""} WisDOT last refreshed the list on ${F.longDate(r.as_of)}.`);
+}
+
 // ---------------------------------------------------------------- public works (bridge update)
 function projectsSection() {
   const p = state.data.projects, box = $("#projects");
@@ -544,6 +563,7 @@ function projectsSection() {
   $("#projects-list").innerHTML = p.projects.map((x) => `<div class="panel reveal">
     <h3>${F.esc(x.title)}</h3>
     <p class="sub">${F.esc(x.place)}. ${F.esc(x.summary)}</p>
+    ${(x.links || []).length ? `<p class="sub">Follow the project: ${x.links.map((l) => `<a href="${F.esc(l.url)}" target="_blank" rel="noopener">${F.esc(l.label)}</a>`).join(" · ")}</p>` : ""}
     <div class="mini-stats">${x.facts.map((f) => `<div><b>${F.esc(f.value)}</b><span>${F.esc(f.label)}${f.note ? `. ${F.esc(f.note)}` : ""}</span></div>`).join("")}</div>
     <div class="table-wrap"><table><thead><tr><th>When</th><th>What</th></tr></thead><tbody>${x.timeline.map((e) => `<tr><td>${F.esc(e.date)}</td><td>${F.esc(e.text)}</td></tr>`).join("")}</tbody></table></div>
     <p class="fine">${sourceLine(x.sources, "Each figure and date is the agency's own published plan. The next reading of these pages is due by " + F.longDate(p.review_by) + ".")}</p>
@@ -1015,6 +1035,7 @@ async function film() {
   dollars();
   collegesSection();
   stationsSection();
+  roadsSection();
   projectsSection();
   liveNow();
   seat();

@@ -233,12 +233,26 @@ def stations_block(b: dict | None, m: dict | None) -> str:
     return out
 
 
+def roads_block(r: dict | None) -> str:
+    if not r or not r.get("projects"):
+        return ""
+    m = lambda v: f"${v / 1e6:,.0f} million" if v < 1e9 else f"${v / 1e9:,.2f} billion"
+    rows = "\n".join(f"| {y['year']} | {y['projects']} | {m(y['cost_low'])} to {m(y['cost_high'])} |" for y in r["by_year"])
+    return (f"\n## 🚧 Planned highway construction\n\nThe Wisconsin Department of Transportation's six-year program lists "
+            f"**{r['total']['projects']} projects** that touch the district, with construction costs between "
+            f"**{m(r['total']['cost_low'])}** and **{m(r['total']['cost_high'])}**.\n\n| Construction year | Projects | Cost range |\n|---|---:|---|\n{rows}\n\n"
+            f"Every project, with route, limits, and cost range, is in [`data/wi-07/roads.json`](data/wi-07/roads.json).\n\n"
+            f"<sub>Source: WisDOT, Construction Projects (6 Year), refreshed {r['as_of']}. {r['note']}</sub>\n")
+
+
 def projects_block(p: dict | None) -> str:
     out = ""
     for x in (p or {}).get("projects", []):
         facts = "\n".join(f"| {f['label']} | **{f['value']}** | {f.get('note') or ''} |" for f in x["facts"])
         when = "\n".join(f"| {e['date']} | {e['text']} |" for e in x["timeline"])
-        out += (f"\n## 🌉 Bridge update: {x['title']}\n\n{x['summary']}\n\n| | | |\n|---|---|---|\n{facts}\n\n"
+        out += (f"\n## 🌉 Bridge update: {x['title']}\n\n{x['summary']}\n\n"
+                + (("Follow the project: " + " · ".join(f"[{l['label']}]({l['url']})" for l in x.get("links") or []) + "\n\n") if x.get("links") else "")
+                + f"| | | |\n|---|---|---|\n{facts}\n\n"
                 f"| When | What |\n|---|---|\n{when}\n\n<sub>Source: the Minnesota and Wisconsin transportation departments' own "
                 f"project pages and releases, read {p['verified_on']}; listed under Sources. {p.get('note', '')}</sub>\n")
     return out
@@ -472,7 +486,7 @@ def render(d: District) -> str:
         "work_text": work_text(acs, summary),
         "federal_text": fed_text,
         "colleges_block": colleges_block(_data(_load(d, "colleges"))),
-        "stations_block": stations_block(_data(_load(d, "broadcast")), _data(_load(d, "municipalities"))) + projects_block(_data(_load(d, "projects"))),
+        "stations_block": stations_block(_data(_load(d, "broadcast")), _data(_load(d, "municipalities"))) + roads_block(_data(_load(d, "roads"))) + projects_block(_data(_load(d, "projects"))),
         "taxes_text": ssa_text(_data(_load(d, "ssa"))) + taxes_text(_data(_load(d, "irs")), d.state_name),
         "agencies_table": agencies,
         "representation_text": representation_text(leg, summary),
