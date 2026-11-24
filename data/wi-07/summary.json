@@ -10,7 +10,7 @@
   "repo": "tjnorman/wi7-atlas",
   "congress": 119
  },
- "built_at": "2026-11-24T05:00:51+00:00",
+ "built_at": "2026-11-24T05:16:32+00:00",
  "headline": [
   {
    "id": "population",
@@ -1457,6 +1457,19 @@
    "apa": "Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes"
   },
   {
+   "id": "open-eagle-eye",
+   "publisher": "Open Eagle Eye (stuchapin909)",
+   "title": "Public camera registry",
+   "url": "https://github.com/stuchapin909/Open-Eagle-Eye",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://raw.githubusercontent.com/stuchapin909/Open-Eagle-Eye/master/cameras.json",
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": "A volunteer-maintained list of public still-image cameras, published under the MIT licence. The atlas keeps name, position, and address only. Images belong to the agency that runs each camera and load from that agency. The registry does not list every camera an agency operates.",
+   "apa": "Open Eagle Eye (stuchapin909). (2026). Public camera registry [Data set]. Retrieved November 24, 2026, from https://github.com/stuchapin909/Open-Eagle-Eye"
+  },
+  {
    "id": "congress-legislators",
    "publisher": "The @unitedstates project",
    "title": "congress-legislators: Members of the United States Congress, 1789 to present",
@@ -1619,17 +1632,18 @@
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-24T04:55:16+00:00",
-  "legislators": "2026-11-24T04:55:22+00:00",
-  "acs": "2026-11-24T04:55:29+00:00",
-  "pep": "2026-11-24T04:56:26+00:00",
-  "laus": "2026-11-24T04:56:27+00:00",
-  "qcew": "2026-11-24T04:56:29+00:00",
-  "usaspending": "2026-11-24T04:56:39+00:00",
-  "elections": "2026-11-24T04:56:43+00:00",
-  "fec": "2026-11-24T04:56:45+00:00",
-  "votes": "2026-11-24T04:56:47+00:00",
-  "irs": "2026-11-24T04:56:41+00:00"
+  "geography": "2026-11-24T05:11:00+00:00",
+  "legislators": "2026-11-24T05:11:05+00:00",
+  "acs": "2026-11-24T05:11:13+00:00",
+  "pep": "2026-11-24T05:12:13+00:00",
+  "laus": "2026-11-24T05:12:14+00:00",
+  "qcew": "2026-11-24T05:12:16+00:00",
+  "usaspending": "2026-11-24T05:12:27+00:00",
+  "elections": "2026-11-24T05:12:31+00:00",
+  "fec": "2026-11-24T05:12:33+00:00",
+  "votes": "2026-11-24T05:12:35+00:00",
+  "irs": "2026-11-24T05:12:29+00:00",
+  "cameras": "2026-11-24T05:16:31+00:00"
  },
  "status": {
   "geography": "ok",
@@ -1642,6 +1656,7 @@
   "elections": "ok",
   "fec": "ok",
   "votes": "ok",
-  "irs": "ok"
+  "irs": "ok",
+  "cameras": "ok"
  }
 }

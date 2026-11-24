@@ -1,0 +1,100 @@
+{
+ "generated_at": "2026-11-24T05:16:32+00:00",
+ "sources": [
+  {
+   "id": "open-eagle-eye",
+   "publisher": "Open Eagle Eye (stuchapin909)",
+   "title": "Public camera registry",
+   "url": "https://github.com/stuchapin909/Open-Eagle-Eye",
+   "year": "2026",
+   "kind": "Data set",
+   "query": "https://raw.githubusercontent.com/stuchapin909/Open-Eagle-Eye/master/cameras.json",
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": "A volunteer-maintained list of public still-image cameras, published under the MIT licence. The atlas keeps name, position, and address only. Images belong to the agency that runs each camera and load from that agency. The registry does not list every camera an agency operates.",
+   "apa": "Open Eagle Eye (stuchapin909). (2026). Public camera registry [Data set]. Retrieved November 24, 2026, from https://github.com/stuchapin909/Open-Eagle-Eye"
+  }
+ ],
+ "district": "wi-07",
+ "source_module": "cameras",
+ "data": {
+  "count": 6,
+  "registry_total": 30736,
+  "rejected_inside_district": {},
+  "cameras": [
+   {
+    "id": "us-minnesota-mndot-C535-168",
+    "name": "I-535 EB (Blatnik Approach)",
+    "lat": 46.73352,
+    "lon": -92.09736,
+    "image_url": "https://public.carsprogram.org/cameras/MN/C535-168",
+    "kind": "highway",
+    "county_fips": "031",
+    "county": "Douglas",
+    "host": "public.carsprogram.org",
+    "operator": "State transportation department (CARS program)"
+   },
+   {
+    "id": "us-minnesota-mndot-C535-160",
+    "name": "I-535 SB (Blatnik Approach)",
+    "lat": 46.73459,
+    "lon": -92.0973,
+    "image_url": "https://public.carsprogram.org/cameras/MN/C535-160",
+    "kind": "highway",
+    "county_fips": "031",
+    "county": "Douglas",
+    "host": "public.carsprogram.org",
+    "operator": "State transportation department (CARS program)"
+   },
+   {
+    "id": "wi-437",
+    "name": "I-39/US 51 at WIS 29E",
+    "lat": 44.89487,
+    "lon": -89.6393,
+    "image_url": "https://511wi.gov/map/Cctv/1373",
+    "kind": "highway",
+    "county_fips": "073",
+    "county": "Marathon",
+    "host": "511wi.gov",
+    "operator": "Wisconsin Department of Transportation (511 Wisconsin)"
+   },
+   {
+    "id": "wi-447",
+    "name": "US 51 at County K",
+    "lat": 44.99035,
+    "lon": -89.65626,
+    "image_url": "https://511wi.gov/map/Cctv/1383",
+    "kind": "highway",
+    "county_fips": "073",
+    "county": "Marathon",
+    "host": "511wi.gov",
+    "operator": "Wisconsin Department of Transportation (511 Wisconsin)"
+   },
+   {
+    "id": "us-minnesota-mndot-C870",
+    "name": "I-94 EB @ Heggen St",
+    "lat": 44.96267,
+    "lon": -92.74365,
+    "image_url": "https://public.carsprogram.org/cameras/MN/C870",
+    "kind": "highway",
+    "county_fips": "109",
+    "county": "St. Croix",
+    "host": "public.carsprogram.org",
+    "operator": "State transportation department (CARS program)"
+   },
+   {
+    "id": "us-minnesota-mndot-C871",
+    "name": "I-94 WB @ Carmichael Rd",
+    "lat": 44.96394,
+    "lon": -92.721,
+    "image_url": "https://public.carsprogram.org/cameras/MN/C871",
+    "kind": "highway",
+    "county_fips": "109",
+    "county": "St. Croix",
+    "host": "public.carsprogram.org",
+    "operator": "State transportation department (CARS program)"
+   }
+  ],
+  "boundary_note": "Cameras are placed with the simplified district outline, so one that sits on the line may be counted on either side."
+ }
+}

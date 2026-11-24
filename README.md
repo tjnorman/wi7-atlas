@@ -20,7 +20,7 @@
 [![Data refresh](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml)
 [![Deploy to Pages](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml)
 [![Cross-checks](https://img.shields.io/badge/cross--checks-21_of_21_passing-2e7d32)](#-how-every-number-is-checked)
-[![Sources](https://img.shields.io/badge/primary_sources-8-0071e3)](#-sources)
+[![Sources](https://img.shields.io/badge/primary_sources-9-0071e3)](#-sources)
 [![Data as of](https://img.shields.io/badge/data_as_of-2026--11--23-555)](data/wi-07/manifest.json)
 ![Nonpartisan](https://img.shields.io/badge/nonpartisan-follows_the_seat-555)
 [![License: MIT](https://img.shields.io/badge/code-MIT-1f4e9c)](LICENSE)
@@ -294,7 +294,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T04:56:26+00:00",
+  "generated_at": "2026-11-24T05:12:13+00:00",
   "sources": [
     {
       "id": "acs1",
@@ -381,6 +381,7 @@ tests/                 pytest unit tests and Playwright site checks
 - MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns
 - Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml
 - Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 119th Congress [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes
+- Open Eagle Eye (stuchapin909). (2026). Public camera registry [Data set]. Retrieved November 24, 2026, from https://github.com/stuchapin909/Open-Eagle-Eye
 - The @unitedstates project. (2026). congress-legislators: Members of the United States Congress, 1789 to present [Data set]. Retrieved November 24, 2026, from https://github.com/unitedstates/congress-legislators
 - U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/lau/
 - U.S. Bureau of Labor Statistics. (2026). Quarterly Census of Employment and Wages: 2025 annual averages by county [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/cew/

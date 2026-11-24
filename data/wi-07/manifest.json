@@ -2,7 +2,7 @@
  "sources": {
   "geography": {
    "status": "ok",
-   "updated": "2026-11-24T04:55:16+00:00",
+   "updated": "2026-11-24T05:11:00+00:00",
    "error": null,
    "sources": [
     "census-cb",
@@ -14,7 +14,7 @@
   },
   "legislators": {
    "status": "ok",
-   "updated": "2026-11-24T04:55:22+00:00",
+   "updated": "2026-11-24T05:11:05+00:00",
    "error": null,
    "sources": [
     "congress-legislators",
@@ -23,7 +23,7 @@
   },
   "acs": {
    "status": "ok",
-   "updated": "2026-11-24T04:55:29+00:00",
+   "updated": "2026-11-24T05:11:13+00:00",
    "error": null,
    "sources": [
     "acs1",
@@ -32,7 +32,7 @@
   },
   "pep": {
    "status": "ok",
-   "updated": "2026-11-24T04:56:26+00:00",
+   "updated": "2026-11-24T05:12:13+00:00",
    "error": null,
    "sources": [
     "pep"
@@ -40,7 +40,7 @@
   },
   "laus": {
    "status": "ok",
-   "updated": "2026-11-24T04:56:27+00:00",
+   "updated": "2026-11-24T05:12:14+00:00",
    "error": null,
    "sources": [
     "bls-laus"
@@ -48,7 +48,7 @@
   },
   "qcew": {
    "status": "ok",
-   "updated": "2026-11-24T04:56:29+00:00",
+   "updated": "2026-11-24T05:12:16+00:00",
    "error": null,
    "sources": [
     "bls-qcew"
@@ -56,7 +56,7 @@
   },
   "usaspending": {
    "status": "ok",
-   "updated": "2026-11-24T04:56:39+00:00",
+   "updated": "2026-11-24T05:12:27+00:00",
    "error": null,
    "sources": [
     "usaspending"
@@ -64,7 +64,7 @@
   },
   "elections": {
    "status": "ok",
-   "updated": "2026-11-24T04:56:43+00:00",
+   "updated": "2026-11-24T05:12:31+00:00",
    "error": null,
    "sources": [
     "medsl-house",
@@ -73,7 +73,7 @@
   },
   "fec": {
    "status": "ok",
-   "updated": "2026-11-24T04:56:45+00:00",
+   "updated": "2026-11-24T05:12:33+00:00",
    "error": null,
    "sources": [
     "fec"
@@ -81,7 +81,7 @@
   },
   "votes": {
    "status": "ok",
-   "updated": "2026-11-24T04:56:47+00:00",
+   "updated": "2026-11-24T05:12:35+00:00",
    "error": null,
    "sources": [
     "clerk-votes"
@@ -89,16 +89,24 @@
   },
   "irs": {
    "status": "ok",
-   "updated": "2026-11-24T04:56:41+00:00",
+   "updated": "2026-11-24T05:12:29+00:00",
    "error": null,
    "sources": [
     "irs-soi-cd"
+   ]
+  },
+  "cameras": {
+   "status": "ok",
+   "updated": "2026-11-24T05:16:31+00:00",
+   "error": null,
+   "sources": [
+    "open-eagle-eye"
    ]
   }
  },
  "district": "wi-07",
  "name": "Wisconsin's 7th Congressional District",
- "built_at": "2026-11-24T05:00:51+00:00",
- "requests": 905,
+ "built_at": "2026-11-24T05:16:32+00:00",
+ "requests": 906,
  "requests_from_cache": 0
 }
