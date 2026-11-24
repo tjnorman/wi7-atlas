@@ -353,3 +353,85 @@ def test_gazetteer_year_comes_from_the_file_downloaded():
     assert gazetteer_year(url) == "2024"
     assert gazetteer_year(None) is None
     assert gazetteer_year("https://example.com/no-year.zip") is None
+
+
+# ---------------------------------------------------------------- IRS income tax by district
+def _irs_docx(rows, text="Money amounts are reported in thousands of dollars. Districts are those of the 118th Congress."):
+    import io
+    import zipfile
+
+    ns = 'xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"'
+    cell = lambda t: f"<w:tc><w:p><w:r><w:t>{t}</w:t></w:r></w:p></w:tc>"
+    table = "".join("<w:tr>" + "".join(cell(c) for c in r) + "</w:tr>" for r in rows)
+    doc = f'<w:document {ns}><w:body><w:p><w:r><w:t>{text}</w:t></w:r></w:p><w:tbl>{table}</w:tbl></w:body></w:document>'
+    core = ('<cp:coreProperties xmlns:cp="x" xmlns:dcterms="http://purl.org/dc/terms/">'
+            '<dcterms:modified xsi:type="dcterms:W3CDTF" xmlns:xsi="y">2026-10-20T12:00:00Z</dcterms:modified></cp:coreProperties>')
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as z:
+        z.writestr("word/document.xml", doc)
+        z.writestr("docProps/core.xml", core)
+    return buf.getvalue()
+
+
+IRS_DOC_ROWS = [
+    ["N1", "Number of returns", "", "Num"],
+    ["A00100", "Adjust gross income (AGI) [8]", "1040:11", "Num"],
+    ["A10300", "Total tax liability amount [13]", "", "Num"],
+    ["A06500", "Income tax after credits amount", "", "Num"],
+    ["A59660", "Earned income credit amount [12]", "", "Num"],
+    ["A11902", "Overpayments refunded amount [15]", "", "Num"],
+    ["A11901", "Tax due at time of filing amount [14]", "", "Num"],
+]
+IRS_CSV = "\n".join([
+    "STATEFIPS,STATE,CONG_DISTRICT,agi_stub,N1,A00100,A10300,A06500,A59660,A11902,A11901",
+    "55,WI,0,0,3000,240000,30000,28000,900,6000,3000",
+    "55,WI,7,0,400,28000,3000,2800,120,800,400",
+    "55,WI,7,1,300,12000,600,500,120,600,100",
+    "55,WI,7,2,100,16000,2400,2300,0,200,300",
+    "55,WI,8,0,2590,212000,27000,25200,780,5200,2600",
+    "27,MN,0,0,1000,100000,15000,14000,100,2000,1500",
+    "27,MN,1,0,1000,100000,15000,14000,100,2000,1500",
+])
+
+
+def _irs_fetcher(doc_rows=IRS_DOC_ROWS, csv_text=IRS_CSV, **kw):
+    from datetime import datetime, timezone
+
+    from conftest import FakeFetcher
+
+    y = str(datetime.now(timezone.utc).year - 1)[2:]
+    return FakeFetcher([(rf"{y}incd\.csv", csv_text), (rf"{y}incddocguide", _irs_docx(doc_rows, **kw))])
+
+
+def test_irs_totals_ratios_and_checks(district):
+    from pipeline.sources import irs
+
+    payload, sources, checks = irs.fetch(_irs_fetcher(), district)
+    d = payload["district"]
+    assert d["returns"] == 400 and d["total_tax_liability"] == 3_000_000 and d["agi"] == 28_000_000
+    assert round(d["tax_per_return"]) == 7500 and round(d["tax_share_of_agi_pct"], 2) == 10.71
+    assert payload["state"]["returns"] == 3000
+    assert payload["us"]["returns"] == 4000  # Wisconsin and Minnesota state rows; districts not double counted
+    status = {c["id"]: c["status"] for c in checks}
+    assert status == {"irs-labels": "pass", "irs-classes-sum": "pass", "irs-state-sum": "pass", "irs-district-lines": "pass"}
+    assert sources[0].year == "2026" and "not all federal tax" in sources[0].notes
+
+
+def test_irs_refuses_a_variable_whose_description_changed(district):
+    from pipeline.sources import irs
+
+    moved = [r if r[0] != "A10300" else ["A10300", "Something else entirely"] for r in IRS_DOC_ROWS]
+    with pytest.raises(ValueError, match="A10300"):
+        irs.fetch(_irs_fetcher(doc_rows=moved), district)
+    # An optional variable that fails is dropped and reported, and the rest still publishes.
+    optional = [r if r[0] != "A59660" else ["A59660", "Renamed credit"] for r in IRS_DOC_ROWS]
+    payload, _, checks = irs.fetch(_irs_fetcher(doc_rows=optional), district)
+    assert "earned_income_credit" not in payload["district"]
+    assert next(c for c in checks if c["id"] == "irs-labels")["status"] == "warn"
+
+
+def test_irs_needs_units_stated(district):
+    from pipeline.sources import irs
+
+    with pytest.raises(ValueError, match="thousands"):
+        irs.fetch(_irs_fetcher(text="No units here."), district)

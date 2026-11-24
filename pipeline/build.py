@@ -15,9 +15,9 @@ from . import checks as checks_mod
 from .config import DATA_ROOT, ROOT, District
 from .http import Fetcher
 from .provenance import dataset
-from .sources import acs, elections, fec, geography, laus, legislators, pep, qcew, usaspending, votes
+from .sources import acs, elections, fec, geography, irs, laus, legislators, pep, qcew, usaspending, votes
 
-ORDER = ["geography", "legislators", "acs", "pep", "laus", "qcew", "usaspending", "elections", "fec", "votes"]
+ORDER = ["geography", "legislators", "acs", "pep", "laus", "qcew", "usaspending", "irs", "elections", "fec", "votes"]
 
 
 def data_dir(d: District) -> pathlib.Path:
@@ -71,6 +71,7 @@ def run(d: District, only: list[str] | None = None) -> dict:
         "laus": lambda: laus.fetch(f, d, counties_fips()),
         "qcew": lambda: qcew.fetch(f, d, counties_fips()),
         "usaspending": lambda: usaspending.fetch(f, d, counties_fips()),
+        "irs": lambda: irs.fetch(f, d),
         "elections": lambda: elections.fetch(f, d),
         "fec": lambda: fec.fetch(f, d),
         "votes": lambda: votes.fetch(f, d, (data.get("legislators") or {}).get("data", {}).get("terms", [])),
@@ -106,7 +107,9 @@ def run(d: District, only: list[str] | None = None) -> dict:
     previous = load_json(out / "integrity.json") or {}
     run_ids = {c["id"] for c in results}
     for c in previous.get("checks", []):
-        if c["id"] not in run_ids and c["id"] == "acs-labels" and only and "acs" not in only:
+        kept = (c["id"] == "acs-labels" and "acs" not in (only or [])) or \
+               (c["id"].startswith("irs-") and "irs" not in (only or []))
+        if c["id"] not in run_ids and only and kept:
             results.insert(0, c)
     integrity = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                  "summary": checks_mod.summarize(results), "checks": results}

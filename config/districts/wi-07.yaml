@@ -45,6 +45,10 @@ expectations:
   # three Census products (boundary file, relationship file, Gazetteer), which all
   # report about 23,111 sq mi of land for the 119th Congress district.
   land_area_sq_mi: 23111
+  # Wisconsin's congressional map took effect for the 2022 election (118th Congress)
+  # and is unchanged for the 119th. Used to judge sources that still label districts
+  # by the 118th Congress.
+  lines_unchanged_since_congress: 118
 
 # Comparison geographies shown beside the district.
 comparisons:

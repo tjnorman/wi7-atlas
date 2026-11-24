@@ -29,6 +29,16 @@ County populations since 2020 come from the Census Bureau's **Population Estimat
 
 Award obligations come from **USAspending.gov**, filtered by place of performance in the district under current lines. Obligations are commitments to spend and agencies revise them. Payments reported only at the county or state level, such as many benefits paid to individuals, are not included in district totals. County totals describe whole counties.
 
+## Federal income tax
+
+The IRS Statistics of Income Division publishes totals from individual income tax returns (Form 1040) by congressional district. The atlas reports the district's number of returns, adjusted gross income, and total tax liability for the most recent tax year, with the same figures per return for the state and the United States (the sum of the 50 states and the District of Columbia).
+
+- **This is not all federal tax.** Employer payroll taxes, corporate income tax, excise taxes, and estate and gift taxes are not published by congressional district. The atlas does not estimate them.
+- **It is not a balance against federal awards.** The tax figure covers one tax year of individual returns; the award figures cover federal fiscal years and only awards reported by place of performance. The atlas shows both and does not subtract one from the other.
+- The IRS places returns in districts by the ZIP code on the return, so a small share of returns near district lines may be assigned to a neighboring district.
+- The IRS file has no labels. Before a variable is used, its description in the IRS documentation guide for that tax year must contain the expected words (for example, "total tax liability"). A variable that does not match is not published, and the build reports it.
+- Checks: the income classes must add up to the published district total; the state's districts are compared with the state row; and the Congress named in the IRS documentation is compared with the atlas's district lines.
+
 ## The seat
 
 - **Members** come from the public-domain [congress-legislators](https://github.com/unitedstates/congress-legislators) dataset and are cross-checked with the Clerk of the House's member data.

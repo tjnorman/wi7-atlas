@@ -36,6 +36,7 @@ def build(d: District, data: dict, integrity: dict, notes: list[dict], manifest:
     geo, acs, pep, laus = (_d(data.get(k)) for k in ("geography", "acs", "pep", "laus"))
     qcew, usa, leg, ele = (_d(data.get(k)) for k in ("qcew", "usaspending", "legislators", "elections"))
     fec, votes = _d(data.get("fec")), _d(data.get("votes"))
+    irs = _d(data.get("irs"))
 
     headline = []
 
@@ -70,6 +71,11 @@ def build(d: District, data: dict, integrity: dict, notes: list[dict], manifest:
         if last:
             add("federal", f"Federal awards, FY{last['fy']}", last["total"], money(last["total"]), "usaspending",
                 "Obligations by place of performance")
+
+    if irs and (irs.get("district") or {}).get("total_tax_liability"):
+        add("income_tax", f"Federal individual income tax, {irs['tax_year']}", irs["district"]["total_tax_liability"],
+            money(irs["district"]["total_tax_liability"]), "irs-soi-cd",
+            "Total tax liability on individual returns; not all federal taxes")
 
     counties = []
     for c in (geo or {}).get("counties", []):

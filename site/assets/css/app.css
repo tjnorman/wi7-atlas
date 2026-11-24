@@ -352,3 +352,8 @@ td.num, th.num { text-align: right; }
 /* Film mode: a clean frame for recording the tour video. */
 .film .nav, .film .scroll-cue { opacity: 0; pointer-events: none; }
 .film ::-webkit-scrollbar { display: none; }
+
+/* ---------- compact figures inside a panel ---------- */
+.mini-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 18px 24px; margin: 18px 0 22px; }
+.mini-stats b { display: block; font-size: 24px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.mini-stats span { color: var(--ink-2); font-size: 13px; }

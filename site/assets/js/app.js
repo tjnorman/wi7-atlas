@@ -10,11 +10,16 @@ const BASE = params.get("data") || "data/";
 const $ = (s, r = document) => r.querySelector(s);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
+const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
 const state = { data: {}, counties: [], byFips: new Map(), topo: null, step: "outline" };
 
 async function load() {
-  const res = await Promise.all(FILES.map((f) => fetch(`${BASE}${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null)));
+  const get = (f) => fetch(`${BASE}${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const summary = await get("summary");
+  const META = ["summary", "integrity", "notes", "manifest"];
+  // Ask only for datasets the last build says exist, so a source that has never built is not requested.
+  const built = (f) => META.includes(f) || (summary?.status?.[f] && summary.status[f] !== "missing");
+  const res = await Promise.all(FILES.map((f) => (f === "summary" ? summary : built(f) ? get(f) : null)));
   FILES.forEach((f, i) => (state.data[f] = res[i] ? (res[i].data !== undefined && f !== "summary" && f !== "integrity" && f !== "notes" && f !== "manifest" ? res[i].data : res[i]) : null));
   state.raw = Object.fromEntries(FILES.map((f, i) => [f, res[i]]));
   state.topo = await fetch(`${BASE}geo/district.topo.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -483,6 +488,21 @@ function payChart() {
   $("#pay-source").innerHTML = sourceLine(["bls-qcew"], `${q.year} annual averages, whole counties, all ownerships. Lighter bars are split counties.`);
 }
 
+// ---------------------------------------------------------------- federal income tax
+function taxes() {
+  const t = state.data.irs, box = $("#taxes");
+  const d = t?.district;
+  if (!box || !d?.total_tax_liability) return;
+  box.hidden = false;
+  $("#taxes-title").textContent = `What residents paid in federal income tax, ${t.tax_year}`;
+  $("#taxes-lede").innerHTML = `On ${F.int(d.returns)} individual returns for tax year ${t.tax_year}, people living in the district reported a total federal tax liability of <strong>${F.usd(d.total_tax_liability)}</strong>, or ${F.pct(d.tax_share_of_agi_pct)} of their adjusted gross income.`;
+  const stat = (label, value) => `<div><b>${value}</b><span>${label}</span></div>`;
+  $("#taxes-stats").innerHTML = stat("Returns filed", F.int(d.returns)) + stat("Adjusted gross income", F.usd(d.agi, { compact: true })) + stat("Tax per return", F.usd(d.tax_per_return)) + (d.earned_income_credit != null ? stat("Earned income credit claimed", F.usd(d.earned_income_credit, { compact: true })) : "");
+  const rows = [["The district", d], [state.data.summary?.district?.state_name || "State", t.state], ["United States", t.us]].filter((r) => r[1]);
+  $("#taxes-table").innerHTML = `<thead><tr><th>Per return</th><th class="num">Adjusted gross income</th><th class="num">Federal income tax</th><th class="num">Tax as a share of income</th></tr></thead><tbody>${rows.map(([n, r]) => `<tr><td>${F.esc(n)}</td><td class="num">${F.usd(r.agi_per_return)}</td><td class="num">${F.usd(r.tax_per_return)}</td><td class="num">${F.pct(r.tax_share_of_agi_pct)}</td></tr>`).join("")}</tbody>`;
+  $("#taxes-source").innerHTML = sourceLine(["irs-soi-cd"], `Individual income tax returns only. Payroll taxes paid by employers, corporate income tax, excise taxes, and estate taxes are not published by congressional district, so this is not the district's total federal tax. Tax year ${t.tax_year} and the award fiscal years above cover different periods and different things, so the two are not a balance sheet.`);
+}
+
 // ---------------------------------------------------------------- federal dollars
 function dollars() {
   const u = state.data.usaspending;
@@ -514,6 +534,7 @@ function dollars() {
   $("#programs-title").textContent = `Top programs, FY${u.last_complete_fy}`;
   rank("#agencies", u.top_agencies);
   rank("#programs", u.top_programs);
+  taxes();
 }
 
 function rank(sel, rows) {

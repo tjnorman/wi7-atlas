@@ -195,6 +195,24 @@ def work_text(acs: dict | None, summary: dict) -> str:
     return " ".join(out)
 
 
+def taxes_text(irs: dict | None, state_name: str = "State") -> str:
+    d = (irs or {}).get("district") or {}
+    if not d.get("total_tax_liability"):
+        return ""
+    y = irs["tax_year"]
+    rows = [("The district", d), (state_name, irs.get("state")), ("United States", irs.get("us"))]
+    table = "\n".join(f"| {n} | {money(r['agi_per_return'])} | {money(r['tax_per_return'])} | {r['tax_share_of_agi_pct']:.1f}% |"
+                      for n, r in rows if r)
+    return (f"### What residents pay in federal income tax\n\n"
+            f"On {d['returns']:,.0f} individual returns for tax year {y}, people living in the district reported a total "
+            f"federal tax liability of **{money(d['total_tax_liability'])}**, or {d['tax_share_of_agi_pct']:.1f}% of their "
+            f"adjusted gross income.\n\n| Per return, tax year {y} | Adjusted gross income | Federal income tax | Tax as a share of income |\n"
+            f"|---|---:|---:|---:|\n{table}\n\n"
+            f"<sub>Source: IRS Statistics of Income, congressional district data. Individual income tax returns only. "
+            f"Employer payroll taxes, corporate income tax, excise taxes, and estate taxes are not published by congressional "
+            f"district, so this is not the district's total federal tax, and it is not a balance against the awards above.</sub>")
+
+
 def federal_text(usa: dict | None) -> tuple[str, str]:
     if not usa or not usa.get("years"):
         return "", ""
@@ -372,6 +390,7 @@ def render(d: District) -> str:
         "people_text": people_text(acs),
         "work_text": work_text(acs, summary),
         "federal_text": fed_text,
+        "taxes_text": taxes_text(_data(_load(d, "irs")), d.state_name),
         "agencies_table": agencies,
         "representation_text": representation_text(leg, summary),
         "notes_block": notes_block(notes),

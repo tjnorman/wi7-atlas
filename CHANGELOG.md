@@ -2,6 +2,12 @@
 
 All notable changes to the WI-7 Atlas. Corrections to data or wording are listed under **Corrections**.
 
+## 1.1.0 — 2026-11-23
+
+### Added
+- Federal individual income tax by district, from IRS Statistics of Income congressional district data: returns, adjusted gross income, total tax liability, and per-return comparisons with the state and the United States. Variables are confirmed against the IRS documentation guide before use. The site and README state what the figure leaves out.
+- The website now requests only the datasets the latest build produced.
+
 ## 1.0.0 — 2026-11-20
 
 ### Added
