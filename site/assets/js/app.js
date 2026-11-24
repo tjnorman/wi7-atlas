@@ -502,7 +502,9 @@ function collegesSection() {
       <p class="where">${F.esc([i.city, i.county ? `${i.county} County` : ""].filter(Boolean).join(" · "))}</p>
       <p class="tags">${[i.control, i.level, i.size && !/not/i.test(i.size) ? `${i.size} students` : ""].filter(Boolean).map((t) => `<span>${F.esc(t)}</span>`).join("")}</p>
       ${i.website ? `<p class="site"><a href="${F.esc(i.website)}" target="_blank" rel="noopener">${F.esc(host(i.website))}</a></p>` : ""}</article>`).join("");
-  $("#colleges-source").innerHTML = sourceLine(["nces-ipeds-hd"], `Directory year ${c.directory_year}. ${F.esc(c.coverage_note || "")}`);
+  const changed = (c.institutions || []).filter((i) => !i.active && i.status_note);
+  const notes = changed.map((i) => `<strong>${F.esc(i.name)}</strong> (${F.esc(i.city || "")}) is in the ${c.directory_year} directory but is not counted above. ${F.esc(i.status_note)} ${srcChip(i.status_source, "Source")}`).join(" ");
+  $("#colleges-source").innerHTML = sourceLine(["nces-ipeds-hd"], `Directory year ${c.directory_year}. ${F.esc(c.coverage_note || "")}`) + (notes ? `<br>${notes}` : "");
 }
 
 // ---------------------------------------------------------------- radio and television

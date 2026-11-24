@@ -205,7 +205,10 @@ def colleges_block(col: dict | None) -> str:
     return (f"## 🎓 Colleges and universities\n\n{len(rows)} colleges, universities, and career schools have their main "
             f"address in the district.\n\n| Institution | City | County | Control | Level |\n|---|---|---|---|---|\n{table}\n\n"
             f"<sub>Source: National Center for Education Statistics, IPEDS directory file HD{col['directory_year']}. "
-            f"{col.get('coverage_note', '')}</sub>\n")
+            f"{col.get('coverage_note', '')}"
+            + "".join(f" {i['name']} ({i.get('city') or ''}) is in the directory but is not counted: {i['status_note']}"
+                      for i in col.get("institutions", []) if not i.get("active") and i.get("status_note"))
+            + "</sub>\n")
 
 
 def stations_block(b: dict | None, m: dict | None) -> str:

@@ -11,8 +11,8 @@ status:
     verified_on: 2026-11-23
     source:
       id: northland-closure
-      label: Northland College, closure announcement
-      apa: >-
-        Northland College. (2025, February 19). Northland College Board of Trustees votes to
-        close the college at end of academic year. https://www.northland.edu/closure
+      publisher: Northland College
+      title: Northland College Board of Trustees votes to close the college at end of academic year
+      year: 2025
+      kind: Press release
       url: https://www.northland.edu/closure

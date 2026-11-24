@@ -169,9 +169,9 @@ def fetch(fetcher: Fetcher, d: District, shape_path: pathlib.Path) -> tuple[dict
                 c["status_note"] = " ".join(str(st.get("note", "")).split())
                 c["status_source"] = st["source"]["id"]
                 c["status_verified_on"] = str(st.get("verified_on", ""))
-                extra_sources.append(Source(id=st["source"]["id"], publisher=st["source"]["label"].split(",")[0],
-                                            title=st["source"]["label"], url=st["source"]["url"], year="2025",
-                                            apa_override=" ".join(st["source"]["apa"].split())))
+                src_ = st["source"]
+                extra_sources.append(Source(id=src_["id"], publisher=src_["publisher"], title=src_["title"],
+                                            url=src_["url"], year=str(src_["year"]), kind=src_.get("kind", "Press release")))
     rows.sort(key=lambda c: (not c["active"], c["name"]))
     checks = [
         {"id": "ipeds-labels", "title": "College directory variables match the IPEDS dictionary",

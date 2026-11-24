@@ -695,3 +695,16 @@ def test_broadcast_stations_by_transmitter_site(district, tmp_path):
 
     with pytest.raises(ValueError, match="expected layout"):
         broadcast.fetch(FakeFetcher([(r"fcc\.gov", "|".join(["x"] * 30))]), district, _square(tmp_path), {}, set())
+
+
+def test_colleges_curated_closure_is_applied(district, tmp_path, monkeypatch):
+    from pipeline.sources import colleges
+
+    monkeypatch.setattr(colleges, "curated_status", lambda: {"Northwoods University": {
+        "active": False, "note": "Closed in 2025.", "verified_on": "2026-11-23",
+        "source": {"id": "nu-closure", "publisher": "Northwoods University", "title": "Closing", "year": 2025, "url": "https://example.edu/closure"}}})
+    payload, sources, _ = colleges.fetch(_ipeds_fetcher(), district, _square(tmp_path))
+    nu = next(c for c in payload["institutions"] if c["name"] == "Northwoods University")
+    assert nu["active"] is False and nu["status_note"] == "Closed in 2025." and nu["status_source"] == "nu-closure"
+    assert payload["institutions"][-1] is nu and payload["active_count"] == 1
+    assert [s.id for s in sources] == ["nces-ipeds-hd", "nu-closure"]

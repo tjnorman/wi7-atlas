@@ -46,6 +46,7 @@ The list comes from the National Center for Education Statistics' IPEDS director
 
 - IPEDS lists an institution once, at its main address. A branch campus or outreach center inside the district that reports under a parent elsewhere is not listed, and an institution whose main address is outside the district is not listed even if it has a campus inside.
 - Variable names are confirmed against the IPEDS dictionary, and the words for control, level, and size come from the dictionary's own code lists.
+- The directory runs a year or more behind. When an institution has closed since the directory year, the change is recorded in `data/curated/colleges.yaml` with the institution's own statement as the source, and the institution is shown as closed and left out of the count.
 - Check: IPEDS also records a congressional district code for each institution. The build compares that code with the outline and reports any institution where they differ.
 
 ## Radio and television
