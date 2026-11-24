@@ -8,19 +8,20 @@
 // Adapted from proxy/worker.js in Normansrule/global-intelligence-atlas, reused with the author's
 // permission (see NOTICE.md).
 //
-// Variables (wrangler.toml or the dashboard): ALLOWED_ORIGINS, LAT, LON, NM.
+// The defaults below can be overridden with variables of the same names (wrangler.toml or the dashboard).
 
 const SOURCES = [
   ['adsb.lol', (la, lo, nm) => `https://api.adsb.lol/v2/lat/${la}/lon/${lo}/dist/${nm}`, 'Open Database License 1.0', 'https://www.adsb.lol/'],
   ['adsb.fi', (la, lo, nm) => `https://opendata.adsb.fi/api/v2/lat/${la}/lon/${lo}/dist/${nm}`, 'adsb.fi open data terms', 'https://adsb.fi/'],
   ['airplanes.live', (la, lo, nm) => `https://api.airplanes.live/v2/point/${la}/${lo}/${nm}`, 'airplanes.live terms, non-commercial use', 'https://airplanes.live/'],
 ];
+const DEFAULTS = { ALLOWED_ORIGINS: 'https://tjnorman.github.io', LAT: '45.4344', LON: '-90.4727', NM: '143' };
 const TTL = 10; // seconds; every visitor in that window shares one upstream request
 
 export default {
   async fetch(request, env, ctx) {
     const origin = request.headers.get('Origin') || '';
-    const allowed = (env.ALLOWED_ORIGINS || '').split(',').map((s) => s.trim()).filter(Boolean);
+    const allowed = (env.ALLOWED_ORIGINS || DEFAULTS.ALLOWED_ORIGINS).split(',').map((s) => s.trim()).filter(Boolean);
     const cors = { 'Access-Control-Allow-Origin': allowed.includes(origin) ? origin : allowed[0] || 'null', Vary: 'Origin' };
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: { ...cors, 'Access-Control-Allow-Methods': 'GET' } });
     const url = new URL(request.url);
@@ -41,7 +42,7 @@ export default {
 };
 
 async function ask(env) {
-  const la = Number(env.LAT), lo = Number(env.LON), nm = Math.min(250, Number(env.NM) || 150);
+  const la = Number(env.LAT || DEFAULTS.LAT), lo = Number(env.LON || DEFAULTS.LON), nm = Math.min(250, Number(env.NM || DEFAULTS.NM));
   const errors = [];
   for (const [name, build, licence, home] of SOURCES) {
     try {
