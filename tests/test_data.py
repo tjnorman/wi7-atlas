@@ -9,7 +9,7 @@ import pytest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "wi-07"
-FILES = ["geography", "acs", "pep", "laus", "qcew", "usaspending", "irs", "cameras", "colleges", "legislators", "elections", "fec", "votes"]
+FILES = ["geography", "acs", "pep", "laus", "qcew", "usaspending", "irs", "cameras", "colleges", "municipalities", "broadcast", "legislators", "elections", "fec", "votes"]
 
 pytestmark = pytest.mark.skipif(not (DATA / "summary.json").exists(), reason="no data build yet")
 

@@ -648,3 +648,50 @@ def test_colleges_inside_the_district(district, tmp_path, monkeypatch):
     renamed = dict(IPEDS_TITLES, LATITUDE="Something else")
     with pytest.raises(ValueError, match="LATITUDE"):
         colleges.fetch(_ipeds_fetcher(renamed), district, _square(tmp_path))
+
+
+# ---------------------------------------------------------------- municipalities and broadcast stations
+def test_municipality_status_by_land_share():
+    from pipeline.sources.municipalities import classify
+
+    assert classify({"07": 100}, 100, "07") == ("inside", 1.0)
+    assert classify({"03": 100}, 100, "07")[0] == "outside"
+    assert classify({"07": 60, "03": 40}, 100, "07") == ("split", 0.6)
+    assert classify({"07": 1, "03": 99999}, 100000, "07")[0] == "outside"   # a boundary sliver
+    assert classify({"07": 99999, "03": 1}, 100000, "07")[0] == "inside"
+
+
+def _fcc(call, service, city, lat_deg, lon_deg, status="LIC", freq="88.1  MHz", channel="201", fid="1", licensee="SOMEBODY INC"):
+    c = [""] * 41
+    c[1], c[2], c[3], c[4], c[9], c[10], c[11], c[18] = call, freq, service, channel, status, city, "WI", fid
+    c[19], c[20], c[21], c[22], c[23], c[24], c[25], c[26], c[27] = "N", str(lat_deg), "30", "0.0", "W", str(lon_deg), "30", "0.0", licensee
+    return "|".join(c)
+
+
+def test_broadcast_stations_by_transmitter_site(district, tmp_path):
+    from pipeline.sources import broadcast
+
+    fm = "\n".join(["header without pipes",
+                    _fcc("WAAA", "FM", "WAUSAU", 45, 90, fid="10"),                      # inside the square (45.5, -90.5)
+                    _fcc("WBBB", "FM", "MADISON", 43, 89, fid="11"),                     # far outside
+                    _fcc("WCCC", "FM", "WAUSAU", 45, 89, fid="12"),                      # licensed here, tower just outside
+                    _fcc("WDDD", "FM", "WAUSAU", 45, 90, status="CP", fid="13"),          # not licensed yet
+                    _fcc("W250AA", "FX", "WAUSAU", 45, 90, fid="14")])                    # translator
+    am = "\n".join([_fcc("WEEE", "AM", "MERRILL", 45, 90, freq="550   kHz", channel="", fid="20"),
+                    _fcc("WEEE", "AM", "MERRILL", 45, 90, freq="550   kHz", channel="", fid="20")])  # day and night rows
+    tv = _fcc("WFFF", "DTV", "WAUSAU", 45, 90, freq="-", channel="7", fid="30")
+
+    def route(url, _):
+        return am if "amq" in url else tv if "tvq" in url else fm if "serv=FM" in url else ""
+
+    payload, sources, checks = broadcast.fetch(FakeFetcher([(r"fcc\.gov", route)]), district, _square(tmp_path),
+                                               {"073": "Marathon"}, {"WAUSAU", "MERRILL"})
+    assert [(s["call"], s["band"]) for s in payload["stations"]] == [("WEEE", "AM"), ("WAAA", "FM"), ("WFFF", "TV")]
+    assert payload["by_band"] == {"AM": 1, "FM": 1, "TV": 1}
+    assert payload["stations"][2]["channel"] == "7" and payload["stations"][2]["frequency"] is None
+    assert payload["stations"][1]["transmitter_county"] == "Marathon" and payload["stations"][1]["licensee"] == "Somebody Inc"
+    assert [s["call"] for s in payload["licensed_to_district_community_transmitter_outside"]] == ["WCCC"]
+    assert checks[0]["status"] == "pass" and sources[0].id == "fcc-queries"
+
+    with pytest.raises(ValueError, match="expected layout"):
+        broadcast.fetch(FakeFetcher([(r"fcc\.gov", "|".join(["x"] * 30))]), district, _square(tmp_path), {}, set())

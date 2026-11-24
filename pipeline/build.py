@@ -15,9 +15,9 @@ from . import checks as checks_mod
 from .config import DATA_ROOT, ROOT, District
 from .http import Fetcher
 from .provenance import dataset
-from .sources import acs, cameras, colleges, elections, fec, geography, irs, laus, legislators, pep, qcew, usaspending, votes
+from .sources import acs, broadcast, cameras, colleges, elections, fec, geography, irs, laus, legislators, municipalities, pep, qcew, usaspending, votes
 
-ORDER = ["geography", "legislators", "acs", "pep", "laus", "qcew", "usaspending", "irs", "elections", "fec", "votes", "cameras", "colleges"]
+ORDER = ["geography", "legislators", "acs", "pep", "laus", "qcew", "usaspending", "irs", "elections", "fec", "votes", "cameras", "colleges", "municipalities", "broadcast"]
 
 
 def data_dir(d: District) -> pathlib.Path:
@@ -67,6 +67,16 @@ def run(d: District, only: list[str] | None = None) -> dict:
         g = data.get("geography")
         return {c["county_fips"]: c["short_name"] for c in g["data"]["counties"]} if g else {}
 
+    def split_fips() -> set[str]:
+        g = data.get("geography")
+        return {c["county_fips"] for c in g["data"]["counties"] if not c["whole"]} if g else set()
+
+    def communities() -> set[str]:
+        m = data.get("municipalities")
+        if not m:
+            raise RuntimeError("Municipality list unavailable")
+        return {x["name"].upper() for x in m["data"]["municipalities"] if x["status"] != "outside"}
+
     steps: dict[str, Callable[[], tuple]] = {
         "geography": lambda: geography.fetch(f, d, out / "geo"),
         "legislators": lambda: legislators.fetch(f, d),
@@ -77,6 +87,8 @@ def run(d: District, only: list[str] | None = None) -> dict:
         "usaspending": lambda: usaspending.fetch(f, d, counties_fips()),
         "irs": lambda: irs.fetch(f, d),
         "colleges": lambda: colleges.fetch(f, d, out / "geo" / "district.simple.geojson.json"),
+        "municipalities": lambda: municipalities.fetch(f, d, county_names(), split_fips()),
+        "broadcast": lambda: broadcast.fetch(f, d, out / "geo" / "district.simple.geojson.json", county_names(), communities()),
         "cameras": lambda: cameras.fetch(f, d, out / "geo" / "district.simple.geojson.json", county_names()),
         "elections": lambda: elections.fetch(f, d),
         "fec": lambda: fec.fetch(f, d),
@@ -115,7 +127,9 @@ def run(d: District, only: list[str] | None = None) -> dict:
     for c in previous.get("checks", []):
         kept = (c["id"] == "acs-labels" and "acs" not in (only or [])) or \
                (c["id"].startswith("irs-") and "irs" not in (only or [])) or \
-               (c["id"].startswith("ipeds-") and "colleges" not in (only or []))
+               (c["id"].startswith("ipeds-") and "colleges" not in (only or [])) or \
+               (c["id"] == "municipalities-cover" and "municipalities" not in (only or [])) or \
+               (c["id"] == "fcc-layout" and "broadcast" not in (only or []))
         if c["id"] not in run_ids and only and kept:
             results.insert(0, c)
     integrity = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),

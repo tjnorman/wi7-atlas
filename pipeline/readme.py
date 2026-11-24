@@ -208,6 +208,27 @@ def colleges_block(col: dict | None) -> str:
             f"{col.get('coverage_note', '')}</sub>\n")
 
 
+def stations_block(b: dict | None, m: dict | None) -> str:
+    out = ""
+    if b and b.get("stations"):
+        n = b.get("by_band", {})
+        rows = "\n".join(f"| {s['call']} | {('Channel ' + str(s['channel'])) if s['band'] == 'TV' else s.get('frequency') or ''} | "
+                         f"{s['kind']} | {s['city']} | {s.get('licensee') or ''} |" for s in b["stations"])
+        out += (f"## 📻 Radio and television\n\n{b['count']} licensed stations transmit from inside the district: "
+                f"{n.get('FM', 0)} FM, {n.get('AM', 0)} AM, and {n.get('TV', 0)} television.\n\n"
+                f"<details><summary><b>Every station</b></summary>\n\n| Call sign | Frequency | Type | Licensed to | Licensee |\n"
+                f"|---|---|---|---|---|\n{rows}\n\n</details>\n\n<sub>Source: Federal Communications Commission AM, FM, and TV queries, "
+                f"as of {b['as_of']}. {b.get('rule', '')}</sub>\n")
+    if m and m.get("count_in_district"):
+        t = m["by_type"]
+        out += (f"\n## 🏘 Cities, villages, and towns\n\nThe district takes in all or part of **{m['count_in_district']} municipalities**: "
+                f"{t['city']} cities, {t['village']} villages, and {t['town']} towns. {len(m.get('split_municipalities', []))} of them are "
+                f"themselves divided by the district line. The full list, with each one's status, is in "
+                f"[`data/wi-07/municipalities.json`](data/wi-07/municipalities.json).\n\n"
+                f"<sub>Source: U.S. Census Bureau, congressional district to county subdivision relationship file. {m.get('note', '')}</sub>\n")
+    return out
+
+
 def taxes_text(irs: dict | None, state_name: str = "State") -> str:
     d = (irs or {}).get("district") or {}
     if not d.get("total_tax_liability"):
@@ -423,6 +444,7 @@ def render(d: District) -> str:
         "work_text": work_text(acs, summary),
         "federal_text": fed_text,
         "colleges_block": colleges_block(_data(_load(d, "colleges"))),
+        "stations_block": stations_block(_data(_load(d, "broadcast")), _data(_load(d, "municipalities"))),
         "taxes_text": taxes_text(_data(_load(d, "irs")), d.state_name),
         "agencies_table": agencies,
         "representation_text": representation_text(leg, summary),

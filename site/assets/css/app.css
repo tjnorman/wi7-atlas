@@ -401,3 +401,4 @@ td.num, th.num { text-align: right; }
 .college .tags span { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 980px; background: var(--bg-2); color: var(--ink-2); }
 .college .site { margin: 0; font-size: 14px; overflow-wrap: anywhere; }
 #colleges-source { margin-top: 18px; }
+#stations .segmented { margin-bottom: 16px; }

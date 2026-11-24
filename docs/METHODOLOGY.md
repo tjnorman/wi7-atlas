@@ -48,6 +48,18 @@ The list comes from the National Center for Education Statistics' IPEDS director
 - Variable names are confirmed against the IPEDS dictionary, and the words for control, level, and size come from the dictionary's own code lists.
 - Check: IPEDS also records a congressional district code for each institution. The build compares that code with the outline and reports any institution where they differ.
 
+## Radio and television
+
+Stations come from the Federal Communications Commission's AM, FM, and TV query tools. A station is listed when it holds a licence (not only a construction permit) and its transmitter coordinates fall inside the district outline. Full-power and low-power FM, AM, and full-power, Class A, and low-power television are included; translators and boosters are not.
+
+- **Licensed here is not the same as received here.** Stations in Duluth, Eau Claire, Green Bay, and the Twin Cities reach parts of the district from transmitters outside it. Reception depends on power, antenna height, and terrain, and the atlas does not model it. A separate short list shows stations licensed to a community in the district whose transmitter stands outside it.
+- The FCC output has no column names. Each row must show hemisphere letters and plausible coordinates in the expected positions, or the build stops.
+- FCC records change continuously; the list carries its retrieval date.
+
+## Cities, villages, and towns
+
+The Census Bureau's relationship file between the 119th Congress districts and 2020 county subdivisions gives, for every city, village, and town, the land area inside each district. A municipality is *inside* when all of its land is in the district, *split* when the line divides it, and *outside* otherwise; a share under 0.1% is treated as a boundary sliver. The file has no population by part, so "split" describes land, not residents. A municipality that crosses a county line appears once in each county.
+
 ## Right now: cameras and aircraft
 
 This section is a window, not a dataset. Nothing in it feeds the figures elsewhere in the atlas.

@@ -93,6 +93,8 @@ A scheduled GitHub Action rebuilds the data each week, runs {{check_count}} cros
 
 {{colleges_block}}
 
+{{stations_block}}
+
 ## 🗳 Representation and elections
 
 {{representation_text}}

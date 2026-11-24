@@ -10,7 +10,7 @@ const BASE = params.get("data") || "data/";
 const $ = (s, r = document) => r.querySelector(s);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "cameras", "colleges", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
+const FILES = ["summary", "acs", "geography", "pep", "laus", "qcew", "usaspending", "irs", "cameras", "colleges", "municipalities", "broadcast", "legislators", "elections", "fec", "votes", "integrity", "notes", "manifest"];
 const state = { data: {}, counties: [], byFips: new Map(), topo: null, step: "outline" };
 
 async function load() {
@@ -505,6 +505,32 @@ function collegesSection() {
   $("#colleges-source").innerHTML = sourceLine(["nces-ipeds-hd"], `Directory year ${c.directory_year}. ${F.esc(c.coverage_note || "")}`);
 }
 
+// ---------------------------------------------------------------- radio and television
+function stationsSection() {
+  const b = state.data.broadcast, box = $("#stations");
+  if (!box || !b?.stations?.length) return;
+  box.hidden = false;
+  const n = b.by_band || {};
+  $("#stations-lede").innerHTML = `<strong>${b.count}</strong> licensed stations transmit from inside the district: ${n.FM || 0} FM, ${n.AM || 0} AM, and ${n.TV || 0} television.`;
+  const row = (s) => `<tr><td><b>${F.esc(s.call)}</b></td><td>${F.esc(s.band === "TV" ? `Channel ${s.channel || "—"}` : s.frequency || "—")}</td><td>${F.esc(s.kind)}</td><td>${F.esc(s.city)}</td><td>${F.esc(s.transmitter_county || "—")}</td><td>${F.esc(s.licensee || "—")}</td></tr>`;
+  const head = `<thead><tr><th>Call sign</th><th>Frequency</th><th>Type</th><th>Licensed to</th><th>Transmitter county</th><th>Licensee</th></tr></thead>`;
+  const bands = ["FM", "AM", "TV"].filter((k) => n[k]);
+  const show = (band) => {
+    $("#stations-table").innerHTML = head + `<tbody>${b.stations.filter((s) => s.band === band).map(row).join("")}</tbody>`;
+    document.querySelectorAll("#stations-tabs button").forEach((x) => { x.classList.toggle("on", x.dataset.band === band); x.setAttribute("aria-selected", x.dataset.band === band); });
+  };
+  $("#stations-tabs").innerHTML = bands.map((k) => `<button type="button" role="tab" data-band="${k}">${k === "TV" ? "Television" : k} (${n[k]})</button>`).join("");
+  document.querySelectorAll("#stations-tabs button").forEach((x) => (x.onclick = () => show(x.dataset.band)));
+  show(bands[0]);
+  const out = b.licensed_to_district_community_transmitter_outside || [];
+  if (out.length) {
+    $("#stations-outside").hidden = false;
+    $("#stations-outside-sum").textContent = `Licensed to a community in the district, transmitting from outside it (${out.length})`;
+    $("#stations-outside-table").innerHTML = head + `<tbody>${out.map(row).join("")}</tbody>`;
+  }
+  $("#stations-source").innerHTML = sourceLine(["fcc-queries"], `${F.esc(b.rule || "")} Records as of ${F.longDate(b.as_of)}.`);
+}
+
 // ---------------------------------------------------------------- right now: cameras and aircraft
 // Camera and aircraft handling is adapted from cameras.js and flights.js in
 // Normansrule/global-intelligence-atlas, reused with the author's permission (see NOTICE.md).
@@ -954,6 +980,7 @@ async function film() {
   work();
   dollars();
   collegesSection();
+  stationsSection();
   liveNow();
   seat();
   counties();
