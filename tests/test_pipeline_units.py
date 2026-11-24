@@ -345,3 +345,11 @@ def test_education_rows_found_by_label_in_old_and_new_layouts():
     assert [new[v].split("!!")[-1] for v in e2["ba"]] == ["Bachelor's degree", "Master's degree", "Professional school degree", "Doctorate degree"]
     assert all("no diploma" not in new[v].lower() for v in e2["hs"])
     assert len(e2["hs"]) == 8
+
+
+def test_gazetteer_year_comes_from_the_file_downloaded():
+    from pipeline.sources.geography import gazetteer_year
+    url = "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_119CDs_national.zip"
+    assert gazetteer_year(url) == "2024"
+    assert gazetteer_year(None) is None
+    assert gazetteer_year("https://example.com/no-year.zip") is None

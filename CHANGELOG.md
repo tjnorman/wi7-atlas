@@ -17,4 +17,5 @@ All notable changes to the WI-7 Atlas. Corrections to data or wording are listed
 
 ### Corrections
 - 2026-11-23: District land area. The figure recorded from widistrict7.com (18,787 sq mi) disagreed with three Census Bureau products: the 119th Congress cartographic boundary file, the district-to-county relationship file, and the Gazetteer, which agree on about 23,111 sq mi of land. The atlas uses the Census figure.
+- 2026-11-23: Gazetteer citation. The source record gave the current year (2026) as the edition, but the file used is the 2024 Gazetteer. The year and title now come from the file actually downloaded. The land-area value was unaffected. widistrict7.com was corrected to 23,111 sq mi the same day.
 - 2026-11-23: Unemployment. BLS county and state series IDs were one digit short, so the first builds had no county or state rates. Fixed before publication.

@@ -14,6 +14,7 @@ import csv
 import io
 import json
 import pathlib
+import re
 import shutil
 import subprocess
 import tempfile
@@ -28,6 +29,13 @@ SQ_M_PER_SQ_MI = 2_589_988.110336
 GENZ = "https://www2.census.gov/geo/tiger/GENZ{y}/shp/cb_{y}_us_{layer}_500k.zip"
 REL = "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd{c}20_county20_st{s}.txt"
 GAZ = "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/{y}_Gazetteer/{y}_Gaz_{c}CDs_national.zip"
+
+
+def gazetteer_year(url: str | None) -> str | None:
+    """Edition year of a Gazetteer download, read from its URL (e.g. .../2024_Gazetteer/...)."""
+    m = re.search(r"/(\d{4})_Gazetteer/", url or "")
+    return m.group(1) if m else None
+
 
 
 def gazetteer_land(fetcher: Fetcher, d: District) -> tuple[float | None, str | None]:
@@ -280,9 +288,10 @@ def fetch(fetcher: Fetcher, d: District, geo_dir: pathlib.Path) -> tuple[dict, l
         Source(
             id="census-gaz",
             publisher="U.S. Census Bureau",
-            title=f"Gazetteer files: {d.congress}th congressional districts",
+            title=f"{gazetteer_year(gaz_url) or ''} Gazetteer files: {d.congress}th congressional districts".strip(),
             url="https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html",
-            year=str(datetime.now(timezone.utc).year),
+            year=gazetteer_year(gaz_url) or "n.d.",
+            vintage=f"{gazetteer_year(gaz_url)}_Gazetteer" if gazetteer_year(gaz_url) else None,
             query=gaz_url,
         ),
         Source(
