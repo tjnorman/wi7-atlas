@@ -33,7 +33,6 @@ VARS: dict[str, tuple[str, tuple[str, ...], bool]] = {
     "A00100": ("agi", ("gross income",), True),
     "A10300": ("total_tax_liability", ("total tax liability",), True),
     "A06500": ("income_tax_after_credits", ("income tax after credits",), True),
-    "A59660": ("earned_income_credit", ("earned income credit",), True),
     "A11902": ("refunds", ("overpayments refunded",), True),
     "A11901": ("tax_due_at_filing", ("tax due at time of filing",), True),
 }
@@ -167,6 +166,19 @@ def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]
     if (state, dist) not in table:
         raise ValueError(f"District {d.state_abbr}-{d.district} is not in the IRS tax year {year} file")
 
+    # A value can carry the right label and still be wrong in the file. Any amount larger than
+    # half of the district's adjusted gross income is not believable for a tax, refund, or
+    # balance due, so it is withheld and reported instead of published.
+    probe = totals(table[(state, dist)], variables)
+    probe = probe[0] or probe[1]
+    implausible = [v for v in variables if v not in ("N1", "A00100") and probe[v] > 0.5 * probe["A00100"]]
+    if any(v in REQUIRED for v in implausible):
+        raise ValueError(f"IRS value fails the plausibility test: {implausible}")
+    for v in implausible:
+        bad.append(f"{v}: value {probe[v] * 1000:,.0f} is more than half of adjusted gross income; withheld")
+        variables.remove(v)
+        good.pop(v)
+
     def best(classes):
         published, summed = totals(classes, variables)
         return published or summed, published, summed
@@ -193,7 +205,8 @@ def fetch(fetcher: Fetcher, d: District) -> tuple[dict, list[Source], list[dict]
 
     check("irs-labels", "IRS variables match their published descriptions",
           "pass" if not bad else "warn",
-          f"{len(good)} of {len(VARS)} variables confirmed against the tax year {year} documentation guide."
+          f"{len(good)} of {len(VARS)} variables confirmed against the tax year {year} documentation guide "
+          f"and within plausible range."
           + (" Not published: " + "; ".join(bad) if bad else ""))
 
     def close(a, b, tol):

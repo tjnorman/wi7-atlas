@@ -424,10 +424,20 @@ def test_irs_refuses_a_variable_whose_description_changed(district):
     with pytest.raises(ValueError, match="A10300"):
         irs.fetch(_irs_fetcher(doc_rows=moved), district)
     # An optional variable that fails is dropped and reported, and the rest still publishes.
-    optional = [r if r[0] != "A59660" else ["A59660", "Renamed credit"] for r in IRS_DOC_ROWS]
+    optional = [r if r[0] != "A11902" else ["A11902", "Renamed amount"] for r in IRS_DOC_ROWS]
     payload, _, checks = irs.fetch(_irs_fetcher(doc_rows=optional), district)
-    assert "earned_income_credit" not in payload["district"]
+    assert "refunds" not in payload["district"]
     assert next(c for c in checks if c["id"] == "irs-labels")["status"] == "warn"
+
+
+def test_irs_withholds_a_value_that_is_not_believable(district):
+    from pipeline.sources import irs
+
+    # Refunds for the district larger than half of its income: right label, wrong number.
+    broken = IRS_CSV.replace("55,WI,7,0,400,28000,3000,2800,120,800,400", "55,WI,7,0,400,28000,3000,2800,120,23000,400")
+    payload, _, checks = irs.fetch(_irs_fetcher(csv_text=broken), district)
+    assert "refunds" not in payload["district"] and payload["district"]["total_tax_liability"] == 3_000_000
+    assert any("A11902" in m and "withheld" in m for m in payload["not_published"])
 
 
 def test_irs_needs_units_stated(district):

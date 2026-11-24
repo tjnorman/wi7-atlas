@@ -37,6 +37,7 @@ The IRS Statistics of Income Division publishes totals from individual income ta
 - **It is not a balance against federal awards.** The tax figure covers one tax year of individual returns; the award figures cover federal fiscal years and only awards reported by place of performance. The atlas shows both and does not subtract one from the other.
 - The IRS places returns in districts by the ZIP code on the return, so a small share of returns near district lines may be assigned to a neighboring district.
 - The IRS file has no labels. Before a variable is used, its description in the IRS documentation guide for that tax year must contain the expected words (for example, "total tax liability"). A variable that does not match is not published, and the build reports it.
+- A value can carry the right label and still be wrong. Any amount larger than half of the district's adjusted gross income is withheld and reported. The earned income credit column in the tax year 2023 file showed $23.0 billion for this district on 38,770 returns, which is not believable, so the atlas does not publish that column.
 - Checks: the income classes must add up to the published district total; the state's districts are compared with the state row; and the Congress named in the IRS documentation is compared with the atlas's district lines.
 
 ## The seat
