@@ -6,7 +6,7 @@ Parts of this repository may be adapted from
 [Normansrule/global-intelligence-atlas](https://github.com/Normansrule/global-intelligence-atlas),
 which its author publishes under the GNU Affero General Public License v3.0.
 
-The author, Aleksander Norman, gave permission for that code to be reused in this repository under
+The author (GitHub user Normansrule) gave permission for that code to be reused in this repository under
 this repository's MIT license. Thomas J. Norman, publisher of this atlas, relayed the permission on
 November 23, 2026. Each adapted file names its origin in a comment at the top.
 
