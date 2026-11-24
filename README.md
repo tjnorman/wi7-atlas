@@ -19,8 +19,8 @@
 [![Tests](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/tests.yml)
 [![Data refresh](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/data.yml)
 [![Deploy to Pages](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/tjnorman/wi7-atlas/actions/workflows/pages.yml)
-[![Cross-checks](https://img.shields.io/badge/cross--checks-24_of_25_passing-b26a00)](#-how-every-number-is-checked)
-[![Sources](https://img.shields.io/badge/primary_sources-11-0071e3)](#-sources)
+[![Cross-checks](https://img.shields.io/badge/cross--checks-25_of_25_passing-2e7d32)](#-how-every-number-is-checked)
+[![Sources](https://img.shields.io/badge/primary_sources-12-0071e3)](#-sources)
 [![Data as of](https://img.shields.io/badge/data_as_of-2026--11--24-555)](data/wi-07/manifest.json)
 ![Nonpartisan](https://img.shields.io/badge/nonpartisan-follows_the_seat-555)
 [![License: MIT](https://img.shields.io/badge/code-MIT-1f4e9c)](LICENSE)
@@ -148,23 +148,22 @@ On 368,470 individual returns for tax year 2023, people living in the district r
 
 ## 🎓 Colleges and universities
 
-7 colleges, universities, and career schools have their main address in the district.
+6 colleges, universities, and career schools have their main address in the district.
 
 | Institution | City | County | Control | Level |
 |---|---|---|---|---|
 | [Lac Courte Oreilles Ojibwe University](https://www.lco.edu/) | Hayward | Sawyer | Public | Four or more years |
 | [Nicolet Area Technical College](https://www.nicoletcollege.edu/) | Rhinelander | Oneida | Public | At least 2 but less than 4 years |
 | [Northcentral Technical College](https://www.ntc.edu/) | Wausau | Marathon | Public | At least 2 but less than 4 years |
-| [Northland College](https://www.northland.edu/) | Ashland | Ashland | Private not-for-profit | Four or more years |
 | [Northwood Technical College](https://www.northwoodtech.edu/) | Rice Lake | Barron | Public | At least 2 but less than 4 years |
 | [State College of Beauty Culture](https://www.statecollegeofbeauty.com/) | Wausau | Marathon | Private for-profit | Less than 2 years (below associate) |
 | [University of Wisconsin-Superior](https://www.uwsuper.edu/) | Superior | Douglas | Public | Four or more years |
 
-<sub>Source: National Center for Education Statistics, IPEDS directory file HD2024. IPEDS lists each institution once, at its main address. Branch campuses and outreach centers inside the district that report under a parent institution are not listed.</sub>
+<sub>Source: National Center for Education Statistics, IPEDS directory file HD2024. IPEDS lists each institution once, at its main address. Branch campuses and outreach centers inside the district that report under a parent institution are not listed. Northland College (Ashland) is in the directory but is not counted: Closed at the end of the 2024-25 academic year. The Board of Trustees voted to close the college on February 19, 2025.</sub>
 
 ## 📻 Radio and television
 
-114 licensed stations transmit from inside the district: 77 FM, 27 AM, and 10 television.
+117 licensed stations transmit from inside the district: 77 FM, 27 AM, and 13 television.
 
 <details><summary><b>Every station</b></summary>
 
@@ -280,10 +279,13 @@ On 368,470 individual returns for tax year 2023, people living in the district r
 | WYOW | Channel 28 | Full-power television | Eagle River | Gray Television Licensee, Llc |
 | WLEF-TV | Channel 36 | Full-power television | Park Falls | State Of Wisconsin - Educational Communications Board |
 | WJFW-TV | Channel 16 | Full-power television | Rhinelander | Northland Television, Llc |
+| W21EW-D | Channel 21 | Low-power television or translator | Wausau | Hc2 Station Group, Inc. |
+| W27AU-D | Channel 27 | Low-power television or translator | Wausau | Northland Television, Llc |
+| W36EI-D | Channel 36 | Low-power television or translator | Wausau | Edge Spectrum, Inc. |
 | WAOW | Channel 9 | Full-power television | Wausau | Wausau Tv License Company, Llc |
 | WHRM-TV | Channel 24 | Full-power television | Wausau | State Of Wisconsin - Educational Communications Board |
 | WSAW-TV | Channel 7 | Full-power television | Wausau | Gray Television Licensee, Llc |
-| WZAW-LD | Channel 33 | Low-power television | Wausau | Gray Television Licensee, Llc |
+| WZAW-LD | Channel 33 | Low-power television or translator | Wausau | Gray Television Licensee, Llc |
 
 </details>
 
@@ -429,7 +431,7 @@ Three rules keep the atlas honest:
 2. **A label check before any Census number is used.** Every Census variable's official label is compared with what the atlas says it means. If a table is renumbered, that measure is dropped and the check fails in public.
 3. **Nothing unofficial without a label and a review date.** Hand-written notes (like a race called by news organizations before certification) carry sources, a verification date, and a review-by date; an overdue note turns the check yellow.
 
-**Latest build: 24 of 25 checks passing**, 1 for review.
+**Latest build: 25 of 25 checks passing**.
 
 | | Check | What was compared |
 |---|---|---|
@@ -442,7 +444,7 @@ Three rules keep the atlas honest:
 | ✅ Pass | College directory variables match the IPEDS dictionary | 13 of 13 variables confirmed against the 2024 dictionary. |
 | ✅ Pass | IPEDS district codes agree with the district outline | All 7 institutions inside the outline carry this district's code in IPEDS, and no other Wisconsin institution does. |
 | ✅ Pass | Every county in the district has municipalities in the district | 607 municipalities are in the district or split by its line (51 cities, 90 villages, 466 towns), across 26 of 26 counties. |
-| ⚠️ Review | FCC station records have the expected layout | 720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. Skipped 17 licensed records without a standard call sign: DWCCX, W19DP-D, W19DP-D, W20FH-D, W21EW-D, W22FK-D. |
+| ✅ Pass | FCC station records have the expected layout | 720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. |
 | ✅ Pass | The district's counties match the recorded list (26 counties: 21 whole, 5 split) | Census relationship file: 26 counties with land in the district, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. Recorded: 26 counties, 21 whole; split: Chippewa, Jackson, Juneau, Monroe, Wood. |
 | ✅ Pass | 2020 Census population agrees three ways (district total, sum of county parts, recorded figure) | District total 736,715; sum of county parts 736,715; recorded 736,715. |
 | ✅ Pass | For whole counties, two Census files report the same 2020 population | 21 of 21 whole counties match between the 119th District Summary File and the 2020 redistricting file. |
@@ -466,7 +468,7 @@ Every data file wraps its numbers with the sources used to make them:
 
 ```json
 {
-  "generated_at": "2026-11-24T06:44:32+00:00",
+  "generated_at": "2026-11-24T07:27:51+00:00",
   "sources": [
     {
       "id": "acs1",
@@ -553,6 +555,7 @@ tests/                 pytest unit tests and Playwright site checks
 - Internal Revenue Service, Statistics of Income Division. (2026). Individual income tax returns: Congressional district data, tax year 2023 [Data set]. Retrieved November 24, 2026, from https://www.irs.gov/statistics/soi-tax-stats-data-by-congressional-district-2023
 - MIT Election Data and Science Lab. (2019). U.S. House 1976-2018 (constituency returns) [Data set]. Retrieved November 24, 2026, from https://github.com/MEDSL/constituency-returns
 - National Center for Education Statistics. (2025). Integrated Postsecondary Education Data System (IPEDS): Institutional Characteristics directory file, HD2024 [Data set]. Retrieved November 24, 2026, from https://nces.ed.gov/ipeds/use-the-data
+- Northland College. (2025). Northland College Board of Trustees votes to close the college at end of academic year [Press release]. Retrieved November 24, 2026, from https://www.northland.edu/closure
 - Office of the Clerk, U.S. House of Representatives. (2026). Member data (XML) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/xml/lists/MemberData.xml
 - Office of the Clerk, U.S. House of Representatives. (2026). Roll call votes, 115th to 119th Congresses (2017 to 2026) [Data set]. Retrieved November 24, 2026, from https://clerk.house.gov/Votes
 - Open Eagle Eye (stuchapin909). (2026). Public camera registry [Data set]. Retrieved November 24, 2026, from https://github.com/stuchapin909/Open-Eagle-Eye

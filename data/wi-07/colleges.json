@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T07:23:57+00:00",
+ "generated_at": "2026-11-24T07:30:22+00:00",
  "sources": [
   {
    "id": "nces-ipeds-hd",
@@ -13,6 +13,19 @@
    "accessed": "2026-11-24",
    "notes": "The directory of institutions that take part in federal student aid programs. An institution appears once, at its main address; branch campuses that do not report separately are not listed.",
    "apa": "National Center for Education Statistics. (2025). Integrated Postsecondary Education Data System (IPEDS): Institutional Characteristics directory file, HD2024 [Data set]. Retrieved November 24, 2026, from https://nces.ed.gov/ipeds/use-the-data"
+  },
+  {
+   "id": "northland-closure",
+   "publisher": "Northland College",
+   "title": "Northland College Board of Trustees votes to close the college at end of academic year",
+   "url": "https://www.northland.edu/closure",
+   "year": "2025",
+   "kind": "Press release",
+   "query": null,
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "Northland College. (2025). Northland College Board of Trustees votes to close the college at end of academic year [Press release]. Retrieved November 24, 2026, from https://www.northland.edu/closure"
   }
  ],
  "district": "wi-07",
@@ -20,7 +33,7 @@
  "data": {
   "directory_year": 2024,
   "count": 7,
-  "active_count": 7,
+  "active_count": 6,
   "institutions": [
    {
     "unitid": "260372",
@@ -68,21 +81,6 @@
     "closed": null
    },
    {
-    "unitid": "239512",
-    "name": "Northland College",
-    "city": "Ashland",
-    "county_fips": "003",
-    "county": "Ashland",
-    "lat": 46.57909,
-    "lon": -90.87476,
-    "website": "https://www.northland.edu/",
-    "control": "Private not-for-profit",
-    "level": "Four or more years",
-    "size": "Under 1,000",
-    "active": true,
-    "closed": null
-   },
-   {
     "unitid": "240198",
     "name": "Northwood Technical College",
     "city": "Rice Lake",
@@ -126,6 +124,24 @@
     "size": "1,000 - 4,999",
     "active": true,
     "closed": null
+   },
+   {
+    "unitid": "239512",
+    "name": "Northland College",
+    "city": "Ashland",
+    "county_fips": "003",
+    "county": "Ashland",
+    "lat": 46.57909,
+    "lon": -90.87476,
+    "website": "https://www.northland.edu/",
+    "control": "Private not-for-profit",
+    "level": "Four or more years",
+    "size": "Under 1,000",
+    "active": false,
+    "closed": null,
+    "status_note": "Closed at the end of the 2024-25 academic year. The Board of Trustees voted to close the college on February 19, 2025.",
+    "status_source": "northland-closure",
+    "status_verified_on": "2026-11-23"
    }
   ],
   "coverage_note": "IPEDS lists each institution once, at its main address. Branch campuses and outreach centers inside the district that report under a parent institution are not listed."

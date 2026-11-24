@@ -1,9 +1,8 @@
 {
- "generated_at": "2026-11-24T07:24:02+00:00",
+ "generated_at": "2026-11-24T07:30:26+00:00",
  "summary": {
   "total": 25,
-  "pass": 24,
-  "warn": 1,
+  "pass": 25,
   "ok": true
  },
  "checks": [
@@ -117,7 +116,7 @@
   {
    "id": "fcc-layout",
    "title": "FCC station records have the expected layout",
-   "status": "warn",
+   "status": "pass",
    "sources": [
     "fcc-queries"
    ],
@@ -125,7 +124,7 @@
     "rows": 720,
     "readable": 720
    },
-   "detail": "720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions. Skipped 17 licensed records without a standard call sign: DWCCX, W19DP-D, W19DP-D, W20FH-D, W21EW-D, W22FK-D."
+   "detail": "720 of 720 rows had hemisphere letters and plausible coordinates in the expected positions."
   },
   {
    "id": "county-list",

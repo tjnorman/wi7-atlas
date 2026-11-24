@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T07:24:02+00:00",
+ "generated_at": "2026-11-24T07:30:26+00:00",
  "sources": [
   {
    "id": "fcc-queries",
@@ -18,11 +18,11 @@
  "district": "wi-07",
  "source_module": "broadcast",
  "data": {
-  "count": 114,
+  "count": 117,
   "by_band": {
    "AM": 27,
    "FM": 77,
-   "TV": 10
+   "TV": 13
   },
   "stations": [
    {
@@ -1456,6 +1456,45 @@
     "transmitter_county": "Oneida"
    },
    {
+    "call": "W21EW-D",
+    "frequency": null,
+    "channel": "21",
+    "city": "Wausau",
+    "licensee": "Hc2 Station Group, Inc.",
+    "facility_id": "793758",
+    "lat": 44.98319,
+    "lon": -89.60214,
+    "band": "TV",
+    "kind": "Low-power television or translator",
+    "transmitter_county": "Marathon"
+   },
+   {
+    "call": "W27AU-D",
+    "frequency": null,
+    "channel": "27",
+    "city": "Wausau",
+    "licensee": "Northland Television, Llc",
+    "facility_id": "49696",
+    "lat": 44.88806,
+    "lon": -89.65194,
+    "band": "TV",
+    "kind": "Low-power television or translator",
+    "transmitter_county": "Marathon"
+   },
+   {
+    "call": "W36EI-D",
+    "frequency": null,
+    "channel": "36",
+    "city": "Wausau",
+    "licensee": "Edge Spectrum, Inc.",
+    "facility_id": "186472",
+    "lat": 45.05611,
+    "lon": -89.465,
+    "band": "TV",
+    "kind": "Low-power television or translator",
+    "transmitter_county": "Marathon"
+   },
+   {
     "call": "WAOW",
     "frequency": null,
     "channel": "9",
@@ -1504,59 +1543,11 @@
     "lat": 45.05611,
     "lon": -89.465,
     "band": "TV",
-    "kind": "Low-power television",
+    "kind": "Low-power television or translator",
     "transmitter_county": "Marathon"
    }
   ],
   "licensed_to_district_community_transmitter_outside": [
-   {
-    "call": "WISS",
-    "frequency": "1100 kHz",
-    "channel": null,
-    "city": "Berlin",
-    "licensee": "Civic Media, Inc.",
-    "facility_id": "34907",
-    "lat": 43.94858,
-    "lon": -88.98594,
-    "band": "AM",
-    "kind": "AM radio"
-   },
-   {
-    "call": "WAUK",
-    "frequency": "540 kHz",
-    "channel": null,
-    "city": "Jackson",
-    "licensee": "Civic Media, Inc.",
-    "facility_id": "10824",
-    "lat": 43.33333,
-    "lon": -88.15314,
-    "band": "AM",
-    "kind": "AM radio"
-   },
-   {
-    "call": "WBOG",
-    "frequency": "1460 kHz",
-    "channel": null,
-    "city": "Tomah",
-    "licensee": "Magnum Radio, Inc.",
-    "facility_id": "52533",
-    "lat": 43.96858,
-    "lon": -90.51403,
-    "band": "AM",
-    "kind": "AM radio"
-   },
-   {
-    "call": "WZOS",
-    "frequency": "104.7 MHz",
-    "channel": null,
-    "city": "Berlin",
-    "licensee": "Woodward Communications, Inc.",
-    "facility_id": "34905",
-    "lat": 43.90575,
-    "lon": -88.88669,
-    "band": "FM",
-    "kind": "FM radio"
-   },
    {
     "call": "WQRB",
     "frequency": "95.1 MHz",
@@ -1582,30 +1573,6 @@
     "kind": "FM radio"
    },
    {
-    "call": "WLKN",
-    "frequency": "98.1 MHz",
-    "channel": null,
-    "city": "Cleveland",
-    "licensee": "Seehafer Broadcasting Corp",
-    "facility_id": "67716",
-    "lat": 43.98417,
-    "lon": -87.76536,
-    "band": "FM",
-    "kind": "FM radio"
-   },
-   {
-    "call": "WJWD",
-    "frequency": "90.3 MHz",
-    "channel": null,
-    "city": "Marshall",
-    "licensee": "Calvary Radio Network, Inc.",
-    "facility_id": "93445",
-    "lat": 43.34444,
-    "lon": -89.10278,
-    "band": "FM",
-    "kind": "FM radio"
-   },
-   {
     "call": "WYTE",
     "frequency": "106.5 MHz",
     "channel": null,
@@ -1614,18 +1581,6 @@
     "facility_id": "24444",
     "lat": 44.64414,
     "lon": -89.85344,
-    "band": "FM",
-    "kind": "FM radio"
-   },
-   {
-    "call": "WMDC",
-    "frequency": "98.7 MHz",
-    "channel": null,
-    "city": "Mayville",
-    "licensee": "Radio Plus, Inc.",
-    "facility_id": "46698",
-    "lat": 43.43803,
-    "lon": -88.52647,
     "band": "FM",
     "kind": "FM radio"
    },
@@ -1666,54 +1621,6 @@
     "kind": "FM radio"
    },
    {
-    "call": "WLXR",
-    "frequency": "96.1 MHz",
-    "channel": null,
-    "city": "Tomah",
-    "licensee": "Magnum Radio, Inc.",
-    "facility_id": "39627",
-    "lat": 44.0255,
-    "lon": -90.81622,
-    "band": "FM",
-    "kind": "FM radio"
-   },
-   {
-    "call": "WTMB",
-    "frequency": "94.5 MHz",
-    "channel": null,
-    "city": "Tomah",
-    "licensee": "Magnum Radio, Inc.",
-    "facility_id": "30305",
-    "lat": 43.89883,
-    "lon": -90.48983,
-    "band": "FM",
-    "kind": "FM radio"
-   },
-   {
-    "call": "WVCX",
-    "frequency": "98.9 MHz",
-    "channel": null,
-    "city": "Tomah",
-    "licensee": "Vcy America, Inc.",
-    "facility_id": "73061",
-    "lat": 43.85275,
-    "lon": -90.46014,
-    "band": "FM",
-    "kind": "FM radio"
-   },
-   {
-    "call": "WWRS-TV",
-    "frequency": null,
-    "channel": "34",
-    "city": "Mayville",
-    "licensee": "Trinity Broadcasting Of Texas, Inc.",
-    "facility_id": "68547",
-    "lat": 43.4365,
-    "lon": -88.52608,
-    "band": "TV",
-    "kind": "Full-power television"
-   },
-   {
     "call": "KBJR-TV",
     "frequency": null,
     "channel": "19",
@@ -1726,18 +1633,6 @@
     "kind": "Full-power television"
    },
    {
-    "call": "WPDR-LD",
-    "frequency": null,
-    "channel": "35",
-    "city": "Tomah",
-    "licensee": "Queenb Television, Llc",
-    "facility_id": "39628",
-    "lat": 43.89722,
-    "lon": -90.5825,
-    "band": "TV",
-    "kind": "Low-power television"
-   },
-   {
     "call": "WRJT-LD",
     "frequency": null,
     "channel": "34",
@@ -1747,7 +1642,7 @@
     "lat": 44.64264,
     "lon": -89.85667,
     "band": "TV",
-    "kind": "Low-power television"
+    "kind": "Low-power television or translator"
    }
   ],
   "kinds": {
@@ -1756,7 +1651,7 @@
    "FL": "Low-power FM radio",
    "DTV": "Full-power television",
    "DCA": "Class A television",
-   "LPD": "Low-power television"
+   "LPD": "Low-power television or translator"
   },
   "rule": "Listed: licensed stations whose transmitter stands inside the district outline. Translators and boosters are left out. Stations that are received in the district from transmitters outside it are not listed.",
   "as_of": "2026-11-24"

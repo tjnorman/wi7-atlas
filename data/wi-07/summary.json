@@ -11,7 +11,7 @@
   "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-24T07:24:02+00:00",
+ "built_at": "2026-11-24T07:30:26+00:00",
  "headline": [
   {
    "id": "population",
@@ -1458,6 +1458,19 @@
    "apa": "National Center for Education Statistics. (2025). Integrated Postsecondary Education Data System (IPEDS): Institutional Characteristics directory file, HD2024 [Data set]. Retrieved November 24, 2026, from https://nces.ed.gov/ipeds/use-the-data"
   },
   {
+   "id": "northland-closure",
+   "publisher": "Northland College",
+   "title": "Northland College Board of Trustees votes to close the college at end of academic year",
+   "url": "https://www.northland.edu/closure",
+   "year": "2025",
+   "kind": "Press release",
+   "query": null,
+   "vintage": null,
+   "accessed": "2026-11-24",
+   "notes": null,
+   "apa": "Northland College. (2025). Northland College Board of Trustees votes to close the college at end of academic year [Press release]. Retrieved November 24, 2026, from https://www.northland.edu/closure"
+  },
+  {
    "id": "clerk-members",
    "publisher": "Office of the Clerk, U.S. House of Representatives",
    "title": "Member data (XML)",
@@ -1668,26 +1681,26 @@
  ],
  "integrity": {
   "total": 25,
-  "pass": 24,
-  "warn": 1,
+  "pass": 25,
   "ok": true
  },
  "freshness": {
-  "geography": "2026-11-24T06:43:10+00:00",
-  "legislators": "2026-11-24T06:43:17+00:00",
-  "acs": "2026-11-24T06:43:24+00:00",
-  "pep": "2026-11-24T06:44:33+00:00",
-  "laus": "2026-11-24T06:44:33+00:00",
-  "qcew": "2026-11-24T06:44:36+00:00",
-  "usaspending": "2026-11-24T06:44:47+00:00",
-  "elections": "2026-11-24T06:44:50+00:00",
-  "fec": "2026-11-24T06:44:53+00:00",
-  "votes": "2026-11-24T06:44:54+00:00",
-  "irs": "2026-11-24T06:44:49+00:00",
-  "cameras": "2026-11-24T07:22:22+00:00",
-  "colleges": "2026-11-24T07:23:54+00:00",
-  "municipalities": "2026-11-24T07:23:57+00:00",
-  "broadcast": "2026-11-24T07:23:58+00:00"
+  "geography": "2026-11-24T07:26:32+00:00",
+  "legislators": "2026-11-24T07:26:38+00:00",
+  "acs": "2026-11-24T07:26:47+00:00",
+  "pep": "2026-11-24T07:27:51+00:00",
+  "laus": "2026-11-24T07:27:52+00:00",
+  "qcew": "2026-11-24T07:27:54+00:00",
+  "usaspending": "2026-11-24T07:28:05+00:00",
+  "elections": "2026-11-24T07:28:10+00:00",
+  "fec": "2026-11-24T07:28:13+00:00",
+  "votes": "2026-11-24T07:28:15+00:00",
+  "irs": "2026-11-24T07:28:07+00:00",
+  "cameras": "2026-11-24T07:30:19+00:00",
+  "colleges": "2026-11-24T07:30:19+00:00",
+  "municipalities": "2026-11-24T07:30:22+00:00",
+  "broadcast": "2026-11-24T07:30:23+00:00",
+  "ssa": null
  },
  "status": {
   "geography": "ok",
@@ -1704,6 +1717,7 @@
   "cameras": "ok",
   "colleges": "ok",
   "municipalities": "ok",
-  "broadcast": "ok"
+  "broadcast": "ok",
+  "ssa": "missing"
  }
 }
