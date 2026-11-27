@@ -40,7 +40,7 @@
   },
   "laus": {
    "status": "ok",
-   "updated": "2026-11-24T17:00:32+00:00",
+   "updated": "2026-11-27T00:54:05+00:00",
    "error": null,
    "sources": [
     "bls-laus"
@@ -157,7 +157,7 @@
  },
  "district": "wi-07",
  "name": "Wisconsin's 7th Congressional District",
- "built_at": "2026-11-27T00:52:29+00:00",
- "requests": 4,
+ "built_at": "2026-11-27T00:54:06+00:00",
+ "requests": 1,
  "requests_from_cache": 0
 }

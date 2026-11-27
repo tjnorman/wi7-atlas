@@ -11,7 +11,7 @@
   "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-27T00:52:29+00:00",
+ "built_at": "2026-11-27T00:54:06+00:00",
  "headline": [
   {
    "id": "population",
@@ -1557,9 +1557,9 @@
    "kind": "Data set",
    "query": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (series LAUCN550030000000003, LAUCN550050000000003, LAUCN550070000000003, ...)",
    "vintage": null,
-   "accessed": "2026-11-24",
+   "accessed": "2026-11-27",
    "notes": "The most recent month is preliminary and is revised the following month.",
-   "apa": "U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 24, 2026, from https://www.bls.gov/lau/"
+   "apa": "U.S. Bureau of Labor Statistics. (2026). Local Area Unemployment Statistics: county, state, and national unemployment rates, not seasonally adjusted [Data set]. Retrieved November 27, 2026, from https://www.bls.gov/lau/"
   },
   {
    "id": "bls-qcew",
@@ -1754,7 +1754,7 @@
   "legislators": "2026-11-24T16:59:13+00:00",
   "acs": "2026-11-24T16:59:21+00:00",
   "pep": "2026-11-24T17:00:31+00:00",
-  "laus": "2026-11-24T17:00:32+00:00",
+  "laus": "2026-11-27T00:54:05+00:00",
   "qcew": "2026-11-24T17:00:34+00:00",
   "usaspending": "2026-11-24T17:00:48+00:00",
   "elections": "2026-11-24T17:00:53+00:00",
