@@ -11,7 +11,7 @@
   "live_proxy": null,
   "congress": 119
  },
- "built_at": "2026-11-24T17:03:26+00:00",
+ "built_at": "2026-11-27T00:52:29+00:00",
  "headline": [
   {
    "id": "population",
@@ -1401,9 +1401,9 @@
    "kind": "Data set",
    "query": "https://api.open.fec.gov/v1/candidates/totals/?election_year=...&office=H&state=WI&district=07",
    "vintage": null,
-   "accessed": "2026-11-24",
+   "accessed": "2026-11-27",
    "notes": "Totals cover each candidate's principal campaign committee for the two-year cycle, through its latest report.",
-   "apa": "Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 24, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/"
+   "apa": "Federal Election Commission. (2026). Candidate financial totals, U.S. House [Data set]. Retrieved November 27, 2026, from https://www.fec.gov/data/elections/house/WI/07/2026/"
   },
   {
    "id": "fec-results",
@@ -1745,8 +1745,8 @@
   }
  ],
  "integrity": {
-  "total": 31,
-  "pass": 31,
+  "total": 30,
+  "pass": 30,
   "ok": true
  },
  "freshness": {
@@ -1758,7 +1758,7 @@
   "qcew": "2026-11-24T17:00:34+00:00",
   "usaspending": "2026-11-24T17:00:48+00:00",
   "elections": "2026-11-24T17:00:53+00:00",
-  "fec": "2026-11-24T17:00:57+00:00",
+  "fec": "2026-11-27T00:52:28+00:00",
   "votes": "2026-11-24T17:00:59+00:00",
   "irs": "2026-11-24T17:00:49+00:00",
   "cameras": "2026-11-24T17:03:15+00:00",

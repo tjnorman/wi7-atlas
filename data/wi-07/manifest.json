@@ -73,7 +73,7 @@
   },
   "fec": {
    "status": "ok",
-   "updated": "2026-11-24T17:00:57+00:00",
+   "updated": "2026-11-27T00:52:28+00:00",
    "error": null,
    "sources": [
     "fec"
@@ -157,7 +157,7 @@
  },
  "district": "wi-07",
  "name": "Wisconsin's 7th Congressional District",
- "built_at": "2026-11-24T17:03:26+00:00",
- "requests": 5342,
- "requests_from_cache": 4792
+ "built_at": "2026-11-27T00:52:29+00:00",
+ "requests": 4,
+ "requests_from_cache": 0
 }
